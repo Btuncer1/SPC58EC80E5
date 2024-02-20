@@ -1,0 +1,224 @@
+/*
+ * CANparse.c
+ *
+ *  Created on: 23 Oca 2024
+ *      Author: bayra
+ */
+#include "CANparse.h"
+
+/*
+ * LWI 0x86 ID
+ */
+
+float GetSteeringWheelAngle(const uint8_t* data)
+{
+	uint8_t Qbit = 0;
+	Qbit = (data[3] & 0b00100000) >> 5;//cw-> 1, ccw-> 0
+	uint16_t SteeringAngle_u16 = 0;
+	SteeringAngle_u16 = (uint16_t)(data[3] & 0b00011111) << 8 | data[2];
+
+	float SteeringAngle = 0;
+	SteeringAngle = (float)SteeringAngle_u16 * 0.1f;
+	SteeringAngle = Qbit == 1 ? -SteeringAngle : SteeringAngle;
+
+	return SteeringAngle;
+}
+
+/*
+ * LWI 0x86 ID
+ */
+int16_t GetSteeringWheelRate(const uint8_t* data)
+{
+	uint8_t Qbit = 0;
+	Qbit = (data[3] & 0b01000000) >> 6;//cw-> 1, ccw-> 0
+
+	uint16_t SteeringRate_u16 = 0;
+	SteeringRate_u16 = (uint16_t)data[4] << 1 | (data[3] & 0b10000000) >> 7 ;
+
+	int16_t SteeringRate_i16 = (int16_t)SteeringRate_u16;
+	SteeringRate_i16 = Qbit > 0 ? -SteeringRate_i16 : SteeringRate_i16;
+
+	return SteeringRate_i16 * 5 ;
+}
+
+
+/*
+ * Motor_11 0xA7
+ */
+
+int16_t GetTargetMotorTorqueFiltered(const uint8_t* data)
+{
+	int16_t Torque = 0;
+
+	Torque = ((uint16_t)data[6] & 0b00001111) << 6 | (data[5] & 0b11111100) >> 2;
+
+	return Torque - 509u;
+}
+
+
+int16_t GetTargetMotorTorqueRaw(const uint8_t* data)
+{
+	int16_t Torque = 0;
+
+	Torque = ((uint16_t)data[2] & 0b00111111) << 4 | (data[1] & 0b11110000) >> 4;
+	return Torque - 509u;
+}
+
+int16_t GetTargetMotorTorqueTotal(const uint8_t* data)
+{
+	int16_t Torque = 0;
+
+	Torque = ((uint16_t)data[3] ) << 2 | (data[2] & 0b11000000) >> 6;
+	return Torque - 509u;
+}
+/*
+ * Motor_12 0xA8
+ */
+
+uint16_t GetMotorRPM(const uint8_t* data)
+{
+	uint16_t RPM = 0;
+	RPM = (uint16_t)data[7] << 8 | data[6];
+
+	return RPM * 0.25;
+}
+/*
+ * 0xAD
+ */
+uint8_t GetTargetGearLevel(const uint8_t* data)
+{
+	uint8_t Gear = 0;
+	Gear = (data[7] & 0xF0) >> 4;
+
+	return Gear;
+
+}
+
+/*
+ * ESP_19 0xB2
+ */
+float Get_WheelSpeed_FR(const uint8_t* data) // km/h
+{
+	uint16_t speed_u16 = 0;
+
+	speed_u16 = (uint16_t)data[7] << 8 | data[6];
+
+	float speed = 0;
+	speed = (float)speed_u16 * 0.0075f;
+	return speed;
+}
+
+/*
+ * ESP_19 0xB2
+ */
+float Get_WheelSpeed_FL(const uint8_t* data) // km/h
+{
+	uint16_t speed_u16 = 0;
+
+	speed_u16 = (uint16_t)data[5] << 8 | data[4];
+
+	float speed = 0;
+	speed = (float)speed_u16 * 0.0075f;
+	return speed;
+}
+
+/*
+ * ESP_19 0xB2
+ */
+float Get_WheelSpeed_BR(const uint8_t* data) // km/h
+{
+	uint16_t speed_u16 = 0;
+
+	speed_u16 = (uint16_t)data[3] << 8 | data[2];
+
+	float speed = 0;
+	speed = (float)speed_u16 * 0.0075f;
+	return speed;
+}
+
+/*
+ * ESP_19 0xB2
+ */
+float Get_WheelSpeed_BL(const uint8_t* data) // km/h
+{
+	uint16_t speed_u16 = 0;
+
+	speed_u16 = (uint16_t)data[1] << 8 | data[0];
+
+	float speed = 0;
+	speed = (float)speed_u16 * 0.0075f;
+	return speed;
+}
+/*
+ * ESP_02 0x101
+ */
+
+float GetLateralACC(const uint8_t* data)// g
+{
+	uint8_t ACC = 0;
+	ACC = data[2];
+	float latACC = (float)ACC * 0.01 -1.27f;
+
+	return latACC;
+}
+/*
+ * ESP_02 0x101
+ */
+float GetLongitudinalACC(const uint8_t* data)// m/s^2
+{
+	uint16_t longACC = 0;
+	longACC = (uint16_t)(data[4] & 0b00000011) << 8 | data[3];
+
+	float longitudinalACC = 0;
+	longitudinalACC = (float)longACC * 0.03125f - 16;
+	return longitudinalACC;
+}
+
+
+/*
+ * ESP_05 0x106
+ */
+float GetBrakePressure(const uint8_t* data)// bar
+{
+	uint16_t pressure_u16 = 0;
+	pressure_u16 = (uint16_t)(data[3] & 0b00000011) << 8 | data[2];
+
+	float pressure = 0;
+	pressure = (float) pressure_u16 * 0.3f -30;
+	return pressure;
+}
+
+/*
+ * ESP_05 0x106
+ */
+uint8_t GetDriverBrake(const uint8_t* data)
+{
+	return (data[3] & 0b00000100) >> 2;
+}
+/*
+ * EPB_01 0x104
+ */
+
+uint8_t GetEPBStatus(const uint8_t* data)
+{
+	return (data[7] & 0b01100000) >> 5;
+}
+
+/*
+ * Motor_20 0x121
+ */
+
+float GetThrottlePedalRawValue(const uint8_t* data)
+{
+	uint8_t throttle_u8 = 0;
+	throttle_u8 = (data[2] & 0b00001111) << 4 | (data[1] & 0b11110000) >> 4;
+	return (float)throttle_u8 * 0.4f;
+}
+
+/*
+ * 0x176
+ */
+uint8_t GetBrakePedalPos(const uint8_t* data)
+{
+	return data[5];
+}

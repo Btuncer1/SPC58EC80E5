@@ -1,0 +1,3856 @@
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 1
+
+
+   1              		.file	"cache.c"
+   2              		.section	".text","axv"
+   3              	.Ltext0:
+   4              		.cfi_sections	.debug_frame
+   5              		.section	.text.idc_exist,"axv",@progbits
+   6              		.align 1
+   7              		.p2align 4,,15
+   8              		.type	idc_exist, @function
+   9              	idc_exist:
+  10              	.LFB3:
+  11              		.file 1 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c"
+  12              		.loc 1 191 0
+  13              		.cfi_startproc
+  14              	.LVL0:
+  15              	.LBB24:
+  16              	.LBB25:
+  17              	.LBB26:
+  18              	.LBB27:
+  19              		.loc 1 327 0
+  20 0000 70E00201 		e_li %r7,513
+  21              	.LBE27:
+  22              	.LBE26:
+  23              	.LBE25:
+  24              	.LBE24:
+  25              		.loc 1 192 0
+  26 0004 2203     		se_cmpli %r3,1
+  27 0006 7A12001C 		e_beq %cr0,.L5
+  28              	.LVL1:
+  29              	.LBB31:
+  30              	.LBB32:
+  31              		.loc 1 327 0
+  32              	 # 327 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+  33 000a 7CF5FBA6 		mtspr 1013, %r7
+  34              	 # 0 "" 2
+  35              		.loc 1 331 0
+  36              	 # 331 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+  37 000e 7C6382A6 		mfspr %r3, 515
+  38              	 # 0 "" 2
+  39              	.LVL2:
+  40              	.LBE32:
+  41              	.LBE31:
+  42              		.loc 1 196 0
+  43 0012 4807     		se_li %r7,0
+  44              	.LBB34:
+  45              	.LBB33:
+  46              		.loc 1 337 0
+  47 0014 7463057F 		e_rlwinm %r3,%r3,0,21,31
+  48              	.LVL3:
+  49              	.LBE33:
+  50              	.LBE34:
+  51              		.loc 1 196 0
+  52 0018 4816     		se_li %r6,1
+  53 001a 2A03     		se_cmpi %r3,0
+  54 001c 7C66389E 		isel %r3,%r6,%r7,2
+  55              	.LVL4:
+  56              		.loc 1 200 0
+  57 0020 0004     		se_blr
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 2
+
+
+  58              	.LVL5:
+  59              	.L5:
+  60              	.LBB35:
+  61              	.LBB30:
+  62              	.LBB29:
+  63              	.LBB28:
+  64              		.loc 1 327 0
+  65              	 # 327 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+  66 0022 7CF5FBA6 		mtspr 1013, %r7
+  67              	 # 0 "" 2
+  68              		.loc 1 329 0
+  69              	 # 329 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+  70 0026 7CE482A6 		mfspr %r7, 516
+  71              	 # 0 "" 2
+  72              	.LVL6:
+  73              		.loc 1 337 0
+  74 002a 74E7057F 		e_rlwinm %r7,%r7,0,21,31
+  75              	.LVL7:
+  76              	.LBE28:
+  77              	.LBE29:
+  78              		.loc 1 193 0
+  79 002e 2A07     		se_cmpi %r7,0
+  80 0030 4807     		se_li %r7,0
+  81              	.LVL8:
+  82 0032 7C63389E 		isel %r3,%r3,%r7,2
+  83              	.LVL9:
+  84 0036 0004     		se_blr
+  85              	.LBE30:
+  86              	.LBE35:
+  87              		.cfi_endproc
+  88              	.LFE3:
+  89              		.size	idc_exist, .-idc_exist
+  90              		.section	.text.idc_invalidate.constprop.1,"axv",@progbits
+  91              		.align 1
+  92              		.p2align 4,,15
+  93              		.type	idc_invalidate.constprop.1, @function
+  94              	idc_invalidate.constprop.1:
+  95              	.LFB13:
+  96              		.loc 1 108 0
+  97              		.cfi_startproc
+  98              	.LVL10:
+  99              		.loc 1 115 0
+ 100 0000 2203     		se_cmpli %r3,1
+ 101 0002 7A12004E 		e_beq %cr0,.L45
+ 102              	.LVL11:
+ 103              		.loc 1 127 0
+ 104              	 # 127 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 105 0006 7C92FAA6 		mfspr %r4, 1010
+ 106              	 # 0 "" 2
+ 107              	.LVL12:
+ 108              		.loc 1 131 0
+ 109 000a 4927     		se_li %r7,18
+ 110              	 # 131 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 111 000c 7CF2FBA6 		mtspr 1010, %r7
+ 112              	 # 0 "" 2
+ 113              		.loc 1 132 0
+ 114              	 # 132 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 3
+
+
+ 115 0010 7CF2FAA6 		mfspr %r7, 1010
+ 116              	 # 0 "" 2
+ 117              	.LVL13:
+ 118              		.loc 1 122 0
+ 119 0014 4FF6     		se_li %r6,127
+ 120              	.LVL14:
+ 121              	.L9:
+ 122              		.loc 1 136 0
+ 123 0016 2F27     		se_andi %r7,18
+ 124              	.LVL15:
+ 125 0018 2317     		se_cmpli %r7,18
+ 126 001a 7A020016 		e_bne %cr0,.L46
+ 127              	.L12:
+ 128              		.loc 1 137 0
+ 129 001e 2203     		se_cmpli %r3,1
+ 130 0020 7A120028 		e_beq %cr0,.L47
+ 131              	 # 137 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 132 0024 7CF2FAA6 		mfspr %r7, 1010
+ 133              	 # 0 "" 2
+ 134              	.LVL16:
+ 135              		.loc 1 136 0
+ 136 0028 2F27     		se_andi %r7,18
+ 137              	.LVL17:
+ 138 002a 2317     		se_cmpli %r7,18
+ 139 002c 7A12FFF2 		e_beq %cr0,.L12
+ 140              	.L46:
+ 141              		.loc 1 141 0
+ 142 0030 2203     		se_cmpli %r3,1
+ 143 0032 7A120032 		e_beq %cr0,.L48
+ 144              	 # 141 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 145 0036 7CF2FAA6 		mfspr %r7, 1010
+ 146              	 # 0 "" 2
+ 147              	.LVL18:
+ 148              		.loc 1 142 0
+ 149 003a 67D7     		se_btsti %r7,29
+ 150 003c 7A0200AC 		e_bne %cr0,.L16
+ 151              		.loc 1 112 0
+ 152 0040 4803     		se_li %r3,0
+ 153              	.LVL19:
+ 154              	.L17:
+ 155              		.loc 1 165 0
+ 156              	 # 165 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 157 0042 7C92FBA6 		mtspr 1010, %r4
+ 158              	 # 0 "" 2
+ 159 0046 0004     		se_blr
+ 160              	.LVL20:
+ 161              	.L47:
+ 162              		.loc 1 137 0
+ 163              	 # 137 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 164 0048 7CF3FAA6 		mfspr %r7, 1011
+ 165              	 # 0 "" 2
+ 166              	.LVL21:
+ 167 004c 79FFFFCA 		e_b .L9
+ 168              	.LVL22:
+ 169              	.L45:
+ 170              		.loc 1 127 0
+ 171              	 # 127 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 4
+
+
+ 172 0050 7C93FAA6 		mfspr %r4, 1011
+ 173              	 # 0 "" 2
+ 174              	.LVL23:
+ 175              		.loc 1 131 0
+ 176 0054 4927     		se_li %r7,18
+ 177              	 # 131 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 178 0056 7CF3FBA6 		mtspr 1011, %r7
+ 179              	 # 0 "" 2
+ 180              		.loc 1 132 0
+ 181              	 # 132 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 182 005a 7CF3FAA6 		mfspr %r7, 1011
+ 183              	 # 0 "" 2
+ 184              	.LVL24:
+ 185              		.loc 1 118 0
+ 186 005e 2C86     		se_bmaski %r6,8
+ 187 0060 79FFFFB6 		e_b .L9
+ 188              	.LVL25:
+ 189              	.L48:
+ 190              		.loc 1 141 0
+ 191              	 # 141 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 192 0064 7CF3FAA6 		mfspr %r7, 1011
+ 193              	 # 0 "" 2
+ 194              	.LVL26:
+ 195              		.loc 1 142 0
+ 196 0068 67D7     		se_btsti %r7,29
+ 197 006a 7A02000C 		e_bne %cr0,.L14
+ 198              		.loc 1 112 0
+ 199 006e 4803     		se_li %r3,0
+ 200              	.LVL27:
+ 201              	.L15:
+ 202              		.loc 1 165 0
+ 203              	 # 165 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 204 0070 7C93FBA6 		mtspr 1011, %r4
+ 205              	 # 0 "" 2
+ 206 0074 0004     		se_blr
+ 207              	.LVL28:
+ 208              	.L14:
+ 209              		.loc 1 143 0
+ 210 0076 61D7     		se_bclri %r7,29
+ 211              	.LVL29:
+ 212              		.loc 1 144 0
+ 213              	 # 144 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 214 0078 7CF3FBA6 		mtspr 1011, %r7
+ 215              	 # 0 "" 2
+ 216 007c 4807     		se_li %r7,0
+ 217              	.LVL30:
+ 218 007e 78000012 		e_b .L31
+ 219              	.LVL31:
+ 220              	.L35:
+ 221              		.loc 1 159 0
+ 222              	 # 159 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 223 0082 7CB8FBA6 		mtspr 1016, %r5
+ 224              	 # 0 "" 2
+ 225              		.loc 1 154 0
+ 226 0086 2007     		se_addi %r7,1
+ 227              	.LVL32:
+ 228 0088 00C7     		se_extzb %r7
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 5
+
+
+ 229              	.LVL33:
+ 230 008a 0D67     		se_cmpl %r7,%r6
+ 231 008c 7A11001C 		e_bgt %cr0,.L49
+ 232              	.LVL34:
+ 233              	.L31:
+ 234              		.loc 1 155 0
+ 235 0090 7CE52870 		e_slwi %r5,%r7,5
+ 236              	.LVL35:
+ 237              		.loc 1 156 0
+ 238 0094 2203     		se_cmpli %r3,1
+ 239 0096 7A02FFEC 		e_bne %cr0,.L35
+ 240              		.loc 1 157 0
+ 241              	 # 157 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 242 009a 7CBFEBA6 		mtspr 959, %r5
+ 243              	 # 0 "" 2
+ 244              		.loc 1 154 0
+ 245 009e 2007     		se_addi %r7,1
+ 246              	.LVL36:
+ 247 00a0 00C7     		se_extzb %r7
+ 248              	.LVL37:
+ 249 00a2 0D67     		se_cmpl %r7,%r6
+ 250 00a4 7A01FFEC 		e_ble %cr0,.L31
+ 251              	.LVL38:
+ 252              	.L49:
+ 253 00a8 18A68001 		e_addi %r5,%r6,1
+ 254              	.LVL39:
+ 255 00ac 4806     		se_li %r6,0
+ 256 00ae 00C5     		se_extzb %r5
+ 257 00b0 78000012 		e_b .L25
+ 258              	.LVL40:
+ 259              	.L37:
+ 260              		.loc 1 159 0
+ 261              	 # 159 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 262 00b4 7CF8FBA6 		mtspr 1016, %r7
+ 263              	 # 0 "" 2
+ 264              		.loc 1 154 0
+ 265 00b8 2006     		se_addi %r6,1
+ 266              	.LVL41:
+ 267 00ba 00C6     		se_extzb %r6
+ 268              	.LVL42:
+ 269 00bc 0D56     		se_cmpl %r6,%r5
+ 270 00be 7A12001E 		e_beq %cr0,.L50
+ 271              	.LVL43:
+ 272              	.L25:
+ 273              		.loc 1 155 0
+ 274 00c2 7CC72870 		e_slwi %r7,%r6,5
+ 275              		.loc 1 156 0
+ 276 00c6 2203     		se_cmpli %r3,1
+ 277              		.loc 1 155 0
+ 278 00c8 6477     		se_bseti %r7,7
+ 279              	.LVL44:
+ 280              		.loc 1 156 0
+ 281 00ca 7A02FFEA 		e_bne %cr0,.L37
+ 282              		.loc 1 157 0
+ 283              	 # 157 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 284 00ce 7CFFEBA6 		mtspr 959, %r7
+ 285              	 # 0 "" 2
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 6
+
+
+ 286              		.loc 1 154 0
+ 287 00d2 2006     		se_addi %r6,1
+ 288              	.LVL45:
+ 289 00d4 00C6     		se_extzb %r6
+ 290              	.LVL46:
+ 291 00d6 0D56     		se_cmpl %r6,%r5
+ 292 00d8 7A02FFEA 		e_bne %cr0,.L25
+ 293              	.LVL47:
+ 294              	.L50:
+ 295              		.loc 1 165 0
+ 296 00dc 2203     		se_cmpli %r3,1
+ 297 00de 4823     		se_li %r3,2
+ 298              	.LVL48:
+ 299 00e0 7A12FF90 		e_beq %cr0,.L15
+ 300 00e4 79FFFF5E 		e_b .L17
+ 301              	.LVL49:
+ 302              	.L16:
+ 303              		.loc 1 143 0
+ 304 00e8 61D7     		se_bclri %r7,29
+ 305              	.LVL50:
+ 306              		.loc 1 144 0
+ 307              	 # 144 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 308 00ea 7CF2FBA6 		mtspr 1010, %r7
+ 309              	 # 0 "" 2
+ 310 00ee 4807     		se_li %r7,0
+ 311              	.LVL51:
+ 312 00f0 79FFFFA0 		e_b .L31
+ 313              		.cfi_endproc
+ 314              	.LFE13:
+ 315              		.size	idc_invalidate.constprop.1, .-idc_invalidate.constprop.1
+ 316              		.section	.text.cache_get_status,"axv",@progbits
+ 317              		.align 1
+ 318              		.p2align 4,,15
+ 319              		.globl cache_get_status
+ 320              		.type	cache_get_status, @function
+ 321              	cache_get_status:
+ 322              	.LFB4:
+ 323              		.loc 1 214 0
+ 324              		.cfi_startproc
+ 325              	.LVL52:
+ 326 0000 182106F0 		e_stwu %r1,-16(%r1)
+ 327              	.LCFI0:
+ 328              		.cfi_def_cfa_offset 16
+ 329 0004 0080     		se_mflr %r0
+ 330 0006 D3F1     		se_stw %r31,12(%r1)
+ 331 0008 D501     		se_stw %r0,20(%r1)
+ 332              		.cfi_offset 65, 4
+ 333              		.cfi_offset 31, -4
+ 334              		.loc 1 214 0
+ 335 000a 013F     		se_mr %r31,%r3
+ 336              		.loc 1 217 0
+ 337 000c 78000001 		e_bl idc_exist
+ 338              	.LVL53:
+ 339              		.loc 1 218 0
+ 340 0010 4807     		se_li %r7,0
+ 341              		.loc 1 217 0
+ 342 0012 2A03     		se_cmpi %r3,0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 7
+
+
+ 343 0014 7A020010 		e_bne %cr0,.L52
+ 344              		.loc 1 220 0
+ 345 0018 220F     		se_cmpli %r31,1
+ 346 001a 7A120016 		e_beq %cr0,.L55
+ 347              		.loc 1 224 0
+ 348              	 # 224 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 349 001e 7CF2FAA6 		mfspr %r7, 1010
+ 350              	 # 0 "" 2
+ 351              	.LVL54:
+ 352              		.loc 1 225 0
+ 353 0022 2E17     		se_andi %r7,1
+ 354              	.LVL55:
+ 355              	.L52:
+ 356              		.loc 1 226 0
+ 357 0024 C501     		se_lwz %r0,20(%r1)
+ 358 0026 0090     		se_mtlr %r0
+ 359              		.cfi_remember_state
+ 360              		.cfi_restore 65
+ 361 0028 C3F1     		se_lwz %r31,12(%r1)
+ 362              	.LVL56:
+ 363 002a 0173     		se_mr %r3,%r7
+ 364 002c 20F1     		se_addi %r1,16
+ 365              	.LCFI1:
+ 366              		.cfi_restore 31
+ 367              		.cfi_def_cfa_offset 0
+ 368 002e 0004     		se_blr
+ 369              	.LVL57:
+ 370              	.L55:
+ 371              	.LCFI2:
+ 372              		.cfi_restore_state
+ 373              		.loc 1 221 0
+ 374              	 # 221 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 375 0030 7CF3FAA6 		mfspr %r7, 1011
+ 376              	 # 0 "" 2
+ 377              	.LVL58:
+ 378              		.loc 1 226 0
+ 379 0034 C501     		se_lwz %r0,20(%r1)
+ 380 0036 0090     		se_mtlr %r0
+ 381              		.cfi_restore 65
+ 382 0038 C3F1     		se_lwz %r31,12(%r1)
+ 383              	.LVL59:
+ 384              		.loc 1 222 0
+ 385 003a 2E17     		se_andi %r7,1
+ 386              	.LVL60:
+ 387              		.loc 1 226 0
+ 388 003c 0173     		se_mr %r3,%r7
+ 389 003e 20F1     		se_addi %r1,16
+ 390              	.LCFI3:
+ 391              		.cfi_restore 31
+ 392              		.cfi_def_cfa_offset 0
+ 393 0040 0004     		se_blr
+ 394              		.cfi_endproc
+ 395              	.LFE4:
+ 396              		.size	cache_get_status, .-cache_get_status
+ 397              		.section	.text.cache_enable,"axv",@progbits
+ 398              		.align 1
+ 399              		.p2align 4,,15
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 8
+
+
+ 400              		.globl cache_enable
+ 401              		.type	cache_enable, @function
+ 402              	cache_enable:
+ 403              	.LFB5:
+ 404              		.loc 1 237 0
+ 405              		.cfi_startproc
+ 406              	.LVL61:
+ 407 0000 182106F0 		e_stwu %r1,-16(%r1)
+ 408              	.LCFI4:
+ 409              		.cfi_def_cfa_offset 16
+ 410 0004 0080     		se_mflr %r0
+ 411 0006 1BC10908 		e_stmw %r30,8(%r1)
+ 412 000a D501     		se_stw %r0,20(%r1)
+ 413              		.cfi_offset 65, 4
+ 414              		.cfi_offset 30, -8
+ 415              		.cfi_offset 31, -4
+ 416              		.loc 1 237 0
+ 417 000c 013F     		se_mr %r31,%r3
+ 418              		.loc 1 240 0
+ 419 000e 78000001 		e_bl idc_exist
+ 420              	.LVL62:
+ 421 0012 013E     		se_mr %r30,%r3
+ 422 0014 2A0E     		se_cmpi %r30,0
+ 423 0016 7A120012 		e_beq %cr0,.L59
+ 424              	.LVL63:
+ 425              	.L57:
+ 426              		.loc 1 258 0
+ 427 001a C501     		se_lwz %r0,20(%r1)
+ 428 001c 0090     		se_mtlr %r0
+ 429              		.cfi_remember_state
+ 430              		.cfi_restore 65
+ 431 001e 01E3     		se_mr %r3,%r30
+ 432 0020 1BC10808 		e_lmw %r30,8(%r1)
+ 433              	.LVL64:
+ 434 0024 20F1     		se_addi %r1,16
+ 435              	.LCFI5:
+ 436              		.cfi_restore 31
+ 437              		.cfi_restore 30
+ 438              		.cfi_def_cfa_offset 0
+ 439 0026 0004     		se_blr
+ 440              	.LVL65:
+ 441              	.L59:
+ 442              	.LCFI6:
+ 443              		.cfi_restore_state
+ 444              		.loc 1 243 0
+ 445 0028 70E00201 		e_li %r7,513
+ 446              	 # 243 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 447 002c 7CF5FBA6 		mtspr 1013, %r7
+ 448              	 # 0 "" 2
+ 449              		.loc 1 247 0
+ 450              	 # 247 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 451 0030 4C00012C 		isync
+ 452              	 # 0 "" 2
+ 453              	 # 247 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 454 0034 7C0004AC 		msync
+ 455              	 # 0 "" 2
+ 456              		.loc 1 250 0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 9
+
+
+ 457 0038 01F3     		se_mr %r3,%r31
+ 458              	.LVL66:
+ 459 003a 78000001 		e_bl idc_invalidate.constprop.1
+ 460              	.LVL67:
+ 461              		.loc 1 251 0
+ 462 003e 220F     		se_cmpli %r31,1
+ 463 0040 7A12001C 		e_beq %cr0,.L60
+ 464              	.LVL68:
+ 465              	.LBB36:
+ 466              	.LBB37:
+ 467              		.loc 1 175 0
+ 468              	 # 175 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 469 0044 7CF2FAA6 		mfspr %r7, 1010
+ 470              	 # 0 "" 2
+ 471              	.LVL69:
+ 472              		.loc 1 176 0
+ 473 0048 65F7     		se_bseti %r7,31
+ 474              	.LVL70:
+ 475              		.loc 1 177 0
+ 476              	 # 177 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 477 004a 7CF2FBA6 		mtspr 1010, %r7
+ 478              	 # 0 "" 2
+ 479              	.LBE37:
+ 480              	.LBE36:
+ 481              		.loc 1 258 0
+ 482 004e C501     		se_lwz %r0,20(%r1)
+ 483 0050 0090     		se_mtlr %r0
+ 484              		.cfi_remember_state
+ 485              		.cfi_restore 65
+ 486 0052 01E3     		se_mr %r3,%r30
+ 487 0054 1BC10808 		e_lmw %r30,8(%r1)
+ 488              	.LVL71:
+ 489 0058 20F1     		se_addi %r1,16
+ 490              	.LCFI7:
+ 491              		.cfi_restore 30
+ 492              		.cfi_restore 31
+ 493              		.cfi_def_cfa_offset 0
+ 494 005a 0004     		se_blr
+ 495              	.LVL72:
+ 496              	.L60:
+ 497              	.LCFI8:
+ 498              		.cfi_restore_state
+ 499              	.LBB38:
+ 500              	.LBB39:
+ 501              		.loc 1 175 0
+ 502              	 # 175 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 503 005c 7CF3FAA6 		mfspr %r7, 1011
+ 504              	 # 0 "" 2
+ 505              	.LVL73:
+ 506              		.loc 1 176 0
+ 507 0060 65F7     		se_bseti %r7,31
+ 508              	.LVL74:
+ 509              		.loc 1 177 0
+ 510              	 # 177 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 511 0062 7CF3FBA6 		mtspr 1011, %r7
+ 512              	 # 0 "" 2
+ 513 0066 79FFFFB4 		e_b .L57
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 10
+
+
+ 514              	.LBE39:
+ 515              	.LBE38:
+ 516              		.cfi_endproc
+ 517              	.LFE5:
+ 518              		.size	cache_enable, .-cache_enable
+ 519              		.section	.text.cache_set_control,"axv",@progbits
+ 520              		.align 1
+ 521              		.p2align 4,,15
+ 522              		.globl cache_set_control
+ 523              		.type	cache_set_control, @function
+ 524              	cache_set_control:
+ 525              	.LFB6:
+ 526              		.loc 1 270 0
+ 527              		.cfi_startproc
+ 528              	.LVL75:
+ 529 0000 182106F0 		e_stwu %r1,-16(%r1)
+ 530              	.LCFI9:
+ 531              		.cfi_def_cfa_offset 16
+ 532 0004 0080     		se_mflr %r0
+ 533 0006 1BC10908 		e_stmw %r30,8(%r1)
+ 534 000a D501     		se_stw %r0,20(%r1)
+ 535              		.cfi_offset 65, 4
+ 536              		.cfi_offset 30, -8
+ 537              		.cfi_offset 31, -4
+ 538              		.loc 1 270 0
+ 539 000c 013F     		se_mr %r31,%r3
+ 540 000e 014E     		se_mr %r30,%r4
+ 541              		.loc 1 273 0
+ 542 0010 78000001 		e_bl idc_exist
+ 543              	.LVL76:
+ 544 0014 2A03     		se_cmpi %r3,0
+ 545 0016 7A120010 		e_beq %cr0,.L65
+ 546              	.LVL77:
+ 547              	.L62:
+ 548              		.loc 1 286 0
+ 549 001a C501     		se_lwz %r0,20(%r1)
+ 550 001c 0090     		se_mtlr %r0
+ 551              		.cfi_remember_state
+ 552              		.cfi_restore 65
+ 553 001e 1BC10808 		e_lmw %r30,8(%r1)
+ 554              	.LVL78:
+ 555 0022 20F1     		se_addi %r1,16
+ 556              	.LCFI10:
+ 557              		.cfi_restore 31
+ 558              		.cfi_restore 30
+ 559              		.cfi_def_cfa_offset 0
+ 560 0024 0004     		se_blr
+ 561              	.LVL79:
+ 562              	.L65:
+ 563              	.LCFI11:
+ 564              		.cfi_restore_state
+ 565              		.loc 1 276 0
+ 566 0026 70E00201 		e_li %r7,513
+ 567              	 # 276 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 568 002a 7CF5FBA6 		mtspr 1013, %r7
+ 569              	 # 0 "" 2
+ 570              		.loc 1 280 0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 11
+
+
+ 571              	 # 280 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 572 002e 4C00012C 		isync
+ 573              	 # 0 "" 2
+ 574              	 # 280 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 575 0032 7C0004AC 		msync
+ 576              	 # 0 "" 2
+ 577              		.loc 1 282 0
+ 578 0036 01F3     		se_mr %r3,%r31
+ 579              	.LVL80:
+ 580 0038 78000001 		e_bl idc_invalidate.constprop.1
+ 581              	.LVL81:
+ 582              		.loc 1 283 0
+ 583 003c 220F     		se_cmpli %r31,1
+ 584 003e 7A120014 		e_beq %cr0,.L66
+ 585              		.loc 1 283 0 is_stmt 0 discriminator 2
+ 586              	 # 283 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 587 0042 7FD2FBA6 		mtspr 1010, %r30
+ 588              	 # 0 "" 2
+ 589              		.loc 1 286 0 is_stmt 1 discriminator 2
+ 590 0046 C501     		se_lwz %r0,20(%r1)
+ 591 0048 0090     		se_mtlr %r0
+ 592              		.cfi_remember_state
+ 593              		.cfi_restore 65
+ 594 004a 1BC10808 		e_lmw %r30,8(%r1)
+ 595              	.LVL82:
+ 596 004e 20F1     		se_addi %r1,16
+ 597              	.LCFI12:
+ 598              		.cfi_restore 30
+ 599              		.cfi_restore 31
+ 600              		.cfi_def_cfa_offset 0
+ 601 0050 0004     		se_blr
+ 602              	.LVL83:
+ 603              	.L66:
+ 604              	.LCFI13:
+ 605              		.cfi_restore_state
+ 606              		.loc 1 283 0 discriminator 1
+ 607              	 # 283 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 608 0052 7FD3FBA6 		mtspr 1011, %r30
+ 609              	 # 0 "" 2
+ 610 0056 79FFFFC4 		e_b .L62
+ 611              		.cfi_endproc
+ 612              	.LFE6:
+ 613              		.size	cache_set_control, .-cache_set_control
+ 614              		.section	.text.cache_disable,"axv",@progbits
+ 615              		.align 1
+ 616              		.p2align 4,,15
+ 617              		.globl cache_disable
+ 618              		.type	cache_disable, @function
+ 619              	cache_disable:
+ 620              	.LFB7:
+ 621              		.loc 1 297 0
+ 622              		.cfi_startproc
+ 623              	.LVL84:
+ 624 0000 182106F0 		e_stwu %r1,-16(%r1)
+ 625              	.LCFI14:
+ 626              		.cfi_def_cfa_offset 16
+ 627 0004 0080     		se_mflr %r0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 12
+
+
+ 628 0006 D3F1     		se_stw %r31,12(%r1)
+ 629 0008 D501     		se_stw %r0,20(%r1)
+ 630              		.cfi_offset 65, 4
+ 631              		.cfi_offset 31, -4
+ 632              		.loc 1 297 0
+ 633 000a 013F     		se_mr %r31,%r3
+ 634              		.loc 1 300 0
+ 635 000c 78000001 		e_bl idc_exist
+ 636              	.LVL85:
+ 637 0010 2A03     		se_cmpi %r3,0
+ 638 0012 7A12000E 		e_beq %cr0,.L71
+ 639              		.loc 1 313 0
+ 640 0016 C501     		se_lwz %r0,20(%r1)
+ 641 0018 0090     		se_mtlr %r0
+ 642              		.cfi_remember_state
+ 643              		.cfi_restore 65
+ 644 001a C3F1     		se_lwz %r31,12(%r1)
+ 645              	.LVL86:
+ 646 001c 20F1     		se_addi %r1,16
+ 647              	.LCFI15:
+ 648              		.cfi_restore 31
+ 649              		.cfi_def_cfa_offset 0
+ 650 001e 0004     		se_blr
+ 651              	.LVL87:
+ 652              	.L71:
+ 653              	.LCFI16:
+ 654              		.cfi_restore_state
+ 655              		.loc 1 303 0
+ 656 0020 70E00201 		e_li %r7,513
+ 657              	 # 303 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 658 0024 7CF5FBA6 		mtspr 1013, %r7
+ 659              	 # 0 "" 2
+ 660              		.loc 1 307 0
+ 661              	 # 307 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 662 0028 4C00012C 		isync
+ 663              	 # 0 "" 2
+ 664              	 # 307 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 665 002c 7C0004AC 		msync
+ 666              	 # 0 "" 2
+ 667              		.loc 1 309 0
+ 668 0030 01F3     		se_mr %r3,%r31
+ 669              	.LVL88:
+ 670 0032 78000001 		e_bl idc_invalidate.constprop.1
+ 671              	.LVL89:
+ 672              	.LBB40:
+ 673              	.LBB41:
+ 674              		.loc 1 186 0
+ 675 0036 220F     		se_cmpli %r31,1
+ 676 0038 7A120018 		e_beq %cr0,.L72
+ 677              	 # 186 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 678 003c 7CF2FAA6 		mfspr %r7, 1010
+ 679              	 # 0 "" 2
+ 680              	.LVL90:
+ 681              		.loc 1 187 0
+ 682 0040 61F7     		se_bclri %r7,31
+ 683              	.LVL91:
+ 684              		.loc 1 188 0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 13
+
+
+ 685              	 # 188 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 686 0042 7CF2FBA6 		mtspr 1010, %r7
+ 687              	 # 0 "" 2
+ 688              	.LBE41:
+ 689              	.LBE40:
+ 690              		.loc 1 313 0
+ 691 0046 C501     		se_lwz %r0,20(%r1)
+ 692 0048 0090     		se_mtlr %r0
+ 693              		.cfi_remember_state
+ 694              		.cfi_restore 65
+ 695 004a C3F1     		se_lwz %r31,12(%r1)
+ 696              	.LVL92:
+ 697 004c 20F1     		se_addi %r1,16
+ 698              	.LCFI17:
+ 699              		.cfi_restore 31
+ 700              		.cfi_def_cfa_offset 0
+ 701 004e 0004     		se_blr
+ 702              	.LVL93:
+ 703              	.L72:
+ 704              	.LCFI18:
+ 705              		.cfi_restore_state
+ 706              	.LBB43:
+ 707              	.LBB42:
+ 708              		.loc 1 186 0
+ 709              	 # 186 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 710 0050 7CF3FAA6 		mfspr %r7, 1011
+ 711              	 # 0 "" 2
+ 712              	.LVL94:
+ 713              		.loc 1 187 0
+ 714 0054 61F7     		se_bclri %r7,31
+ 715              	.LVL95:
+ 716              		.loc 1 188 0
+ 717              	 # 188 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 718 0056 7CF3FBA6 		mtspr 1011, %r7
+ 719              	 # 0 "" 2
+ 720              	.LBE42:
+ 721              	.LBE43:
+ 722              		.loc 1 313 0
+ 723 005a C501     		se_lwz %r0,20(%r1)
+ 724 005c 0090     		se_mtlr %r0
+ 725              		.cfi_restore 65
+ 726 005e C3F1     		se_lwz %r31,12(%r1)
+ 727              	.LVL96:
+ 728 0060 20F1     		se_addi %r1,16
+ 729              	.LCFI19:
+ 730              		.cfi_restore 31
+ 731              		.cfi_def_cfa_offset 0
+ 732 0062 0004     		se_blr
+ 733              		.cfi_endproc
+ 734              	.LFE7:
+ 735              		.size	cache_disable, .-cache_disable
+ 736              		.section	.text.cache_get_cfg,"axv",@progbits
+ 737              		.align 1
+ 738              		.p2align 4,,15
+ 739              		.globl cache_get_cfg
+ 740              		.type	cache_get_cfg, @function
+ 741              	cache_get_cfg:
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 14
+
+
+ 742              	.LFB8:
+ 743              		.loc 1 324 0
+ 744              		.cfi_startproc
+ 745              	.LVL97:
+ 746              		.loc 1 327 0
+ 747 0000 70E00201 		e_li %r7,513
+ 748              	 # 327 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 749 0004 7CF5FBA6 		mtspr 1013, %r7
+ 750              	 # 0 "" 2
+ 751              		.loc 1 328 0
+ 752 0008 2A03     		se_cmpi %r3,0
+ 753 000a 7A020010 		e_bne %cr0,.L74
+ 754              		.loc 1 329 0
+ 755              	 # 329 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 756 000e 7CC482A6 		mfspr %r6, 516
+ 757              	 # 0 "" 2
+ 758              	.LVL98:
+ 759              	.L75:
+ 760              		.loc 1 337 0
+ 761 0012 74C7057F 		e_rlwinm %r7,%r6,0,21,31
+ 762              	.LVL99:
+ 763              		.loc 1 343 0
+ 764 0016 0173     		se_mr %r3,%r7
+ 765              	.LVL100:
+ 766 0018 0004     		se_blr
+ 767              	.LVL101:
+ 768              	.L74:
+ 769              		.loc 1 331 0
+ 770              	 # 331 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 771 001a 7CC382A6 		mfspr %r6, 515
+ 772              	 # 0 "" 2
+ 773              	.LVL102:
+ 774              		.loc 1 340 0
+ 775 001e 4807     		se_li %r7,0
+ 776              		.loc 1 334 0
+ 777 0020 2203     		se_cmpli %r3,1
+ 778 0022 7A01FFF0 		e_ble %cr0,.L75
+ 779              	.LVL103:
+ 780              		.loc 1 343 0
+ 781 0026 0173     		se_mr %r3,%r7
+ 782              	.LVL104:
+ 783 0028 0004     		se_blr
+ 784              		.cfi_endproc
+ 785              	.LFE8:
+ 786              		.size	cache_get_cfg, .-cache_get_cfg
+ 787              		.section	.text.cache_invalidate,"axv",@progbits
+ 788              		.align 1
+ 789              		.p2align 4,,15
+ 790              		.globl cache_invalidate
+ 791              		.type	cache_invalidate, @function
+ 792              	cache_invalidate:
+ 793              	.LFB9:
+ 794              		.loc 1 354 0
+ 795              		.cfi_startproc
+ 796              	.LVL105:
+ 797 0000 182106F0 		e_stwu %r1,-16(%r1)
+ 798              	.LCFI20:
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 15
+
+
+ 799              		.cfi_def_cfa_offset 16
+ 800 0004 0080     		se_mflr %r0
+ 801 0006 D3F1     		se_stw %r31,12(%r1)
+ 802 0008 D501     		se_stw %r0,20(%r1)
+ 803              		.cfi_offset 65, 4
+ 804              		.cfi_offset 31, -4
+ 805              		.loc 1 354 0
+ 806 000a 013F     		se_mr %r31,%r3
+ 807              		.loc 1 357 0
+ 808 000c 78000001 		e_bl idc_exist
+ 809              	.LVL106:
+ 810 0010 2A03     		se_cmpi %r3,0
+ 811 0012 7A12000E 		e_beq %cr0,.L81
+ 812              		.loc 1 369 0
+ 813 0016 C501     		se_lwz %r0,20(%r1)
+ 814 0018 0090     		se_mtlr %r0
+ 815              		.cfi_remember_state
+ 816              		.cfi_restore 65
+ 817 001a C3F1     		se_lwz %r31,12(%r1)
+ 818              	.LVL107:
+ 819 001c 20F1     		se_addi %r1,16
+ 820              	.LCFI21:
+ 821              		.cfi_restore 31
+ 822              		.cfi_def_cfa_offset 0
+ 823 001e 0004     		se_blr
+ 824              	.LVL108:
+ 825              	.L81:
+ 826              	.LCFI22:
+ 827              		.cfi_restore_state
+ 828              		.loc 1 360 0
+ 829 0020 70E00201 		e_li %r7,513
+ 830              	 # 360 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 831 0024 7CF5FBA6 		mtspr 1013, %r7
+ 832              	 # 0 "" 2
+ 833              		.loc 1 363 0
+ 834              	 # 363 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 835 0028 4C00012C 		isync
+ 836              	 # 0 "" 2
+ 837              	 # 363 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 838 002c 7C0004AC 		msync
+ 839              	 # 0 "" 2
+ 840              		.loc 1 369 0
+ 841 0030 C501     		se_lwz %r0,20(%r1)
+ 842              		.loc 1 366 0
+ 843 0032 01F3     		se_mr %r3,%r31
+ 844              	.LVL109:
+ 845              		.loc 1 369 0
+ 846 0034 0090     		se_mtlr %r0
+ 847              		.cfi_restore 65
+ 848 0036 C3F1     		se_lwz %r31,12(%r1)
+ 849              	.LVL110:
+ 850 0038 20F1     		se_addi %r1,16
+ 851              	.LCFI23:
+ 852              		.cfi_restore 31
+ 853              		.cfi_def_cfa_offset 0
+ 854              		.loc 1 366 0
+ 855 003a 78000000 		e_b idc_invalidate.constprop.1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 16
+
+
+ 856              	.LVL111:
+ 857              		.cfi_endproc
+ 858              	.LFE9:
+ 859              		.size	cache_invalidate, .-cache_invalidate
+ 860              		.section	.text.cache_flush_range,"axv",@progbits
+ 861              		.align 1
+ 862              		.p2align 4,,15
+ 863              		.globl cache_flush_range
+ 864              		.type	cache_flush_range, @function
+ 865              	cache_flush_range:
+ 866              	.LFB10:
+ 867              		.loc 1 381 0
+ 868              		.cfi_startproc
+ 869              	.LVL112:
+ 870              		.loc 1 381 0
+ 871 0000 0137     		se_mr %r7,%r3
+ 872              		.loc 1 385 0
+ 873              	 # 385 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 874 0002 7CD2FAA6 		mfspr %r6, 1010
+ 875              	 # 0 "" 2
+ 876              	.LVL113:
+ 877              		.loc 1 387 0
+ 878 0006 4813     		se_li %r3,1
+ 879              	.LVL114:
+ 880              		.loc 1 386 0
+ 881 0008 67F6     		se_btsti %r6,31
+ 882 000a 7A12001A 		e_beq %cr0,.L83
+ 883              	.LVL115:
+ 884              		.loc 1 389 0 discriminator 1
+ 885 000e 0474     		se_add %r4,%r7
+ 886              	.LVL116:
+ 887 0010 0D47     		se_cmpl %r7,%r4
+ 888 0012 7A000010 		e_bge %cr0,.L86
+ 889              	.LVL117:
+ 890              	.L84:
+ 891              		.loc 1 390 0 discriminator 3
+ 892              	 # 390 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 893 0016 7C0038AC 		dcbf 0, %r7
+ 894              	 # 0 "" 2
+ 895              		.loc 1 389 0 discriminator 3
+ 896 001a 2037     		se_addi %r7,4
+ 897              	.LVL118:
+ 898 001c 0D47     		se_cmpl %r7,%r4
+ 899 001e 7A10FFF8 		e_blt %cr0,.L84
+ 900              	.L86:
+ 901              		.loc 1 392 0
+ 902 0022 4803     		se_li %r3,0
+ 903              	.LVL119:
+ 904              	.L83:
+ 905              		.loc 1 393 0
+ 906 0024 0004     		se_blr
+ 907              		.cfi_endproc
+ 908              	.LFE10:
+ 909              		.size	cache_flush_range, .-cache_flush_range
+ 910              		.section	.text.cache_invalidate_range,"axv",@progbits
+ 911              		.align 1
+ 912              		.p2align 4,,15
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 17
+
+
+ 913              		.globl cache_invalidate_range
+ 914              		.type	cache_invalidate_range, @function
+ 915              	cache_invalidate_range:
+ 916              	.LFB11:
+ 917              		.loc 1 405 0
+ 918              		.cfi_startproc
+ 919              	.LVL120:
+ 920              		.loc 1 405 0
+ 921 0000 0137     		se_mr %r7,%r3
+ 922              		.loc 1 409 0
+ 923              	 # 409 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 924 0002 7CD2FAA6 		mfspr %r6, 1010
+ 925              	 # 0 "" 2
+ 926              	.LVL121:
+ 927              		.loc 1 411 0
+ 928 0006 4813     		se_li %r3,1
+ 929              	.LVL122:
+ 930              		.loc 1 410 0
+ 931 0008 67F6     		se_btsti %r6,31
+ 932 000a 7A12002A 		e_beq %cr0,.L89
+ 933              		.loc 1 413 0
+ 934 000e 70C00201 		e_li %r6,513
+ 935              	 # 413 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 936 0012 7CD5FBA6 		mtspr 1013, %r6
+ 937              	 # 0 "" 2
+ 938              		.loc 1 416 0
+ 939              	 # 416 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 940 0016 4C00012C 		isync
+ 941              	 # 0 "" 2
+ 942              	 # 416 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 943 001a 7C0004AC 		msync
+ 944              	 # 0 "" 2
+ 945              	.LVL123:
+ 946              		.loc 1 418 0
+ 947 001e 0474     		se_add %r4,%r7
+ 948              	.LVL124:
+ 949 0020 0D47     		se_cmpl %r7,%r4
+ 950 0022 7A000010 		e_bge %cr0,.L92
+ 951              	.LVL125:
+ 952              	.L90:
+ 953              		.loc 1 419 0 discriminator 3
+ 954              	 # 419 "./components/spc58ecxx_platform_component_rla/lib/src/cache.c" 1
+ 955 0026 7C003BAC 		dcbi 0, %r7
+ 956              	 # 0 "" 2
+ 957              		.loc 1 418 0 discriminator 3
+ 958 002a 2037     		se_addi %r7,4
+ 959              	.LVL126:
+ 960 002c 0D47     		se_cmpl %r7,%r4
+ 961 002e 7A10FFF8 		e_blt %cr0,.L90
+ 962              	.L92:
+ 963              		.loc 1 421 0
+ 964 0032 4803     		se_li %r3,0
+ 965              	.LVL127:
+ 966              	.L89:
+ 967              		.loc 1 422 0
+ 968 0034 0004     		se_blr
+ 969              		.cfi_endproc
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 18
+
+
+ 970              	.LFE11:
+ 971              		.size	cache_invalidate_range, .-cache_invalidate_range
+ 972              		.section	".text","axv"
+ 973              	.Letext0:
+ 974              		.file 2 "c:\\spc5studio-6.0\\eclipse\\plugins\\com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.
+ 975              		.file 3 "c:\\spc5studio-6.0\\eclipse\\plugins\\com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.
+ 976              		.file 4 "./components/spc58ecxx_platform_component_rla/lib/include/cache.h"
+ 977              		.section	.debug_info,"",@progbits
+ 978              	.Ldebug_info0:
+ 979 0000 0000066F 		.4byte	0x66f
+ 980 0004 0002     		.2byte	0x2
+ 981 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 982 000a 04       		.byte	0x4
+ 983 000b 01       		.uleb128 0x1
+ 984 000c 00000000 		.4byte	.LASF47
+ 985 0010 01       		.byte	0x1
+ 986 0011 00000000 		.4byte	.LASF48
+ 987 0015 00000000 		.4byte	.LASF49
+ 988 0019 00000000 		.4byte	.Ldebug_ranges0+0x60
+ 989 001d 00000000 		.4byte	0
+ 990 0021 00000000 		.4byte	0
+ 991 0025 00000000 		.4byte	.Ldebug_line0
+ 992 0029 02       		.uleb128 0x2
+ 993 002a 01       		.byte	0x1
+ 994 002b 06       		.byte	0x6
+ 995 002c 00000000 		.4byte	.LASF0
+ 996 0030 03       		.uleb128 0x3
+ 997 0031 00000000 		.4byte	.LASF3
+ 998 0035 02       		.byte	0x2
+ 999 0036 1D       		.byte	0x1d
+ 1000 0037 0000003B 		.4byte	0x3b
+ 1001 003b 02       		.uleb128 0x2
+ 1002 003c 01       		.byte	0x1
+ 1003 003d 08       		.byte	0x8
+ 1004 003e 00000000 		.4byte	.LASF1
+ 1005 0042 02       		.uleb128 0x2
+ 1006 0043 02       		.byte	0x2
+ 1007 0044 05       		.byte	0x5
+ 1008 0045 00000000 		.4byte	.LASF2
+ 1009 0049 03       		.uleb128 0x3
+ 1010 004a 00000000 		.4byte	.LASF4
+ 1011 004e 02       		.byte	0x2
+ 1012 004f 2B       		.byte	0x2b
+ 1013 0050 00000054 		.4byte	0x54
+ 1014 0054 02       		.uleb128 0x2
+ 1015 0055 02       		.byte	0x2
+ 1016 0056 07       		.byte	0x7
+ 1017 0057 00000000 		.4byte	.LASF5
+ 1018 005b 02       		.uleb128 0x2
+ 1019 005c 04       		.byte	0x4
+ 1020 005d 05       		.byte	0x5
+ 1021 005e 00000000 		.4byte	.LASF6
+ 1022 0062 03       		.uleb128 0x3
+ 1023 0063 00000000 		.4byte	.LASF7
+ 1024 0067 02       		.byte	0x2
+ 1025 0068 41       		.byte	0x41
+ 1026 0069 0000006D 		.4byte	0x6d
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 19
+
+
+ 1027 006d 02       		.uleb128 0x2
+ 1028 006e 04       		.byte	0x4
+ 1029 006f 07       		.byte	0x7
+ 1030 0070 00000000 		.4byte	.LASF8
+ 1031 0074 02       		.uleb128 0x2
+ 1032 0075 08       		.byte	0x8
+ 1033 0076 05       		.byte	0x5
+ 1034 0077 00000000 		.4byte	.LASF9
+ 1035 007b 02       		.uleb128 0x2
+ 1036 007c 08       		.byte	0x8
+ 1037 007d 07       		.byte	0x7
+ 1038 007e 00000000 		.4byte	.LASF10
+ 1039 0082 04       		.uleb128 0x4
+ 1040 0083 04       		.byte	0x4
+ 1041 0084 05       		.byte	0x5
+ 1042 0085 696E7400 		.string	"int"
+ 1043 0089 02       		.uleb128 0x2
+ 1044 008a 04       		.byte	0x4
+ 1045 008b 07       		.byte	0x7
+ 1046 008c 00000000 		.4byte	.LASF11
+ 1047 0090 03       		.uleb128 0x3
+ 1048 0091 00000000 		.4byte	.LASF12
+ 1049 0095 03       		.byte	0x3
+ 1050 0096 15       		.byte	0x15
+ 1051 0097 00000030 		.4byte	0x30
+ 1052 009b 03       		.uleb128 0x3
+ 1053 009c 00000000 		.4byte	.LASF13
+ 1054 00a0 03       		.byte	0x3
+ 1055 00a1 21       		.byte	0x21
+ 1056 00a2 00000049 		.4byte	0x49
+ 1057 00a6 03       		.uleb128 0x3
+ 1058 00a7 00000000 		.4byte	.LASF14
+ 1059 00ab 03       		.byte	0x3
+ 1060 00ac 2D       		.byte	0x2d
+ 1061 00ad 00000062 		.4byte	0x62
+ 1062 00b1 05       		.uleb128 0x5
+ 1063 00b2 04       		.byte	0x4
+ 1064 00b3 04       		.byte	0x4
+ 1065 00b4 12       		.byte	0x12
+ 1066 00b5 000000C6 		.4byte	0xc6
+ 1067 00b9 06       		.uleb128 0x6
+ 1068 00ba 00000000 		.4byte	.LASF15
+ 1069 00be 00       		.sleb128 0
+ 1070 00bf 06       		.uleb128 0x6
+ 1071 00c0 00000000 		.4byte	.LASF16
+ 1072 00c4 01       		.sleb128 1
+ 1073 00c5 00       		.byte	0
+ 1074 00c6 03       		.uleb128 0x3
+ 1075 00c7 00000000 		.4byte	.LASF17
+ 1076 00cb 04       		.byte	0x4
+ 1077 00cc 15       		.byte	0x15
+ 1078 00cd 000000B1 		.4byte	0xb1
+ 1079 00d1 05       		.uleb128 0x5
+ 1080 00d2 04       		.byte	0x4
+ 1081 00d3 04       		.byte	0x4
+ 1082 00d4 17       		.byte	0x17
+ 1083 00d5 000000E6 		.4byte	0xe6
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 20
+
+
+ 1084 00d9 06       		.uleb128 0x6
+ 1085 00da 00000000 		.4byte	.LASF18
+ 1086 00de 00       		.sleb128 0
+ 1087 00df 06       		.uleb128 0x6
+ 1088 00e0 00000000 		.4byte	.LASF19
+ 1089 00e4 01       		.sleb128 1
+ 1090 00e5 00       		.byte	0
+ 1091 00e6 03       		.uleb128 0x3
+ 1092 00e7 00000000 		.4byte	.LASF20
+ 1093 00eb 04       		.byte	0x4
+ 1094 00ec 1A       		.byte	0x1a
+ 1095 00ed 000000D1 		.4byte	0xd1
+ 1096 00f1 05       		.uleb128 0x5
+ 1097 00f2 04       		.byte	0x4
+ 1098 00f3 04       		.byte	0x4
+ 1099 00f4 1C       		.byte	0x1c
+ 1100 00f5 0000010C 		.4byte	0x10c
+ 1101 00f9 06       		.uleb128 0x6
+ 1102 00fa 00000000 		.4byte	.LASF21
+ 1103 00fe 00       		.sleb128 0
+ 1104 00ff 06       		.uleb128 0x6
+ 1105 0100 00000000 		.4byte	.LASF22
+ 1106 0104 01       		.sleb128 1
+ 1107 0105 06       		.uleb128 0x6
+ 1108 0106 00000000 		.4byte	.LASF23
+ 1109 010a 02       		.sleb128 2
+ 1110 010b 00       		.byte	0
+ 1111 010c 03       		.uleb128 0x3
+ 1112 010d 00000000 		.4byte	.LASF24
+ 1113 0111 04       		.byte	0x4
+ 1114 0112 20       		.byte	0x20
+ 1115 0113 000000F1 		.4byte	0xf1
+ 1116 0117 07       		.uleb128 0x7
+ 1117 0118 01       		.byte	0x1
+ 1118 0119 00000000 		.4byte	.LASF50
+ 1119 011d 01       		.byte	0x1
+ 1120 011e 0144     		.2byte	0x144
+ 1121 0120 01       		.byte	0x1
+ 1122 0121 00000089 		.4byte	0x89
+ 1123 0125 01       		.byte	0x1
+ 1124 0126 00000143 		.4byte	0x143
+ 1125 012a 08       		.uleb128 0x8
+ 1126 012b 00000000 		.4byte	.LASF25
+ 1127 012f 01       		.byte	0x1
+ 1128 0130 0144     		.2byte	0x144
+ 1129 0132 000000E6 		.4byte	0xe6
+ 1130 0136 09       		.uleb128 0x9
+ 1131 0137 73707200 		.string	"spr"
+ 1132 013b 01       		.byte	0x1
+ 1133 013c 0145     		.2byte	0x145
+ 1134 013e 00000089 		.4byte	0x89
+ 1135 0142 00       		.byte	0
+ 1136 0143 0A       		.uleb128 0xa
+ 1137 0144 00000000 		.4byte	.LASF29
+ 1138 0148 01       		.byte	0x1
+ 1139 0149 BF       		.byte	0xbf
+ 1140 014a 01       		.byte	0x1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 21
+
+
+ 1141 014b 0000010C 		.4byte	0x10c
+ 1142 014f 01       		.byte	0x1
+ 1143 0150 00000160 		.4byte	0x160
+ 1144 0154 0B       		.uleb128 0xb
+ 1145 0155 00000000 		.4byte	.LASF26
+ 1146 0159 01       		.byte	0x1
+ 1147 015a BF       		.byte	0xbf
+ 1148 015b 000000C6 		.4byte	0xc6
+ 1149 015f 00       		.byte	0
+ 1150 0160 0C       		.uleb128 0xc
+ 1151 0161 00000000 		.4byte	.LASF27
+ 1152 0165 01       		.byte	0x1
+ 1153 0166 AB       		.byte	0xab
+ 1154 0167 01       		.byte	0x1
+ 1155 0168 01       		.byte	0x1
+ 1156 0169 0000018F 		.4byte	0x18f
+ 1157 016d 0B       		.uleb128 0xb
+ 1158 016e 00000000 		.4byte	.LASF26
+ 1159 0172 01       		.byte	0x1
+ 1160 0173 AB       		.byte	0xab
+ 1161 0174 000000C6 		.4byte	0xc6
+ 1162 0178 0D       		.uleb128 0xd
+ 1163 0179 64656600 		.string	"def"
+ 1164 017d 01       		.byte	0x1
+ 1165 017e AB       		.byte	0xab
+ 1166 017f 00000089 		.4byte	0x89
+ 1167 0183 0E       		.uleb128 0xe
+ 1168 0184 73707200 		.string	"spr"
+ 1169 0188 01       		.byte	0x1
+ 1170 0189 AC       		.byte	0xac
+ 1171 018a 00000089 		.4byte	0x89
+ 1172 018e 00       		.byte	0
+ 1173 018f 0C       		.uleb128 0xc
+ 1174 0190 00000000 		.4byte	.LASF28
+ 1175 0194 01       		.byte	0x1
+ 1176 0195 B4       		.byte	0xb4
+ 1177 0196 01       		.byte	0x1
+ 1178 0197 01       		.byte	0x1
+ 1179 0198 000001B3 		.4byte	0x1b3
+ 1180 019c 0B       		.uleb128 0xb
+ 1181 019d 00000000 		.4byte	.LASF26
+ 1182 01a1 01       		.byte	0x1
+ 1183 01a2 B4       		.byte	0xb4
+ 1184 01a3 000000C6 		.4byte	0xc6
+ 1185 01a7 0E       		.uleb128 0xe
+ 1186 01a8 73707200 		.string	"spr"
+ 1187 01ac 01       		.byte	0x1
+ 1188 01ad B5       		.byte	0xb5
+ 1189 01ae 00000089 		.4byte	0x89
+ 1190 01b2 00       		.byte	0
+ 1191 01b3 0A       		.uleb128 0xa
+ 1192 01b4 00000000 		.4byte	.LASF30
+ 1193 01b8 01       		.byte	0x1
+ 1194 01b9 6C       		.byte	0x6c
+ 1195 01ba 01       		.byte	0x1
+ 1196 01bb 0000010C 		.4byte	0x10c
+ 1197 01bf 01       		.byte	0x1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 22
+
+
+ 1198 01c0 0000022F 		.4byte	0x22f
+ 1199 01c4 0B       		.uleb128 0xb
+ 1200 01c5 00000000 		.4byte	.LASF26
+ 1201 01c9 01       		.byte	0x1
+ 1202 01ca 6C       		.byte	0x6c
+ 1203 01cb 000000C6 		.4byte	0xc6
+ 1204 01cf 0B       		.uleb128 0xb
+ 1205 01d0 00000000 		.4byte	.LASF31
+ 1206 01d4 01       		.byte	0x1
+ 1207 01d5 6C       		.byte	0x6c
+ 1208 01d6 00000090 		.4byte	0x90
+ 1209 01da 0F       		.uleb128 0xf
+ 1210 01db 00000000 		.4byte	.LASF32
+ 1211 01df 01       		.byte	0x1
+ 1212 01e0 6D       		.byte	0x6d
+ 1213 01e1 0000003B 		.4byte	0x3b
+ 1214 01e5 0E       		.uleb128 0xe
+ 1215 01e6 7300     		.string	"s"
+ 1216 01e8 01       		.byte	0x1
+ 1217 01e9 6D       		.byte	0x6d
+ 1218 01ea 0000003B 		.4byte	0x3b
+ 1219 01ee 0E       		.uleb128 0xe
+ 1220 01ef 7700     		.string	"w"
+ 1221 01f1 01       		.byte	0x1
+ 1222 01f2 6D       		.byte	0x6d
+ 1223 01f3 0000003B 		.4byte	0x3b
+ 1224 01f7 0F       		.uleb128 0xf
+ 1225 01f8 00000000 		.4byte	.LASF33
+ 1226 01fc 01       		.byte	0x1
+ 1227 01fd 6E       		.byte	0x6e
+ 1228 01fe 00000089 		.4byte	0x89
+ 1229 0202 0F       		.uleb128 0xf
+ 1230 0203 00000000 		.4byte	.LASF34
+ 1231 0207 01       		.byte	0x1
+ 1232 0208 6E       		.byte	0x6e
+ 1233 0209 00000089 		.4byte	0x89
+ 1234 020d 0E       		.uleb128 0xe
+ 1235 020e 73707200 		.string	"spr"
+ 1236 0212 01       		.byte	0x1
+ 1237 0213 6F       		.byte	0x6f
+ 1238 0214 00000089 		.4byte	0x89
+ 1239 0218 0F       		.uleb128 0xf
+ 1240 0219 00000000 		.4byte	.LASF35
+ 1241 021d 01       		.byte	0x1
+ 1242 021e 6F       		.byte	0x6f
+ 1243 021f 00000089 		.4byte	0x89
+ 1244 0223 0F       		.uleb128 0xf
+ 1245 0224 00000000 		.4byte	.LASF36
+ 1246 0228 01       		.byte	0x1
+ 1247 0229 70       		.byte	0x70
+ 1248 022a 0000010C 		.4byte	0x10c
+ 1249 022e 00       		.byte	0
+ 1250 022f 10       		.uleb128 0x10
+ 1251 0230 00000143 		.4byte	0x143
+ 1252 0234 00000000 		.4byte	.LFB3
+ 1253 0238 00000000 		.4byte	.LFE3
+ 1254 023c 02       		.byte	0x2
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 23
+
+
+ 1255 023d 71       		.byte	0x71
+ 1256 023e 00       		.sleb128 0
+ 1257 023f 01       		.byte	0x1
+ 1258 0240 000002AB 		.4byte	0x2ab
+ 1259 0244 11       		.uleb128 0x11
+ 1260 0245 00000154 		.4byte	0x154
+ 1261 0249 00000000 		.4byte	.LLST0
+ 1262 024d 12       		.uleb128 0x12
+ 1263 024e 00000000 		.4byte	.Ldebug_ranges0+0
+ 1264 0252 00000282 		.4byte	0x282
+ 1265 0256 13       		.uleb128 0x13
+ 1266 0257 00000154 		.4byte	0x154
+ 1267 025b 01       		.byte	0x1
+ 1268 025c 14       		.uleb128 0x14
+ 1269 025d 00000117 		.4byte	0x117
+ 1270 0261 00000000 		.4byte	.LBB26
+ 1271 0265 00000000 		.4byte	.Ldebug_ranges0+0x18
+ 1272 0269 01       		.byte	0x1
+ 1273 026a C1       		.byte	0xc1
+ 1274 026b 13       		.uleb128 0x13
+ 1275 026c 0000012A 		.4byte	0x12a
+ 1276 0270 00       		.byte	0
+ 1277 0271 15       		.uleb128 0x15
+ 1278 0272 00000000 		.4byte	.Ldebug_ranges0+0x18
+ 1279 0276 16       		.uleb128 0x16
+ 1280 0277 00000136 		.4byte	0x136
+ 1281 027b 00000000 		.4byte	.LLST1
+ 1282 027f 00       		.byte	0
+ 1283 0280 00       		.byte	0
+ 1284 0281 00       		.byte	0
+ 1285 0282 14       		.uleb128 0x14
+ 1286 0283 00000117 		.4byte	0x117
+ 1287 0287 00000000 		.4byte	.LBB31
+ 1288 028b 00000000 		.4byte	.Ldebug_ranges0+0x30
+ 1289 028f 01       		.byte	0x1
+ 1290 0290 C4       		.byte	0xc4
+ 1291 0291 11       		.uleb128 0x11
+ 1292 0292 0000012A 		.4byte	0x12a
+ 1293 0296 00000000 		.4byte	.LLST2
+ 1294 029a 15       		.uleb128 0x15
+ 1295 029b 00000000 		.4byte	.Ldebug_ranges0+0x30
+ 1296 029f 16       		.uleb128 0x16
+ 1297 02a0 00000136 		.4byte	0x136
+ 1298 02a4 00000000 		.4byte	.LLST3
+ 1299 02a8 00       		.byte	0
+ 1300 02a9 00       		.byte	0
+ 1301 02aa 00       		.byte	0
+ 1302 02ab 10       		.uleb128 0x10
+ 1303 02ac 000001B3 		.4byte	0x1b3
+ 1304 02b0 00000000 		.4byte	.LFB13
+ 1305 02b4 00000000 		.4byte	.LFE13
+ 1306 02b8 02       		.byte	0x2
+ 1307 02b9 71       		.byte	0x71
+ 1308 02ba 00       		.sleb128 0
+ 1309 02bb 01       		.byte	0x1
+ 1310 02bc 0000030B 		.4byte	0x30b
+ 1311 02c0 11       		.uleb128 0x11
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 24
+
+
+ 1312 02c1 000001C4 		.4byte	0x1c4
+ 1313 02c5 00000000 		.4byte	.LLST4
+ 1314 02c9 16       		.uleb128 0x16
+ 1315 02ca 000001DA 		.4byte	0x1da
+ 1316 02ce 00000000 		.4byte	.LLST5
+ 1317 02d2 16       		.uleb128 0x16
+ 1318 02d3 000001E5 		.4byte	0x1e5
+ 1319 02d7 00000000 		.4byte	.LLST6
+ 1320 02db 17       		.uleb128 0x17
+ 1321 02dc 000001EE 		.4byte	0x1ee
+ 1322 02e0 18       		.uleb128 0x18
+ 1323 02e1 000001F7 		.4byte	0x1f7
+ 1324 02e5 12       		.byte	0x12
+ 1325 02e6 18       		.uleb128 0x18
+ 1326 02e7 00000202 		.4byte	0x202
+ 1327 02eb 04       		.byte	0x4
+ 1328 02ec 16       		.uleb128 0x16
+ 1329 02ed 0000020D 		.4byte	0x20d
+ 1330 02f1 00000000 		.4byte	.LLST7
+ 1331 02f5 16       		.uleb128 0x16
+ 1332 02f6 00000218 		.4byte	0x218
+ 1333 02fa 00000000 		.4byte	.LLST8
+ 1334 02fe 18       		.uleb128 0x18
+ 1335 02ff 00000223 		.4byte	0x223
+ 1336 0303 00       		.byte	0
+ 1337 0304 13       		.uleb128 0x13
+ 1338 0305 000001CF 		.4byte	0x1cf
+ 1339 0309 01       		.byte	0x1
+ 1340 030a 00       		.byte	0
+ 1341 030b 19       		.uleb128 0x19
+ 1342 030c 01       		.byte	0x1
+ 1343 030d 00000000 		.4byte	.LASF37
+ 1344 0311 01       		.byte	0x1
+ 1345 0312 D6       		.byte	0xd6
+ 1346 0313 01       		.byte	0x1
+ 1347 0314 00000089 		.4byte	0x89
+ 1348 0318 00000000 		.4byte	.LFB4
+ 1349 031c 00000000 		.4byte	.LFE4
+ 1350 0320 00000000 		.4byte	.LLST9
+ 1351 0324 01       		.byte	0x1
+ 1352 0325 00000358 		.4byte	0x358
+ 1353 0329 1A       		.uleb128 0x1a
+ 1354 032a 00000000 		.4byte	.LASF26
+ 1355 032e 01       		.byte	0x1
+ 1356 032f D6       		.byte	0xd6
+ 1357 0330 000000C6 		.4byte	0xc6
+ 1358 0334 00000000 		.4byte	.LLST10
+ 1359 0338 1B       		.uleb128 0x1b
+ 1360 0339 73707200 		.string	"spr"
+ 1361 033d 01       		.byte	0x1
+ 1362 033e D7       		.byte	0xd7
+ 1363 033f 00000089 		.4byte	0x89
+ 1364 0343 00000000 		.4byte	.LLST11
+ 1365 0347 1C       		.uleb128 0x1c
+ 1366 0348 00000000 		.4byte	.LVL53
+ 1367 034c 00000143 		.4byte	0x143
+ 1368 0350 1D       		.uleb128 0x1d
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 25
+
+
+ 1369 0351 01       		.byte	0x1
+ 1370 0352 53       		.byte	0x53
+ 1371 0353 02       		.byte	0x2
+ 1372 0354 8F       		.byte	0x8f
+ 1373 0355 00       		.sleb128 0
+ 1374 0356 00       		.byte	0
+ 1375 0357 00       		.byte	0
+ 1376 0358 19       		.uleb128 0x19
+ 1377 0359 01       		.byte	0x1
+ 1378 035a 00000000 		.4byte	.LASF38
+ 1379 035e 01       		.byte	0x1
+ 1380 035f ED       		.byte	0xed
+ 1381 0360 01       		.byte	0x1
+ 1382 0361 0000010C 		.4byte	0x10c
+ 1383 0365 00000000 		.4byte	.LFB5
+ 1384 0369 00000000 		.4byte	.LFE5
+ 1385 036d 00000000 		.4byte	.LLST12
+ 1386 0371 01       		.byte	0x1
+ 1387 0372 00000425 		.4byte	0x425
+ 1388 0376 1A       		.uleb128 0x1a
+ 1389 0377 00000000 		.4byte	.LASF26
+ 1390 037b 01       		.byte	0x1
+ 1391 037c ED       		.byte	0xed
+ 1392 037d 000000C6 		.4byte	0xc6
+ 1393 0381 00000000 		.4byte	.LLST13
+ 1394 0385 1E       		.uleb128 0x1e
+ 1395 0386 00000000 		.4byte	.LASF36
+ 1396 038a 01       		.byte	0x1
+ 1397 038b EE       		.byte	0xee
+ 1398 038c 0000010C 		.4byte	0x10c
+ 1399 0390 00000000 		.4byte	.LLST14
+ 1400 0394 1F       		.uleb128 0x1f
+ 1401 0395 00000160 		.4byte	0x160
+ 1402 0399 00000000 		.4byte	.LBB36
+ 1403 039d 00000000 		.4byte	.LBE36
+ 1404 03a1 01       		.byte	0x1
+ 1405 03a2 FE       		.byte	0xfe
+ 1406 03a3 000003CD 		.4byte	0x3cd
+ 1407 03a7 11       		.uleb128 0x11
+ 1408 03a8 00000178 		.4byte	0x178
+ 1409 03ac 00000000 		.4byte	.LLST15
+ 1410 03b0 11       		.uleb128 0x11
+ 1411 03b1 0000016D 		.4byte	0x16d
+ 1412 03b5 00000000 		.4byte	.LLST16
+ 1413 03b9 20       		.uleb128 0x20
+ 1414 03ba 00000000 		.4byte	.LBB37
+ 1415 03be 00000000 		.4byte	.LBE37
+ 1416 03c2 16       		.uleb128 0x16
+ 1417 03c3 00000183 		.4byte	0x183
+ 1418 03c7 00000000 		.4byte	.LLST17
+ 1419 03cb 00       		.byte	0
+ 1420 03cc 00       		.byte	0
+ 1421 03cd 1F       		.uleb128 0x1f
+ 1422 03ce 00000160 		.4byte	0x160
+ 1423 03d2 00000000 		.4byte	.LBB38
+ 1424 03d6 00000000 		.4byte	.LBE38
+ 1425 03da 01       		.byte	0x1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 26
+
+
+ 1426 03db FC       		.byte	0xfc
+ 1427 03dc 00000400 		.4byte	0x400
+ 1428 03e0 13       		.uleb128 0x13
+ 1429 03e1 00000178 		.4byte	0x178
+ 1430 03e5 01       		.byte	0x1
+ 1431 03e6 13       		.uleb128 0x13
+ 1432 03e7 0000016D 		.4byte	0x16d
+ 1433 03eb 01       		.byte	0x1
+ 1434 03ec 20       		.uleb128 0x20
+ 1435 03ed 00000000 		.4byte	.LBB39
+ 1436 03f1 00000000 		.4byte	.LBE39
+ 1437 03f5 16       		.uleb128 0x16
+ 1438 03f6 00000183 		.4byte	0x183
+ 1439 03fa 00000000 		.4byte	.LLST18
+ 1440 03fe 00       		.byte	0
+ 1441 03ff 00       		.byte	0
+ 1442 0400 21       		.uleb128 0x21
+ 1443 0401 00000000 		.4byte	.LVL62
+ 1444 0405 00000143 		.4byte	0x143
+ 1445 0409 00000414 		.4byte	0x414
+ 1446 040d 1D       		.uleb128 0x1d
+ 1447 040e 01       		.byte	0x1
+ 1448 040f 53       		.byte	0x53
+ 1449 0410 02       		.byte	0x2
+ 1450 0411 8F       		.byte	0x8f
+ 1451 0412 00       		.sleb128 0
+ 1452 0413 00       		.byte	0
+ 1453 0414 1C       		.uleb128 0x1c
+ 1454 0415 00000000 		.4byte	.LVL67
+ 1455 0419 000002AB 		.4byte	0x2ab
+ 1456 041d 1D       		.uleb128 0x1d
+ 1457 041e 01       		.byte	0x1
+ 1458 041f 53       		.byte	0x53
+ 1459 0420 02       		.byte	0x2
+ 1460 0421 8F       		.byte	0x8f
+ 1461 0422 00       		.sleb128 0
+ 1462 0423 00       		.byte	0
+ 1463 0424 00       		.byte	0
+ 1464 0425 22       		.uleb128 0x22
+ 1465 0426 01       		.byte	0x1
+ 1466 0427 00000000 		.4byte	.LASF39
+ 1467 042b 01       		.byte	0x1
+ 1468 042c 010E     		.2byte	0x10e
+ 1469 042e 01       		.byte	0x1
+ 1470 042f 0000010C 		.4byte	0x10c
+ 1471 0433 00000000 		.4byte	.LFB6
+ 1472 0437 00000000 		.4byte	.LFE6
+ 1473 043b 00000000 		.4byte	.LLST19
+ 1474 043f 01       		.byte	0x1
+ 1475 0440 00000499 		.4byte	0x499
+ 1476 0444 23       		.uleb128 0x23
+ 1477 0445 00000000 		.4byte	.LASF26
+ 1478 0449 01       		.byte	0x1
+ 1479 044a 010E     		.2byte	0x10e
+ 1480 044c 000000C6 		.4byte	0xc6
+ 1481 0450 00000000 		.4byte	.LLST20
+ 1482 0454 23       		.uleb128 0x23
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 27
+
+
+ 1483 0455 00000000 		.4byte	.LASF40
+ 1484 0459 01       		.byte	0x1
+ 1485 045a 010E     		.2byte	0x10e
+ 1486 045c 000000A6 		.4byte	0xa6
+ 1487 0460 00000000 		.4byte	.LLST21
+ 1488 0464 24       		.uleb128 0x24
+ 1489 0465 00000000 		.4byte	.LASF36
+ 1490 0469 01       		.byte	0x1
+ 1491 046a 010F     		.2byte	0x10f
+ 1492 046c 0000010C 		.4byte	0x10c
+ 1493 0470 00000000 		.4byte	.LLST22
+ 1494 0474 21       		.uleb128 0x21
+ 1495 0475 00000000 		.4byte	.LVL76
+ 1496 0479 00000143 		.4byte	0x143
+ 1497 047d 00000488 		.4byte	0x488
+ 1498 0481 1D       		.uleb128 0x1d
+ 1499 0482 01       		.byte	0x1
+ 1500 0483 53       		.byte	0x53
+ 1501 0484 02       		.byte	0x2
+ 1502 0485 8F       		.byte	0x8f
+ 1503 0486 00       		.sleb128 0
+ 1504 0487 00       		.byte	0
+ 1505 0488 1C       		.uleb128 0x1c
+ 1506 0489 00000000 		.4byte	.LVL81
+ 1507 048d 000002AB 		.4byte	0x2ab
+ 1508 0491 1D       		.uleb128 0x1d
+ 1509 0492 01       		.byte	0x1
+ 1510 0493 53       		.byte	0x53
+ 1511 0494 02       		.byte	0x2
+ 1512 0495 8F       		.byte	0x8f
+ 1513 0496 00       		.sleb128 0
+ 1514 0497 00       		.byte	0
+ 1515 0498 00       		.byte	0
+ 1516 0499 22       		.uleb128 0x22
+ 1517 049a 01       		.byte	0x1
+ 1518 049b 00000000 		.4byte	.LASF41
+ 1519 049f 01       		.byte	0x1
+ 1520 04a0 0129     		.2byte	0x129
+ 1521 04a2 01       		.byte	0x1
+ 1522 04a3 0000010C 		.4byte	0x10c
+ 1523 04a7 00000000 		.4byte	.LFB7
+ 1524 04ab 00000000 		.4byte	.LFE7
+ 1525 04af 00000000 		.4byte	.LLST23
+ 1526 04b3 01       		.byte	0x1
+ 1527 04b4 0000052A 		.4byte	0x52a
+ 1528 04b8 23       		.uleb128 0x23
+ 1529 04b9 00000000 		.4byte	.LASF26
+ 1530 04bd 01       		.byte	0x1
+ 1531 04be 0129     		.2byte	0x129
+ 1532 04c0 000000C6 		.4byte	0xc6
+ 1533 04c4 00000000 		.4byte	.LLST24
+ 1534 04c8 24       		.uleb128 0x24
+ 1535 04c9 00000000 		.4byte	.LASF36
+ 1536 04cd 01       		.byte	0x1
+ 1537 04ce 012A     		.2byte	0x12a
+ 1538 04d0 0000010C 		.4byte	0x10c
+ 1539 04d4 00000000 		.4byte	.LLST25
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 28
+
+
+ 1540 04d8 25       		.uleb128 0x25
+ 1541 04d9 0000018F 		.4byte	0x18f
+ 1542 04dd 00000000 		.4byte	.LBB40
+ 1543 04e1 00000000 		.4byte	.Ldebug_ranges0+0x48
+ 1544 04e5 01       		.byte	0x1
+ 1545 04e6 0136     		.2byte	0x136
+ 1546 04e8 00000505 		.4byte	0x505
+ 1547 04ec 11       		.uleb128 0x11
+ 1548 04ed 0000019C 		.4byte	0x19c
+ 1549 04f1 00000000 		.4byte	.LLST26
+ 1550 04f5 15       		.uleb128 0x15
+ 1551 04f6 00000000 		.4byte	.Ldebug_ranges0+0x48
+ 1552 04fa 16       		.uleb128 0x16
+ 1553 04fb 000001A7 		.4byte	0x1a7
+ 1554 04ff 00000000 		.4byte	.LLST27
+ 1555 0503 00       		.byte	0
+ 1556 0504 00       		.byte	0
+ 1557 0505 21       		.uleb128 0x21
+ 1558 0506 00000000 		.4byte	.LVL85
+ 1559 050a 00000143 		.4byte	0x143
+ 1560 050e 00000519 		.4byte	0x519
+ 1561 0512 1D       		.uleb128 0x1d
+ 1562 0513 01       		.byte	0x1
+ 1563 0514 53       		.byte	0x53
+ 1564 0515 02       		.byte	0x2
+ 1565 0516 8F       		.byte	0x8f
+ 1566 0517 00       		.sleb128 0
+ 1567 0518 00       		.byte	0
+ 1568 0519 1C       		.uleb128 0x1c
+ 1569 051a 00000000 		.4byte	.LVL89
+ 1570 051e 000002AB 		.4byte	0x2ab
+ 1571 0522 1D       		.uleb128 0x1d
+ 1572 0523 01       		.byte	0x1
+ 1573 0524 53       		.byte	0x53
+ 1574 0525 02       		.byte	0x2
+ 1575 0526 8F       		.byte	0x8f
+ 1576 0527 00       		.sleb128 0
+ 1577 0528 00       		.byte	0
+ 1578 0529 00       		.byte	0
+ 1579 052a 10       		.uleb128 0x10
+ 1580 052b 00000117 		.4byte	0x117
+ 1581 052f 00000000 		.4byte	.LFB8
+ 1582 0533 00000000 		.4byte	.LFE8
+ 1583 0537 02       		.byte	0x2
+ 1584 0538 71       		.byte	0x71
+ 1585 0539 00       		.sleb128 0
+ 1586 053a 01       		.byte	0x1
+ 1587 053b 00000552 		.4byte	0x552
+ 1588 053f 11       		.uleb128 0x11
+ 1589 0540 0000012A 		.4byte	0x12a
+ 1590 0544 00000000 		.4byte	.LLST28
+ 1591 0548 16       		.uleb128 0x16
+ 1592 0549 00000136 		.4byte	0x136
+ 1593 054d 00000000 		.4byte	.LLST29
+ 1594 0551 00       		.byte	0
+ 1595 0552 22       		.uleb128 0x22
+ 1596 0553 01       		.byte	0x1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 29
+
+
+ 1597 0554 00000000 		.4byte	.LASF42
+ 1598 0558 01       		.byte	0x1
+ 1599 0559 0162     		.2byte	0x162
+ 1600 055b 01       		.byte	0x1
+ 1601 055c 0000010C 		.4byte	0x10c
+ 1602 0560 00000000 		.4byte	.LFB9
+ 1603 0564 00000000 		.4byte	.LFE9
+ 1604 0568 00000000 		.4byte	.LLST30
+ 1605 056c 01       		.byte	0x1
+ 1606 056d 000005B8 		.4byte	0x5b8
+ 1607 0571 23       		.uleb128 0x23
+ 1608 0572 00000000 		.4byte	.LASF26
+ 1609 0576 01       		.byte	0x1
+ 1610 0577 0162     		.2byte	0x162
+ 1611 0579 000000C6 		.4byte	0xc6
+ 1612 057d 00000000 		.4byte	.LLST31
+ 1613 0581 24       		.uleb128 0x24
+ 1614 0582 00000000 		.4byte	.LASF36
+ 1615 0586 01       		.byte	0x1
+ 1616 0587 0163     		.2byte	0x163
+ 1617 0589 0000010C 		.4byte	0x10c
+ 1618 058d 00000000 		.4byte	.LLST32
+ 1619 0591 21       		.uleb128 0x21
+ 1620 0592 00000000 		.4byte	.LVL106
+ 1621 0596 00000143 		.4byte	0x143
+ 1622 059a 000005A5 		.4byte	0x5a5
+ 1623 059e 1D       		.uleb128 0x1d
+ 1624 059f 01       		.byte	0x1
+ 1625 05a0 53       		.byte	0x53
+ 1626 05a1 02       		.byte	0x2
+ 1627 05a2 8F       		.byte	0x8f
+ 1628 05a3 00       		.sleb128 0
+ 1629 05a4 00       		.byte	0
+ 1630 05a5 26       		.uleb128 0x26
+ 1631 05a6 00000000 		.4byte	.LVL111
+ 1632 05aa 01       		.byte	0x1
+ 1633 05ab 000002AB 		.4byte	0x2ab
+ 1634 05af 1D       		.uleb128 0x1d
+ 1635 05b0 01       		.byte	0x1
+ 1636 05b1 53       		.byte	0x53
+ 1637 05b2 03       		.byte	0x3
+ 1638 05b3 F3       		.byte	0xf3
+ 1639 05b4 01       		.uleb128 0x1
+ 1640 05b5 53       		.byte	0x53
+ 1641 05b6 00       		.byte	0
+ 1642 05b7 00       		.byte	0
+ 1643 05b8 27       		.uleb128 0x27
+ 1644 05b9 01       		.byte	0x1
+ 1645 05ba 00000000 		.4byte	.LASF43
+ 1646 05be 01       		.byte	0x1
+ 1647 05bf 017D     		.2byte	0x17d
+ 1648 05c1 01       		.byte	0x1
+ 1649 05c2 0000010C 		.4byte	0x10c
+ 1650 05c6 00000000 		.4byte	.LFB10
+ 1651 05ca 00000000 		.4byte	.LFE10
+ 1652 05ce 02       		.byte	0x2
+ 1653 05cf 71       		.byte	0x71
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 30
+
+
+ 1654 05d0 00       		.sleb128 0
+ 1655 05d1 01       		.byte	0x1
+ 1656 05d2 00000617 		.4byte	0x617
+ 1657 05d6 23       		.uleb128 0x23
+ 1658 05d7 00000000 		.4byte	.LASF44
+ 1659 05db 01       		.byte	0x1
+ 1660 05dc 017D     		.2byte	0x17d
+ 1661 05de 000000A6 		.4byte	0xa6
+ 1662 05e2 00000000 		.4byte	.LLST33
+ 1663 05e6 23       		.uleb128 0x23
+ 1664 05e7 00000000 		.4byte	.LASF45
+ 1665 05eb 01       		.byte	0x1
+ 1666 05ec 017D     		.2byte	0x17d
+ 1667 05ee 0000009B 		.4byte	0x9b
+ 1668 05f2 00000000 		.4byte	.LLST34
+ 1669 05f6 24       		.uleb128 0x24
+ 1670 05f7 00000000 		.4byte	.LASF46
+ 1671 05fb 01       		.byte	0x1
+ 1672 05fc 017E     		.2byte	0x17e
+ 1673 05fe 000000A6 		.4byte	0xa6
+ 1674 0602 00000000 		.4byte	.LLST35
+ 1675 0606 28       		.uleb128 0x28
+ 1676 0607 73707200 		.string	"spr"
+ 1677 060b 01       		.byte	0x1
+ 1678 060c 017F     		.2byte	0x17f
+ 1679 060e 00000089 		.4byte	0x89
+ 1680 0612 00000000 		.4byte	.LLST36
+ 1681 0616 00       		.byte	0
+ 1682 0617 29       		.uleb128 0x29
+ 1683 0618 01       		.byte	0x1
+ 1684 0619 00000000 		.4byte	.LASF51
+ 1685 061d 01       		.byte	0x1
+ 1686 061e 0195     		.2byte	0x195
+ 1687 0620 01       		.byte	0x1
+ 1688 0621 0000010C 		.4byte	0x10c
+ 1689 0625 00000000 		.4byte	.LFB11
+ 1690 0629 00000000 		.4byte	.LFE11
+ 1691 062d 02       		.byte	0x2
+ 1692 062e 71       		.byte	0x71
+ 1693 062f 00       		.sleb128 0
+ 1694 0630 01       		.byte	0x1
+ 1695 0631 23       		.uleb128 0x23
+ 1696 0632 00000000 		.4byte	.LASF44
+ 1697 0636 01       		.byte	0x1
+ 1698 0637 0195     		.2byte	0x195
+ 1699 0639 000000A6 		.4byte	0xa6
+ 1700 063d 00000000 		.4byte	.LLST37
+ 1701 0641 23       		.uleb128 0x23
+ 1702 0642 00000000 		.4byte	.LASF45
+ 1703 0646 01       		.byte	0x1
+ 1704 0647 0195     		.2byte	0x195
+ 1705 0649 0000009B 		.4byte	0x9b
+ 1706 064d 00000000 		.4byte	.LLST38
+ 1707 0651 24       		.uleb128 0x24
+ 1708 0652 00000000 		.4byte	.LASF46
+ 1709 0656 01       		.byte	0x1
+ 1710 0657 0196     		.2byte	0x196
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 31
+
+
+ 1711 0659 000000A6 		.4byte	0xa6
+ 1712 065d 00000000 		.4byte	.LLST39
+ 1713 0661 28       		.uleb128 0x28
+ 1714 0662 73707200 		.string	"spr"
+ 1715 0666 01       		.byte	0x1
+ 1716 0667 0197     		.2byte	0x197
+ 1717 0669 00000089 		.4byte	0x89
+ 1718 066d 00000000 		.4byte	.LLST40
+ 1719 0671 00       		.byte	0
+ 1720 0672 00       		.byte	0
+ 1721              		.section	.debug_abbrev,"",@progbits
+ 1722              	.Ldebug_abbrev0:
+ 1723 0000 01       		.uleb128 0x1
+ 1724 0001 11       		.uleb128 0x11
+ 1725 0002 01       		.byte	0x1
+ 1726 0003 25       		.uleb128 0x25
+ 1727 0004 0E       		.uleb128 0xe
+ 1728 0005 13       		.uleb128 0x13
+ 1729 0006 0B       		.uleb128 0xb
+ 1730 0007 03       		.uleb128 0x3
+ 1731 0008 0E       		.uleb128 0xe
+ 1732 0009 1B       		.uleb128 0x1b
+ 1733 000a 0E       		.uleb128 0xe
+ 1734 000b 55       		.uleb128 0x55
+ 1735 000c 06       		.uleb128 0x6
+ 1736 000d 11       		.uleb128 0x11
+ 1737 000e 01       		.uleb128 0x1
+ 1738 000f 52       		.uleb128 0x52
+ 1739 0010 01       		.uleb128 0x1
+ 1740 0011 10       		.uleb128 0x10
+ 1741 0012 06       		.uleb128 0x6
+ 1742 0013 00       		.byte	0
+ 1743 0014 00       		.byte	0
+ 1744 0015 02       		.uleb128 0x2
+ 1745 0016 24       		.uleb128 0x24
+ 1746 0017 00       		.byte	0
+ 1747 0018 0B       		.uleb128 0xb
+ 1748 0019 0B       		.uleb128 0xb
+ 1749 001a 3E       		.uleb128 0x3e
+ 1750 001b 0B       		.uleb128 0xb
+ 1751 001c 03       		.uleb128 0x3
+ 1752 001d 0E       		.uleb128 0xe
+ 1753 001e 00       		.byte	0
+ 1754 001f 00       		.byte	0
+ 1755 0020 03       		.uleb128 0x3
+ 1756 0021 16       		.uleb128 0x16
+ 1757 0022 00       		.byte	0
+ 1758 0023 03       		.uleb128 0x3
+ 1759 0024 0E       		.uleb128 0xe
+ 1760 0025 3A       		.uleb128 0x3a
+ 1761 0026 0B       		.uleb128 0xb
+ 1762 0027 3B       		.uleb128 0x3b
+ 1763 0028 0B       		.uleb128 0xb
+ 1764 0029 49       		.uleb128 0x49
+ 1765 002a 13       		.uleb128 0x13
+ 1766 002b 00       		.byte	0
+ 1767 002c 00       		.byte	0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 32
+
+
+ 1768 002d 04       		.uleb128 0x4
+ 1769 002e 24       		.uleb128 0x24
+ 1770 002f 00       		.byte	0
+ 1771 0030 0B       		.uleb128 0xb
+ 1772 0031 0B       		.uleb128 0xb
+ 1773 0032 3E       		.uleb128 0x3e
+ 1774 0033 0B       		.uleb128 0xb
+ 1775 0034 03       		.uleb128 0x3
+ 1776 0035 08       		.uleb128 0x8
+ 1777 0036 00       		.byte	0
+ 1778 0037 00       		.byte	0
+ 1779 0038 05       		.uleb128 0x5
+ 1780 0039 04       		.uleb128 0x4
+ 1781 003a 01       		.byte	0x1
+ 1782 003b 0B       		.uleb128 0xb
+ 1783 003c 0B       		.uleb128 0xb
+ 1784 003d 3A       		.uleb128 0x3a
+ 1785 003e 0B       		.uleb128 0xb
+ 1786 003f 3B       		.uleb128 0x3b
+ 1787 0040 0B       		.uleb128 0xb
+ 1788 0041 01       		.uleb128 0x1
+ 1789 0042 13       		.uleb128 0x13
+ 1790 0043 00       		.byte	0
+ 1791 0044 00       		.byte	0
+ 1792 0045 06       		.uleb128 0x6
+ 1793 0046 28       		.uleb128 0x28
+ 1794 0047 00       		.byte	0
+ 1795 0048 03       		.uleb128 0x3
+ 1796 0049 0E       		.uleb128 0xe
+ 1797 004a 1C       		.uleb128 0x1c
+ 1798 004b 0D       		.uleb128 0xd
+ 1799 004c 00       		.byte	0
+ 1800 004d 00       		.byte	0
+ 1801 004e 07       		.uleb128 0x7
+ 1802 004f 2E       		.uleb128 0x2e
+ 1803 0050 01       		.byte	0x1
+ 1804 0051 3F       		.uleb128 0x3f
+ 1805 0052 0C       		.uleb128 0xc
+ 1806 0053 03       		.uleb128 0x3
+ 1807 0054 0E       		.uleb128 0xe
+ 1808 0055 3A       		.uleb128 0x3a
+ 1809 0056 0B       		.uleb128 0xb
+ 1810 0057 3B       		.uleb128 0x3b
+ 1811 0058 05       		.uleb128 0x5
+ 1812 0059 27       		.uleb128 0x27
+ 1813 005a 0C       		.uleb128 0xc
+ 1814 005b 49       		.uleb128 0x49
+ 1815 005c 13       		.uleb128 0x13
+ 1816 005d 20       		.uleb128 0x20
+ 1817 005e 0B       		.uleb128 0xb
+ 1818 005f 01       		.uleb128 0x1
+ 1819 0060 13       		.uleb128 0x13
+ 1820 0061 00       		.byte	0
+ 1821 0062 00       		.byte	0
+ 1822 0063 08       		.uleb128 0x8
+ 1823 0064 05       		.uleb128 0x5
+ 1824 0065 00       		.byte	0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 33
+
+
+ 1825 0066 03       		.uleb128 0x3
+ 1826 0067 0E       		.uleb128 0xe
+ 1827 0068 3A       		.uleb128 0x3a
+ 1828 0069 0B       		.uleb128 0xb
+ 1829 006a 3B       		.uleb128 0x3b
+ 1830 006b 05       		.uleb128 0x5
+ 1831 006c 49       		.uleb128 0x49
+ 1832 006d 13       		.uleb128 0x13
+ 1833 006e 00       		.byte	0
+ 1834 006f 00       		.byte	0
+ 1835 0070 09       		.uleb128 0x9
+ 1836 0071 34       		.uleb128 0x34
+ 1837 0072 00       		.byte	0
+ 1838 0073 03       		.uleb128 0x3
+ 1839 0074 08       		.uleb128 0x8
+ 1840 0075 3A       		.uleb128 0x3a
+ 1841 0076 0B       		.uleb128 0xb
+ 1842 0077 3B       		.uleb128 0x3b
+ 1843 0078 05       		.uleb128 0x5
+ 1844 0079 49       		.uleb128 0x49
+ 1845 007a 13       		.uleb128 0x13
+ 1846 007b 00       		.byte	0
+ 1847 007c 00       		.byte	0
+ 1848 007d 0A       		.uleb128 0xa
+ 1849 007e 2E       		.uleb128 0x2e
+ 1850 007f 01       		.byte	0x1
+ 1851 0080 03       		.uleb128 0x3
+ 1852 0081 0E       		.uleb128 0xe
+ 1853 0082 3A       		.uleb128 0x3a
+ 1854 0083 0B       		.uleb128 0xb
+ 1855 0084 3B       		.uleb128 0x3b
+ 1856 0085 0B       		.uleb128 0xb
+ 1857 0086 27       		.uleb128 0x27
+ 1858 0087 0C       		.uleb128 0xc
+ 1859 0088 49       		.uleb128 0x49
+ 1860 0089 13       		.uleb128 0x13
+ 1861 008a 20       		.uleb128 0x20
+ 1862 008b 0B       		.uleb128 0xb
+ 1863 008c 01       		.uleb128 0x1
+ 1864 008d 13       		.uleb128 0x13
+ 1865 008e 00       		.byte	0
+ 1866 008f 00       		.byte	0
+ 1867 0090 0B       		.uleb128 0xb
+ 1868 0091 05       		.uleb128 0x5
+ 1869 0092 00       		.byte	0
+ 1870 0093 03       		.uleb128 0x3
+ 1871 0094 0E       		.uleb128 0xe
+ 1872 0095 3A       		.uleb128 0x3a
+ 1873 0096 0B       		.uleb128 0xb
+ 1874 0097 3B       		.uleb128 0x3b
+ 1875 0098 0B       		.uleb128 0xb
+ 1876 0099 49       		.uleb128 0x49
+ 1877 009a 13       		.uleb128 0x13
+ 1878 009b 00       		.byte	0
+ 1879 009c 00       		.byte	0
+ 1880 009d 0C       		.uleb128 0xc
+ 1881 009e 2E       		.uleb128 0x2e
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 34
+
+
+ 1882 009f 01       		.byte	0x1
+ 1883 00a0 03       		.uleb128 0x3
+ 1884 00a1 0E       		.uleb128 0xe
+ 1885 00a2 3A       		.uleb128 0x3a
+ 1886 00a3 0B       		.uleb128 0xb
+ 1887 00a4 3B       		.uleb128 0x3b
+ 1888 00a5 0B       		.uleb128 0xb
+ 1889 00a6 27       		.uleb128 0x27
+ 1890 00a7 0C       		.uleb128 0xc
+ 1891 00a8 20       		.uleb128 0x20
+ 1892 00a9 0B       		.uleb128 0xb
+ 1893 00aa 01       		.uleb128 0x1
+ 1894 00ab 13       		.uleb128 0x13
+ 1895 00ac 00       		.byte	0
+ 1896 00ad 00       		.byte	0
+ 1897 00ae 0D       		.uleb128 0xd
+ 1898 00af 05       		.uleb128 0x5
+ 1899 00b0 00       		.byte	0
+ 1900 00b1 03       		.uleb128 0x3
+ 1901 00b2 08       		.uleb128 0x8
+ 1902 00b3 3A       		.uleb128 0x3a
+ 1903 00b4 0B       		.uleb128 0xb
+ 1904 00b5 3B       		.uleb128 0x3b
+ 1905 00b6 0B       		.uleb128 0xb
+ 1906 00b7 49       		.uleb128 0x49
+ 1907 00b8 13       		.uleb128 0x13
+ 1908 00b9 00       		.byte	0
+ 1909 00ba 00       		.byte	0
+ 1910 00bb 0E       		.uleb128 0xe
+ 1911 00bc 34       		.uleb128 0x34
+ 1912 00bd 00       		.byte	0
+ 1913 00be 03       		.uleb128 0x3
+ 1914 00bf 08       		.uleb128 0x8
+ 1915 00c0 3A       		.uleb128 0x3a
+ 1916 00c1 0B       		.uleb128 0xb
+ 1917 00c2 3B       		.uleb128 0x3b
+ 1918 00c3 0B       		.uleb128 0xb
+ 1919 00c4 49       		.uleb128 0x49
+ 1920 00c5 13       		.uleb128 0x13
+ 1921 00c6 00       		.byte	0
+ 1922 00c7 00       		.byte	0
+ 1923 00c8 0F       		.uleb128 0xf
+ 1924 00c9 34       		.uleb128 0x34
+ 1925 00ca 00       		.byte	0
+ 1926 00cb 03       		.uleb128 0x3
+ 1927 00cc 0E       		.uleb128 0xe
+ 1928 00cd 3A       		.uleb128 0x3a
+ 1929 00ce 0B       		.uleb128 0xb
+ 1930 00cf 3B       		.uleb128 0x3b
+ 1931 00d0 0B       		.uleb128 0xb
+ 1932 00d1 49       		.uleb128 0x49
+ 1933 00d2 13       		.uleb128 0x13
+ 1934 00d3 00       		.byte	0
+ 1935 00d4 00       		.byte	0
+ 1936 00d5 10       		.uleb128 0x10
+ 1937 00d6 2E       		.uleb128 0x2e
+ 1938 00d7 01       		.byte	0x1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 35
+
+
+ 1939 00d8 31       		.uleb128 0x31
+ 1940 00d9 13       		.uleb128 0x13
+ 1941 00da 11       		.uleb128 0x11
+ 1942 00db 01       		.uleb128 0x1
+ 1943 00dc 12       		.uleb128 0x12
+ 1944 00dd 01       		.uleb128 0x1
+ 1945 00de 40       		.uleb128 0x40
+ 1946 00df 0A       		.uleb128 0xa
+ 1947 00e0 9742     		.uleb128 0x2117
+ 1948 00e2 0C       		.uleb128 0xc
+ 1949 00e3 01       		.uleb128 0x1
+ 1950 00e4 13       		.uleb128 0x13
+ 1951 00e5 00       		.byte	0
+ 1952 00e6 00       		.byte	0
+ 1953 00e7 11       		.uleb128 0x11
+ 1954 00e8 05       		.uleb128 0x5
+ 1955 00e9 00       		.byte	0
+ 1956 00ea 31       		.uleb128 0x31
+ 1957 00eb 13       		.uleb128 0x13
+ 1958 00ec 02       		.uleb128 0x2
+ 1959 00ed 06       		.uleb128 0x6
+ 1960 00ee 00       		.byte	0
+ 1961 00ef 00       		.byte	0
+ 1962 00f0 12       		.uleb128 0x12
+ 1963 00f1 0B       		.uleb128 0xb
+ 1964 00f2 01       		.byte	0x1
+ 1965 00f3 55       		.uleb128 0x55
+ 1966 00f4 06       		.uleb128 0x6
+ 1967 00f5 01       		.uleb128 0x1
+ 1968 00f6 13       		.uleb128 0x13
+ 1969 00f7 00       		.byte	0
+ 1970 00f8 00       		.byte	0
+ 1971 00f9 13       		.uleb128 0x13
+ 1972 00fa 05       		.uleb128 0x5
+ 1973 00fb 00       		.byte	0
+ 1974 00fc 31       		.uleb128 0x31
+ 1975 00fd 13       		.uleb128 0x13
+ 1976 00fe 1C       		.uleb128 0x1c
+ 1977 00ff 0B       		.uleb128 0xb
+ 1978 0100 00       		.byte	0
+ 1979 0101 00       		.byte	0
+ 1980 0102 14       		.uleb128 0x14
+ 1981 0103 1D       		.uleb128 0x1d
+ 1982 0104 01       		.byte	0x1
+ 1983 0105 31       		.uleb128 0x31
+ 1984 0106 13       		.uleb128 0x13
+ 1985 0107 52       		.uleb128 0x52
+ 1986 0108 01       		.uleb128 0x1
+ 1987 0109 55       		.uleb128 0x55
+ 1988 010a 06       		.uleb128 0x6
+ 1989 010b 58       		.uleb128 0x58
+ 1990 010c 0B       		.uleb128 0xb
+ 1991 010d 59       		.uleb128 0x59
+ 1992 010e 0B       		.uleb128 0xb
+ 1993 010f 00       		.byte	0
+ 1994 0110 00       		.byte	0
+ 1995 0111 15       		.uleb128 0x15
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 36
+
+
+ 1996 0112 0B       		.uleb128 0xb
+ 1997 0113 01       		.byte	0x1
+ 1998 0114 55       		.uleb128 0x55
+ 1999 0115 06       		.uleb128 0x6
+ 2000 0116 00       		.byte	0
+ 2001 0117 00       		.byte	0
+ 2002 0118 16       		.uleb128 0x16
+ 2003 0119 34       		.uleb128 0x34
+ 2004 011a 00       		.byte	0
+ 2005 011b 31       		.uleb128 0x31
+ 2006 011c 13       		.uleb128 0x13
+ 2007 011d 02       		.uleb128 0x2
+ 2008 011e 06       		.uleb128 0x6
+ 2009 011f 00       		.byte	0
+ 2010 0120 00       		.byte	0
+ 2011 0121 17       		.uleb128 0x17
+ 2012 0122 34       		.uleb128 0x34
+ 2013 0123 00       		.byte	0
+ 2014 0124 31       		.uleb128 0x31
+ 2015 0125 13       		.uleb128 0x13
+ 2016 0126 00       		.byte	0
+ 2017 0127 00       		.byte	0
+ 2018 0128 18       		.uleb128 0x18
+ 2019 0129 34       		.uleb128 0x34
+ 2020 012a 00       		.byte	0
+ 2021 012b 31       		.uleb128 0x31
+ 2022 012c 13       		.uleb128 0x13
+ 2023 012d 1C       		.uleb128 0x1c
+ 2024 012e 0B       		.uleb128 0xb
+ 2025 012f 00       		.byte	0
+ 2026 0130 00       		.byte	0
+ 2027 0131 19       		.uleb128 0x19
+ 2028 0132 2E       		.uleb128 0x2e
+ 2029 0133 01       		.byte	0x1
+ 2030 0134 3F       		.uleb128 0x3f
+ 2031 0135 0C       		.uleb128 0xc
+ 2032 0136 03       		.uleb128 0x3
+ 2033 0137 0E       		.uleb128 0xe
+ 2034 0138 3A       		.uleb128 0x3a
+ 2035 0139 0B       		.uleb128 0xb
+ 2036 013a 3B       		.uleb128 0x3b
+ 2037 013b 0B       		.uleb128 0xb
+ 2038 013c 27       		.uleb128 0x27
+ 2039 013d 0C       		.uleb128 0xc
+ 2040 013e 49       		.uleb128 0x49
+ 2041 013f 13       		.uleb128 0x13
+ 2042 0140 11       		.uleb128 0x11
+ 2043 0141 01       		.uleb128 0x1
+ 2044 0142 12       		.uleb128 0x12
+ 2045 0143 01       		.uleb128 0x1
+ 2046 0144 40       		.uleb128 0x40
+ 2047 0145 06       		.uleb128 0x6
+ 2048 0146 9742     		.uleb128 0x2117
+ 2049 0148 0C       		.uleb128 0xc
+ 2050 0149 01       		.uleb128 0x1
+ 2051 014a 13       		.uleb128 0x13
+ 2052 014b 00       		.byte	0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 37
+
+
+ 2053 014c 00       		.byte	0
+ 2054 014d 1A       		.uleb128 0x1a
+ 2055 014e 05       		.uleb128 0x5
+ 2056 014f 00       		.byte	0
+ 2057 0150 03       		.uleb128 0x3
+ 2058 0151 0E       		.uleb128 0xe
+ 2059 0152 3A       		.uleb128 0x3a
+ 2060 0153 0B       		.uleb128 0xb
+ 2061 0154 3B       		.uleb128 0x3b
+ 2062 0155 0B       		.uleb128 0xb
+ 2063 0156 49       		.uleb128 0x49
+ 2064 0157 13       		.uleb128 0x13
+ 2065 0158 02       		.uleb128 0x2
+ 2066 0159 06       		.uleb128 0x6
+ 2067 015a 00       		.byte	0
+ 2068 015b 00       		.byte	0
+ 2069 015c 1B       		.uleb128 0x1b
+ 2070 015d 34       		.uleb128 0x34
+ 2071 015e 00       		.byte	0
+ 2072 015f 03       		.uleb128 0x3
+ 2073 0160 08       		.uleb128 0x8
+ 2074 0161 3A       		.uleb128 0x3a
+ 2075 0162 0B       		.uleb128 0xb
+ 2076 0163 3B       		.uleb128 0x3b
+ 2077 0164 0B       		.uleb128 0xb
+ 2078 0165 49       		.uleb128 0x49
+ 2079 0166 13       		.uleb128 0x13
+ 2080 0167 02       		.uleb128 0x2
+ 2081 0168 06       		.uleb128 0x6
+ 2082 0169 00       		.byte	0
+ 2083 016a 00       		.byte	0
+ 2084 016b 1C       		.uleb128 0x1c
+ 2085 016c 898201   		.uleb128 0x4109
+ 2086 016f 01       		.byte	0x1
+ 2087 0170 11       		.uleb128 0x11
+ 2088 0171 01       		.uleb128 0x1
+ 2089 0172 31       		.uleb128 0x31
+ 2090 0173 13       		.uleb128 0x13
+ 2091 0174 00       		.byte	0
+ 2092 0175 00       		.byte	0
+ 2093 0176 1D       		.uleb128 0x1d
+ 2094 0177 8A8201   		.uleb128 0x410a
+ 2095 017a 00       		.byte	0
+ 2096 017b 02       		.uleb128 0x2
+ 2097 017c 0A       		.uleb128 0xa
+ 2098 017d 9142     		.uleb128 0x2111
+ 2099 017f 0A       		.uleb128 0xa
+ 2100 0180 00       		.byte	0
+ 2101 0181 00       		.byte	0
+ 2102 0182 1E       		.uleb128 0x1e
+ 2103 0183 34       		.uleb128 0x34
+ 2104 0184 00       		.byte	0
+ 2105 0185 03       		.uleb128 0x3
+ 2106 0186 0E       		.uleb128 0xe
+ 2107 0187 3A       		.uleb128 0x3a
+ 2108 0188 0B       		.uleb128 0xb
+ 2109 0189 3B       		.uleb128 0x3b
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 38
+
+
+ 2110 018a 0B       		.uleb128 0xb
+ 2111 018b 49       		.uleb128 0x49
+ 2112 018c 13       		.uleb128 0x13
+ 2113 018d 02       		.uleb128 0x2
+ 2114 018e 06       		.uleb128 0x6
+ 2115 018f 00       		.byte	0
+ 2116 0190 00       		.byte	0
+ 2117 0191 1F       		.uleb128 0x1f
+ 2118 0192 1D       		.uleb128 0x1d
+ 2119 0193 01       		.byte	0x1
+ 2120 0194 31       		.uleb128 0x31
+ 2121 0195 13       		.uleb128 0x13
+ 2122 0196 11       		.uleb128 0x11
+ 2123 0197 01       		.uleb128 0x1
+ 2124 0198 12       		.uleb128 0x12
+ 2125 0199 01       		.uleb128 0x1
+ 2126 019a 58       		.uleb128 0x58
+ 2127 019b 0B       		.uleb128 0xb
+ 2128 019c 59       		.uleb128 0x59
+ 2129 019d 0B       		.uleb128 0xb
+ 2130 019e 01       		.uleb128 0x1
+ 2131 019f 13       		.uleb128 0x13
+ 2132 01a0 00       		.byte	0
+ 2133 01a1 00       		.byte	0
+ 2134 01a2 20       		.uleb128 0x20
+ 2135 01a3 0B       		.uleb128 0xb
+ 2136 01a4 01       		.byte	0x1
+ 2137 01a5 11       		.uleb128 0x11
+ 2138 01a6 01       		.uleb128 0x1
+ 2139 01a7 12       		.uleb128 0x12
+ 2140 01a8 01       		.uleb128 0x1
+ 2141 01a9 00       		.byte	0
+ 2142 01aa 00       		.byte	0
+ 2143 01ab 21       		.uleb128 0x21
+ 2144 01ac 898201   		.uleb128 0x4109
+ 2145 01af 01       		.byte	0x1
+ 2146 01b0 11       		.uleb128 0x11
+ 2147 01b1 01       		.uleb128 0x1
+ 2148 01b2 31       		.uleb128 0x31
+ 2149 01b3 13       		.uleb128 0x13
+ 2150 01b4 01       		.uleb128 0x1
+ 2151 01b5 13       		.uleb128 0x13
+ 2152 01b6 00       		.byte	0
+ 2153 01b7 00       		.byte	0
+ 2154 01b8 22       		.uleb128 0x22
+ 2155 01b9 2E       		.uleb128 0x2e
+ 2156 01ba 01       		.byte	0x1
+ 2157 01bb 3F       		.uleb128 0x3f
+ 2158 01bc 0C       		.uleb128 0xc
+ 2159 01bd 03       		.uleb128 0x3
+ 2160 01be 0E       		.uleb128 0xe
+ 2161 01bf 3A       		.uleb128 0x3a
+ 2162 01c0 0B       		.uleb128 0xb
+ 2163 01c1 3B       		.uleb128 0x3b
+ 2164 01c2 05       		.uleb128 0x5
+ 2165 01c3 27       		.uleb128 0x27
+ 2166 01c4 0C       		.uleb128 0xc
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 39
+
+
+ 2167 01c5 49       		.uleb128 0x49
+ 2168 01c6 13       		.uleb128 0x13
+ 2169 01c7 11       		.uleb128 0x11
+ 2170 01c8 01       		.uleb128 0x1
+ 2171 01c9 12       		.uleb128 0x12
+ 2172 01ca 01       		.uleb128 0x1
+ 2173 01cb 40       		.uleb128 0x40
+ 2174 01cc 06       		.uleb128 0x6
+ 2175 01cd 9742     		.uleb128 0x2117
+ 2176 01cf 0C       		.uleb128 0xc
+ 2177 01d0 01       		.uleb128 0x1
+ 2178 01d1 13       		.uleb128 0x13
+ 2179 01d2 00       		.byte	0
+ 2180 01d3 00       		.byte	0
+ 2181 01d4 23       		.uleb128 0x23
+ 2182 01d5 05       		.uleb128 0x5
+ 2183 01d6 00       		.byte	0
+ 2184 01d7 03       		.uleb128 0x3
+ 2185 01d8 0E       		.uleb128 0xe
+ 2186 01d9 3A       		.uleb128 0x3a
+ 2187 01da 0B       		.uleb128 0xb
+ 2188 01db 3B       		.uleb128 0x3b
+ 2189 01dc 05       		.uleb128 0x5
+ 2190 01dd 49       		.uleb128 0x49
+ 2191 01de 13       		.uleb128 0x13
+ 2192 01df 02       		.uleb128 0x2
+ 2193 01e0 06       		.uleb128 0x6
+ 2194 01e1 00       		.byte	0
+ 2195 01e2 00       		.byte	0
+ 2196 01e3 24       		.uleb128 0x24
+ 2197 01e4 34       		.uleb128 0x34
+ 2198 01e5 00       		.byte	0
+ 2199 01e6 03       		.uleb128 0x3
+ 2200 01e7 0E       		.uleb128 0xe
+ 2201 01e8 3A       		.uleb128 0x3a
+ 2202 01e9 0B       		.uleb128 0xb
+ 2203 01ea 3B       		.uleb128 0x3b
+ 2204 01eb 05       		.uleb128 0x5
+ 2205 01ec 49       		.uleb128 0x49
+ 2206 01ed 13       		.uleb128 0x13
+ 2207 01ee 02       		.uleb128 0x2
+ 2208 01ef 06       		.uleb128 0x6
+ 2209 01f0 00       		.byte	0
+ 2210 01f1 00       		.byte	0
+ 2211 01f2 25       		.uleb128 0x25
+ 2212 01f3 1D       		.uleb128 0x1d
+ 2213 01f4 01       		.byte	0x1
+ 2214 01f5 31       		.uleb128 0x31
+ 2215 01f6 13       		.uleb128 0x13
+ 2216 01f7 52       		.uleb128 0x52
+ 2217 01f8 01       		.uleb128 0x1
+ 2218 01f9 55       		.uleb128 0x55
+ 2219 01fa 06       		.uleb128 0x6
+ 2220 01fb 58       		.uleb128 0x58
+ 2221 01fc 0B       		.uleb128 0xb
+ 2222 01fd 59       		.uleb128 0x59
+ 2223 01fe 05       		.uleb128 0x5
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 40
+
+
+ 2224 01ff 01       		.uleb128 0x1
+ 2225 0200 13       		.uleb128 0x13
+ 2226 0201 00       		.byte	0
+ 2227 0202 00       		.byte	0
+ 2228 0203 26       		.uleb128 0x26
+ 2229 0204 898201   		.uleb128 0x4109
+ 2230 0207 01       		.byte	0x1
+ 2231 0208 11       		.uleb128 0x11
+ 2232 0209 01       		.uleb128 0x1
+ 2233 020a 9542     		.uleb128 0x2115
+ 2234 020c 0C       		.uleb128 0xc
+ 2235 020d 31       		.uleb128 0x31
+ 2236 020e 13       		.uleb128 0x13
+ 2237 020f 00       		.byte	0
+ 2238 0210 00       		.byte	0
+ 2239 0211 27       		.uleb128 0x27
+ 2240 0212 2E       		.uleb128 0x2e
+ 2241 0213 01       		.byte	0x1
+ 2242 0214 3F       		.uleb128 0x3f
+ 2243 0215 0C       		.uleb128 0xc
+ 2244 0216 03       		.uleb128 0x3
+ 2245 0217 0E       		.uleb128 0xe
+ 2246 0218 3A       		.uleb128 0x3a
+ 2247 0219 0B       		.uleb128 0xb
+ 2248 021a 3B       		.uleb128 0x3b
+ 2249 021b 05       		.uleb128 0x5
+ 2250 021c 27       		.uleb128 0x27
+ 2251 021d 0C       		.uleb128 0xc
+ 2252 021e 49       		.uleb128 0x49
+ 2253 021f 13       		.uleb128 0x13
+ 2254 0220 11       		.uleb128 0x11
+ 2255 0221 01       		.uleb128 0x1
+ 2256 0222 12       		.uleb128 0x12
+ 2257 0223 01       		.uleb128 0x1
+ 2258 0224 40       		.uleb128 0x40
+ 2259 0225 0A       		.uleb128 0xa
+ 2260 0226 9742     		.uleb128 0x2117
+ 2261 0228 0C       		.uleb128 0xc
+ 2262 0229 01       		.uleb128 0x1
+ 2263 022a 13       		.uleb128 0x13
+ 2264 022b 00       		.byte	0
+ 2265 022c 00       		.byte	0
+ 2266 022d 28       		.uleb128 0x28
+ 2267 022e 34       		.uleb128 0x34
+ 2268 022f 00       		.byte	0
+ 2269 0230 03       		.uleb128 0x3
+ 2270 0231 08       		.uleb128 0x8
+ 2271 0232 3A       		.uleb128 0x3a
+ 2272 0233 0B       		.uleb128 0xb
+ 2273 0234 3B       		.uleb128 0x3b
+ 2274 0235 05       		.uleb128 0x5
+ 2275 0236 49       		.uleb128 0x49
+ 2276 0237 13       		.uleb128 0x13
+ 2277 0238 02       		.uleb128 0x2
+ 2278 0239 06       		.uleb128 0x6
+ 2279 023a 00       		.byte	0
+ 2280 023b 00       		.byte	0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 41
+
+
+ 2281 023c 29       		.uleb128 0x29
+ 2282 023d 2E       		.uleb128 0x2e
+ 2283 023e 01       		.byte	0x1
+ 2284 023f 3F       		.uleb128 0x3f
+ 2285 0240 0C       		.uleb128 0xc
+ 2286 0241 03       		.uleb128 0x3
+ 2287 0242 0E       		.uleb128 0xe
+ 2288 0243 3A       		.uleb128 0x3a
+ 2289 0244 0B       		.uleb128 0xb
+ 2290 0245 3B       		.uleb128 0x3b
+ 2291 0246 05       		.uleb128 0x5
+ 2292 0247 27       		.uleb128 0x27
+ 2293 0248 0C       		.uleb128 0xc
+ 2294 0249 49       		.uleb128 0x49
+ 2295 024a 13       		.uleb128 0x13
+ 2296 024b 11       		.uleb128 0x11
+ 2297 024c 01       		.uleb128 0x1
+ 2298 024d 12       		.uleb128 0x12
+ 2299 024e 01       		.uleb128 0x1
+ 2300 024f 40       		.uleb128 0x40
+ 2301 0250 0A       		.uleb128 0xa
+ 2302 0251 9742     		.uleb128 0x2117
+ 2303 0253 0C       		.uleb128 0xc
+ 2304 0254 00       		.byte	0
+ 2305 0255 00       		.byte	0
+ 2306 0256 00       		.byte	0
+ 2307              		.section	.debug_loc,"",@progbits
+ 2308              	.Ldebug_loc0:
+ 2309              	.LLST0:
+ 2310 0000 00000000 		.4byte	.LVL0
+ 2311 0004 00000000 		.4byte	.LVL2
+ 2312 0008 0001     		.2byte	0x1
+ 2313 000a 53       		.byte	0x53
+ 2314 000b 00000000 		.4byte	.LVL2
+ 2315 000f 00000000 		.4byte	.LVL5
+ 2316 0013 0004     		.2byte	0x4
+ 2317 0015 F3       		.byte	0xf3
+ 2318 0016 01       		.uleb128 0x1
+ 2319 0017 53       		.byte	0x53
+ 2320 0018 9F       		.byte	0x9f
+ 2321 0019 00000000 		.4byte	.LVL5
+ 2322 001d 00000000 		.4byte	.LVL9
+ 2323 0021 0001     		.2byte	0x1
+ 2324 0023 53       		.byte	0x53
+ 2325 0024 00000000 		.4byte	.LVL9
+ 2326 0028 00000000 		.4byte	.LFE3
+ 2327 002c 0004     		.2byte	0x4
+ 2328 002e F3       		.byte	0xf3
+ 2329 002f 01       		.uleb128 0x1
+ 2330 0030 53       		.byte	0x53
+ 2331 0031 9F       		.byte	0x9f
+ 2332 0032 00000000 		.4byte	0
+ 2333 0036 00000000 		.4byte	0
+ 2334              	.LLST1:
+ 2335 003a 00000000 		.4byte	.LVL5
+ 2336 003e 00000000 		.4byte	.LVL6
+ 2337 0042 0002     		.2byte	0x2
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 42
+
+
+ 2338 0044 30       		.byte	0x30
+ 2339 0045 9F       		.byte	0x9f
+ 2340 0046 00000000 		.4byte	.LVL6
+ 2341 004a 00000000 		.4byte	.LVL7
+ 2342 004e 0007     		.2byte	0x7
+ 2343 0050 77       		.byte	0x77
+ 2344 0051 00       		.sleb128 0
+ 2345 0052 0A       		.byte	0xa
+ 2346 0053 07FF     		.2byte	0x7ff
+ 2347 0055 1A       		.byte	0x1a
+ 2348 0056 9F       		.byte	0x9f
+ 2349 0057 00000000 		.4byte	.LVL7
+ 2350 005b 00000000 		.4byte	.LVL8
+ 2351 005f 0001     		.2byte	0x1
+ 2352 0061 57       		.byte	0x57
+ 2353 0062 00000000 		.4byte	0
+ 2354 0066 00000000 		.4byte	0
+ 2355              	.LLST2:
+ 2356 006a 00000000 		.4byte	.LVL1
+ 2357 006e 00000000 		.4byte	.LVL5
+ 2358 0072 0002     		.2byte	0x2
+ 2359 0074 31       		.byte	0x31
+ 2360 0075 9F       		.byte	0x9f
+ 2361 0076 00000000 		.4byte	0
+ 2362 007a 00000000 		.4byte	0
+ 2363              	.LLST3:
+ 2364 007e 00000000 		.4byte	.LVL1
+ 2365 0082 00000000 		.4byte	.LVL2
+ 2366 0086 0002     		.2byte	0x2
+ 2367 0088 30       		.byte	0x30
+ 2368 0089 9F       		.byte	0x9f
+ 2369 008a 00000000 		.4byte	.LVL2
+ 2370 008e 00000000 		.4byte	.LVL3
+ 2371 0092 0007     		.2byte	0x7
+ 2372 0094 73       		.byte	0x73
+ 2373 0095 00       		.sleb128 0
+ 2374 0096 0A       		.byte	0xa
+ 2375 0097 07FF     		.2byte	0x7ff
+ 2376 0099 1A       		.byte	0x1a
+ 2377 009a 9F       		.byte	0x9f
+ 2378 009b 00000000 		.4byte	.LVL3
+ 2379 009f 00000000 		.4byte	.LVL4
+ 2380 00a3 0001     		.2byte	0x1
+ 2381 00a5 53       		.byte	0x53
+ 2382 00a6 00000000 		.4byte	0
+ 2383 00aa 00000000 		.4byte	0
+ 2384              	.LLST4:
+ 2385 00ae 00000000 		.4byte	.LVL10
+ 2386 00b2 00000000 		.4byte	.LVL19
+ 2387 00b6 0001     		.2byte	0x1
+ 2388 00b8 53       		.byte	0x53
+ 2389 00b9 00000000 		.4byte	.LVL19
+ 2390 00bd 00000000 		.4byte	.LVL20
+ 2391 00c1 0004     		.2byte	0x4
+ 2392 00c3 F3       		.byte	0xf3
+ 2393 00c4 01       		.uleb128 0x1
+ 2394 00c5 53       		.byte	0x53
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 43
+
+
+ 2395 00c6 9F       		.byte	0x9f
+ 2396 00c7 00000000 		.4byte	.LVL20
+ 2397 00cb 00000000 		.4byte	.LVL27
+ 2398 00cf 0001     		.2byte	0x1
+ 2399 00d1 53       		.byte	0x53
+ 2400 00d2 00000000 		.4byte	.LVL27
+ 2401 00d6 00000000 		.4byte	.LVL28
+ 2402 00da 0004     		.2byte	0x4
+ 2403 00dc F3       		.byte	0xf3
+ 2404 00dd 01       		.uleb128 0x1
+ 2405 00de 53       		.byte	0x53
+ 2406 00df 9F       		.byte	0x9f
+ 2407 00e0 00000000 		.4byte	.LVL28
+ 2408 00e4 00000000 		.4byte	.LVL48
+ 2409 00e8 0001     		.2byte	0x1
+ 2410 00ea 53       		.byte	0x53
+ 2411 00eb 00000000 		.4byte	.LVL48
+ 2412 00ef 00000000 		.4byte	.LVL49
+ 2413 00f3 0004     		.2byte	0x4
+ 2414 00f5 F3       		.byte	0xf3
+ 2415 00f6 01       		.uleb128 0x1
+ 2416 00f7 53       		.byte	0x53
+ 2417 00f8 9F       		.byte	0x9f
+ 2418 00f9 00000000 		.4byte	.LVL49
+ 2419 00fd 00000000 		.4byte	.LFE13
+ 2420 0101 0001     		.2byte	0x1
+ 2421 0103 53       		.byte	0x53
+ 2422 0104 00000000 		.4byte	0
+ 2423 0108 00000000 		.4byte	0
+ 2424              	.LLST5:
+ 2425 010c 00000000 		.4byte	.LVL11
+ 2426 0110 00000000 		.4byte	.LVL14
+ 2427 0114 0003     		.2byte	0x3
+ 2428 0116 08       		.byte	0x8
+ 2429 0117 7F       		.byte	0x7f
+ 2430 0118 9F       		.byte	0x9f
+ 2431 0119 00000000 		.4byte	.LVL22
+ 2432 011d 00000000 		.4byte	.LVL25
+ 2433 0121 0003     		.2byte	0x3
+ 2434 0123 09       		.byte	0x9
+ 2435 0124 FF       		.byte	0xff
+ 2436 0125 9F       		.byte	0x9f
+ 2437 0126 00000000 		.4byte	0
+ 2438 012a 00000000 		.4byte	0
+ 2439              	.LLST6:
+ 2440 012e 00000000 		.4byte	.LVL31
+ 2441 0132 00000000 		.4byte	.LVL32
+ 2442 0136 0001     		.2byte	0x1
+ 2443 0138 57       		.byte	0x57
+ 2444 0139 00000000 		.4byte	.LVL32
+ 2445 013d 00000000 		.4byte	.LVL33
+ 2446 0141 0003     		.2byte	0x3
+ 2447 0143 77       		.byte	0x77
+ 2448 0144 7F       		.sleb128 -1
+ 2449 0145 9F       		.byte	0x9f
+ 2450 0146 00000000 		.4byte	.LVL33
+ 2451 014a 00000000 		.4byte	.LVL36
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 44
+
+
+ 2452 014e 0001     		.2byte	0x1
+ 2453 0150 57       		.byte	0x57
+ 2454 0151 00000000 		.4byte	.LVL36
+ 2455 0155 00000000 		.4byte	.LVL37
+ 2456 0159 0003     		.2byte	0x3
+ 2457 015b 77       		.byte	0x77
+ 2458 015c 7F       		.sleb128 -1
+ 2459 015d 9F       		.byte	0x9f
+ 2460 015e 00000000 		.4byte	.LVL37
+ 2461 0162 00000000 		.4byte	.LVL38
+ 2462 0166 0001     		.2byte	0x1
+ 2463 0168 57       		.byte	0x57
+ 2464 0169 00000000 		.4byte	.LVL40
+ 2465 016d 00000000 		.4byte	.LVL41
+ 2466 0171 0001     		.2byte	0x1
+ 2467 0173 56       		.byte	0x56
+ 2468 0174 00000000 		.4byte	.LVL41
+ 2469 0178 00000000 		.4byte	.LVL42
+ 2470 017c 0003     		.2byte	0x3
+ 2471 017e 76       		.byte	0x76
+ 2472 017f 7F       		.sleb128 -1
+ 2473 0180 9F       		.byte	0x9f
+ 2474 0181 00000000 		.4byte	.LVL42
+ 2475 0185 00000000 		.4byte	.LVL45
+ 2476 0189 0001     		.2byte	0x1
+ 2477 018b 56       		.byte	0x56
+ 2478 018c 00000000 		.4byte	.LVL45
+ 2479 0190 00000000 		.4byte	.LVL46
+ 2480 0194 0003     		.2byte	0x3
+ 2481 0196 76       		.byte	0x76
+ 2482 0197 7F       		.sleb128 -1
+ 2483 0198 9F       		.byte	0x9f
+ 2484 0199 00000000 		.4byte	.LVL46
+ 2485 019d 00000000 		.4byte	.LVL47
+ 2486 01a1 0001     		.2byte	0x1
+ 2487 01a3 56       		.byte	0x56
+ 2488 01a4 00000000 		.4byte	0
+ 2489 01a8 00000000 		.4byte	0
+ 2490              	.LLST7:
+ 2491 01ac 00000000 		.4byte	.LVL10
+ 2492 01b0 00000000 		.4byte	.LVL13
+ 2493 01b4 0002     		.2byte	0x2
+ 2494 01b6 30       		.byte	0x30
+ 2495 01b7 9F       		.byte	0x9f
+ 2496 01b8 00000000 		.4byte	.LVL13
+ 2497 01bc 00000000 		.4byte	.LVL15
+ 2498 01c0 0001     		.2byte	0x1
+ 2499 01c2 57       		.byte	0x57
+ 2500 01c3 00000000 		.4byte	.LVL16
+ 2501 01c7 00000000 		.4byte	.LVL17
+ 2502 01cb 0001     		.2byte	0x1
+ 2503 01cd 57       		.byte	0x57
+ 2504 01ce 00000000 		.4byte	.LVL18
+ 2505 01d2 00000000 		.4byte	.LVL20
+ 2506 01d6 0001     		.2byte	0x1
+ 2507 01d8 57       		.byte	0x57
+ 2508 01d9 00000000 		.4byte	.LVL21
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 45
+
+
+ 2509 01dd 00000000 		.4byte	.LVL22
+ 2510 01e1 0001     		.2byte	0x1
+ 2511 01e3 57       		.byte	0x57
+ 2512 01e4 00000000 		.4byte	.LVL22
+ 2513 01e8 00000000 		.4byte	.LVL24
+ 2514 01ec 0002     		.2byte	0x2
+ 2515 01ee 30       		.byte	0x30
+ 2516 01ef 9F       		.byte	0x9f
+ 2517 01f0 00000000 		.4byte	.LVL24
+ 2518 01f4 00000000 		.4byte	.LVL25
+ 2519 01f8 0001     		.2byte	0x1
+ 2520 01fa 57       		.byte	0x57
+ 2521 01fb 00000000 		.4byte	.LVL26
+ 2522 01ff 00000000 		.4byte	.LVL28
+ 2523 0203 0001     		.2byte	0x1
+ 2524 0205 57       		.byte	0x57
+ 2525 0206 00000000 		.4byte	.LVL28
+ 2526 020a 00000000 		.4byte	.LVL29
+ 2527 020e 0006     		.2byte	0x6
+ 2528 0210 77       		.byte	0x77
+ 2529 0211 00       		.sleb128 0
+ 2530 0212 09       		.byte	0x9
+ 2531 0213 FB       		.byte	0xfb
+ 2532 0214 1A       		.byte	0x1a
+ 2533 0215 9F       		.byte	0x9f
+ 2534 0216 00000000 		.4byte	.LVL29
+ 2535 021a 00000000 		.4byte	.LVL30
+ 2536 021e 0001     		.2byte	0x1
+ 2537 0220 57       		.byte	0x57
+ 2538 0221 00000000 		.4byte	.LVL31
+ 2539 0225 00000000 		.4byte	.LVL34
+ 2540 0229 0001     		.2byte	0x1
+ 2541 022b 55       		.byte	0x55
+ 2542 022c 00000000 		.4byte	.LVL35
+ 2543 0230 00000000 		.4byte	.LVL39
+ 2544 0234 0001     		.2byte	0x1
+ 2545 0236 55       		.byte	0x55
+ 2546 0237 00000000 		.4byte	.LVL40
+ 2547 023b 00000000 		.4byte	.LVL43
+ 2548 023f 0001     		.2byte	0x1
+ 2549 0241 57       		.byte	0x57
+ 2550 0242 00000000 		.4byte	.LVL44
+ 2551 0246 00000000 		.4byte	.LVL49
+ 2552 024a 0001     		.2byte	0x1
+ 2553 024c 57       		.byte	0x57
+ 2554 024d 00000000 		.4byte	.LVL49
+ 2555 0251 00000000 		.4byte	.LVL50
+ 2556 0255 0006     		.2byte	0x6
+ 2557 0257 77       		.byte	0x77
+ 2558 0258 00       		.sleb128 0
+ 2559 0259 09       		.byte	0x9
+ 2560 025a FB       		.byte	0xfb
+ 2561 025b 1A       		.byte	0x1a
+ 2562 025c 9F       		.byte	0x9f
+ 2563 025d 00000000 		.4byte	.LVL50
+ 2564 0261 00000000 		.4byte	.LVL51
+ 2565 0265 0001     		.2byte	0x1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 46
+
+
+ 2566 0267 57       		.byte	0x57
+ 2567 0268 00000000 		.4byte	0
+ 2568 026c 00000000 		.4byte	0
+ 2569              	.LLST8:
+ 2570 0270 00000000 		.4byte	.LVL10
+ 2571 0274 00000000 		.4byte	.LVL12
+ 2572 0278 0002     		.2byte	0x2
+ 2573 027a 30       		.byte	0x30
+ 2574 027b 9F       		.byte	0x9f
+ 2575 027c 00000000 		.4byte	.LVL12
+ 2576 0280 00000000 		.4byte	.LVL22
+ 2577 0284 0001     		.2byte	0x1
+ 2578 0286 54       		.byte	0x54
+ 2579 0287 00000000 		.4byte	.LVL22
+ 2580 028b 00000000 		.4byte	.LVL23
+ 2581 028f 0002     		.2byte	0x2
+ 2582 0291 30       		.byte	0x30
+ 2583 0292 9F       		.byte	0x9f
+ 2584 0293 00000000 		.4byte	.LVL23
+ 2585 0297 00000000 		.4byte	.LFE13
+ 2586 029b 0001     		.2byte	0x1
+ 2587 029d 54       		.byte	0x54
+ 2588 029e 00000000 		.4byte	0
+ 2589 02a2 00000000 		.4byte	0
+ 2590              	.LLST9:
+ 2591 02a6 00000000 		.4byte	.LFB4
+ 2592 02aa 00000000 		.4byte	.LCFI0
+ 2593 02ae 0002     		.2byte	0x2
+ 2594 02b0 71       		.byte	0x71
+ 2595 02b1 00       		.sleb128 0
+ 2596 02b2 00000000 		.4byte	.LCFI0
+ 2597 02b6 00000000 		.4byte	.LCFI1
+ 2598 02ba 0002     		.2byte	0x2
+ 2599 02bc 71       		.byte	0x71
+ 2600 02bd 10       		.sleb128 16
+ 2601 02be 00000000 		.4byte	.LCFI1
+ 2602 02c2 00000000 		.4byte	.LCFI2
+ 2603 02c6 0002     		.2byte	0x2
+ 2604 02c8 71       		.byte	0x71
+ 2605 02c9 00       		.sleb128 0
+ 2606 02ca 00000000 		.4byte	.LCFI2
+ 2607 02ce 00000000 		.4byte	.LCFI3
+ 2608 02d2 0002     		.2byte	0x2
+ 2609 02d4 71       		.byte	0x71
+ 2610 02d5 10       		.sleb128 16
+ 2611 02d6 00000000 		.4byte	.LCFI3
+ 2612 02da 00000000 		.4byte	.LFE4
+ 2613 02de 0002     		.2byte	0x2
+ 2614 02e0 71       		.byte	0x71
+ 2615 02e1 00       		.sleb128 0
+ 2616 02e2 00000000 		.4byte	0
+ 2617 02e6 00000000 		.4byte	0
+ 2618              	.LLST10:
+ 2619 02ea 00000000 		.4byte	.LVL52
+ 2620 02ee 00000000 		.4byte	.LVL53-1
+ 2621 02f2 0001     		.2byte	0x1
+ 2622 02f4 53       		.byte	0x53
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 47
+
+
+ 2623 02f5 00000000 		.4byte	.LVL53-1
+ 2624 02f9 00000000 		.4byte	.LVL56
+ 2625 02fd 0001     		.2byte	0x1
+ 2626 02ff 6F       		.byte	0x6f
+ 2627 0300 00000000 		.4byte	.LVL56
+ 2628 0304 00000000 		.4byte	.LVL57
+ 2629 0308 0004     		.2byte	0x4
+ 2630 030a F3       		.byte	0xf3
+ 2631 030b 01       		.uleb128 0x1
+ 2632 030c 53       		.byte	0x53
+ 2633 030d 9F       		.byte	0x9f
+ 2634 030e 00000000 		.4byte	.LVL57
+ 2635 0312 00000000 		.4byte	.LVL59
+ 2636 0316 0001     		.2byte	0x1
+ 2637 0318 6F       		.byte	0x6f
+ 2638 0319 00000000 		.4byte	.LVL59
+ 2639 031d 00000000 		.4byte	.LFE4
+ 2640 0321 0004     		.2byte	0x4
+ 2641 0323 F3       		.byte	0xf3
+ 2642 0324 01       		.uleb128 0x1
+ 2643 0325 53       		.byte	0x53
+ 2644 0326 9F       		.byte	0x9f
+ 2645 0327 00000000 		.4byte	0
+ 2646 032b 00000000 		.4byte	0
+ 2647              	.LLST11:
+ 2648 032f 00000000 		.4byte	.LVL52
+ 2649 0333 00000000 		.4byte	.LVL54
+ 2650 0337 0002     		.2byte	0x2
+ 2651 0339 30       		.byte	0x30
+ 2652 033a 9F       		.byte	0x9f
+ 2653 033b 00000000 		.4byte	.LVL54
+ 2654 033f 00000000 		.4byte	.LVL55
+ 2655 0343 0001     		.2byte	0x1
+ 2656 0345 57       		.byte	0x57
+ 2657 0346 00000000 		.4byte	.LVL57
+ 2658 034a 00000000 		.4byte	.LVL58
+ 2659 034e 0002     		.2byte	0x2
+ 2660 0350 30       		.byte	0x30
+ 2661 0351 9F       		.byte	0x9f
+ 2662 0352 00000000 		.4byte	.LVL58
+ 2663 0356 00000000 		.4byte	.LVL60
+ 2664 035a 0001     		.2byte	0x1
+ 2665 035c 57       		.byte	0x57
+ 2666 035d 00000000 		.4byte	0
+ 2667 0361 00000000 		.4byte	0
+ 2668              	.LLST12:
+ 2669 0365 00000000 		.4byte	.LFB5
+ 2670 0369 00000000 		.4byte	.LCFI4
+ 2671 036d 0002     		.2byte	0x2
+ 2672 036f 71       		.byte	0x71
+ 2673 0370 00       		.sleb128 0
+ 2674 0371 00000000 		.4byte	.LCFI4
+ 2675 0375 00000000 		.4byte	.LCFI5
+ 2676 0379 0002     		.2byte	0x2
+ 2677 037b 71       		.byte	0x71
+ 2678 037c 10       		.sleb128 16
+ 2679 037d 00000000 		.4byte	.LCFI5
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 48
+
+
+ 2680 0381 00000000 		.4byte	.LCFI6
+ 2681 0385 0002     		.2byte	0x2
+ 2682 0387 71       		.byte	0x71
+ 2683 0388 00       		.sleb128 0
+ 2684 0389 00000000 		.4byte	.LCFI6
+ 2685 038d 00000000 		.4byte	.LCFI7
+ 2686 0391 0002     		.2byte	0x2
+ 2687 0393 71       		.byte	0x71
+ 2688 0394 10       		.sleb128 16
+ 2689 0395 00000000 		.4byte	.LCFI7
+ 2690 0399 00000000 		.4byte	.LCFI8
+ 2691 039d 0002     		.2byte	0x2
+ 2692 039f 71       		.byte	0x71
+ 2693 03a0 00       		.sleb128 0
+ 2694 03a1 00000000 		.4byte	.LCFI8
+ 2695 03a5 00000000 		.4byte	.LFE5
+ 2696 03a9 0002     		.2byte	0x2
+ 2697 03ab 71       		.byte	0x71
+ 2698 03ac 10       		.sleb128 16
+ 2699 03ad 00000000 		.4byte	0
+ 2700 03b1 00000000 		.4byte	0
+ 2701              	.LLST13:
+ 2702 03b5 00000000 		.4byte	.LVL61
+ 2703 03b9 00000000 		.4byte	.LVL62-1
+ 2704 03bd 0001     		.2byte	0x1
+ 2705 03bf 53       		.byte	0x53
+ 2706 03c0 00000000 		.4byte	.LVL62-1
+ 2707 03c4 00000000 		.4byte	.LVL64
+ 2708 03c8 0001     		.2byte	0x1
+ 2709 03ca 6F       		.byte	0x6f
+ 2710 03cb 00000000 		.4byte	.LVL64
+ 2711 03cf 00000000 		.4byte	.LVL65
+ 2712 03d3 0004     		.2byte	0x4
+ 2713 03d5 F3       		.byte	0xf3
+ 2714 03d6 01       		.uleb128 0x1
+ 2715 03d7 53       		.byte	0x53
+ 2716 03d8 9F       		.byte	0x9f
+ 2717 03d9 00000000 		.4byte	.LVL65
+ 2718 03dd 00000000 		.4byte	.LVL71
+ 2719 03e1 0001     		.2byte	0x1
+ 2720 03e3 6F       		.byte	0x6f
+ 2721 03e4 00000000 		.4byte	.LVL71
+ 2722 03e8 00000000 		.4byte	.LVL72
+ 2723 03ec 0004     		.2byte	0x4
+ 2724 03ee F3       		.byte	0xf3
+ 2725 03ef 01       		.uleb128 0x1
+ 2726 03f0 53       		.byte	0x53
+ 2727 03f1 9F       		.byte	0x9f
+ 2728 03f2 00000000 		.4byte	.LVL72
+ 2729 03f6 00000000 		.4byte	.LFE5
+ 2730 03fa 0001     		.2byte	0x1
+ 2731 03fc 6F       		.byte	0x6f
+ 2732 03fd 00000000 		.4byte	0
+ 2733 0401 00000000 		.4byte	0
+ 2734              	.LLST14:
+ 2735 0405 00000000 		.4byte	.LVL61
+ 2736 0409 00000000 		.4byte	.LVL62
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 49
+
+
+ 2737 040d 0002     		.2byte	0x2
+ 2738 040f 30       		.byte	0x30
+ 2739 0410 9F       		.byte	0x9f
+ 2740 0411 00000000 		.4byte	.LVL62
+ 2741 0415 00000000 		.4byte	.LVL63
+ 2742 0419 0001     		.2byte	0x1
+ 2743 041b 53       		.byte	0x53
+ 2744 041c 00000000 		.4byte	.LVL63
+ 2745 0420 00000000 		.4byte	.LVL64
+ 2746 0424 0001     		.2byte	0x1
+ 2747 0426 6E       		.byte	0x6e
+ 2748 0427 00000000 		.4byte	.LVL64
+ 2749 042b 00000000 		.4byte	.LVL66
+ 2750 042f 0001     		.2byte	0x1
+ 2751 0431 53       		.byte	0x53
+ 2752 0432 00000000 		.4byte	.LVL66
+ 2753 0436 00000000 		.4byte	.LVL71
+ 2754 043a 0001     		.2byte	0x1
+ 2755 043c 6E       		.byte	0x6e
+ 2756 043d 00000000 		.4byte	.LVL71
+ 2757 0441 00000000 		.4byte	.LVL72
+ 2758 0445 0001     		.2byte	0x1
+ 2759 0447 53       		.byte	0x53
+ 2760 0448 00000000 		.4byte	.LVL72
+ 2761 044c 00000000 		.4byte	.LFE5
+ 2762 0450 0001     		.2byte	0x1
+ 2763 0452 6E       		.byte	0x6e
+ 2764 0453 00000000 		.4byte	0
+ 2765 0457 00000000 		.4byte	0
+ 2766              	.LLST15:
+ 2767 045b 00000000 		.4byte	.LVL68
+ 2768 045f 00000000 		.4byte	.LVL72
+ 2769 0463 0002     		.2byte	0x2
+ 2770 0465 31       		.byte	0x31
+ 2771 0466 9F       		.byte	0x9f
+ 2772 0467 00000000 		.4byte	0
+ 2773 046b 00000000 		.4byte	0
+ 2774              	.LLST16:
+ 2775 046f 00000000 		.4byte	.LVL68
+ 2776 0473 00000000 		.4byte	.LVL71
+ 2777 0477 0001     		.2byte	0x1
+ 2778 0479 6F       		.byte	0x6f
+ 2779 047a 00000000 		.4byte	.LVL71
+ 2780 047e 00000000 		.4byte	.LVL72
+ 2781 0482 0004     		.2byte	0x4
+ 2782 0484 F3       		.byte	0xf3
+ 2783 0485 01       		.uleb128 0x1
+ 2784 0486 53       		.byte	0x53
+ 2785 0487 9F       		.byte	0x9f
+ 2786 0488 00000000 		.4byte	0
+ 2787 048c 00000000 		.4byte	0
+ 2788              	.LLST17:
+ 2789 0490 00000000 		.4byte	.LVL68
+ 2790 0494 00000000 		.4byte	.LVL69
+ 2791 0498 0002     		.2byte	0x2
+ 2792 049a 30       		.byte	0x30
+ 2793 049b 9F       		.byte	0x9f
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 50
+
+
+ 2794 049c 00000000 		.4byte	.LVL69
+ 2795 04a0 00000000 		.4byte	.LVL70
+ 2796 04a4 0005     		.2byte	0x5
+ 2797 04a6 77       		.byte	0x77
+ 2798 04a7 00       		.sleb128 0
+ 2799 04a8 31       		.byte	0x31
+ 2800 04a9 21       		.byte	0x21
+ 2801 04aa 9F       		.byte	0x9f
+ 2802 04ab 00000000 		.4byte	.LVL70
+ 2803 04af 00000000 		.4byte	.LVL72
+ 2804 04b3 0001     		.2byte	0x1
+ 2805 04b5 57       		.byte	0x57
+ 2806 04b6 00000000 		.4byte	0
+ 2807 04ba 00000000 		.4byte	0
+ 2808              	.LLST18:
+ 2809 04be 00000000 		.4byte	.LVL72
+ 2810 04c2 00000000 		.4byte	.LVL73
+ 2811 04c6 0002     		.2byte	0x2
+ 2812 04c8 30       		.byte	0x30
+ 2813 04c9 9F       		.byte	0x9f
+ 2814 04ca 00000000 		.4byte	.LVL73
+ 2815 04ce 00000000 		.4byte	.LVL74
+ 2816 04d2 0005     		.2byte	0x5
+ 2817 04d4 77       		.byte	0x77
+ 2818 04d5 00       		.sleb128 0
+ 2819 04d6 31       		.byte	0x31
+ 2820 04d7 21       		.byte	0x21
+ 2821 04d8 9F       		.byte	0x9f
+ 2822 04d9 00000000 		.4byte	.LVL74
+ 2823 04dd 00000000 		.4byte	.LFE5
+ 2824 04e1 0001     		.2byte	0x1
+ 2825 04e3 57       		.byte	0x57
+ 2826 04e4 00000000 		.4byte	0
+ 2827 04e8 00000000 		.4byte	0
+ 2828              	.LLST19:
+ 2829 04ec 00000000 		.4byte	.LFB6
+ 2830 04f0 00000000 		.4byte	.LCFI9
+ 2831 04f4 0002     		.2byte	0x2
+ 2832 04f6 71       		.byte	0x71
+ 2833 04f7 00       		.sleb128 0
+ 2834 04f8 00000000 		.4byte	.LCFI9
+ 2835 04fc 00000000 		.4byte	.LCFI10
+ 2836 0500 0002     		.2byte	0x2
+ 2837 0502 71       		.byte	0x71
+ 2838 0503 10       		.sleb128 16
+ 2839 0504 00000000 		.4byte	.LCFI10
+ 2840 0508 00000000 		.4byte	.LCFI11
+ 2841 050c 0002     		.2byte	0x2
+ 2842 050e 71       		.byte	0x71
+ 2843 050f 00       		.sleb128 0
+ 2844 0510 00000000 		.4byte	.LCFI11
+ 2845 0514 00000000 		.4byte	.LCFI12
+ 2846 0518 0002     		.2byte	0x2
+ 2847 051a 71       		.byte	0x71
+ 2848 051b 10       		.sleb128 16
+ 2849 051c 00000000 		.4byte	.LCFI12
+ 2850 0520 00000000 		.4byte	.LCFI13
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 51
+
+
+ 2851 0524 0002     		.2byte	0x2
+ 2852 0526 71       		.byte	0x71
+ 2853 0527 00       		.sleb128 0
+ 2854 0528 00000000 		.4byte	.LCFI13
+ 2855 052c 00000000 		.4byte	.LFE6
+ 2856 0530 0002     		.2byte	0x2
+ 2857 0532 71       		.byte	0x71
+ 2858 0533 10       		.sleb128 16
+ 2859 0534 00000000 		.4byte	0
+ 2860 0538 00000000 		.4byte	0
+ 2861              	.LLST20:
+ 2862 053c 00000000 		.4byte	.LVL75
+ 2863 0540 00000000 		.4byte	.LVL76-1
+ 2864 0544 0001     		.2byte	0x1
+ 2865 0546 53       		.byte	0x53
+ 2866 0547 00000000 		.4byte	.LVL76-1
+ 2867 054b 00000000 		.4byte	.LVL78
+ 2868 054f 0001     		.2byte	0x1
+ 2869 0551 6F       		.byte	0x6f
+ 2870 0552 00000000 		.4byte	.LVL78
+ 2871 0556 00000000 		.4byte	.LVL79
+ 2872 055a 0004     		.2byte	0x4
+ 2873 055c F3       		.byte	0xf3
+ 2874 055d 01       		.uleb128 0x1
+ 2875 055e 53       		.byte	0x53
+ 2876 055f 9F       		.byte	0x9f
+ 2877 0560 00000000 		.4byte	.LVL79
+ 2878 0564 00000000 		.4byte	.LVL82
+ 2879 0568 0001     		.2byte	0x1
+ 2880 056a 6F       		.byte	0x6f
+ 2881 056b 00000000 		.4byte	.LVL82
+ 2882 056f 00000000 		.4byte	.LVL83
+ 2883 0573 0004     		.2byte	0x4
+ 2884 0575 F3       		.byte	0xf3
+ 2885 0576 01       		.uleb128 0x1
+ 2886 0577 53       		.byte	0x53
+ 2887 0578 9F       		.byte	0x9f
+ 2888 0579 00000000 		.4byte	.LVL83
+ 2889 057d 00000000 		.4byte	.LFE6
+ 2890 0581 0001     		.2byte	0x1
+ 2891 0583 6F       		.byte	0x6f
+ 2892 0584 00000000 		.4byte	0
+ 2893 0588 00000000 		.4byte	0
+ 2894              	.LLST21:
+ 2895 058c 00000000 		.4byte	.LVL75
+ 2896 0590 00000000 		.4byte	.LVL76-1
+ 2897 0594 0001     		.2byte	0x1
+ 2898 0596 54       		.byte	0x54
+ 2899 0597 00000000 		.4byte	.LVL76-1
+ 2900 059b 00000000 		.4byte	.LVL78
+ 2901 059f 0001     		.2byte	0x1
+ 2902 05a1 6E       		.byte	0x6e
+ 2903 05a2 00000000 		.4byte	.LVL78
+ 2904 05a6 00000000 		.4byte	.LVL79
+ 2905 05aa 0004     		.2byte	0x4
+ 2906 05ac F3       		.byte	0xf3
+ 2907 05ad 01       		.uleb128 0x1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 52
+
+
+ 2908 05ae 54       		.byte	0x54
+ 2909 05af 9F       		.byte	0x9f
+ 2910 05b0 00000000 		.4byte	.LVL79
+ 2911 05b4 00000000 		.4byte	.LVL82
+ 2912 05b8 0001     		.2byte	0x1
+ 2913 05ba 6E       		.byte	0x6e
+ 2914 05bb 00000000 		.4byte	.LVL82
+ 2915 05bf 00000000 		.4byte	.LVL83
+ 2916 05c3 0004     		.2byte	0x4
+ 2917 05c5 F3       		.byte	0xf3
+ 2918 05c6 01       		.uleb128 0x1
+ 2919 05c7 54       		.byte	0x54
+ 2920 05c8 9F       		.byte	0x9f
+ 2921 05c9 00000000 		.4byte	.LVL83
+ 2922 05cd 00000000 		.4byte	.LFE6
+ 2923 05d1 0001     		.2byte	0x1
+ 2924 05d3 6E       		.byte	0x6e
+ 2925 05d4 00000000 		.4byte	0
+ 2926 05d8 00000000 		.4byte	0
+ 2927              	.LLST22:
+ 2928 05dc 00000000 		.4byte	.LVL75
+ 2929 05e0 00000000 		.4byte	.LVL76
+ 2930 05e4 0002     		.2byte	0x2
+ 2931 05e6 30       		.byte	0x30
+ 2932 05e7 9F       		.byte	0x9f
+ 2933 05e8 00000000 		.4byte	.LVL76
+ 2934 05ec 00000000 		.4byte	.LVL77
+ 2935 05f0 0001     		.2byte	0x1
+ 2936 05f2 53       		.byte	0x53
+ 2937 05f3 00000000 		.4byte	.LVL79
+ 2938 05f7 00000000 		.4byte	.LVL80
+ 2939 05fb 0001     		.2byte	0x1
+ 2940 05fd 53       		.byte	0x53
+ 2941 05fe 00000000 		.4byte	.LVL81
+ 2942 0602 00000000 		.4byte	.LFE6
+ 2943 0606 0001     		.2byte	0x1
+ 2944 0608 53       		.byte	0x53
+ 2945 0609 00000000 		.4byte	0
+ 2946 060d 00000000 		.4byte	0
+ 2947              	.LLST23:
+ 2948 0611 00000000 		.4byte	.LFB7
+ 2949 0615 00000000 		.4byte	.LCFI14
+ 2950 0619 0002     		.2byte	0x2
+ 2951 061b 71       		.byte	0x71
+ 2952 061c 00       		.sleb128 0
+ 2953 061d 00000000 		.4byte	.LCFI14
+ 2954 0621 00000000 		.4byte	.LCFI15
+ 2955 0625 0002     		.2byte	0x2
+ 2956 0627 71       		.byte	0x71
+ 2957 0628 10       		.sleb128 16
+ 2958 0629 00000000 		.4byte	.LCFI15
+ 2959 062d 00000000 		.4byte	.LCFI16
+ 2960 0631 0002     		.2byte	0x2
+ 2961 0633 71       		.byte	0x71
+ 2962 0634 00       		.sleb128 0
+ 2963 0635 00000000 		.4byte	.LCFI16
+ 2964 0639 00000000 		.4byte	.LCFI17
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 53
+
+
+ 2965 063d 0002     		.2byte	0x2
+ 2966 063f 71       		.byte	0x71
+ 2967 0640 10       		.sleb128 16
+ 2968 0641 00000000 		.4byte	.LCFI17
+ 2969 0645 00000000 		.4byte	.LCFI18
+ 2970 0649 0002     		.2byte	0x2
+ 2971 064b 71       		.byte	0x71
+ 2972 064c 00       		.sleb128 0
+ 2973 064d 00000000 		.4byte	.LCFI18
+ 2974 0651 00000000 		.4byte	.LCFI19
+ 2975 0655 0002     		.2byte	0x2
+ 2976 0657 71       		.byte	0x71
+ 2977 0658 10       		.sleb128 16
+ 2978 0659 00000000 		.4byte	.LCFI19
+ 2979 065d 00000000 		.4byte	.LFE7
+ 2980 0661 0002     		.2byte	0x2
+ 2981 0663 71       		.byte	0x71
+ 2982 0664 00       		.sleb128 0
+ 2983 0665 00000000 		.4byte	0
+ 2984 0669 00000000 		.4byte	0
+ 2985              	.LLST24:
+ 2986 066d 00000000 		.4byte	.LVL84
+ 2987 0671 00000000 		.4byte	.LVL85-1
+ 2988 0675 0001     		.2byte	0x1
+ 2989 0677 53       		.byte	0x53
+ 2990 0678 00000000 		.4byte	.LVL85-1
+ 2991 067c 00000000 		.4byte	.LVL86
+ 2992 0680 0001     		.2byte	0x1
+ 2993 0682 6F       		.byte	0x6f
+ 2994 0683 00000000 		.4byte	.LVL86
+ 2995 0687 00000000 		.4byte	.LVL87
+ 2996 068b 0004     		.2byte	0x4
+ 2997 068d F3       		.byte	0xf3
+ 2998 068e 01       		.uleb128 0x1
+ 2999 068f 53       		.byte	0x53
+ 3000 0690 9F       		.byte	0x9f
+ 3001 0691 00000000 		.4byte	.LVL87
+ 3002 0695 00000000 		.4byte	.LVL92
+ 3003 0699 0001     		.2byte	0x1
+ 3004 069b 6F       		.byte	0x6f
+ 3005 069c 00000000 		.4byte	.LVL92
+ 3006 06a0 00000000 		.4byte	.LVL93
+ 3007 06a4 0004     		.2byte	0x4
+ 3008 06a6 F3       		.byte	0xf3
+ 3009 06a7 01       		.uleb128 0x1
+ 3010 06a8 53       		.byte	0x53
+ 3011 06a9 9F       		.byte	0x9f
+ 3012 06aa 00000000 		.4byte	.LVL93
+ 3013 06ae 00000000 		.4byte	.LVL96
+ 3014 06b2 0001     		.2byte	0x1
+ 3015 06b4 6F       		.byte	0x6f
+ 3016 06b5 00000000 		.4byte	.LVL96
+ 3017 06b9 00000000 		.4byte	.LFE7
+ 3018 06bd 0004     		.2byte	0x4
+ 3019 06bf F3       		.byte	0xf3
+ 3020 06c0 01       		.uleb128 0x1
+ 3021 06c1 53       		.byte	0x53
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 54
+
+
+ 3022 06c2 9F       		.byte	0x9f
+ 3023 06c3 00000000 		.4byte	0
+ 3024 06c7 00000000 		.4byte	0
+ 3025              	.LLST25:
+ 3026 06cb 00000000 		.4byte	.LVL84
+ 3027 06cf 00000000 		.4byte	.LVL85
+ 3028 06d3 0002     		.2byte	0x2
+ 3029 06d5 30       		.byte	0x30
+ 3030 06d6 9F       		.byte	0x9f
+ 3031 06d7 00000000 		.4byte	.LVL85
+ 3032 06db 00000000 		.4byte	.LVL88
+ 3033 06df 0001     		.2byte	0x1
+ 3034 06e1 53       		.byte	0x53
+ 3035 06e2 00000000 		.4byte	.LVL89
+ 3036 06e6 00000000 		.4byte	.LFE7
+ 3037 06ea 0001     		.2byte	0x1
+ 3038 06ec 53       		.byte	0x53
+ 3039 06ed 00000000 		.4byte	0
+ 3040 06f1 00000000 		.4byte	0
+ 3041              	.LLST26:
+ 3042 06f5 00000000 		.4byte	.LVL89
+ 3043 06f9 00000000 		.4byte	.LVL92
+ 3044 06fd 0001     		.2byte	0x1
+ 3045 06ff 6F       		.byte	0x6f
+ 3046 0700 00000000 		.4byte	.LVL92
+ 3047 0704 00000000 		.4byte	.LVL93
+ 3048 0708 0004     		.2byte	0x4
+ 3049 070a F3       		.byte	0xf3
+ 3050 070b 01       		.uleb128 0x1
+ 3051 070c 53       		.byte	0x53
+ 3052 070d 9F       		.byte	0x9f
+ 3053 070e 00000000 		.4byte	.LVL93
+ 3054 0712 00000000 		.4byte	.LVL96
+ 3055 0716 0001     		.2byte	0x1
+ 3056 0718 6F       		.byte	0x6f
+ 3057 0719 00000000 		.4byte	.LVL96
+ 3058 071d 00000000 		.4byte	.LFE7
+ 3059 0721 0004     		.2byte	0x4
+ 3060 0723 F3       		.byte	0xf3
+ 3061 0724 01       		.uleb128 0x1
+ 3062 0725 53       		.byte	0x53
+ 3063 0726 9F       		.byte	0x9f
+ 3064 0727 00000000 		.4byte	0
+ 3065 072b 00000000 		.4byte	0
+ 3066              	.LLST27:
+ 3067 072f 00000000 		.4byte	.LVL89
+ 3068 0733 00000000 		.4byte	.LVL90
+ 3069 0737 0002     		.2byte	0x2
+ 3070 0739 30       		.byte	0x30
+ 3071 073a 9F       		.byte	0x9f
+ 3072 073b 00000000 		.4byte	.LVL90
+ 3073 073f 00000000 		.4byte	.LVL91
+ 3074 0743 0006     		.2byte	0x6
+ 3075 0745 77       		.byte	0x77
+ 3076 0746 00       		.sleb128 0
+ 3077 0747 09       		.byte	0x9
+ 3078 0748 FE       		.byte	0xfe
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 55
+
+
+ 3079 0749 1A       		.byte	0x1a
+ 3080 074a 9F       		.byte	0x9f
+ 3081 074b 00000000 		.4byte	.LVL91
+ 3082 074f 00000000 		.4byte	.LVL93
+ 3083 0753 0001     		.2byte	0x1
+ 3084 0755 57       		.byte	0x57
+ 3085 0756 00000000 		.4byte	.LVL93
+ 3086 075a 00000000 		.4byte	.LVL94
+ 3087 075e 0002     		.2byte	0x2
+ 3088 0760 30       		.byte	0x30
+ 3089 0761 9F       		.byte	0x9f
+ 3090 0762 00000000 		.4byte	.LVL94
+ 3091 0766 00000000 		.4byte	.LVL95
+ 3092 076a 0006     		.2byte	0x6
+ 3093 076c 77       		.byte	0x77
+ 3094 076d 00       		.sleb128 0
+ 3095 076e 09       		.byte	0x9
+ 3096 076f FE       		.byte	0xfe
+ 3097 0770 1A       		.byte	0x1a
+ 3098 0771 9F       		.byte	0x9f
+ 3099 0772 00000000 		.4byte	.LVL95
+ 3100 0776 00000000 		.4byte	.LFE7
+ 3101 077a 0001     		.2byte	0x1
+ 3102 077c 57       		.byte	0x57
+ 3103 077d 00000000 		.4byte	0
+ 3104 0781 00000000 		.4byte	0
+ 3105              	.LLST28:
+ 3106 0785 00000000 		.4byte	.LVL97
+ 3107 0789 00000000 		.4byte	.LVL100
+ 3108 078d 0001     		.2byte	0x1
+ 3109 078f 53       		.byte	0x53
+ 3110 0790 00000000 		.4byte	.LVL100
+ 3111 0794 00000000 		.4byte	.LVL101
+ 3112 0798 0004     		.2byte	0x4
+ 3113 079a F3       		.byte	0xf3
+ 3114 079b 01       		.uleb128 0x1
+ 3115 079c 53       		.byte	0x53
+ 3116 079d 9F       		.byte	0x9f
+ 3117 079e 00000000 		.4byte	.LVL101
+ 3118 07a2 00000000 		.4byte	.LVL104
+ 3119 07a6 0001     		.2byte	0x1
+ 3120 07a8 53       		.byte	0x53
+ 3121 07a9 00000000 		.4byte	.LVL104
+ 3122 07ad 00000000 		.4byte	.LFE8
+ 3123 07b1 0004     		.2byte	0x4
+ 3124 07b3 F3       		.byte	0xf3
+ 3125 07b4 01       		.uleb128 0x1
+ 3126 07b5 53       		.byte	0x53
+ 3127 07b6 9F       		.byte	0x9f
+ 3128 07b7 00000000 		.4byte	0
+ 3129 07bb 00000000 		.4byte	0
+ 3130              	.LLST29:
+ 3131 07bf 00000000 		.4byte	.LVL97
+ 3132 07c3 00000000 		.4byte	.LVL98
+ 3133 07c7 0002     		.2byte	0x2
+ 3134 07c9 30       		.byte	0x30
+ 3135 07ca 9F       		.byte	0x9f
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 56
+
+
+ 3136 07cb 00000000 		.4byte	.LVL98
+ 3137 07cf 00000000 		.4byte	.LVL99
+ 3138 07d3 0001     		.2byte	0x1
+ 3139 07d5 56       		.byte	0x56
+ 3140 07d6 00000000 		.4byte	.LVL99
+ 3141 07da 00000000 		.4byte	.LVL101
+ 3142 07de 0001     		.2byte	0x1
+ 3143 07e0 57       		.byte	0x57
+ 3144 07e1 00000000 		.4byte	.LVL101
+ 3145 07e5 00000000 		.4byte	.LVL102
+ 3146 07e9 0002     		.2byte	0x2
+ 3147 07eb 30       		.byte	0x30
+ 3148 07ec 9F       		.byte	0x9f
+ 3149 07ed 00000000 		.4byte	.LVL102
+ 3150 07f1 00000000 		.4byte	.LVL103
+ 3151 07f5 0001     		.2byte	0x1
+ 3152 07f7 56       		.byte	0x56
+ 3153 07f8 00000000 		.4byte	.LVL103
+ 3154 07fc 00000000 		.4byte	.LFE8
+ 3155 0800 0001     		.2byte	0x1
+ 3156 0802 57       		.byte	0x57
+ 3157 0803 00000000 		.4byte	0
+ 3158 0807 00000000 		.4byte	0
+ 3159              	.LLST30:
+ 3160 080b 00000000 		.4byte	.LFB9
+ 3161 080f 00000000 		.4byte	.LCFI20
+ 3162 0813 0002     		.2byte	0x2
+ 3163 0815 71       		.byte	0x71
+ 3164 0816 00       		.sleb128 0
+ 3165 0817 00000000 		.4byte	.LCFI20
+ 3166 081b 00000000 		.4byte	.LCFI21
+ 3167 081f 0002     		.2byte	0x2
+ 3168 0821 71       		.byte	0x71
+ 3169 0822 10       		.sleb128 16
+ 3170 0823 00000000 		.4byte	.LCFI21
+ 3171 0827 00000000 		.4byte	.LCFI22
+ 3172 082b 0002     		.2byte	0x2
+ 3173 082d 71       		.byte	0x71
+ 3174 082e 00       		.sleb128 0
+ 3175 082f 00000000 		.4byte	.LCFI22
+ 3176 0833 00000000 		.4byte	.LCFI23
+ 3177 0837 0002     		.2byte	0x2
+ 3178 0839 71       		.byte	0x71
+ 3179 083a 10       		.sleb128 16
+ 3180 083b 00000000 		.4byte	.LCFI23
+ 3181 083f 00000000 		.4byte	.LFE9
+ 3182 0843 0002     		.2byte	0x2
+ 3183 0845 71       		.byte	0x71
+ 3184 0846 00       		.sleb128 0
+ 3185 0847 00000000 		.4byte	0
+ 3186 084b 00000000 		.4byte	0
+ 3187              	.LLST31:
+ 3188 084f 00000000 		.4byte	.LVL105
+ 3189 0853 00000000 		.4byte	.LVL106-1
+ 3190 0857 0001     		.2byte	0x1
+ 3191 0859 53       		.byte	0x53
+ 3192 085a 00000000 		.4byte	.LVL106-1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 57
+
+
+ 3193 085e 00000000 		.4byte	.LVL107
+ 3194 0862 0001     		.2byte	0x1
+ 3195 0864 6F       		.byte	0x6f
+ 3196 0865 00000000 		.4byte	.LVL107
+ 3197 0869 00000000 		.4byte	.LVL108
+ 3198 086d 0004     		.2byte	0x4
+ 3199 086f F3       		.byte	0xf3
+ 3200 0870 01       		.uleb128 0x1
+ 3201 0871 53       		.byte	0x53
+ 3202 0872 9F       		.byte	0x9f
+ 3203 0873 00000000 		.4byte	.LVL108
+ 3204 0877 00000000 		.4byte	.LVL110
+ 3205 087b 0001     		.2byte	0x1
+ 3206 087d 6F       		.byte	0x6f
+ 3207 087e 00000000 		.4byte	.LVL110
+ 3208 0882 00000000 		.4byte	.LVL111-1
+ 3209 0886 0001     		.2byte	0x1
+ 3210 0888 53       		.byte	0x53
+ 3211 0889 00000000 		.4byte	.LVL111-1
+ 3212 088d 00000000 		.4byte	.LFE9
+ 3213 0891 0004     		.2byte	0x4
+ 3214 0893 F3       		.byte	0xf3
+ 3215 0894 01       		.uleb128 0x1
+ 3216 0895 53       		.byte	0x53
+ 3217 0896 9F       		.byte	0x9f
+ 3218 0897 00000000 		.4byte	0
+ 3219 089b 00000000 		.4byte	0
+ 3220              	.LLST32:
+ 3221 089f 00000000 		.4byte	.LVL105
+ 3222 08a3 00000000 		.4byte	.LVL106
+ 3223 08a7 0002     		.2byte	0x2
+ 3224 08a9 30       		.byte	0x30
+ 3225 08aa 9F       		.byte	0x9f
+ 3226 08ab 00000000 		.4byte	.LVL106
+ 3227 08af 00000000 		.4byte	.LVL109
+ 3228 08b3 0001     		.2byte	0x1
+ 3229 08b5 53       		.byte	0x53
+ 3230 08b6 00000000 		.4byte	0
+ 3231 08ba 00000000 		.4byte	0
+ 3232              	.LLST33:
+ 3233 08be 00000000 		.4byte	.LVL112
+ 3234 08c2 00000000 		.4byte	.LVL114
+ 3235 08c6 0001     		.2byte	0x1
+ 3236 08c8 53       		.byte	0x53
+ 3237 08c9 00000000 		.4byte	.LVL114
+ 3238 08cd 00000000 		.4byte	.LVL117
+ 3239 08d1 0001     		.2byte	0x1
+ 3240 08d3 57       		.byte	0x57
+ 3241 08d4 00000000 		.4byte	.LVL117
+ 3242 08d8 00000000 		.4byte	.LFE10
+ 3243 08dc 0004     		.2byte	0x4
+ 3244 08de F3       		.byte	0xf3
+ 3245 08df 01       		.uleb128 0x1
+ 3246 08e0 53       		.byte	0x53
+ 3247 08e1 9F       		.byte	0x9f
+ 3248 08e2 00000000 		.4byte	0
+ 3249 08e6 00000000 		.4byte	0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 58
+
+
+ 3250              	.LLST34:
+ 3251 08ea 00000000 		.4byte	.LVL112
+ 3252 08ee 00000000 		.4byte	.LVL116
+ 3253 08f2 0001     		.2byte	0x1
+ 3254 08f4 54       		.byte	0x54
+ 3255 08f5 00000000 		.4byte	.LVL116
+ 3256 08f9 00000000 		.4byte	.LFE10
+ 3257 08fd 0004     		.2byte	0x4
+ 3258 08ff F3       		.byte	0xf3
+ 3259 0900 01       		.uleb128 0x1
+ 3260 0901 54       		.byte	0x54
+ 3261 0902 9F       		.byte	0x9f
+ 3262 0903 00000000 		.4byte	0
+ 3263 0907 00000000 		.4byte	0
+ 3264              	.LLST35:
+ 3265 090b 00000000 		.4byte	.LVL115
+ 3266 090f 00000000 		.4byte	.LVL119
+ 3267 0913 0001     		.2byte	0x1
+ 3268 0915 57       		.byte	0x57
+ 3269 0916 00000000 		.4byte	0
+ 3270 091a 00000000 		.4byte	0
+ 3271              	.LLST36:
+ 3272 091e 00000000 		.4byte	.LVL112
+ 3273 0922 00000000 		.4byte	.LVL113
+ 3274 0926 0002     		.2byte	0x2
+ 3275 0928 30       		.byte	0x30
+ 3276 0929 9F       		.byte	0x9f
+ 3277 092a 00000000 		.4byte	0
+ 3278 092e 00000000 		.4byte	0
+ 3279              	.LLST37:
+ 3280 0932 00000000 		.4byte	.LVL120
+ 3281 0936 00000000 		.4byte	.LVL122
+ 3282 093a 0001     		.2byte	0x1
+ 3283 093c 53       		.byte	0x53
+ 3284 093d 00000000 		.4byte	.LVL122
+ 3285 0941 00000000 		.4byte	.LVL125
+ 3286 0945 0001     		.2byte	0x1
+ 3287 0947 57       		.byte	0x57
+ 3288 0948 00000000 		.4byte	.LVL125
+ 3289 094c 00000000 		.4byte	.LFE11
+ 3290 0950 0004     		.2byte	0x4
+ 3291 0952 F3       		.byte	0xf3
+ 3292 0953 01       		.uleb128 0x1
+ 3293 0954 53       		.byte	0x53
+ 3294 0955 9F       		.byte	0x9f
+ 3295 0956 00000000 		.4byte	0
+ 3296 095a 00000000 		.4byte	0
+ 3297              	.LLST38:
+ 3298 095e 00000000 		.4byte	.LVL120
+ 3299 0962 00000000 		.4byte	.LVL124
+ 3300 0966 0001     		.2byte	0x1
+ 3301 0968 54       		.byte	0x54
+ 3302 0969 00000000 		.4byte	.LVL124
+ 3303 096d 00000000 		.4byte	.LFE11
+ 3304 0971 0004     		.2byte	0x4
+ 3305 0973 F3       		.byte	0xf3
+ 3306 0974 01       		.uleb128 0x1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 59
+
+
+ 3307 0975 54       		.byte	0x54
+ 3308 0976 9F       		.byte	0x9f
+ 3309 0977 00000000 		.4byte	0
+ 3310 097b 00000000 		.4byte	0
+ 3311              	.LLST39:
+ 3312 097f 00000000 		.4byte	.LVL123
+ 3313 0983 00000000 		.4byte	.LVL127
+ 3314 0987 0001     		.2byte	0x1
+ 3315 0989 57       		.byte	0x57
+ 3316 098a 00000000 		.4byte	0
+ 3317 098e 00000000 		.4byte	0
+ 3318              	.LLST40:
+ 3319 0992 00000000 		.4byte	.LVL120
+ 3320 0996 00000000 		.4byte	.LVL121
+ 3321 099a 0002     		.2byte	0x2
+ 3322 099c 30       		.byte	0x30
+ 3323 099d 9F       		.byte	0x9f
+ 3324 099e 00000000 		.4byte	0
+ 3325 09a2 00000000 		.4byte	0
+ 3326              		.section	.debug_aranges,"",@progbits
+ 3327 0000 00000064 		.4byte	0x64
+ 3328 0004 0002     		.2byte	0x2
+ 3329 0006 00000000 		.4byte	.Ldebug_info0
+ 3330 000a 04       		.byte	0x4
+ 3331 000b 00       		.byte	0
+ 3332 000c 0000     		.2byte	0
+ 3333 000e 0000     		.2byte	0
+ 3334 0010 00000000 		.4byte	.LFB3
+ 3335 0014 00000038 		.4byte	.LFE3-.LFB3
+ 3336 0018 00000000 		.4byte	.LFB13
+ 3337 001c 000000F4 		.4byte	.LFE13-.LFB13
+ 3338 0020 00000000 		.4byte	.LFB4
+ 3339 0024 00000042 		.4byte	.LFE4-.LFB4
+ 3340 0028 00000000 		.4byte	.LFB5
+ 3341 002c 0000006A 		.4byte	.LFE5-.LFB5
+ 3342 0030 00000000 		.4byte	.LFB6
+ 3343 0034 0000005A 		.4byte	.LFE6-.LFB6
+ 3344 0038 00000000 		.4byte	.LFB7
+ 3345 003c 00000064 		.4byte	.LFE7-.LFB7
+ 3346 0040 00000000 		.4byte	.LFB8
+ 3347 0044 0000002A 		.4byte	.LFE8-.LFB8
+ 3348 0048 00000000 		.4byte	.LFB9
+ 3349 004c 0000003E 		.4byte	.LFE9-.LFB9
+ 3350 0050 00000000 		.4byte	.LFB10
+ 3351 0054 00000026 		.4byte	.LFE10-.LFB10
+ 3352 0058 00000000 		.4byte	.LFB11
+ 3353 005c 00000036 		.4byte	.LFE11-.LFB11
+ 3354 0060 00000000 		.4byte	0
+ 3355 0064 00000000 		.4byte	0
+ 3356              		.section	.debug_ranges,"",@progbits
+ 3357              	.Ldebug_ranges0:
+ 3358 0000 00000000 		.4byte	.LBB24
+ 3359 0004 00000000 		.4byte	.LBE24
+ 3360 0008 00000000 		.4byte	.LBB35
+ 3361 000c 00000000 		.4byte	.LBE35
+ 3362 0010 00000000 		.4byte	0
+ 3363 0014 00000000 		.4byte	0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 60
+
+
+ 3364 0018 00000000 		.4byte	.LBB26
+ 3365 001c 00000000 		.4byte	.LBE26
+ 3366 0020 00000000 		.4byte	.LBB29
+ 3367 0024 00000000 		.4byte	.LBE29
+ 3368 0028 00000000 		.4byte	0
+ 3369 002c 00000000 		.4byte	0
+ 3370 0030 00000000 		.4byte	.LBB31
+ 3371 0034 00000000 		.4byte	.LBE31
+ 3372 0038 00000000 		.4byte	.LBB34
+ 3373 003c 00000000 		.4byte	.LBE34
+ 3374 0040 00000000 		.4byte	0
+ 3375 0044 00000000 		.4byte	0
+ 3376 0048 00000000 		.4byte	.LBB40
+ 3377 004c 00000000 		.4byte	.LBE40
+ 3378 0050 00000000 		.4byte	.LBB43
+ 3379 0054 00000000 		.4byte	.LBE43
+ 3380 0058 00000000 		.4byte	0
+ 3381 005c 00000000 		.4byte	0
+ 3382 0060 00000000 		.4byte	.LFB3
+ 3383 0064 00000000 		.4byte	.LFE3
+ 3384 0068 00000000 		.4byte	.LFB13
+ 3385 006c 00000000 		.4byte	.LFE13
+ 3386 0070 00000000 		.4byte	.LFB4
+ 3387 0074 00000000 		.4byte	.LFE4
+ 3388 0078 00000000 		.4byte	.LFB5
+ 3389 007c 00000000 		.4byte	.LFE5
+ 3390 0080 00000000 		.4byte	.LFB6
+ 3391 0084 00000000 		.4byte	.LFE6
+ 3392 0088 00000000 		.4byte	.LFB7
+ 3393 008c 00000000 		.4byte	.LFE7
+ 3394 0090 00000000 		.4byte	.LFB8
+ 3395 0094 00000000 		.4byte	.LFE8
+ 3396 0098 00000000 		.4byte	.LFB9
+ 3397 009c 00000000 		.4byte	.LFE9
+ 3398 00a0 00000000 		.4byte	.LFB10
+ 3399 00a4 00000000 		.4byte	.LFE10
+ 3400 00a8 00000000 		.4byte	.LFB11
+ 3401 00ac 00000000 		.4byte	.LFE11
+ 3402 00b0 00000000 		.4byte	0
+ 3403 00b4 00000000 		.4byte	0
+ 3404              		.section	.debug_line,"",@progbits
+ 3405              	.Ldebug_line0:
+ 3406 0000 00000384 		.section	.debug_str,"MS",@progbits,1
+ 3406      00020000 
+ 3406      01CD0201 
+ 3406      FB0E0D00 
+ 3406      01010101 
+ 3407              	.LASF40:
+ 3408 0000 63637372 		.string	"ccsr"
+ 3408      00
+ 3409              	.LASF20:
+ 3410 0005 63616368 		.string	"cache_cfg_t"
+ 3410      655F6366 
+ 3410      675F7400 
+ 3411              	.LASF37:
+ 3412 0011 63616368 		.string	"cache_get_status"
+ 3412      655F6765 
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 61
+
+
+ 3412      745F7374 
+ 3412      61747573 
+ 3412      00
+ 3413              	.LASF2:
+ 3414 0022 73686F72 		.string	"short int"
+ 3414      7420696E 
+ 3414      7400
+ 3415              	.LASF26:
+ 3416 002c 63747970 		.string	"ctype"
+ 3416      6500
+ 3417              	.LASF7:
+ 3418 0032 5F5F7569 		.string	"__uint32_t"
+ 3418      6E743332 
+ 3418      5F7400
+ 3419              	.LASF4:
+ 3420 003d 5F5F7569 		.string	"__uint16_t"
+ 3420      6E743136 
+ 3420      5F7400
+ 3421              	.LASF22:
+ 3422 0048 49434443 		.string	"ICDC_ERROR_UNAVAILABLE"
+ 3422      5F455252 
+ 3422      4F525F55 
+ 3422      4E415641 
+ 3422      494C4142 
+ 3423              	.LASF12:
+ 3424 005f 75696E74 		.string	"uint8_t"
+ 3424      385F7400 
+ 3425              	.LASF41:
+ 3426 0067 63616368 		.string	"cache_disable"
+ 3426      655F6469 
+ 3426      7361626C 
+ 3426      6500
+ 3427              	.LASF28:
+ 3428 0075 6964635F 		.string	"idc_disable"
+ 3428      64697361 
+ 3428      626C6500 
+ 3429              	.LASF48:
+ 3430 0081 2E2F636F 		.string	"./components/spc58ecxx_platform_component_rla/lib/src/cache.c"
+ 3430      6D706F6E 
+ 3430      656E7473 
+ 3430      2F737063 
+ 3430      35386563 
+ 3431              	.LASF42:
+ 3432 00bf 63616368 		.string	"cache_invalidate"
+ 3432      655F696E 
+ 3432      76616C69 
+ 3432      64617465 
+ 3432      00
+ 3433              	.LASF9:
+ 3434 00d0 6C6F6E67 		.string	"long long int"
+ 3434      206C6F6E 
+ 3434      6720696E 
+ 3434      7400
+ 3435              	.LASF19:
+ 3436 00de 44435F44 		.string	"DC_DCSIZE"
+ 3436      4353495A 
+ 3436      4500
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 62
+
+
+ 3437              	.LASF17:
+ 3438 00e8 63616368 		.string	"cache_type_t"
+ 3438      655F7479 
+ 3438      70655F74 
+ 3438      00
+ 3439              	.LASF6:
+ 3440 00f5 6C6F6E67 		.string	"long int"
+ 3440      20696E74 
+ 3440      00
+ 3441              	.LASF44:
+ 3442 00fe 61646472 		.string	"addr"
+ 3442      00
+ 3443              	.LASF33:
+ 3444 0103 696E765F 		.string	"inv_val"
+ 3444      76616C00 
+ 3445              	.LASF3:
+ 3446 010b 5F5F7569 		.string	"__uint8_t"
+ 3446      6E74385F 
+ 3446      7400
+ 3447              	.LASF47:
+ 3448 0115 474E5520 		.ascii	"GNU C 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         b"
+ 3448      4320342E 
+ 3448      392E3420 
+ 3448      32303136 
+ 3448      30373236 
+ 3449 0151 75696C64 		.ascii	"uild.sh"
+ 3449      2E7368
+ 3450 0158 20726576 		.string	" rev=gd8b6c20 s=F494 ELe200 -V release_gd8b6c20_build_Fed_ELe200_ML0) -mcall-sysv -mcpu=e
+ 3450      3D676438 
+ 3450      62366332 
+ 3450      3020733D 
+ 3450      46343934 
+ 3451              	.LASF38:
+ 3452 0259 63616368 		.string	"cache_enable"
+ 3452      655F656E 
+ 3452      61626C65 
+ 3452      00
+ 3453              	.LASF46:
+ 3454 0266 63616464 		.string	"caddr"
+ 3454      7200
+ 3455              	.LASF1:
+ 3456 026c 756E7369 		.string	"unsigned char"
+ 3456      676E6564 
+ 3456      20636861 
+ 3456      7200
+ 3457              	.LASF24:
+ 3458 027a 63616368 		.string	"cache_result_t"
+ 3458      655F7265 
+ 3458      73756C74 
+ 3458      5F7400
+ 3459              	.LASF25:
+ 3460 0289 63636667 		.string	"ccfg"
+ 3460      00
+ 3461              	.LASF0:
+ 3462 028e 7369676E 		.string	"signed char"
+ 3462      65642063 
+ 3462      68617200 
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 63
+
+
+ 3463              	.LASF10:
+ 3464 029a 6C6F6E67 		.string	"long long unsigned int"
+ 3464      206C6F6E 
+ 3464      6720756E 
+ 3464      7369676E 
+ 3464      65642069 
+ 3465              	.LASF50:
+ 3466 02b1 63616368 		.string	"cache_get_cfg"
+ 3466      655F6765 
+ 3466      745F6366 
+ 3466      6700
+ 3467              	.LASF14:
+ 3468 02bf 75696E74 		.string	"uint32_t"
+ 3468      33325F74 
+ 3468      00
+ 3469              	.LASF11:
+ 3470 02c8 756E7369 		.string	"unsigned int"
+ 3470      676E6564 
+ 3470      20696E74 
+ 3470      00
+ 3471              	.LASF36:
+ 3472 02d5 63726573 		.string	"cres"
+ 3472      00
+ 3473              	.LASF13:
+ 3474 02da 75696E74 		.string	"uint16_t"
+ 3474      31365F74 
+ 3474      00
+ 3475              	.LASF16:
+ 3476 02e3 49435F54 		.string	"IC_TYPE"
+ 3476      59504500 
+ 3477              	.LASF5:
+ 3478 02eb 73686F72 		.string	"short unsigned int"
+ 3478      7420756E 
+ 3478      7369676E 
+ 3478      65642069 
+ 3478      6E7400
+ 3479              	.LASF31:
+ 3480 02fe 73617665 		.string	"savectx"
+ 3480      63747800 
+ 3481              	.LASF30:
+ 3482 0306 6964635F 		.string	"idc_invalidate"
+ 3482      696E7661 
+ 3482      6C696461 
+ 3482      746500
+ 3483              	.LASF18:
+ 3484 0315 49435F49 		.string	"IC_ICSIZE"
+ 3484      4353495A 
+ 3484      4500
+ 3485              	.LASF34:
+ 3486 031f 61626F5F 		.string	"abo_val"
+ 3486      76616C00 
+ 3487              	.LASF35:
+ 3488 0327 63636163 		.string	"ccache"
+ 3488      686500
+ 3489              	.LASF32:
+ 3490 032e 73657473 		.string	"sets"
+ 3490      00
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 64
+
+
+ 3491              	.LASF29:
+ 3492 0333 6964635F 		.string	"idc_exist"
+ 3492      65786973 
+ 3492      7400
+ 3493              	.LASF8:
+ 3494 033d 6C6F6E67 		.string	"long unsigned int"
+ 3494      20756E73 
+ 3494      69676E65 
+ 3494      6420696E 
+ 3494      7400
+ 3495              	.LASF21:
+ 3496 034f 49434443 		.string	"ICDC_NO_ERROR"
+ 3496      5F4E4F5F 
+ 3496      4552524F 
+ 3496      5200
+ 3497              	.LASF45:
+ 3498 035d 73697A65 		.string	"size"
+ 3498      00
+ 3499              	.LASF49:
+ 3500 0362 433A5C53 		.string	"C:\\SPC5Studio-6.0\\workspace\\Gateway"
+ 3500      50433553 
+ 3500      74756469 
+ 3500      6F2D362E 
+ 3500      305C776F 
+ 3501              	.LASF43:
+ 3502 0386 63616368 		.string	"cache_flush_range"
+ 3502      655F666C 
+ 3502      7573685F 
+ 3502      72616E67 
+ 3502      6500
+ 3503              	.LASF23:
+ 3504 0398 49434443 		.string	"ICDC_ERROR_ABORTED"
+ 3504      5F455252 
+ 3504      4F525F41 
+ 3504      424F5254 
+ 3504      454400
+ 3505              	.LASF15:
+ 3506 03ab 44435F54 		.string	"DC_TYPE"
+ 3506      59504500 
+ 3507              	.LASF51:
+ 3508 03b3 63616368 		.string	"cache_invalidate_range"
+ 3508      655F696E 
+ 3508      76616C69 
+ 3508      64617465 
+ 3508      5F72616E 
+ 3509              	.LASF39:
+ 3510 03ca 63616368 		.string	"cache_set_control"
+ 3510      655F7365 
+ 3510      745F636F 
+ 3510      6E74726F 
+ 3510      6C00
+ 3511              	.LASF27:
+ 3512 03dc 6964635F 		.string	"idc_enable"
+ 3512      656E6162 
+ 3512      6C6500
+ 3513              		.ident	"GCC: (GNU) 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         build.sh rev=gd8b6c20 s=F4
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccekMmww.s 			page 65
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 cache.c
+C:\Users\bayra\AppData\Local\Temp\ccekMmww.s:9      .text.idc_exist:00000000 idc_exist
+C:\Users\bayra\AppData\Local\Temp\ccekMmww.s:94     .text.idc_invalidate.constprop.1:00000000 idc_invalidate.constprop.1
+C:\Users\bayra\AppData\Local\Temp\ccekMmww.s:321    .text.cache_get_status:00000000 cache_get_status
+C:\Users\bayra\AppData\Local\Temp\ccekMmww.s:402    .text.cache_enable:00000000 cache_enable
+C:\Users\bayra\AppData\Local\Temp\ccekMmww.s:524    .text.cache_set_control:00000000 cache_set_control
+C:\Users\bayra\AppData\Local\Temp\ccekMmww.s:619    .text.cache_disable:00000000 cache_disable
+C:\Users\bayra\AppData\Local\Temp\ccekMmww.s:741    .text.cache_get_cfg:00000000 cache_get_cfg
+C:\Users\bayra\AppData\Local\Temp\ccekMmww.s:792    .text.cache_invalidate:00000000 cache_invalidate
+C:\Users\bayra\AppData\Local\Temp\ccekMmww.s:865    .text.cache_flush_range:00000000 cache_flush_range
+C:\Users\bayra\AppData\Local\Temp\ccekMmww.s:915    .text.cache_invalidate_range:00000000 cache_invalidate_range
+
+NO UNDEFINED SYMBOLS

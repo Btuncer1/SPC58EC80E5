@@ -1,0 +1,213 @@
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccAsbu5i.s 			page 1
+
+
+   1              		.file	"core0.c"
+   2              		.section	".text","axv"
+   3              	.Ltext0:
+   4              		.cfi_sections	.debug_frame
+   5              	.Letext0:
+   6              		.section	.debug_info,"",@progbits
+   7              	.Ldebug_info0:
+   8 0000 00000067 		.4byte	0x67
+   9 0004 0002     		.2byte	0x2
+  10 0006 00000000 		.4byte	.Ldebug_abbrev0
+  11 000a 04       		.byte	0x4
+  12 000b 01       		.uleb128 0x1
+  13 000c 00000000 		.4byte	.LASF10
+  14 0010 01       		.byte	0x1
+  15 0011 00000000 		.4byte	.LASF11
+  16 0015 00000000 		.4byte	.LASF12
+  17 0019 00000000 		.4byte	.Ldebug_line0
+  18 001d 02       		.uleb128 0x2
+  19 001e 01       		.byte	0x1
+  20 001f 06       		.byte	0x6
+  21 0020 00000000 		.4byte	.LASF0
+  22 0024 02       		.uleb128 0x2
+  23 0025 01       		.byte	0x1
+  24 0026 08       		.byte	0x8
+  25 0027 00000000 		.4byte	.LASF1
+  26 002b 02       		.uleb128 0x2
+  27 002c 02       		.byte	0x2
+  28 002d 05       		.byte	0x5
+  29 002e 00000000 		.4byte	.LASF2
+  30 0032 02       		.uleb128 0x2
+  31 0033 02       		.byte	0x2
+  32 0034 07       		.byte	0x7
+  33 0035 00000000 		.4byte	.LASF3
+  34 0039 02       		.uleb128 0x2
+  35 003a 04       		.byte	0x4
+  36 003b 05       		.byte	0x5
+  37 003c 00000000 		.4byte	.LASF4
+  38 0040 02       		.uleb128 0x2
+  39 0041 04       		.byte	0x4
+  40 0042 07       		.byte	0x7
+  41 0043 00000000 		.4byte	.LASF5
+  42 0047 02       		.uleb128 0x2
+  43 0048 08       		.byte	0x8
+  44 0049 05       		.byte	0x5
+  45 004a 00000000 		.4byte	.LASF6
+  46 004e 02       		.uleb128 0x2
+  47 004f 08       		.byte	0x8
+  48 0050 07       		.byte	0x7
+  49 0051 00000000 		.4byte	.LASF7
+  50 0055 03       		.uleb128 0x3
+  51 0056 04       		.byte	0x4
+  52 0057 05       		.byte	0x5
+  53 0058 696E7400 		.string	"int"
+  54 005c 02       		.uleb128 0x2
+  55 005d 04       		.byte	0x4
+  56 005e 07       		.byte	0x7
+  57 005f 00000000 		.4byte	.LASF8
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccAsbu5i.s 			page 2
+
+
+  58 0063 02       		.uleb128 0x2
+  59 0064 04       		.byte	0x4
+  60 0065 07       		.byte	0x7
+  61 0066 00000000 		.4byte	.LASF9
+  62 006a 00       		.byte	0
+  63              		.section	.debug_abbrev,"",@progbits
+  64              	.Ldebug_abbrev0:
+  65 0000 01       		.uleb128 0x1
+  66 0001 11       		.uleb128 0x11
+  67 0002 01       		.byte	0x1
+  68 0003 25       		.uleb128 0x25
+  69 0004 0E       		.uleb128 0xe
+  70 0005 13       		.uleb128 0x13
+  71 0006 0B       		.uleb128 0xb
+  72 0007 03       		.uleb128 0x3
+  73 0008 0E       		.uleb128 0xe
+  74 0009 1B       		.uleb128 0x1b
+  75 000a 0E       		.uleb128 0xe
+  76 000b 10       		.uleb128 0x10
+  77 000c 06       		.uleb128 0x6
+  78 000d 00       		.byte	0
+  79 000e 00       		.byte	0
+  80 000f 02       		.uleb128 0x2
+  81 0010 24       		.uleb128 0x24
+  82 0011 00       		.byte	0
+  83 0012 0B       		.uleb128 0xb
+  84 0013 0B       		.uleb128 0xb
+  85 0014 3E       		.uleb128 0x3e
+  86 0015 0B       		.uleb128 0xb
+  87 0016 03       		.uleb128 0x3
+  88 0017 0E       		.uleb128 0xe
+  89 0018 00       		.byte	0
+  90 0019 00       		.byte	0
+  91 001a 03       		.uleb128 0x3
+  92 001b 24       		.uleb128 0x24
+  93 001c 00       		.byte	0
+  94 001d 0B       		.uleb128 0xb
+  95 001e 0B       		.uleb128 0xb
+  96 001f 3E       		.uleb128 0x3e
+  97 0020 0B       		.uleb128 0xb
+  98 0021 03       		.uleb128 0x3
+  99 0022 08       		.uleb128 0x8
+ 100 0023 00       		.byte	0
+ 101 0024 00       		.byte	0
+ 102 0025 00       		.byte	0
+ 103              		.section	.debug_aranges,"",@progbits
+ 104 0000 00000014 		.4byte	0x14
+ 105 0004 0002     		.2byte	0x2
+ 106 0006 00000000 		.4byte	.Ldebug_info0
+ 107 000a 04       		.byte	0x4
+ 108 000b 00       		.byte	0
+ 109 000c 0000     		.2byte	0
+ 110 000e 0000     		.2byte	0
+ 111 0010 00000000 		.4byte	0
+ 112 0014 00000000 		.4byte	0
+ 113              		.section	.debug_line,"",@progbits
+ 114              	.Ldebug_line0:
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccAsbu5i.s 			page 3
+
+
+ 115 0000 00000019 		.section	.debug_str,"MS",@progbits,1
+ 115      00020000 
+ 115      00130201 
+ 115      FB0E0D00 
+ 115      01010101 
+ 116              	.LASF8:
+ 117 0000 756E7369 		.string	"unsigned int"
+ 117      676E6564 
+ 117      20696E74 
+ 117      00
+ 118              	.LASF5:
+ 119 000d 6C6F6E67 		.string	"long unsigned int"
+ 119      20756E73 
+ 119      69676E65 
+ 119      6420696E 
+ 119      7400
+ 120              	.LASF0:
+ 121 001f 7369676E 		.string	"signed char"
+ 121      65642063 
+ 121      68617200 
+ 122              	.LASF3:
+ 123 002b 73686F72 		.string	"short unsigned int"
+ 123      7420756E 
+ 123      7369676E 
+ 123      65642069 
+ 123      6E7400
+ 124              	.LASF2:
+ 125 003e 73686F72 		.string	"short int"
+ 125      7420696E 
+ 125      7400
+ 126              	.LASF7:
+ 127 0048 6C6F6E67 		.string	"long long unsigned int"
+ 127      206C6F6E 
+ 127      6720756E 
+ 127      7369676E 
+ 127      65642069 
+ 128              	.LASF1:
+ 129 005f 756E7369 		.string	"unsigned char"
+ 129      676E6564 
+ 129      20636861 
+ 129      7200
+ 130              	.LASF4:
+ 131 006d 6C6F6E67 		.string	"long int"
+ 131      20696E74 
+ 131      00
+ 132              	.LASF9:
+ 133 0076 73697A65 		.string	"sizetype"
+ 133      74797065 
+ 133      00
+ 134              	.LASF12:
+ 135 007f 433A5C53 		.string	"C:\\SPC5Studio-6.0\\workspace\\Gateway"
+ 135      50433553 
+ 135      74756469 
+ 135      6F2D362E 
+ 135      305C776F 
+ 136              	.LASF11:
+ 137 00a3 2E2F636F 		.string	"./components/spc58ecxx_platform_component_rla/lib/src/core0.c"
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccAsbu5i.s 			page 4
+
+
+ 137      6D706F6E 
+ 137      656E7473 
+ 137      2F737063 
+ 137      35386563 
+ 138              	.LASF10:
+ 139 00e1 474E5520 		.ascii	"GNU C 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         b"
+ 139      4320342E 
+ 139      392E3420 
+ 139      32303136 
+ 139      30373236 
+ 140 011d 75696C64 		.ascii	"uild.sh"
+ 140      2E7368
+ 141 0124 20726576 		.string	" rev=gd8b6c20 s=F494 ELe200 -V release_gd8b6c20_build_Fed_ELe200_ML0) -mcall-sysv -mcpu=e
+ 141      3D676438 
+ 141      62366332 
+ 141      3020733D 
+ 141      46343934 
+ 142              	.LASF6:
+ 143 0225 6C6F6E67 		.string	"long long int"
+ 143      206C6F6E 
+ 143      6720696E 
+ 143      7400
+ 144              		.ident	"GCC: (GNU) 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         build.sh rev=gd8b6c20 s=F4
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccAsbu5i.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 core0.c
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,812 @@
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 1
+
+
+   1              	# 1 "./components/spc5_freertos_component_rla/lib/portable/portasm.s"
+   1              	/*
+   0              	
+   0              	
+   2              	;
+   3              	;    FreeRTOS V7.3.0 - Copyright (C) 2012 Real Time Engineers Ltd.
+   4              	;
+   5              	;    FEATURES AND PORTS ARE ADDED TO FREERTOS ALL THE TIME.  PLEASE VISIT
+   6              	;    http://www.FreeRTOS.org TO ENSURE YOU ARE USING THE LATEST VERSION.
+   7              	;
+   8              	;    ***************************************************************************
+   9              	;     *                                                                       *
+  10              	;     *    FreeRTOS tutorial books are available in pdf and paperback.        *
+  11              	;     *    Complete, revised, and edited pdf reference manuals are also       *
+  12              	;     *    available.                                                         *
+  13              	;     *                                                                       *
+  14              	;     *    Purchasing FreeRTOS documentation will not only help you, by       *
+  15              	;     *    ensuring you get running as quickly as possible and with an        *
+  16              	;     *    in-depth knowledge of how to use FreeRTOS, it will also help       *
+  17              	;     *    the FreeRTOS project to continue with its mission of providing     *
+  18              	;     *    professional grade, cross platform, de facto standard solutions    *
+  19              	;     *    for microcontrollers - completely free of charge!                  *
+  20              	;     *                                                                       *
+  21              	;     *    >>> See http://www.FreeRTOS.org/Documentation for details. <<<     *
+  22              	;     *                                                                       *
+  23              	;     *    Thank you for using FreeRTOS, and thank you for your support!      *
+  24              	;     *                                                                       *
+  25              	;    ***************************************************************************
+  26              	;
+  27              	;
+  28              	;    This file is part of the FreeRTOS distribution.
+  29              	;
+  30              	;    FreeRTOS is free software; you can redistribute it and/or modify it under
+  31              	;    the terms of the GNU General Public License (version 2) as published by the
+  32              	;    Free Software Foundation AND MODIFIED BY the FreeRTOS exception.
+  33              	;    >>>NOTE<<< The modification to the GPL is included to allow you to
+  34              	;    distribute a combined work that includes FreeRTOS without being obliged to
+  35              	;    provide the source code for proprietary components outside of the FreeRTOS
+  36              	;    kernel.  FreeRTOS is distributed in the hope that it will be useful, but
+  37              	;    WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+  38              	;    or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+  39              	;    more details. You should have received a copy of the GNU General Public
+  40              	;    License and the FreeRTOS license exception along with FreeRTOS; if not it
+  41              	;    can be viewed here: http://www.freertos.org/a00114.html and also obtained
+  42              	;    by writing to Richard Barry, contact details for whom are available on the
+  43              	;    FreeRTOS WEB site.
+  44              	;
+  45              	;    1 tab == 4 spaces!
+  46              	;
+  47              	;    ***************************************************************************
+  48              	;     *                                                                       *
+  49              	;     *    Having a problem?  Start by reading the FAQ "My application does   *
+  50              	;     *    not run, what could be wrong?"                                     *
+  51              	;     *                                                                       *
+  52              	;     *    http://www.FreeRTOS.org/FAQHelp.html                               *
+  53              	;     *                                                                       *
+  54              	;    ***************************************************************************
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 2
+
+
+  55              	;
+  56              	;
+  57              	;    http://www.FreeRTOS.org - Documentation, training, latest versions, license
+  58              	;    and contact details.
+  59              	;
+  60              	;    http://www.FreeRTOS.org/plus - A selection of FreeRTOS ecosystem products,
+  61              	;    including FreeRTOS+Trace - an indispensable productivity tool.
+  62              	;
+  63              	;    Real Time Engineers ltd license FreeRTOS to High Integrity Systems, who sell
+  64              	;    the code with commercial support, indemnification, and middleware, under
+  65              	;    the OpenRTOS brand: http://www.OpenRTOS.com.  High Integrity Systems also
+  66              	;    provide a safety engineered and independently SIL3 certified version under
+  67              	;    the SafeRTOS brand: http://www.SafeRTOS.com.
+  68              	;
+  69              	;
+  70              	; (C) Copyright 2013
+  71              	; Promwad Innovation Company <www.promwad.com>
+  72              	*/
+  73              	/*
+  74              	 *
+  75              	 THIS PORTING IS WORKING FOR VLE ONLY !!!!!
+  76              	 *
+  77              	 */
+  78              	#define _FROM_ASM_
+  79              	#include "FreeRTOSConfig.h"
+   1              	/***********************************************************************************
+  80              	#include "platform.h"
+   1              	/****************************************************************************
+   2              	*
+   3              	* Copyright © 2015-2019 STMicroelectronics - All Rights Reserved
+   4              	*
+   5              	* This software is licensed under SLA0098 terms that can be found in the
+   6              	* DM00779817_1_0.pdf file in the licenses directory of this software product.
+   7              	* 
+   8              	* THIS SOFTWARE IS DISTRIBUTED "AS IS," AND ALL WARRANTIES ARE DISCLAIMED, 
+   9              	* INCLUDING MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  10              	*
+  11              	*****************************************************************************/
+  12              	
+  13              	/**
+  14              	 * @file    platform.h
+  15              	 * @brief   platform file.
+  16              	 */
+  17              	
+  18              	#ifndef _PLATFORM_H_
+  19              	#define _PLATFORM_H_
+  20              	
+  21              	#include "core.h"
+   1              	/****************************************************************************
+  22              	#include "toolchain.h"
+   1              	/****************************************************************************
+  23              	#include "intc.h"
+   1              	/****************************************************************************
+  24              	#if !defined(_FROM_ASM_)
+  81              	#include "boot.h"
+   1              	/****************************************************************************
+  82              	#include "osal_cfg.h"
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 3
+
+
+   1              	/****************************************************************************
+  83              	
+  84              	/*
+  85              	 * This is a temporary work around to fix core definition on siongle core devices.
+  86              	 * On single core devices the boot core is CORE_0 but in boot.s the IVOR definition
+  87              	 * used are without "C0_" prefix. This causes an isse.
+  88              	 * To avoid to modify also boot.c a simple workaround is to redifine, just for this
+  89              	 * file. the configUSE_CORE_x defines.
+  90              	 *
+  91              	 * TODO: fix this issue by redifining appropriately CORE IVORs defines.
+  92              	 */
+  93              	#if (configUSE_CORE_0 == 1) && (configUSE_CORE_1 == 0) && (configUSE_CORE_2 == 0)
+  94              	#undef configUSE_CORE_0
+  95              	#define configUSE_CORE_0                     0
+  96              	
+  97              	#undef configUSE_CORE_1
+  98              	#define configUSE_CORE_1                     0
+  99              	
+ 100              	#undef configUSE_CORE_2
+ 101              	#define configUSE_CORE_2                     1
+ 102              	#endif
+ 103              	
+ 104              	
+ 105              	/*
+ 106              	    .vle
+ 107              	
+ 108              	    .extern vTaskSwitchContext
+ 109              	    .extern vTaskIncrementTick
+ 110              	    .extern vPortISRHandler
+ 111              	    .extern timer
+ 112              	*/
+ 113              	    .global pxCurrentTCB
+ 114              	/*
+ 115              	    .global vPortYield
+ 116              	    .global vPortTickISR
+ 117              	    .global vPortISRHandler
+ 118              	    .global vPortStartFirstTask
+ 119              	*/
+ 120              	
+ 121              	/*
+ 122              	--- Stack frame layout ---------------------------
+ 123              	  32 bytes  | Reserved area (may used by compiler)
+ 124              	--------------------------------------------------
+ 125              	   4 bytes  | MSR
+ 126              	    ...     | SRR0
+ 127              	            | SRR1
+ 128              	 128 bytes  | R0 - R31
+ 129              	   4 bytes  | CR
+ 130              	            | LR
+ 131              	            | CTR
+ 132              	            | XER
+ 133              	--- Total: 32 + 156 ------------------------------
+ 134              	*/
+ 135              	    .equ CONTEXT_SIZE, 156
+ 136              	
+ 137              	/* context switch macro */
+ 138              	.macro portSAVE_CONTEXT
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 4
+
+
+ 139              	    e_addi    r1, r1, -CONTEXT_SIZE
+ 140              	
+ 141              	    /* saving R0-R31 */
+ 142              	    e_stmw    r0, 12(r1)
+ 143              	
+ 144              	    /* saving MSR */
+ 145              	    mfmsr     r0
+ 146              	    e_stw     r0, 0(r1)
+ 147              	
+ 148              	    /* saving SRR0, SRR1 */
+ 149              	    mfspr     r0,  SRR0
+ 150              	    e_stw     r0, 4(r1)
+ 151              	    mfspr     r0,  SRR1
+ 152              	    e_stw     r0, 8(r1)
+ 153              	
+ 154              	    e_addi    r1, r1, 12 + 128
+ 155              	
+ 156              	    /* saving CR, LR, CTR, XER */
+ 157              	    e_stmvsprw 0(r1)
+ 158              	
+ 159              	    e_addi    r1, r1, 16
+ 160              	    e_addi    r1, r1, -CONTEXT_SIZE - 32
+ 161              	
+ 162              	    /* get the address of the TCB */
+ 163              	    e_lis     r11, pxCurrentTCB@h
+ 164              	    e_or2i    r11, pxCurrentTCB@l
+ 165              	    /* get pxTopOfStack address */
+ 166              	    e_lwz     r11, 0(r11)
+ 167              	    /* store the stack pointer into the TCB */
+ 168              	    e_stw     r1,  0(r11)
+ 169              	.endm
+ 170              	
+ 171              	/* context switch macro */
+ 172              	.macro portRESTORE_CONTEXT
+ 173              	    /* get the address of the TCB */
+ 174              	    e_lis     r11, pxCurrentTCB@h
+ 175              	    e_or2i    r11, pxCurrentTCB@l
+ 176              	
+ 177              	    /* get the task stack pointer from the TCB */
+ 178              	    e_lwz     r11, 0(r11)
+ 179              	    /* get pxTopOfStack address */
+ 180              	    e_lwz     r1,  0(r11)
+ 181              	    /* reserved stack area offset */
+ 182              	    e_addi    r1,  r1, 32
+ 183              	
+ 184              	    /* correct pxTopOfStack value. It allows nested context switchings */
+ 185              	    e_lwz     r2,  0(r11)
+ 186              	    e_addi    r2,  r2, CONTEXT_SIZE + 32
+ 187              	    e_stw     r2,  0(r11)
+ 188              	
+ 189              	    /* MSR restoring */
+ 190              	    e_lwz     r0,  0(r1)
+ 191              	    mtmsr     r0
+ 192              	
+ 193              	    /* SRR0, SRR1 restoring */
+ 194              	    e_lwz     r0,  4(r1)
+ 195              	    mtspr     SRR0,r0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 5
+
+
+ 196              	    e_lwz     r0,  8(r1)
+ 197              	    mtspr     SRR1,r0
+ 198              	
+ 199              	    e_addi    r1,  r1, 12
+ 200              	
+ 201              	    /* restoring R2-R31, R0 */
+ 202              	    e_lmw     r2,  8(r1)
+ 203              	    e_lwz     r0,  0(r1)
+ 204              	    e_addi    r1,  r1, 128
+ 205              	
+ 206              	    /* restoring CR, LR, CTR, XER */
+ 207              	    e_lmvsprw 0(r1)
+ 208              	
+ 209              	    /* restoring R1 */
+ 210              	    e_addi    r1,  r1, 16
+ 211              	.endm
+ 212              	
+ 213              	 /* Context save.*/
+ 214              	.macro SAVE_CONTEXT
+ 215              	    e_stwu      sp, -80(sp)             /* Size of the extctx structure.*/
+ 216              	    e_stmvsrrw  8(sp)                   /* Saves PC, MSR (SRR0, SRR1).  */
+ 217              	    e_stmvsprw  16(sp)                  /* Saves CR, LR, CTR, XER.      */
+ 218              	    e_stmvgprw  32(sp)                  /* Saves GPR0, GPR3...GPR12.    */
+ 219              	.endm
+ 220              	
+ 221              	/* Context restore.*/
+ 222              	.macro RESTORE_CONTEXT
+ 223              	    e_lmvgprw   32(sp)                  /* Restores GPR0, GPR3...GPR12.  */
+ 224              	    e_lmvsprw   16(sp)                  /* Restores CR, LR, CTR, XER.    */
+ 225              	    e_lmvsrrw   8(sp)                   /* Restores PC, MSR (SRR0, SRR1).*/
+ 226              	    e_addi      sp, sp, 80              /* Back to the previous frame.   */
+ 227              	.endm
+ 228              	
+ 229              	    .section  .handlers, "axv"
+ 230              	
+ 231              	_VLE
+ 232              	
+ 233              	
+ 234              	#if (CORE_SUPPORTS_DECREMENTER == 1)
+ 235              	/*****************************************************************************/
+ 236              	/* Function: _IVOR10                                                         */
+ 237              	/* Core:      CORE_2                                                         */
+ 238              	/*****************************************************************************/
+ 239              	    .align    4
+ 240              	    .globl    _IVOR10
+ 241              	    .type     _IVOR10, @function
+ 242              	_IVOR10:
+ 243              	    portSAVE_CONTEXT
+ 244              	
+ 245              	    /* Reset DIE bit in TSR register */
+ 246              	    e_lis     %r3, 0x0800          /* DIS bit mask */
+ 247              	    mtspr     336, %r3             /* TSR register */
+ 248              	
+ 249              	#ifndef _SPC570Sxx_
+ 250              	    /* Restoring pre-IRQ MSR register value */
+ 251              	    mfSRR1    %r0
+ 252              	
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 6
+
+
+ 253              	    /* No preemption, keeping EE disabled */
+ 254              	    se_bclri  %r0, 16              /* EE = bit 16 */
+ 255              	    mtMSR     %r0
+ 256              	#endif
+ 257              	
+ 258              	    portRESTORE_CONTEXT
+ 259              	
+ 260              	    se_rfi
+ 261              	
+ 262              	#if (BOOT_CORE0 == 1)
+ 263              	/*****************************************************************************/
+ 264              	/* Function: _IVOR10                                                         */
+ 265              	/* Core:      CORE_0                                                         */
+ 266              	/*****************************************************************************/
+ 267              	    .align    4
+ 268              	    .globl    _C0_IVOR10
+ 269              	    .type     _C0_IVOR10, @function
+ 270              	_C0_IVOR10:
+ 271              	    portSAVE_CONTEXT
+ 272              	
+ 273              	    /* Reset DIE bit in TSR register */
+ 274              	    e_lis     %r3, 0x0800          /* DIS bit mask */
+ 275              	    mtspr     336, %r3             /* TSR register */
+ 276              	
+ 277              	#ifndef _SPC570Sxx_
+ 278              	    /* Restoring pre-IRQ MSR register value */
+ 279              	    mfSRR1    %r0
+ 280              	
+ 281              	    /* No preemption, keeping EE disabled */
+ 282              	    se_bclri  %r0, 16              /* EE = bit 16 */
+ 283              	    mtMSR     %r0
+ 284              	#endif
+ 285              	
+ 286              	    portRESTORE_CONTEXT
+ 287              	
+ 288              	    se_rfi
+ 289              	#endif /* BOOT_CORE0 */
+ 290              	#endif /* CORE_SUPPORTS_DECREMENTER */
+ 291              	
+ 292              	
+ 293              	/*****************************************************************************/
+ 294              	/* Function: _IVOR8                                                          */
+ 295              	/* Core:      CORE_2                                                         */
+ 296              	/*****************************************************************************/
+ 297              	    .align    4
+ 298              	    .globl    _IVOR8
+ 299              	    .type     _IVOR8, @function
+ 300              	_IVOR8:
+ 301              	/* vPortYield: */
+ 302              	
+ 303              	#if (configUSE_CORE_2 == 1)
+ 304              	    portSAVE_CONTEXT
+ 304 0000 18218464 	>  e_addi r1,r1,-CONTEXT_SIZE
+ 304              	> 
+ 304              	> 
+ 304 0004 1801090C 	>  e_stmw r0,12(r1)
+ 304              	> 
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 7
+
+
+ 304              	> 
+ 304 0008 7C0000A6 	>  mfmsr r0
+ 304 000c 54010000 	>  e_stw r0,0(r1)
+ 304              	> 
+ 304              	> 
+ 304 0010 7C1A02A6 	>  mfspr r0,SRR0
+ 304 0014 54010004 	>  e_stw r0,4(r1)
+ 304 0018 7C1B02A6 	>  mfspr r0,SRR1
+ 304 001c 54010008 	>  e_stw r0,8(r1)
+ 304              	> 
+ 304 0020 1821808C 	>  e_addi r1,r1,12+128
+ 304              	> 
+ 304              	> 
+ 304 0024 18211100 	>  e_stmvsprw 0(r1)
+ 304              	> 
+ 304 0028 18218010 	>  e_addi r1,r1,16
+ 304 002c 18218444 	>  e_addi r1,r1,-CONTEXT_SIZE-32
+ 304              	> 
+ 304              	> 
+ 304 0030 7160E000 	>  e_lis r11,pxCurrentTCB@h
+ 304 0034 7160C000 	>  e_or2i r11,pxCurrentTCB@l
+ 304              	> 
+ 304 0038 516B0000 	>  e_lwz r11,0(r11)
+ 304              	> 
+ 304 003c 542B0000 	>  e_stw r1,0(r11)
+ 305              	
+ 306 0040 78000001 	    e_bl      vTaskSwitchContext
+ 307              	
+ 308              	    portRESTORE_CONTEXT
+ 308              	> 
+ 308 0044 7160E000 	>  e_lis r11,pxCurrentTCB@h
+ 308 0048 7160C000 	>  e_or2i r11,pxCurrentTCB@l
+ 308              	> 
+ 308              	> 
+ 308 004c 516B0000 	>  e_lwz r11,0(r11)
+ 308              	> 
+ 308 0050 502B0000 	>  e_lwz r1,0(r11)
+ 308              	> 
+ 308 0054 18218020 	>  e_addi r1,r1,32
+ 308              	> 
+ 308              	> 
+ 308 0058 504B0000 	>  e_lwz r2,0(r11)
+ 308 005c 184280BC 	>  e_addi r2,r2,CONTEXT_SIZE+32
+ 308 0060 544B0000 	>  e_stw r2,0(r11)
+ 308              	> 
+ 308              	> 
+ 308 0064 50010000 	>  e_lwz r0,0(r1)
+ 308 0068 7C000124 	>  mtmsr r0
+ 308              	> 
+ 308              	> 
+ 308 006c 50010004 	>  e_lwz r0,4(r1)
+ 308 0070 7C1A03A6 	>  mtspr SRR0,r0
+ 308 0074 50010008 	>  e_lwz r0,8(r1)
+ 308 0078 7C1B03A6 	>  mtspr SRR1,r0
+ 308              	> 
+ 308 007c 1821800C 	>  e_addi r1,r1,12
+ 308              	> 
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 8
+
+
+ 308              	> 
+ 308 0080 18410808 	>  e_lmw r2,8(r1)
+ 308 0084 50010000 	>  e_lwz r0,0(r1)
+ 308 0088 18218080 	>  e_addi r1,r1,128
+ 308              	> 
+ 308              	> 
+ 308 008c 18211000 	>  e_lmvsprw 0(r1)
+ 308              	> 
+ 308              	> 
+ 308 0090 18218010 	>  e_addi r1,r1,16
+ 309              	#else
+ 310              	    SAVE_CONTEXT
+ 311              	    RESTORE_CONTEXT
+ 312              	#endif /* configUSE_CORE_2 */
+ 313              	
+ 314 0094 0008     	    se_rfi
+ 315              	
+ 316              	#if (BOOT_CORE0 == 1)
+ 317              	/*****************************************************************************/
+ 318              	/* Function: _IVOR8                                                          */
+ 319              	/* Core:      CORE_0                                                         */
+ 320              	/*****************************************************************************/
+ 321              	    .align    4
+ 322              	    .globl    _C0_IVOR8
+ 323              	    .type     _C0_IVOR8, @function
+ 324              	_C0_IVOR8:
+ 325              	
+ 326              	#if (configUSE_CORE_0 == 1)
+ 327              	    portSAVE_CONTEXT
+ 328              	
+ 329              	    e_bl      vTaskSwitchContext
+ 330              	
+ 331              	    portRESTORE_CONTEXT
+ 332              	#else
+ 333              	    SAVE_CONTEXT
+ 334              	    RESTORE_CONTEXT
+ 335              	#endif /* configUSE_CORE_0 */
+ 336              	
+ 337              	    se_rfi
+ 338              	#endif /* BOOT_CORE0 */
+ 339              	
+ 340              	/*****************************************************************************/
+ 341              	/* Function: _IVOR4                                                          */
+ 342              	/* Core:      CORE_2                                                         */
+ 343              	/*****************************************************************************/
+ 344 0096 44004400 	    .align    4
+ 344      44004400 
+ 344      4400
+ 345              	    .globl    _IVOR4
+ 346              	    .type     _IVOR4, @function
+ 347              	_IVOR4:
+ 348              	/* vPortISRHandler: */
+ 349              	
+ 350              	#if (configUSE_CORE_2 == 1)
+ 351              	    portSAVE_CONTEXT
+ 351 00a0 18218464 	>  e_addi r1,r1,-CONTEXT_SIZE
+ 351              	> 
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 9
+
+
+ 351              	> 
+ 351 00a4 1801090C 	>  e_stmw r0,12(r1)
+ 351              	> 
+ 351              	> 
+ 351 00a8 7C0000A6 	>  mfmsr r0
+ 351 00ac 54010000 	>  e_stw r0,0(r1)
+ 351              	> 
+ 351              	> 
+ 351 00b0 7C1A02A6 	>  mfspr r0,SRR0
+ 351 00b4 54010004 	>  e_stw r0,4(r1)
+ 351 00b8 7C1B02A6 	>  mfspr r0,SRR1
+ 351 00bc 54010008 	>  e_stw r0,8(r1)
+ 351              	> 
+ 351 00c0 1821808C 	>  e_addi r1,r1,12+128
+ 351              	> 
+ 351              	> 
+ 351 00c4 18211100 	>  e_stmvsprw 0(r1)
+ 351              	> 
+ 351 00c8 18218010 	>  e_addi r1,r1,16
+ 351 00cc 18218444 	>  e_addi r1,r1,-CONTEXT_SIZE-32
+ 351              	> 
+ 351              	> 
+ 351 00d0 7160E000 	>  e_lis r11,pxCurrentTCB@h
+ 351 00d4 7160C000 	>  e_or2i r11,pxCurrentTCB@l
+ 351              	> 
+ 351 00d8 516B0000 	>  e_lwz r11,0(r11)
+ 351              	> 
+ 351 00dc 542B0000 	>  e_stw r1,0(r11)
+ 352              	
+ 353 00e0 707EE404 	    e_lis     r3,  INTC_IACKR_BASE@h
+ 354 00e4 7068C028 	    e_or2i    r3,  INTC_IACKR_BASE@l
+ 355 00e8 50630000 	    e_lwz     r3,  0(r3)           /* load the base adress of Vector Table */
+ 356 00ec 50630000 	    e_lwz     r3,  0(r3)
+ 357 00f0 7C6903A6 	    mtctr     r3                   /* load ISR handler in CTR */
+ 358              	
+ 359              	    /* Restoring pre-IRQ MSR register value.*/
+ 360 00f4 7C1B02A6 	    mfSRR1    %r0
+ 361              	    /* No preemption, keeping EE disabled.*/
+ 362 00f8 6100     	    se_bclri  %r0, 16              /* EE = bit 16 */
+ 363 00fa 7C000124 	    mtMSR     %r0
+ 364              	
+ 365              	#if (OSAL_ENABLE_IRQ_PREEMPTION == 1)
+ 366              	    wrteei    1
+ 367              	#endif /* OSAL_ENABLE_IRQ_PREEMPTION */
+ 368              	
+ 369 00fe 0007     	    se_bctrl                       /* branch to handler */
+ 370              	
+ 371              	#if (OSAL_ENABLE_IRQ_PREEMPTION == 1)
+ 372              	    wrteei    0
+ 373              	#endif /* OSAL_ENABLE_IRQ_PREEMPTION */
+ 374              	
+ 375 0100 7C0006AC 	    mbar      0                    /* complete all pending operations */
+ 376 0104 707EE404 	    e_lis     r3,  INTC_EOIR_BASE@h
+ 377 0108 7068C038 	    e_or2i    r3,  INTC_EOIR_BASE@l
+ 378 010c 54630000 	    e_stw     r3,  0(r3)           /* write 0 to INTC_EOIR_BASE */
+ 379              	
+ 380              	    portRESTORE_CONTEXT
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 10
+
+
+ 380              	> 
+ 380 0110 7160E000 	>  e_lis r11,pxCurrentTCB@h
+ 380 0114 7160C000 	>  e_or2i r11,pxCurrentTCB@l
+ 380              	> 
+ 380              	> 
+ 380 0118 516B0000 	>  e_lwz r11,0(r11)
+ 380              	> 
+ 380 011c 502B0000 	>  e_lwz r1,0(r11)
+ 380              	> 
+ 380 0120 18218020 	>  e_addi r1,r1,32
+ 380              	> 
+ 380              	> 
+ 380 0124 504B0000 	>  e_lwz r2,0(r11)
+ 380 0128 184280BC 	>  e_addi r2,r2,CONTEXT_SIZE+32
+ 380 012c 544B0000 	>  e_stw r2,0(r11)
+ 380              	> 
+ 380              	> 
+ 380 0130 50010000 	>  e_lwz r0,0(r1)
+ 380 0134 7C000124 	>  mtmsr r0
+ 380              	> 
+ 380              	> 
+ 380 0138 50010004 	>  e_lwz r0,4(r1)
+ 380 013c 7C1A03A6 	>  mtspr SRR0,r0
+ 380 0140 50010008 	>  e_lwz r0,8(r1)
+ 380 0144 7C1B03A6 	>  mtspr SRR1,r0
+ 380              	> 
+ 380 0148 1821800C 	>  e_addi r1,r1,12
+ 380              	> 
+ 380              	> 
+ 380 014c 18410808 	>  e_lmw r2,8(r1)
+ 380 0150 50010000 	>  e_lwz r0,0(r1)
+ 380 0154 18218080 	>  e_addi r1,r1,128
+ 380              	> 
+ 380              	> 
+ 380 0158 18211000 	>  e_lmvsprw 0(r1)
+ 380              	> 
+ 380              	> 
+ 380 015c 18218010 	>  e_addi r1,r1,16
+ 381              	#else
+ 382              	    SAVE_CONTEXT
+ 383              	
+ 384              	    /* Software vector address from the INTC register.*/
+ 385              	    e_lis       %r3, HI(INTC_IACKR_BASE_0) /*IACKR register address.    */
+ 386              	    e_or2i      %r3, LO(INTC_IACKR_BASE_0)
+ 387              	    se_lwz      %r3, 0(%r3)             /* IACKR register value.        */
+ 388              	    se_lwz      %r3, 0(%r3)
+ 389              	    se_mtCTR    %r3                     /* Software handler address.    */
+ 390              	
+ 391              	    /* Restoring pre-IRQ MSR register value.*/
+ 392              	    mfSRR1      %r0
+ 393              	    /* No preemption, keeping EE disabled.*/
+ 394              	    se_bclri    %r0, 16                 /* EE = bit 16.                 */
+ 395              	    mtMSR       %r0
+ 396              	
+ 397              	#if (OSAL_ENABLE_IRQ_PREEMPTION == TRUE)
+ 398              	    /* Allows preemption while executing the software handler.*/
+ 399              	    wrteei      1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 11
+
+
+ 400              	#endif /* OSAL_ENABLE_IRQ_PREEMPTION */
+ 401              	
+ 402              	    /* Executes the software handler.*/
+ 403              	    se_bctrl
+ 404              	
+ 405              	#if (OSAL_ENABLE_IRQ_PREEMPTION == TRUE)
+ 406              	    /* Prevents preemption again.*/
+ 407              	    wrteei      0
+ 408              	#endif /* OSAL_ENABLE_IRQ_PREEMPTION */
+ 409              	
+ 410              	    /* Informs the INTC that the interrupt has been served.*/
+ 411              	    mbar        0
+ 412              	    e_lis       %r3, HI(INTC_EOIR_BASE_0)
+ 413              	    e_or2i      %r3, LO(INTC_EOIR_BASE_0)
+ 414              	    se_stw      %r3, 0(%r3)             /* Writing any value should do. */
+ 415              	
+ 416              	    RESTORE_CONTEXT
+ 417              	#endif /* configUSE_CORE_2 */
+ 418              	
+ 419 0160 0008     	    se_rfi
+ 420              	
+ 421              	
+ 422              	#if (BOOT_CORE0 == 1)
+ 423              	/*****************************************************************************/
+ 424              	/* Function: _IVOR4                                                          */
+ 425              	/* Core:      CORE_0                                                         */
+ 426              	/*****************************************************************************/
+ 427              	    .align      4
+ 428              	    .globl      _C0_IVOR4
+ 429              	    .type       _C0_IVOR4, @function
+ 430              	_C0_IVOR4:
+ 431              	
+ 432              	#if (configUSE_CORE_0 == 1)
+ 433              	/* vPortISRHandler: */
+ 434              	
+ 435              	    portSAVE_CONTEXT
+ 436              	
+ 437              	    e_lis     r3,  INTC_IACKR_BASE@h
+ 438              	    e_or2i    r3,  INTC_IACKR_BASE@l
+ 439              	    e_lwz     r3,  0(r3)           /* load the base adress of Vector Table */
+ 440              	    e_lwz     r3,  0(r3)
+ 441              	    mtctr     r3                   /* load ISR handler in CTR */
+ 442              	
+ 443              	    /* Restoring pre-IRQ MSR register value.*/
+ 444              	    mfSRR1    %r0
+ 445              	    /* No preemption, keeping EE disabled.*/
+ 446              	    se_bclri  %r0, 16              /* EE = bit 16 */
+ 447              	    mtMSR     %r0
+ 448              	
+ 449              	#if (OSAL_ENABLE_IRQ_PREEMPTION == 1)
+ 450              	    wrteei    1
+ 451              	#endif /* OSAL_ENABLE_IRQ_PREEMPTION */
+ 452              	
+ 453              	    se_bctrl                       /* branch to handler */
+ 454              	
+ 455              	#if (OSAL_ENABLE_IRQ_PREEMPTION == 1)
+ 456              	    wrteei    0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 12
+
+
+ 457              	#endif /* OSAL_ENABLE_IRQ_PREEMPTION */
+ 458              	
+ 459              	    mbar      0                    /* complete all pending operations */
+ 460              	    e_lis     r3,  INTC_EOIR_BASE@h
+ 461              	    e_or2i    r3,  INTC_EOIR_BASE@l
+ 462              	    e_stw     r3,  0(r3)           /* write 0 to INTC_EOIR_BASE */
+ 463              	
+ 464              	    portRESTORE_CONTEXT
+ 465              	#else
+ 466              	    SAVE_CONTEXT
+ 467              	
+ 468              	    /* Software vector address from the INTC register.*/
+ 469              	    e_lis       %r3, HI(INTC_IACKR_BASE_0) /*IACKR register address.    */
+ 470              	    e_or2i      %r3, LO(INTC_IACKR_BASE_0)
+ 471              	    se_lwz      %r3, 0(%r3)             /* IACKR register value.        */
+ 472              	    se_lwz      %r3, 0(%r3)
+ 473              	    se_mtCTR    %r3                     /* Software handler address.    */
+ 474              	
+ 475              	    /* Restoring pre-IRQ MSR register value.*/
+ 476              	    mfSRR1      %r0
+ 477              	    /* No preemption, keeping EE disabled.*/
+ 478              	    se_bclri    %r0, 16                 /* EE = bit 16.                 */
+ 479              	    mtMSR       %r0
+ 480              	
+ 481              	#if (OSAL_ENABLE_IRQ_PREEMPTION == TRUE)
+ 482              	    /* Allows preemption while executing the software handler.*/
+ 483              	    wrteei      1
+ 484              	#endif /* OSAL_ENABLE_IRQ_PREEMPTION */
+ 485              	
+ 486              	    /* Executes the software handler.*/
+ 487              	    se_bctrl
+ 488              	
+ 489              	#if (OSAL_ENABLE_IRQ_PREEMPTION == TRUE)
+ 490              	    /* Prevents preemption again.*/
+ 491              	    wrteei      0
+ 492              	#endif /* OSAL_ENABLE_IRQ_PREEMPTION */
+ 493              	
+ 494              	    /* Informs the INTC that the interrupt has been served.*/
+ 495              	    mbar        0
+ 496              	    e_lis       %r3, HI(INTC_EOIR_BASE_0)
+ 497              	    e_or2i      %r3, LO(INTC_EOIR_BASE_0)
+ 498              	    se_stw      %r3, 0(%r3)             /* Writing any value should do. */
+ 499              	
+ 500              	    RESTORE_CONTEXT
+ 501              	#endif /* configUSE_CORE_0 */
+ 502              	
+ 503              	        se_rfi
+ 504              	#endif /* BOOT_CORE0 */
+ 505              	
+ 506              	/*****************************************************************************/
+ 507              	/* Function: vPortStartFirstTask                                             */
+ 508              	/* Core:     The core running FreeRTOS                                       */
+ 509              	/*****************************************************************************/
+ 510 0162 44004400 	    .align    4
+ 510      44004400 
+ 510      44004400 
+ 510      4400
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 13
+
+
+ 511              	    .globl    vPortStartFirstTask
+ 512              	    .type     vPortStartFirstTask, @function
+ 513              	vPortStartFirstTask: 
+ 514              	
+ 515              	    portRESTORE_CONTEXT
+ 515              	> 
+ 515 0170 7160E000 	>  e_lis r11,pxCurrentTCB@h
+ 515 0174 7160C000 	>  e_or2i r11,pxCurrentTCB@l
+ 515              	> 
+ 515              	> 
+ 515 0178 516B0000 	>  e_lwz r11,0(r11)
+ 515              	> 
+ 515 017c 502B0000 	>  e_lwz r1,0(r11)
+ 515              	> 
+ 515 0180 18218020 	>  e_addi r1,r1,32
+ 515              	> 
+ 515              	> 
+ 515 0184 504B0000 	>  e_lwz r2,0(r11)
+ 515 0188 184280BC 	>  e_addi r2,r2,CONTEXT_SIZE+32
+ 515 018c 544B0000 	>  e_stw r2,0(r11)
+ 515              	> 
+ 515              	> 
+ 515 0190 50010000 	>  e_lwz r0,0(r1)
+ 515 0194 7C000124 	>  mtmsr r0
+ 515              	> 
+ 515              	> 
+ 515 0198 50010004 	>  e_lwz r0,4(r1)
+ 515 019c 7C1A03A6 	>  mtspr SRR0,r0
+ 515 01a0 50010008 	>  e_lwz r0,8(r1)
+ 515 01a4 7C1B03A6 	>  mtspr SRR1,r0
+ 515              	> 
+ 515 01a8 1821800C 	>  e_addi r1,r1,12
+ 515              	> 
+ 515              	> 
+ 515 01ac 18410808 	>  e_lmw r2,8(r1)
+ 515 01b0 50010000 	>  e_lwz r0,0(r1)
+ 515 01b4 18218080 	>  e_addi r1,r1,128
+ 515              	> 
+ 515              	> 
+ 515 01b8 18211000 	>  e_lmvsprw 0(r1)
+ 515              	> 
+ 515              	> 
+ 515 01bc 18218010 	>  e_addi r1,r1,16
+ 516              	
+ 517              	    /* Return into the first task */
+ 518 01c0 0008     	    se_rfi
+ 519              	
+ 520              	/*****************************************************************************/
+ 521              	/* Function: _spr_init                                                       */
+ 522              	/* Core:     The core booting FreeRTOS                                       */
+ 523              	/*****************************************************************************/
+ 524              	#if CORE_SUPPORTS_IVORS
+ 525              	    .align    4
+ 526              	    .globl    _spr_init
+ 527              	    .type     _spr_init, @function
+ 528              	_spr_init:
+ 529              	
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 14
+
+
+ 530              	    e_lis     %r3, HI(_IVOR4)
+ 531              	    e_or2i    %r3, LO(_IVOR4)
+ 532              	    mtIVOR4   %r3
+ 533              	    e_lis     %r3, HI(_IVOR8)
+ 534              	    e_or2i    %r3, LO(_IVOR8)
+ 535              	    mtIVOR8   %r3
+ 536              	#if (CORE_SUPPORTS_DECREMENTER == 1)
+ 537              	    e_lis     %r3, HI(_IVOR10)
+ 538              	    e_or2i    %r3, LO(_IVOR10)
+ 539              	    mtIVOR10  %r3
+ 540              	#endif /* CORE_SUPPORTS_DECREMENTER */
+ 541              	
+ 542              	    se_blr
+ 543              	#endif /* CORE_SUPPORTS_IVORS */
+ 544              	
+ 545              	    /* end of assembler code */
+ 546              	    .end
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccSZNRzg.s 			page 15
+
+
+DEFINED SYMBOLS
+./components/spc5_freertos_component_rla/lib/portable/portasm.s:135    *ABS*:0000009c CONTEXT_SIZE
+./components/spc5_freertos_component_rla/lib/portable/portasm.s:300    .handlers:00000000 _IVOR8
+./components/spc5_freertos_component_rla/lib/portable/portasm.s:347    .handlers:000000a0 _IVOR4
+./components/spc5_freertos_component_rla/lib/portable/portasm.s:513    .handlers:00000170 vPortStartFirstTask
+
+UNDEFINED SYMBOLS
+pxCurrentTCB
+vTaskSwitchContext

@@ -1,0 +1,596 @@
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccIGi24g.s 			page 1
+
+
+   1              	# 1 "./components/spc58ecxx_platform_component_rla/lib/src/boot.s"
+   1              	/****************************************************************************
+   0              	
+   0              	
+   2              	*
+   3              	* Copyright © 2016-2019 STMicroelectronics - All Rights Reserved
+   4              	*
+   5              	* This software is licensed under SLA0098 terms that can be found in the
+   6              	* DM00779817_1_0.pdf file in the licenses directory of this software product.
+   7              	* 
+   8              	* THIS SOFTWARE IS DISTRIBUTED "AS IS," AND ALL WARRANTIES ARE DISCLAIMED, 
+   9              	* INCLUDING MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  10              	*
+  11              	*****************************************************************************/
+  12              	
+  13              	/**
+  14              	 * @file    boot.s
+  15              	 * @brief   SPC58ECxx boot-related code.
+  16              	 *
+  17              	 * @addtogroup PPC_BOOT
+  18              	 * @{
+  19              	 */
+  20              	
+  21              	#include "boot.h"
+   1              	/****************************************************************************
+  22              	#include "toolchain.h"
+   1              	/****************************************************************************
+  23              	
+  24              	#if !defined(__DOXYGEN__)
+  25              	
+  26              	        /*
+  27              	         * BAM record, only processor 2 is started but the table is entirely
+  28              	         * populated.
+  29              	         * TODO: Handle autostart for cores 0 and 1.
+  30              	         */
+  31              	        .section    .boot, "axv"
+  32              	
+  33 0000 00A50001 	        .long       0x00A50001
+  34 0004 00000000 	        .long       _reset_address2 /* Core 2 reset address. */
+  35 0008 00000000 	        .long       _reset_address0 /* Core 0 reset address. */
+  36              	
+  37              	        /*
+  38              	         * Reset entry point for core0.
+  39              	         */
+  40              	        .align      2
+  41              	        .globl      _reset_address0
+  42              	        .type       _reset_address0, @function
+  43              	_VLE
+  44              	_reset_address0:
+  45 000c 70000000 	        e_li        %r0, 0
+  46 0010 7C1E43A6 	        mtspr       286, %r0        /* PIR register.*/
+  47              	
+  48 0014 780000B9 	        e_bl        _regclear
+  49 0018 7800015D 	        e_bl        _ram0init
+  50 001c 780001A1 	        e_bl        _iv0init
+  51              	
+  52 0020 7060E000 	        e_lis       %r3, HI(_boot_address0)
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccIGi24g.s 			page 2
+
+
+  53 0024 7060C000 	        e_or2i      %r3, LO(_boot_address0)
+  54 0028 7C6903A6 	        mtctr       %r3
+  55 002c 0007     	        se_bctrl
+  56              	
+  57              	        /*
+  58              	         * Reset entry point for core2.
+  59              	         */
+  60 002e 4400     	        .align      3               /* _reset_address2 must be aligned to 64 bits */ 
+  61              	        .globl      _reset_address2
+  62              	        .type       _reset_address2, @function
+  63              	_VLE
+  64              	_reset_address2:
+  65 0030 70000002 	        e_li        %r0, 2
+  66 0034 7C1E43A6 	        mtspr       286, %r0        /* PIR register.*/
+  67              			
+  68              	#if BOOT_DISABLE_WATCHDOG
+  69 0038 78000027 			e_bl		_disablewatchdog
+  70              	#endif
+  71 003c 78000091 	        e_bl        _regclear
+  72              	#if !BOOT_LOAD_IN_RAM
+  73 0040 78000111 	        e_bl        _sysraminit
+  74              	#endif
+  75 0044 78000155 	        e_bl        _ram2init
+  76 0048 78000191 	        e_bl        _iv2init
+  77              	
+  78              	#if BOOT_RELOCATE_IN_RAM
+  79              	        /*
+  80              	         * Image relocation in RAM.
+  81              	         */
+  82              	        e_lis       %r4, HI(__ram_reloc_start__)
+  83              	        e_or2i      %r4, LO(__ram_reloc_start__)
+  84              	        e_lis       %r5, HI(__ram_reloc_dest__)
+  85              	        e_or2i      %r5, LO(__ram_reloc_dest__)
+  86              	        e_lis       %r6, HI(__ram_reloc_end__)
+  87              	        e_or2i      %r6, LO(__ram_reloc_end__)
+  88              	.relloop:
+  89              	_NOVLE
+  90              	        cmpl        cr0, %r4, %r6
+  91              	_VLE
+  92              	        se_bge      .relend
+  93              	        se_lwz      %r7, 0(%r4)
+  94              	        se_addi     %r4, 4
+  95              	        se_stw      %r7, 0(%r5)
+  96              	        se_addi     %r5, 4
+  97              	        se_b        .relloop
+  98              	.relend:
+  99              	#endif
+ 100 004c 7060E000 	        e_lis       %r3, HI(_boot_address)
+ 101 0050 7060C000 	        e_or2i      %r3, LO(_boot_address)
+ 102 0054 7C6903A6 	        mtctr       %r3
+ 103 0058 0007     	        se_bctrl
+ 104              	        
+ 105              	        /*
+ 106              	         * Default boot addresses, are overriden by the startup code.
+ 107              	         */
+ 108 005a 4400     	        .align      2
+ 109              	        .weak       _boot_address0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccIGi24g.s 			page 3
+
+
+ 110              	_boot_address0:
+ 111              	        .weak       _boot_address
+ 112              	_boot_address:
+ 113              	.noboot:
+ 114 005c E800     	        se_b        .noboot
+ 115              	
+ 116              			/*
+ 117              	         * Disable Software Watchdogs.
+ 118              	         */
+ 119              	_disablewatchdog:
+ 120              			/* Disable SWT_0 */
+ 121 005e 709EE405 	        e_lis       r4, 0xF405
+ 122 0062 7080C000 	        e_or2i      r4, 0x0000
+ 123 0066 70780520 	        e_li        r3, 0xC520
+ 124 006a 54640010 	        e_stw       r3, 0x10(r4)
+ 125 006e 707B0128 	        e_li        r3, 0xD928
+ 126 0072 54640010 	        e_stw       r3, 0x10(r4)
+ 127 0076 707FE700 	        e_lis       r3, 0xFF00
+ 128 007a 7060C00A 	        e_or2i      r3, 0x000A
+ 129 007e 54640000 	        e_stw       r3, 0(r4)
+ 130              	
+ 131              			/* SWT_1 not present */
+ 132              			
+ 133              			/* Disable SWT_2 */
+ 134 0082 709EE405 			e_lis       r4, 0xF405
+ 135 0086 7090C000 	        e_or2i      r4, 0x8000
+ 136 008a 70780520 	        e_li        r3, 0xC520
+ 137 008e 54640010 	        e_stw       r3, 0x10(r4)
+ 138 0092 707B0128 	        e_li        r3, 0xD928
+ 139 0096 54640010 	        e_stw       r3, 0x10(r4)
+ 140 009a 707FE700 	        e_lis       r3, 0xFF00
+ 141 009e 7060C00A 	        e_or2i      r3, 0x000A
+ 142 00a2 54640000 	        e_stw       r3, 0(r4)
+ 143              			
+ 144              			/* Disable SWT_3 */
+ 145 00a6 709EE405 			e_lis       r4, 0xF405
+ 146 00aa 7098C000 	        e_or2i      r4, 0xC000
+ 147 00ae 70780520 	        e_li        r3, 0xC520
+ 148 00b2 54640010 	        e_stw       r3, 0x10(r4)
+ 149 00b6 707B0128 	        e_li        r3, 0xD928
+ 150 00ba 54640010 	        e_stw       r3, 0x10(r4)
+ 151 00be 707FE700 	        e_lis       r3, 0xFF00
+ 152 00c2 7060C00A 	        e_or2i      r3, 0x000A
+ 153 00c6 54640000 	        e_stw       r3, 0(r4)
+ 154              			
+ 155 00ca 0004     	        se_blr
+ 156              			
+ 157              	        /*
+ 158              	         * Clears the internal registers of the calling core.
+ 159              	         */
+ 160              	_regclear:
+ 161 00cc 7C000278 	        xor         %r0, %r0, %r0
+ 162 00d0 7C210A78 	        xor         %r1, %r1, %r1
+ 163 00d4 7C421278 	        xor         %r2, %r2, %r2
+ 164 00d8 7C631A78 	        xor         %r3, %r3, %r3
+ 165 00dc 7C842278 	        xor         %r4, %r4, %r4
+ 166 00e0 7CA52A78 	        xor         %r5, %r5, %r5
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccIGi24g.s 			page 4
+
+
+ 167 00e4 7CC63278 	        xor         %r6, %r6, %r6
+ 168 00e8 7CE73A78 	        xor         %r7, %r7, %r7
+ 169 00ec 7D084278 	        xor         %r8, %r8, %r8
+ 170 00f0 7D294A78 	        xor         %r9, %r9, %r9
+ 171 00f4 7D4A5278 	        xor         %r10, %r10, %r10
+ 172 00f8 7D6B5A78 	        xor         %r11, %r11, %r11
+ 173 00fc 7D8C6278 	        xor         %r12, %r12, %r12
+ 174 0100 7DAD6A78 	        xor         %r13, %r13, %r13
+ 175 0104 7DCE7278 	        xor         %r14, %r14, %r14
+ 176 0108 7DEF7A78 	        xor         %r15, %r15, %r15
+ 177 010c 7E108278 	        xor         %r16, %r16, %r16
+ 178 0110 7E318A78 	        xor         %r17, %r17, %r17
+ 179 0114 7E529278 	        xor         %r18, %r18, %r18
+ 180 0118 7E739A78 	        xor         %r19, %r19, %r19
+ 181 011c 7E94A278 	        xor         %r20, %r20, %r20
+ 182 0120 7EB5AA78 	        xor         %r21, %r21, %r21
+ 183 0124 7ED6B278 	        xor         %r22, %r22, %r22
+ 184 0128 7EF7BA78 	        xor         %r23, %r23, %r23
+ 185 012c 7F18C278 	        xor         %r24, %r24, %r24
+ 186 0130 7F39CA78 	        xor         %r25, %r25, %r25
+ 187 0134 7F5AD278 	        xor         %r26, %r26, %r26
+ 188 0138 7F7BDA78 	        xor         %r27, %r27, %r27
+ 189 013c 7F9CE278 	        xor         %r28, %r28, %r28
+ 190 0140 7FBDEA78 	        xor         %r29, %r29, %r29
+ 191 0144 7FDEF278 	        xor         %r30, %r30, %r30
+ 192 0148 7FFFFA78 	        xor         %r31, %r31, %r31
+ 193              	
+ 194 014c 0004     	        se_blr
+ 195              	
+ 196              	        /*
+ 197              	         * System RAM clearing.
+ 198              	         */
+ 199 014e 4400     	        .align      2
+ 200              	_sysraminit:
+ 201              	        /* Shared RAM.*/
+ 202 0150 7080E000 	        e_lis       %r4, HI(__ram_start__)
+ 203 0154 7080C000 	        e_or2i      %r4, LO(__ram_start__)
+ 204 0158 70A0E000 	        e_lis       %r5, HI(__ram_end__)
+ 205 015c 70A0C000 	        e_or2i      %r5, LO(__ram_end__)
+ 206              	.sramclrloop:
+ 207              	_NOVLE
+ 208 0160 7C042840 	        cmpl        cr0, %r4, %r5
+ 209              	_VLE
+ 210 0164 E006     	        se_bge      .sramclrend
+ 211 0166 1A040900 	        e_stmw      %r16, 0(%r4)
+ 212 016a 18848040 	        e_addi      %r4, %r4, 64
+ 213 016e E8F9     	        se_b        .sramclrloop
+ 214              	.sramclrend:
+ 215 0170 0004     	        se_blr
+ 216              	
+ 217              	        /*
+ 218              	         * Core 0 RAM clearing.
+ 219              	         */
+ 220 0172 4400     	        .align      2
+ 221              	_ram0init:
+ 222              	        /* Core 0 DRAM.*/
+ 223 0174 7080E000 	        e_lis       %r4, HI(__dram0_start__)
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccIGi24g.s 			page 5
+
+
+ 224 0178 7080C000 	        e_or2i      %r4, LO(__dram0_start__)
+ 225 017c 70A0E000 	        e_lis       %r5, HI(__dram0_end__)
+ 226 0180 70A0C000 	        e_or2i      %r5, LO(__dram0_end__)
+ 227              	.dram0clrloop:
+ 228              	_NOVLE
+ 229 0184 7C042840 	        cmpl        cr0, %r4, %r5
+ 230              	_VLE
+ 231 0188 E006     	        se_bge      .dram0clrend
+ 232 018a 1A040900 	        e_stmw      %r16, 0(%r4)
+ 233 018e 18848040 	        e_addi      %r4, %r4, 64
+ 234 0192 E8F9     	        se_b        .dram0clrloop
+ 235              	.dram0clrend:
+ 236              	
+ 237 0194 0004     	        se_blr
+ 238              	
+ 239              	        /*
+ 240              	         * Core 2 RAM clearing.
+ 241              	         */
+ 242 0196 4400     	        .align      2
+ 243              	_ram2init:
+ 244              	        /* Core 2 DRAM.*/
+ 245 0198 7080E000 	        e_lis       %r4, HI(__dram2_start__)
+ 246 019c 7080C000 	        e_or2i      %r4, LO(__dram2_start__)
+ 247 01a0 70A0E000 	        e_lis       %r5, HI(__dram2_end__)
+ 248 01a4 70A0C000 	        e_or2i      %r5, LO(__dram2_end__)
+ 249              	.dram2clrloop:
+ 250              	_NOVLE
+ 251 01a8 7C042840 	        cmpl        cr0, %r4, %r5
+ 252              	_VLE
+ 253 01ac E006     	        se_bge      .dram2clrend
+ 254 01ae 1A040900 	        e_stmw      %r16, 0(%r4)
+ 255 01b2 18848040 	        e_addi      %r4, %r4, 64
+ 256 01b6 E8F9     	        se_b        .dram2clrloop
+ 257              	.dram2clrend:
+ 258              	
+ 259 01b8 0004     	        se_blr
+ 260              	
+ 261              	        /*
+ 262              	         * Core 0 exception vectors initialization.
+ 263              	         */
+ 264 01ba 4400     	        .align      2
+ 265              	_iv0init:
+ 266              	        /* IVPR initialization.*/
+ 267 01bc 7060E000 	        e_lis       %r3, HI(__ivpr0_base__)
+ 268 01c0 7060C000 	        e_or2i      %r3, LO(__ivpr0_base__)
+ 269 01c4 7C7F0BA6 	        mtIVPR      %r3
+ 270              	
+ 271              	        /* MSR initialization.*/
+ 272 01c8 7060E206 	        e_lis       %r3, HI(MSR_DEFAULT)
+ 273 01cc 7062C000 	        e_or2i      %r3, LO(MSR_DEFAULT)
+ 274 01d0 7C600124 	        mtMSR       %r3
+ 275              	
+ 276 01d4 0004     	        se_blr
+ 277              	
+ 278              	        /*
+ 279              	         * Core 2 exception vectors initialization.
+ 280              	         */
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccIGi24g.s 			page 6
+
+
+ 281 01d6 4400     	        .align      2
+ 282              	_iv2init:
+ 283              	        /* IVPR initialization.*/
+ 284 01d8 7060E000 	        e_lis       %r3, HI(__ivpr2_base__)
+ 285 01dc 7060C000 	        e_or2i      %r3, LO(__ivpr2_base__)
+ 286 01e0 7C7F0BA6 	        mtIVPR      %r3
+ 287              	
+ 288              	        /* MSR initialization.*/
+ 289 01e4 7060E206 	        e_lis       %r3, HI(MSR_DEFAULT)
+ 290 01e8 7062C000 	        e_or2i      %r3, LO(MSR_DEFAULT)
+ 291 01ec 7C600124 	        mtMSR       %r3
+ 292              	
+ 293 01f0 0004     	        se_blr
+ 294              	
+ 295              	        /*
+ 296              	         * Core 0 exceptions vectors.
+ 297              	         */
+ 298              	        .section    .core0_ivors, "axv"
+ 299              	        .globl      C0_IVORS
+ 300              	C0_IVORS:
+ 301 0000 78000000 	        e_b         _C0_IVOR0
+ 302 0004 44004400 	        .align      4
+ 302      44004400 
+ 302      44004400 
+ 303 0010 78000000 	        e_b         _C0_IVOR1
+ 304 0014 44004400 	        .align      4
+ 304      44004400 
+ 304      44004400 
+ 305 0020 78000000 	        e_b        _C0_IVOR2
+ 306 0024 44004400 	        .align      4
+ 306      44004400 
+ 306      44004400 
+ 307 0030 78000000 	        e_b        _C0_IVOR3
+ 308 0034 44004400 	        .align      4
+ 308      44004400 
+ 308      44004400 
+ 309 0040 78000000 	        e_b        _C0_IVOR4
+ 310 0044 44004400 	        .align      4
+ 310      44004400 
+ 310      44004400 
+ 311 0050 78000000 	        e_b        _C0_IVOR5
+ 312 0054 44004400 	        .align      4
+ 312      44004400 
+ 312      44004400 
+ 313 0060 78000000 	        e_b        _C0_IVOR6
+ 314 0064 44004400 	        .align      4
+ 314      44004400 
+ 314      44004400 
+ 315 0070 78000000 	        e_b        _C0_IVOR7
+ 316 0074 44004400 	        .align      4
+ 316      44004400 
+ 316      44004400 
+ 317 0080 78000000 	        e_b        _C0_IVOR8
+ 318 0084 44004400 	        .align      4
+ 318      44004400 
+ 318      44004400 
+ 319 0090 78000000 	        e_b        _C0_IVOR9
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccIGi24g.s 			page 7
+
+
+ 320 0094 44004400 	        .align      4
+ 320      44004400 
+ 320      44004400 
+ 321 00a0 78000000 	        e_b         _C0_IVOR10
+ 322 00a4 44004400 	        .align      4
+ 322      44004400 
+ 322      44004400 
+ 323 00b0 78000000 	        e_b         _C0_IVOR11
+ 324 00b4 44004400 	        .align      4
+ 324      44004400 
+ 324      44004400 
+ 325 00c0 78000000 	        e_b         _C0_IVOR12
+ 326 00c4 44004400 	        .align      4
+ 326      44004400 
+ 326      44004400 
+ 327 00d0 78000000 	        e_b         _C0_IVOR13
+ 328 00d4 44004400 	        .align      4
+ 328      44004400 
+ 328      44004400 
+ 329 00e0 78000000 	        e_b         _C0_IVOR14
+ 330 00e4 44004400 	        .align      4
+ 330      44004400 
+ 330      44004400 
+ 331 00f0 78000000 	        e_b         _C0_IVOR15
+ 332              	
+ 333              	        /*
+ 334              	         * Core 2 exceptions vectors.
+ 335              	         * Note: Names are not prefixed with C2_ in order to maintain name
+ 336              	         *       compatibility with single code devices.
+ 337              	         */
+ 338              	        .section    .core2_ivors, "axv"
+ 339              	        .globl      IVORS
+ 340              	IVORS:
+ 341 0000 78000000 	        e_b         _IVOR0
+ 342 0004 44004400 	        .align      4
+ 342      44004400 
+ 342      44004400 
+ 343 0010 78000000 	        e_b         _IVOR1
+ 344 0014 44004400 	        .align      4
+ 344      44004400 
+ 344      44004400 
+ 345 0020 78000000 	        e_b         _IVOR2
+ 346 0024 44004400 	        .align      4
+ 346      44004400 
+ 346      44004400 
+ 347 0030 78000000 	        e_b         _IVOR3
+ 348 0034 44004400 	        .align      4
+ 348      44004400 
+ 348      44004400 
+ 349 0040 78000000 	        e_b         _IVOR4
+ 350 0044 44004400 	        .align      4
+ 350      44004400 
+ 350      44004400 
+ 351 0050 78000000 	        e_b         _IVOR5
+ 352 0054 44004400 	        .align      4
+ 352      44004400 
+ 352      44004400 
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccIGi24g.s 			page 8
+
+
+ 353 0060 78000000 	        e_b         _IVOR6
+ 354 0064 44004400 	        .align      4
+ 354      44004400 
+ 354      44004400 
+ 355 0070 78000000 	        e_b         _IVOR7
+ 356 0074 44004400 	        .align      4
+ 356      44004400 
+ 356      44004400 
+ 357 0080 78000000 	        e_b         _IVOR8
+ 358 0084 44004400 	        .align      4
+ 358      44004400 
+ 358      44004400 
+ 359 0090 78000000 	        e_b         _IVOR9
+ 360 0094 44004400 	        .align      4
+ 360      44004400 
+ 360      44004400 
+ 361 00a0 78000000 	        e_b         _IVOR10
+ 362 00a4 44004400 	        .align      4
+ 362      44004400 
+ 362      44004400 
+ 363 00b0 78000000 	        e_b         _IVOR11
+ 364 00b4 44004400 	        .align      4
+ 364      44004400 
+ 364      44004400 
+ 365 00c0 78000000 	        e_b         _IVOR12
+ 366 00c4 44004400 	        .align      4
+ 366      44004400 
+ 366      44004400 
+ 367 00d0 78000000 	        e_b         _IVOR13
+ 368 00d4 44004400 	        .align      4
+ 368      44004400 
+ 368      44004400 
+ 369 00e0 78000000 	        e_b         _IVOR14
+ 370 00e4 44004400 	        .align      4
+ 370      44004400 
+ 370      44004400 
+ 371 00f0 78000000 	        e_b         _IVOR15
+ 372              	
+ 373              	        .section    .handlers, "axv"
+ 374              	
+ 375              	        /*
+ 376              	         * Unhandled exceptions handler for core 0.
+ 377              	         */
+ 378              	        .align      2
+ 379              	        .weak       _C0_IVOR0,  _C0_IVOR1,  _C0_IVOR2,  _C0_IVOR3,
+ 380              	        .weak       _C0_IVOR4,  _C0_IVOR5,  _C0_IVOR6,  _C0_IVOR7,
+ 381              	        .weak       _C0_IVOR8,  _C0_IVOR9,  _C0_IVOR10, _C0_IVOR11
+ 382              	        .weak       _C0_IVOR12, _C0_IVOR13, _C0_IVOR14, _C0_IVOR15
+ 383              	        .weak       _unhandled_exception0
+ 384              	        .type       _unhandled_exception0, @function
+ 385              	_C0_IVOR0:
+ 386              	_C0_IVOR1:
+ 387              	_C0_IVOR2:
+ 388              	_C0_IVOR3:
+ 389              	_C0_IVOR5:
+ 390              	_C0_IVOR6:
+ 391              	_C0_IVOR7:
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccIGi24g.s 			page 9
+
+
+ 392              	_C0_IVOR8:
+ 393              	_C0_IVOR9:
+ 394              	_C0_IVOR11:
+ 395              	_C0_IVOR12:
+ 396              	_C0_IVOR13:
+ 397              	_C0_IVOR14:
+ 398              	_C0_IVOR15:
+ 399              	_unhandled_exception0:
+ 400              	.unhandled_exception0:
+ 401 0000 E800     	        se_b        .unhandled_exception0
+ 402              	
+ 403              	        /*
+ 404              	         * Unhandled exceptions handler for core 2.
+ 405              	         * Note: Names are not prefixed with C2_ in order to maintain name
+ 406              	         *       compatibility with single code devices.
+ 407              	         */
+ 408 0002 4400     	        .align      2
+ 409              	        .weak       _IVOR0,  _IVOR1,  _IVOR2,  _IVOR3,
+ 410              	        .weak       _IVOR4,  _IVOR5,  _IVOR6,  _IVOR7,
+ 411              	        .weak       _IVOR8,  _IVOR9,  _IVOR10, _IVOR11
+ 412              	        .weak       _IVOR12, _IVOR13, _IVOR14, _IVOR15
+ 413              	        .weak       _unhandled_exception2
+ 414              	        .type       _unhandled_exception2, @function
+ 415              	_IVOR0:
+ 416              	_IVOR1:
+ 417              	_IVOR2:
+ 418              	_IVOR3:
+ 419              	_IVOR5:
+ 420              	_IVOR6:
+ 421              	_IVOR7:
+ 422              	_IVOR8:
+ 423              	_IVOR9:
+ 424              	_IVOR11:
+ 425              	_IVOR12:
+ 426              	_IVOR13:
+ 427              	_IVOR14:
+ 428              	_IVOR15:
+ 429              	_unhandled_exception2:
+ 430              	.unhandled_exception2:
+ 431 0004 E800     	        se_b        .unhandled_exception2
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccIGi24g.s 			page 10
+
+
+DEFINED SYMBOLS
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:64     .boot:00000030 _reset_address2
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:44     .boot:0000000c _reset_address0
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:160    .boot:000000cc _regclear
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:221    .boot:00000174 _ram0init
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:265    .boot:000001bc _iv0init
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:110    .boot:0000005c _boot_address0
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:119    .boot:0000005e _disablewatchdog
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:200    .boot:00000150 _sysraminit
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:243    .boot:00000198 _ram2init
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:282    .boot:000001d8 _iv2init
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:112    .boot:0000005c _boot_address
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:113    .boot:0000005c .noboot
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:206    .boot:00000160 .sramclrloop
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:214    .boot:00000170 .sramclrend
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:227    .boot:00000184 .dram0clrloop
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:235    .boot:00000194 .dram0clrend
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:249    .boot:000001a8 .dram2clrloop
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:257    .boot:000001b8 .dram2clrend
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:300    .core0_ivors:00000000 C0_IVORS
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:385    .handlers:00000000 _C0_IVOR0
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:386    .handlers:00000000 _C0_IVOR1
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:387    .handlers:00000000 _C0_IVOR2
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:388    .handlers:00000000 _C0_IVOR3
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:389    .handlers:00000000 _C0_IVOR5
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:390    .handlers:00000000 _C0_IVOR6
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:391    .handlers:00000000 _C0_IVOR7
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:392    .handlers:00000000 _C0_IVOR8
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:393    .handlers:00000000 _C0_IVOR9
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:394    .handlers:00000000 _C0_IVOR11
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:395    .handlers:00000000 _C0_IVOR12
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:396    .handlers:00000000 _C0_IVOR13
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:397    .handlers:00000000 _C0_IVOR14
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:398    .handlers:00000000 _C0_IVOR15
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:340    .core2_ivors:00000000 IVORS
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:415    .handlers:00000004 _IVOR0
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:416    .handlers:00000004 _IVOR1
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:417    .handlers:00000004 _IVOR2
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:418    .handlers:00000004 _IVOR3
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:419    .handlers:00000004 _IVOR5
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:420    .handlers:00000004 _IVOR6
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:421    .handlers:00000004 _IVOR7
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:422    .handlers:00000004 _IVOR8
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:423    .handlers:00000004 _IVOR9
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:424    .handlers:00000004 _IVOR11
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:425    .handlers:00000004 _IVOR12
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:426    .handlers:00000004 _IVOR13
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:427    .handlers:00000004 _IVOR14
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:428    .handlers:00000004 _IVOR15
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:399    .handlers:00000000 _unhandled_exception0
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:400    .handlers:00000000 .unhandled_exception0
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:429    .handlers:00000004 _unhandled_exception2
+./components/spc58ecxx_platform_component_rla/lib/src/boot.s:430    .handlers:00000004 .unhandled_exception2
+
+UNDEFINED SYMBOLS
+__ram_start__
+__ram_end__
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccIGi24g.s 			page 11
+
+
+__dram0_start__
+__dram0_end__
+__dram2_start__
+__dram2_end__
+__ivpr0_base__
+__ivpr2_base__
+_C0_IVOR4
+_C0_IVOR10
+_IVOR4
+_IVOR10

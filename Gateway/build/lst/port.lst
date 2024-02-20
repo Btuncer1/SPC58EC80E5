@@ -1,0 +1,1617 @@
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 1
+
+
+   1              		.file	"port.c"
+   2              		.section	".text","axv"
+   3              	.Ltext0:
+   4              		.cfi_sections	.debug_frame
+   5              		.section	.text.pxPortInitialiseStack,"axv",@progbits
+   6              		.align 1
+   7              		.p2align 4,,15
+   8              		.globl pxPortInitialiseStack
+   9              		.type	pxPortInitialiseStack, @function
+  10              	pxPortInitialiseStack:
+  11              	.LFB3:
+  12              		.file 1 "./components/spc5_freertos_component_rla/lib/portable/port.c"
+  13              		.loc 1 124 0
+  14              		.cfi_startproc
+  15              	.LVL0:
+  16              		.loc 1 137 0
+  17              	 # 137 "./components/spc5_freertos_component_rla/lib/portable/port.c" 1
+  18 0000 7CC000A6 		mfmsr	%r6	
+  19              	
+  20              	 # 0 "" 2
+  21              		.loc 1 138 0
+  22              	 # 138 "./components/spc5_freertos_component_rla/lib/portable/port.c" 1
+  23 0004 18C7D180 		e_ori	%r7, %r6, 32768	
+  24              	
+  25              	 # 0 "" 2
+  26              	.LVL1:
+  27              		.loc 1 143 0
+  28 0008 4800     		se_li %r0,0
+  29              		.loc 1 179 0
+  30 000a 54A3FF5C 		e_stw %r5,-164(%r3)
+  31              		.loc 1 145 0
+  32 000e 5483FFD4 		e_stw %r4,-44(%r3)
+  33              		.loc 1 143 0
+  34 0012 5403FFDC 		e_stw %r0,-36(%r3)
+  35              	.LVL2:
+  36              		.loc 1 144 0
+  37 0016 5403FFD8 		e_stw %r0,-40(%r3)
+  38              	.LVL3:
+  39              		.loc 1 146 0
+  40 001a 5403FFD0 		e_stw %r0,-48(%r3)
+  41              	.LVL4:
+  42              		.loc 1 147 0
+  43 001e 71600031 		e_li %r11,49
+  44              		.loc 1 170 0
+  45 0022 71200012 		e_li %r9,18
+  46              		.loc 1 147 0
+  47 0026 5563FFCC 		e_stw %r11,-52(%r3)
+  48              	.LVL5:
+  49              		.loc 1 170 0
+  50 002a 5523FF80 		e_stw %r9,-128(%r3)
+  51              		.loc 1 148 0
+  52 002e 71600030 		e_li %r11,48
+  53              		.loc 1 171 0
+  54 0032 71200011 		e_li %r9,17
+  55              		.loc 1 148 0
+  56 0036 5563FFC8 		e_stw %r11,-56(%r3)
+  57              	.LVL6:
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 2
+
+
+  58              		.loc 1 171 0
+  59 003a 5523FF7C 		e_stw %r9,-132(%r3)
+  60              		.loc 1 149 0
+  61 003e 71600029 		e_li %r11,41
+  62              		.loc 1 172 0
+  63 0042 71200010 		e_li %r9,16
+  64              		.loc 1 149 0
+  65 0046 5563FFC4 		e_stw %r11,-60(%r3)
+  66              	.LVL7:
+  67              		.loc 1 172 0
+  68 004a 5523FF78 		e_stw %r9,-136(%r3)
+  69              		.loc 1 150 0
+  70 004e 71600028 		e_li %r11,40
+  71              		.loc 1 173 0
+  72 0052 71200009 		e_li %r9,9
+  73              		.loc 1 150 0
+  74 0056 5563FFC0 		e_stw %r11,-64(%r3)
+  75              	.LVL8:
+  76              		.loc 1 173 0
+  77 005a 5523FF74 		e_stw %r9,-140(%r3)
+  78              		.loc 1 151 0
+  79 005e 71600027 		e_li %r11,39
+  80              		.loc 1 174 0
+  81 0062 71200008 		e_li %r9,8
+  82              		.loc 1 151 0
+  83 0066 5563FFBC 		e_stw %r11,-68(%r3)
+  84              	.LVL9:
+  85              		.loc 1 174 0
+  86 006a 5523FF70 		e_stw %r9,-144(%r3)
+  87              		.loc 1 152 0
+  88 006e 71600026 		e_li %r11,38
+  89              		.loc 1 175 0
+  90 0072 71200007 		e_li %r9,7
+  91              		.loc 1 152 0
+  92 0076 5563FFB8 		e_stw %r11,-72(%r3)
+  93              	.LVL10:
+  94              		.loc 1 175 0
+  95 007a 5523FF6C 		e_stw %r9,-148(%r3)
+  96              		.loc 1 153 0
+  97 007e 71600025 		e_li %r11,37
+  98              		.loc 1 176 0
+  99 0082 71200006 		e_li %r9,6
+ 100              		.loc 1 153 0
+ 101 0086 5563FFB4 		e_stw %r11,-76(%r3)
+ 102              	.LVL11:
+ 103              		.loc 1 176 0
+ 104 008a 5523FF68 		e_stw %r9,-152(%r3)
+ 105              		.loc 1 154 0
+ 106 008e 71600024 		e_li %r11,36
+ 107              		.loc 1 177 0
+ 108 0092 71200005 		e_li %r9,5
+ 109              		.loc 1 154 0
+ 110 0096 5563FFB0 		e_stw %r11,-80(%r3)
+ 111              	.LVL12:
+ 112              		.loc 1 177 0
+ 113 009a 5523FF64 		e_stw %r9,-156(%r3)
+ 114              		.loc 1 155 0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 3
+
+
+ 115 009e 71600023 		e_li %r11,35
+ 116              		.loc 1 178 0
+ 117 00a2 71200004 		e_li %r9,4
+ 118              		.loc 1 155 0
+ 119 00a6 5563FFAC 		e_stw %r11,-84(%r3)
+ 120              	.LVL13:
+ 121              		.loc 1 178 0
+ 122 00aa 5523FF60 		e_stw %r9,-160(%r3)
+ 123              		.loc 1 156 0
+ 124 00ae 71600022 		e_li %r11,34
+ 125              		.loc 1 185 0
+ 126 00b2 4815     		se_li %r5,1
+ 127              	.LVL14:
+ 128              		.loc 1 156 0
+ 129 00b4 5563FFA8 		e_stw %r11,-88(%r3)
+ 130              	.LVL15:
+ 131              		.loc 1 157 0
+ 132 00b8 71600021 		e_li %r11,33
+ 133              		.loc 1 195 0
+ 134 00bc 18638424 		e_addi %r3,%r3,-220
+ 135              	.LVL16:
+ 136              		.loc 1 157 0
+ 137 00c0 55630080 		e_stw %r11,128(%r3)
+ 138              	.LVL17:
+ 139              		.loc 1 158 0
+ 140 00c4 71600020 		e_li %r11,32
+ 141 00c8 5563007C 		e_stw %r11,124(%r3)
+ 142              		.loc 1 159 0
+ 143 00cc 71600019 		e_li %r11,25
+ 144 00d0 55630078 		e_stw %r11,120(%r3)
+ 145              		.loc 1 160 0
+ 146 00d4 71600018 		e_li %r11,24
+ 147 00d8 55630074 		e_stw %r11,116(%r3)
+ 148              		.loc 1 161 0
+ 149 00dc 71600017 		e_li %r11,23
+ 150 00e0 55630070 		e_stw %r11,112(%r3)
+ 151              		.loc 1 162 0
+ 152 00e4 71600016 		e_li %r11,22
+ 153 00e8 5563006C 		e_stw %r11,108(%r3)
+ 154              		.loc 1 163 0
+ 155 00ec 71600015 		e_li %r11,21
+ 156 00f0 55630068 		e_stw %r11,104(%r3)
+ 157              		.loc 1 164 0
+ 158 00f4 71600014 		e_li %r11,20
+ 159 00f8 55630064 		e_stw %r11,100(%r3)
+ 160              		.loc 1 168 0
+ 161 00fc 7160E000 		e_lis %r11,__sdata2_start__@ha
+ 162 0100 1D6B0000 		e_la %r11,__sdata2_start__@l(%r11)
+ 163 0104 55630060 		e_stw %r11,96(%r3)
+ 164              		.loc 1 183 0
+ 165 0108 55630034 		e_stw %r11,52(%r3)
+ 166              		.loc 1 187 0
+ 167 010c DA73     		se_stw %r7,40(%r3)
+ 168              		.loc 1 185 0
+ 169 010e DC53     		se_stw %r5,48(%r3)
+ 170              		.loc 1 186 0
+ 171 0110 DB03     		se_stw %r0,44(%r3)
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 4
+
+
+ 172              		.loc 1 188 0
+ 173 0112 D943     		se_stw %r4,36(%r3)
+ 174              		.loc 1 189 0
+ 175 0114 D863     		se_stw %r6,32(%r3)
+ 176              		.loc 1 192 0
+ 177 0116 70F7E2DA 		e_lis %r7,0xbada
+ 178 011a 70F7C2DA 		e_or2i %r7,47834
+ 179 011e D073     		se_stw %r7,0(%r3)
+ 180              		.loc 1 195 0
+ 181 0120 0004     		se_blr
+ 182              		.cfi_endproc
+ 183              	.LFE3:
+ 184              		.size	pxPortInitialiseStack, .-pxPortInitialiseStack
+ 185              		.section	.text.xPortStartScheduler,"axv",@progbits
+ 186              		.align 1
+ 187              		.p2align 4,,15
+ 188              		.globl xPortStartScheduler
+ 189              		.type	xPortStartScheduler, @function
+ 190              	xPortStartScheduler:
+ 191              	.LFB4:
+ 192              		.loc 1 199 0
+ 193              		.cfi_startproc
+ 194 0000 182106F8 		e_stwu %r1,-8(%r1)
+ 195              	.LCFI0:
+ 196              		.cfi_def_cfa_offset 8
+ 197 0004 0080     		se_mflr %r0
+ 198              	.LBB6:
+ 199              	.LBB7:
+ 200              		.loc 1 219 0
+ 201 0006 706003E8 		e_li %r3,1000
+ 202              	.LBE7:
+ 203              	.LBE6:
+ 204              		.loc 1 199 0
+ 205 000a D301     		se_stw %r0,12(%r1)
+ 206              		.cfi_offset 65, 4
+ 207              	.LBB9:
+ 208              	.LBB8:
+ 209              		.loc 1 219 0
+ 210 000c 78000001 		e_bl osalSysTimeSetup
+ 211              	.LVL18:
+ 212              	.LBE8:
+ 213              	.LBE9:
+ 214              		.loc 1 202 0
+ 215 0010 78000001 		e_bl vPortStartFirstTask
+ 216              	.LVL19:
+ 217              		.loc 1 206 0
+ 218 0014 C301     		se_lwz %r0,12(%r1)
+ 219 0016 0090     		se_mtlr %r0
+ 220              		.cfi_restore 65
+ 221 0018 4803     		se_li %r3,0
+ 222 001a 2071     		se_addi %r1,8
+ 223              	.LCFI1:
+ 224              		.cfi_def_cfa_offset 0
+ 225 001c 0004     		se_blr
+ 226              		.cfi_endproc
+ 227              	.LFE4:
+ 228              		.size	xPortStartScheduler, .-xPortStartScheduler
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 5
+
+
+ 229              		.section	.text.vPortEndScheduler,"axv",@progbits
+ 230              		.align 1
+ 231              		.p2align 4,,15
+ 232              		.globl vPortEndScheduler
+ 233              		.type	vPortEndScheduler, @function
+ 234              	vPortEndScheduler:
+ 235              	.LFB5:
+ 236              		.loc 1 210 0
+ 237              		.cfi_startproc
+ 238              	.L4:
+ 239              		.loc 1 212 0 discriminator 1
+ 240 0000 78000000 		e_b .L4
+ 241              		.cfi_endproc
+ 242              	.LFE5:
+ 243              		.size	vPortEndScheduler, .-vPortEndScheduler
+ 244              		.section	.text.prvPortTimerSetup,"axv",@progbits
+ 245              		.align 1
+ 246              		.p2align 4,,15
+ 247              		.globl prvPortTimerSetup
+ 248              		.type	prvPortTimerSetup, @function
+ 249              	prvPortTimerSetup:
+ 250              	.LFB6:
+ 251              		.loc 1 217 0
+ 252              		.cfi_startproc
+ 253              		.loc 1 219 0
+ 254 0000 706003E8 		e_li %r3,1000
+ 255              		.loc 1 221 0
+ 256              		.loc 1 219 0
+ 257 0004 78000000 		e_b osalSysTimeSetup
+ 258              	.LVL20:
+ 259              		.cfi_endproc
+ 260              	.LFE6:
+ 261              		.size	prvPortTimerSetup, .-prvPortTimerSetup
+ 262              		.section	.text.vPortTimerReset,"axv",@progbits
+ 263              		.align 1
+ 264              		.p2align 4,,15
+ 265              		.globl vPortTimerReset
+ 266              		.type	vPortTimerReset, @function
+ 267              	vPortTimerReset:
+ 268              	.LFB7:
+ 269              		.loc 1 225 0
+ 270              		.cfi_startproc
+ 271              		.loc 1 229 0
+ 272              		.loc 1 227 0
+ 273 0000 78000000 		e_b osalSysTimeReset
+ 274              	.LVL21:
+ 275              		.cfi_endproc
+ 276              	.LFE7:
+ 277              		.size	vPortTimerReset, .-vPortTimerReset
+ 278              		.section	.text.vector226,"axv",@progbits
+ 279              		.align 1
+ 280              		.p2align 4,,15
+ 281              		.globl vector226
+ 282              		.type	vector226, @function
+ 283              	vector226:
+ 284              	.LFB8:
+ 285              		.loc 1 233 0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 6
+
+
+ 286              		.cfi_startproc
+ 287 0000 182106F8 		e_stwu %r1,-8(%r1)
+ 288              	.LCFI2:
+ 289              		.cfi_def_cfa_offset 8
+ 290 0004 0080     		se_mflr %r0
+ 291 0006 D301     		se_stw %r0,12(%r1)
+ 292              		.cfi_offset 65, 4
+ 293              		.loc 1 234 0
+ 294 0008 78000001 		e_bl xTaskIncrementTick
+ 295              	.LVL22:
+ 296              		.loc 1 239 0
+ 297 000c 78000001 		e_bl vTaskSwitchContext
+ 298              	.LVL23:
+ 299              		.loc 1 242 0
+ 300 0010 C301     		se_lwz %r0,12(%r1)
+ 301 0012 0090     		se_mtlr %r0
+ 302              		.cfi_restore 65
+ 303 0014 2071     		se_addi %r1,8
+ 304              	.LCFI3:
+ 305              		.cfi_def_cfa_offset 0
+ 306              	.LBB10:
+ 307              	.LBB11:
+ 308              		.loc 1 227 0
+ 309 0016 78000000 		e_b osalSysTimeReset
+ 310              	.LVL24:
+ 311              	.LBE11:
+ 312              	.LBE10:
+ 313              		.cfi_endproc
+ 314              	.LFE8:
+ 315              		.size	vector226, .-vector226
+ 316              		.section	".text","axv"
+ 317              	.Letext0:
+ 318              		.file 2 "c:\\spc5studio-6.0\\eclipse\\plugins\\com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.
+ 319              		.file 3 "c:\\spc5studio-6.0\\eclipse\\plugins\\com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.
+ 320              		.file 4 "./components/spc5_freertos_component_rla/lib/include/projdefs.h"
+ 321              		.file 5 "./components/spc5_freertos_component_rla/lib/portable/portmacro.h"
+ 322              		.file 6 "./components/spc58ecxx_osal_component_rla/lib/include/osal.h"
+ 323              		.file 7 "./components/spc5_freertos_component_rla/lib/include/task.h"
+ 324              		.section	.debug_info,"",@progbits
+ 325              	.Ldebug_info0:
+ 326 0000 00000295 		.4byte	0x295
+ 327 0004 0002     		.2byte	0x2
+ 328 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 329 000a 04       		.byte	0x4
+ 330 000b 01       		.uleb128 0x1
+ 331 000c 00000000 		.4byte	.LASF26
+ 332 0010 01       		.byte	0x1
+ 333 0011 00000000 		.4byte	.LASF27
+ 334 0015 00000000 		.4byte	.LASF28
+ 335 0019 00000000 		.4byte	.Ldebug_ranges0+0x18
+ 336 001d 00000000 		.4byte	0
+ 337 0021 00000000 		.4byte	0
+ 338 0025 00000000 		.4byte	.Ldebug_line0
+ 339 0029 02       		.uleb128 0x2
+ 340 002a 04       		.byte	0x4
+ 341 002b 05       		.byte	0x5
+ 342 002c 696E7400 		.string	"int"
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 7
+
+
+ 343 0030 03       		.uleb128 0x3
+ 344 0031 04       		.byte	0x4
+ 345 0032 07       		.byte	0x7
+ 346 0033 00000000 		.4byte	.LASF0
+ 347 0037 03       		.uleb128 0x3
+ 348 0038 04       		.byte	0x4
+ 349 0039 05       		.byte	0x5
+ 350 003a 00000000 		.4byte	.LASF1
+ 351 003e 03       		.uleb128 0x3
+ 352 003f 01       		.byte	0x1
+ 353 0040 06       		.byte	0x6
+ 354 0041 00000000 		.4byte	.LASF2
+ 355 0045 03       		.uleb128 0x3
+ 356 0046 01       		.byte	0x1
+ 357 0047 08       		.byte	0x8
+ 358 0048 00000000 		.4byte	.LASF3
+ 359 004c 03       		.uleb128 0x3
+ 360 004d 02       		.byte	0x2
+ 361 004e 05       		.byte	0x5
+ 362 004f 00000000 		.4byte	.LASF4
+ 363 0053 03       		.uleb128 0x3
+ 364 0054 02       		.byte	0x2
+ 365 0055 07       		.byte	0x7
+ 366 0056 00000000 		.4byte	.LASF5
+ 367 005a 04       		.uleb128 0x4
+ 368 005b 00000000 		.4byte	.LASF9
+ 369 005f 02       		.byte	0x2
+ 370 0060 41       		.byte	0x41
+ 371 0061 00000065 		.4byte	0x65
+ 372 0065 03       		.uleb128 0x3
+ 373 0066 04       		.byte	0x4
+ 374 0067 07       		.byte	0x7
+ 375 0068 00000000 		.4byte	.LASF6
+ 376 006c 03       		.uleb128 0x3
+ 377 006d 08       		.byte	0x8
+ 378 006e 05       		.byte	0x5
+ 379 006f 00000000 		.4byte	.LASF7
+ 380 0073 03       		.uleb128 0x3
+ 381 0074 08       		.byte	0x8
+ 382 0075 07       		.byte	0x7
+ 383 0076 00000000 		.4byte	.LASF8
+ 384 007a 04       		.uleb128 0x4
+ 385 007b 00000000 		.4byte	.LASF10
+ 386 007f 03       		.byte	0x3
+ 387 0080 2D       		.byte	0x2d
+ 388 0081 0000005A 		.4byte	0x5a
+ 389 0085 04       		.uleb128 0x4
+ 390 0086 00000000 		.4byte	.LASF11
+ 391 008a 04       		.byte	0x4
+ 392 008b 23       		.byte	0x23
+ 393 008c 00000090 		.4byte	0x90
+ 394 0090 05       		.uleb128 0x5
+ 395 0091 04       		.byte	0x4
+ 396 0092 00000096 		.4byte	0x96
+ 397 0096 06       		.uleb128 0x6
+ 398 0097 01       		.byte	0x1
+ 399 0098 000000A2 		.4byte	0xa2
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 8
+
+
+ 400 009c 07       		.uleb128 0x7
+ 401 009d 000000A2 		.4byte	0xa2
+ 402 00a1 00       		.byte	0
+ 403 00a2 08       		.uleb128 0x8
+ 404 00a3 04       		.byte	0x4
+ 405 00a4 04       		.uleb128 0x4
+ 406 00a5 00000000 		.4byte	.LASF12
+ 407 00a9 05       		.byte	0x5
+ 408 00aa 62       		.byte	0x62
+ 409 00ab 00000037 		.4byte	0x37
+ 410 00af 03       		.uleb128 0x3
+ 411 00b0 04       		.byte	0x4
+ 412 00b1 07       		.byte	0x7
+ 413 00b2 00000000 		.4byte	.LASF13
+ 414 00b6 03       		.uleb128 0x3
+ 415 00b7 01       		.byte	0x1
+ 416 00b8 08       		.byte	0x8
+ 417 00b9 00000000 		.4byte	.LASF14
+ 418 00bd 09       		.uleb128 0x9
+ 419 00be 0000007A 		.4byte	0x7a
+ 420 00c2 0A       		.uleb128 0xa
+ 421 00c3 01       		.byte	0x1
+ 422 00c4 00000000 		.4byte	.LASF15
+ 423 00c8 01       		.byte	0x1
+ 424 00c9 D8       		.byte	0xd8
+ 425 00ca 01       		.byte	0x1
+ 426 00cb 01       		.byte	0x1
+ 427 00cc 0A       		.uleb128 0xa
+ 428 00cd 01       		.byte	0x1
+ 429 00ce 00000000 		.4byte	.LASF16
+ 430 00d2 01       		.byte	0x1
+ 431 00d3 E0       		.byte	0xe0
+ 432 00d4 01       		.byte	0x1
+ 433 00d5 01       		.byte	0x1
+ 434 00d6 0B       		.uleb128 0xb
+ 435 00d7 01       		.byte	0x1
+ 436 00d8 00000000 		.4byte	.LASF21
+ 437 00dc 01       		.byte	0x1
+ 438 00dd 7B       		.byte	0x7b
+ 439 00de 01       		.byte	0x1
+ 440 00df 00000139 		.4byte	0x139
+ 441 00e3 00000000 		.4byte	.LFB3
+ 442 00e7 00000000 		.4byte	.LFE3
+ 443 00eb 02       		.byte	0x2
+ 444 00ec 71       		.byte	0x71
+ 445 00ed 00       		.sleb128 0
+ 446 00ee 01       		.byte	0x1
+ 447 00ef 00000139 		.4byte	0x139
+ 448 00f3 0C       		.uleb128 0xc
+ 449 00f4 00000000 		.4byte	.LASF17
+ 450 00f8 01       		.byte	0x1
+ 451 00f9 7B       		.byte	0x7b
+ 452 00fa 00000139 		.4byte	0x139
+ 453 00fe 00000000 		.4byte	.LLST0
+ 454 0102 0D       		.uleb128 0xd
+ 455 0103 00000000 		.4byte	.LASF18
+ 456 0107 01       		.byte	0x1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 9
+
+
+ 457 0108 7B       		.byte	0x7b
+ 458 0109 00000085 		.4byte	0x85
+ 459 010d 01       		.byte	0x1
+ 460 010e 54       		.byte	0x54
+ 461 010f 0C       		.uleb128 0xc
+ 462 0110 00000000 		.4byte	.LASF19
+ 463 0114 01       		.byte	0x1
+ 464 0115 7B       		.byte	0x7b
+ 465 0116 000000A2 		.4byte	0xa2
+ 466 011a 00000000 		.4byte	.LLST1
+ 467 011e 0E       		.uleb128 0xe
+ 468 011f 6D737200 		.string	"msr"
+ 469 0123 01       		.byte	0x1
+ 470 0124 86       		.byte	0x86
+ 471 0125 00000065 		.4byte	0x65
+ 472 0129 01       		.byte	0x1
+ 473 012a 56       		.byte	0x56
+ 474 012b 0F       		.uleb128 0xf
+ 475 012c 00000000 		.4byte	.LASF20
+ 476 0130 01       		.byte	0x1
+ 477 0131 87       		.byte	0x87
+ 478 0132 00000065 		.4byte	0x65
+ 479 0136 01       		.byte	0x1
+ 480 0137 57       		.byte	0x57
+ 481 0138 00       		.byte	0
+ 482 0139 05       		.uleb128 0x5
+ 483 013a 04       		.byte	0x4
+ 484 013b 00000065 		.4byte	0x65
+ 485 013f 10       		.uleb128 0x10
+ 486 0140 01       		.byte	0x1
+ 487 0141 00000000 		.4byte	.LASF22
+ 488 0145 01       		.byte	0x1
+ 489 0146 C6       		.byte	0xc6
+ 490 0147 01       		.byte	0x1
+ 491 0148 00000037 		.4byte	0x37
+ 492 014c 00000000 		.4byte	.LFB4
+ 493 0150 00000000 		.4byte	.LFE4
+ 494 0154 00000000 		.4byte	.LLST2
+ 495 0158 01       		.byte	0x1
+ 496 0159 0000018C 		.4byte	0x18c
+ 497 015d 11       		.uleb128 0x11
+ 498 015e 000000C2 		.4byte	0xc2
+ 499 0162 00000000 		.4byte	.LBB6
+ 500 0166 00000000 		.4byte	.Ldebug_ranges0+0
+ 501 016a 01       		.byte	0x1
+ 502 016b C8       		.byte	0xc8
+ 503 016c 00000182 		.4byte	0x182
+ 504 0170 12       		.uleb128 0x12
+ 505 0171 00000000 		.4byte	.LVL18
+ 506 0175 0000024C 		.4byte	0x24c
+ 507 0179 13       		.uleb128 0x13
+ 508 017a 01       		.byte	0x1
+ 509 017b 53       		.byte	0x53
+ 510 017c 03       		.byte	0x3
+ 511 017d 0A       		.byte	0xa
+ 512 017e 03E8     		.2byte	0x3e8
+ 513 0180 00       		.byte	0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 10
+
+
+ 514 0181 00       		.byte	0
+ 515 0182 14       		.uleb128 0x14
+ 516 0183 00000000 		.4byte	.LVL19
+ 517 0187 0000026A 		.4byte	0x26a
+ 518 018b 00       		.byte	0
+ 519 018c 15       		.uleb128 0x15
+ 520 018d 01       		.byte	0x1
+ 521 018e 00000000 		.4byte	.LASF29
+ 522 0192 01       		.byte	0x1
+ 523 0193 D1       		.byte	0xd1
+ 524 0194 01       		.byte	0x1
+ 525 0195 00000000 		.4byte	.LFB5
+ 526 0199 00000000 		.4byte	.LFE5
+ 527 019d 02       		.byte	0x2
+ 528 019e 71       		.byte	0x71
+ 529 019f 00       		.sleb128 0
+ 530 01a0 01       		.byte	0x1
+ 531 01a1 16       		.uleb128 0x16
+ 532 01a2 000000C2 		.4byte	0xc2
+ 533 01a6 00000000 		.4byte	.LFB6
+ 534 01aa 00000000 		.4byte	.LFE6
+ 535 01ae 02       		.byte	0x2
+ 536 01af 71       		.byte	0x71
+ 537 01b0 00       		.sleb128 0
+ 538 01b1 01       		.byte	0x1
+ 539 01b2 000001C9 		.4byte	0x1c9
+ 540 01b6 17       		.uleb128 0x17
+ 541 01b7 00000000 		.4byte	.LVL20
+ 542 01bb 01       		.byte	0x1
+ 543 01bc 0000024C 		.4byte	0x24c
+ 544 01c0 13       		.uleb128 0x13
+ 545 01c1 01       		.byte	0x1
+ 546 01c2 53       		.byte	0x53
+ 547 01c3 03       		.byte	0x3
+ 548 01c4 0A       		.byte	0xa
+ 549 01c5 03E8     		.2byte	0x3e8
+ 550 01c7 00       		.byte	0
+ 551 01c8 00       		.byte	0
+ 552 01c9 16       		.uleb128 0x16
+ 553 01ca 000000CC 		.4byte	0xcc
+ 554 01ce 00000000 		.4byte	.LFB7
+ 555 01d2 00000000 		.4byte	.LFE7
+ 556 01d6 02       		.byte	0x2
+ 557 01d7 71       		.byte	0x71
+ 558 01d8 00       		.sleb128 0
+ 559 01d9 01       		.byte	0x1
+ 560 01da 000001E9 		.4byte	0x1e9
+ 561 01de 18       		.uleb128 0x18
+ 562 01df 00000000 		.4byte	.LVL21
+ 563 01e3 01       		.byte	0x1
+ 564 01e4 00000274 		.4byte	0x274
+ 565 01e8 00       		.byte	0
+ 566 01e9 19       		.uleb128 0x19
+ 567 01ea 01       		.byte	0x1
+ 568 01eb 00000000 		.4byte	.LASF30
+ 569 01ef 01       		.byte	0x1
+ 570 01f0 E8       		.byte	0xe8
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 11
+
+
+ 571 01f1 01       		.byte	0x1
+ 572 01f2 00000000 		.4byte	.LFB8
+ 573 01f6 00000000 		.4byte	.LFE8
+ 574 01fa 00000000 		.4byte	.LLST3
+ 575 01fe 01       		.byte	0x1
+ 576 01ff 00000234 		.4byte	0x234
+ 577 0203 1A       		.uleb128 0x1a
+ 578 0204 000000CC 		.4byte	0xcc
+ 579 0208 00000000 		.4byte	.LBB10
+ 580 020c 00000000 		.4byte	.LBE10
+ 581 0210 01       		.byte	0x1
+ 582 0211 F1       		.byte	0xf1
+ 583 0212 00000221 		.4byte	0x221
+ 584 0216 18       		.uleb128 0x18
+ 585 0217 00000000 		.4byte	.LVL24
+ 586 021b 01       		.byte	0x1
+ 587 021c 00000274 		.4byte	0x274
+ 588 0220 00       		.byte	0
+ 589 0221 14       		.uleb128 0x14
+ 590 0222 00000000 		.4byte	.LVL22
+ 591 0226 0000027E 		.4byte	0x27e
+ 592 022a 14       		.uleb128 0x14
+ 593 022b 00000000 		.4byte	.LVL23
+ 594 022f 0000028D 		.4byte	0x28d
+ 595 0233 00       		.byte	0
+ 596 0234 1B       		.uleb128 0x1b
+ 597 0235 00000065 		.4byte	0x65
+ 598 0239 0000023F 		.4byte	0x23f
+ 599 023d 1C       		.uleb128 0x1c
+ 600 023e 00       		.byte	0
+ 601 023f 1D       		.uleb128 0x1d
+ 602 0240 00000000 		.4byte	.LASF31
+ 603 0244 01       		.byte	0x1
+ 604 0245 58       		.byte	0x58
+ 605 0246 00000234 		.4byte	0x234
+ 606 024a 01       		.byte	0x1
+ 607 024b 01       		.byte	0x1
+ 608 024c 1E       		.uleb128 0x1e
+ 609 024d 01       		.byte	0x1
+ 610 024e 00000000 		.4byte	.LASF32
+ 611 0252 06       		.byte	0x6
+ 612 0253 96       		.byte	0x96
+ 613 0254 01       		.byte	0x1
+ 614 0255 00000264 		.4byte	0x264
+ 615 0259 01       		.byte	0x1
+ 616 025a 00000264 		.4byte	0x264
+ 617 025e 07       		.uleb128 0x7
+ 618 025f 0000007A 		.4byte	0x7a
+ 619 0263 00       		.byte	0
+ 620 0264 05       		.uleb128 0x5
+ 621 0265 04       		.byte	0x4
+ 622 0266 000000BD 		.4byte	0xbd
+ 623 026a 1F       		.uleb128 0x1f
+ 624 026b 01       		.byte	0x1
+ 625 026c 00000000 		.4byte	.LASF23
+ 626 0270 01       		.byte	0x1
+ 627 0271 6D       		.byte	0x6d
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 12
+
+
+ 628 0272 01       		.byte	0x1
+ 629 0273 01       		.byte	0x1
+ 630 0274 1F       		.uleb128 0x1f
+ 631 0275 01       		.byte	0x1
+ 632 0276 00000000 		.4byte	.LASF24
+ 633 027a 06       		.byte	0x6
+ 634 027b 97       		.byte	0x97
+ 635 027c 01       		.byte	0x1
+ 636 027d 01       		.byte	0x1
+ 637 027e 20       		.uleb128 0x20
+ 638 027f 01       		.byte	0x1
+ 639 0280 00000000 		.4byte	.LASF33
+ 640 0284 07       		.byte	0x7
+ 641 0285 089C     		.2byte	0x89c
+ 642 0287 01       		.byte	0x1
+ 643 0288 000000A4 		.4byte	0xa4
+ 644 028c 01       		.byte	0x1
+ 645 028d 21       		.uleb128 0x21
+ 646 028e 01       		.byte	0x1
+ 647 028f 00000000 		.4byte	.LASF25
+ 648 0293 07       		.byte	0x7
+ 649 0294 08F0     		.2byte	0x8f0
+ 650 0296 01       		.byte	0x1
+ 651 0297 01       		.byte	0x1
+ 652 0298 00       		.byte	0
+ 653              		.section	.debug_abbrev,"",@progbits
+ 654              	.Ldebug_abbrev0:
+ 655 0000 01       		.uleb128 0x1
+ 656 0001 11       		.uleb128 0x11
+ 657 0002 01       		.byte	0x1
+ 658 0003 25       		.uleb128 0x25
+ 659 0004 0E       		.uleb128 0xe
+ 660 0005 13       		.uleb128 0x13
+ 661 0006 0B       		.uleb128 0xb
+ 662 0007 03       		.uleb128 0x3
+ 663 0008 0E       		.uleb128 0xe
+ 664 0009 1B       		.uleb128 0x1b
+ 665 000a 0E       		.uleb128 0xe
+ 666 000b 55       		.uleb128 0x55
+ 667 000c 06       		.uleb128 0x6
+ 668 000d 11       		.uleb128 0x11
+ 669 000e 01       		.uleb128 0x1
+ 670 000f 52       		.uleb128 0x52
+ 671 0010 01       		.uleb128 0x1
+ 672 0011 10       		.uleb128 0x10
+ 673 0012 06       		.uleb128 0x6
+ 674 0013 00       		.byte	0
+ 675 0014 00       		.byte	0
+ 676 0015 02       		.uleb128 0x2
+ 677 0016 24       		.uleb128 0x24
+ 678 0017 00       		.byte	0
+ 679 0018 0B       		.uleb128 0xb
+ 680 0019 0B       		.uleb128 0xb
+ 681 001a 3E       		.uleb128 0x3e
+ 682 001b 0B       		.uleb128 0xb
+ 683 001c 03       		.uleb128 0x3
+ 684 001d 08       		.uleb128 0x8
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 13
+
+
+ 685 001e 00       		.byte	0
+ 686 001f 00       		.byte	0
+ 687 0020 03       		.uleb128 0x3
+ 688 0021 24       		.uleb128 0x24
+ 689 0022 00       		.byte	0
+ 690 0023 0B       		.uleb128 0xb
+ 691 0024 0B       		.uleb128 0xb
+ 692 0025 3E       		.uleb128 0x3e
+ 693 0026 0B       		.uleb128 0xb
+ 694 0027 03       		.uleb128 0x3
+ 695 0028 0E       		.uleb128 0xe
+ 696 0029 00       		.byte	0
+ 697 002a 00       		.byte	0
+ 698 002b 04       		.uleb128 0x4
+ 699 002c 16       		.uleb128 0x16
+ 700 002d 00       		.byte	0
+ 701 002e 03       		.uleb128 0x3
+ 702 002f 0E       		.uleb128 0xe
+ 703 0030 3A       		.uleb128 0x3a
+ 704 0031 0B       		.uleb128 0xb
+ 705 0032 3B       		.uleb128 0x3b
+ 706 0033 0B       		.uleb128 0xb
+ 707 0034 49       		.uleb128 0x49
+ 708 0035 13       		.uleb128 0x13
+ 709 0036 00       		.byte	0
+ 710 0037 00       		.byte	0
+ 711 0038 05       		.uleb128 0x5
+ 712 0039 0F       		.uleb128 0xf
+ 713 003a 00       		.byte	0
+ 714 003b 0B       		.uleb128 0xb
+ 715 003c 0B       		.uleb128 0xb
+ 716 003d 49       		.uleb128 0x49
+ 717 003e 13       		.uleb128 0x13
+ 718 003f 00       		.byte	0
+ 719 0040 00       		.byte	0
+ 720 0041 06       		.uleb128 0x6
+ 721 0042 15       		.uleb128 0x15
+ 722 0043 01       		.byte	0x1
+ 723 0044 27       		.uleb128 0x27
+ 724 0045 0C       		.uleb128 0xc
+ 725 0046 01       		.uleb128 0x1
+ 726 0047 13       		.uleb128 0x13
+ 727 0048 00       		.byte	0
+ 728 0049 00       		.byte	0
+ 729 004a 07       		.uleb128 0x7
+ 730 004b 05       		.uleb128 0x5
+ 731 004c 00       		.byte	0
+ 732 004d 49       		.uleb128 0x49
+ 733 004e 13       		.uleb128 0x13
+ 734 004f 00       		.byte	0
+ 735 0050 00       		.byte	0
+ 736 0051 08       		.uleb128 0x8
+ 737 0052 0F       		.uleb128 0xf
+ 738 0053 00       		.byte	0
+ 739 0054 0B       		.uleb128 0xb
+ 740 0055 0B       		.uleb128 0xb
+ 741 0056 00       		.byte	0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 14
+
+
+ 742 0057 00       		.byte	0
+ 743 0058 09       		.uleb128 0x9
+ 744 0059 35       		.uleb128 0x35
+ 745 005a 00       		.byte	0
+ 746 005b 49       		.uleb128 0x49
+ 747 005c 13       		.uleb128 0x13
+ 748 005d 00       		.byte	0
+ 749 005e 00       		.byte	0
+ 750 005f 0A       		.uleb128 0xa
+ 751 0060 2E       		.uleb128 0x2e
+ 752 0061 00       		.byte	0
+ 753 0062 3F       		.uleb128 0x3f
+ 754 0063 0C       		.uleb128 0xc
+ 755 0064 03       		.uleb128 0x3
+ 756 0065 0E       		.uleb128 0xe
+ 757 0066 3A       		.uleb128 0x3a
+ 758 0067 0B       		.uleb128 0xb
+ 759 0068 3B       		.uleb128 0x3b
+ 760 0069 0B       		.uleb128 0xb
+ 761 006a 27       		.uleb128 0x27
+ 762 006b 0C       		.uleb128 0xc
+ 763 006c 20       		.uleb128 0x20
+ 764 006d 0B       		.uleb128 0xb
+ 765 006e 00       		.byte	0
+ 766 006f 00       		.byte	0
+ 767 0070 0B       		.uleb128 0xb
+ 768 0071 2E       		.uleb128 0x2e
+ 769 0072 01       		.byte	0x1
+ 770 0073 3F       		.uleb128 0x3f
+ 771 0074 0C       		.uleb128 0xc
+ 772 0075 03       		.uleb128 0x3
+ 773 0076 0E       		.uleb128 0xe
+ 774 0077 3A       		.uleb128 0x3a
+ 775 0078 0B       		.uleb128 0xb
+ 776 0079 3B       		.uleb128 0x3b
+ 777 007a 0B       		.uleb128 0xb
+ 778 007b 27       		.uleb128 0x27
+ 779 007c 0C       		.uleb128 0xc
+ 780 007d 49       		.uleb128 0x49
+ 781 007e 13       		.uleb128 0x13
+ 782 007f 11       		.uleb128 0x11
+ 783 0080 01       		.uleb128 0x1
+ 784 0081 12       		.uleb128 0x12
+ 785 0082 01       		.uleb128 0x1
+ 786 0083 40       		.uleb128 0x40
+ 787 0084 0A       		.uleb128 0xa
+ 788 0085 9742     		.uleb128 0x2117
+ 789 0087 0C       		.uleb128 0xc
+ 790 0088 01       		.uleb128 0x1
+ 791 0089 13       		.uleb128 0x13
+ 792 008a 00       		.byte	0
+ 793 008b 00       		.byte	0
+ 794 008c 0C       		.uleb128 0xc
+ 795 008d 05       		.uleb128 0x5
+ 796 008e 00       		.byte	0
+ 797 008f 03       		.uleb128 0x3
+ 798 0090 0E       		.uleb128 0xe
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 15
+
+
+ 799 0091 3A       		.uleb128 0x3a
+ 800 0092 0B       		.uleb128 0xb
+ 801 0093 3B       		.uleb128 0x3b
+ 802 0094 0B       		.uleb128 0xb
+ 803 0095 49       		.uleb128 0x49
+ 804 0096 13       		.uleb128 0x13
+ 805 0097 02       		.uleb128 0x2
+ 806 0098 06       		.uleb128 0x6
+ 807 0099 00       		.byte	0
+ 808 009a 00       		.byte	0
+ 809 009b 0D       		.uleb128 0xd
+ 810 009c 05       		.uleb128 0x5
+ 811 009d 00       		.byte	0
+ 812 009e 03       		.uleb128 0x3
+ 813 009f 0E       		.uleb128 0xe
+ 814 00a0 3A       		.uleb128 0x3a
+ 815 00a1 0B       		.uleb128 0xb
+ 816 00a2 3B       		.uleb128 0x3b
+ 817 00a3 0B       		.uleb128 0xb
+ 818 00a4 49       		.uleb128 0x49
+ 819 00a5 13       		.uleb128 0x13
+ 820 00a6 02       		.uleb128 0x2
+ 821 00a7 0A       		.uleb128 0xa
+ 822 00a8 00       		.byte	0
+ 823 00a9 00       		.byte	0
+ 824 00aa 0E       		.uleb128 0xe
+ 825 00ab 34       		.uleb128 0x34
+ 826 00ac 00       		.byte	0
+ 827 00ad 03       		.uleb128 0x3
+ 828 00ae 08       		.uleb128 0x8
+ 829 00af 3A       		.uleb128 0x3a
+ 830 00b0 0B       		.uleb128 0xb
+ 831 00b1 3B       		.uleb128 0x3b
+ 832 00b2 0B       		.uleb128 0xb
+ 833 00b3 49       		.uleb128 0x49
+ 834 00b4 13       		.uleb128 0x13
+ 835 00b5 02       		.uleb128 0x2
+ 836 00b6 0A       		.uleb128 0xa
+ 837 00b7 00       		.byte	0
+ 838 00b8 00       		.byte	0
+ 839 00b9 0F       		.uleb128 0xf
+ 840 00ba 34       		.uleb128 0x34
+ 841 00bb 00       		.byte	0
+ 842 00bc 03       		.uleb128 0x3
+ 843 00bd 0E       		.uleb128 0xe
+ 844 00be 3A       		.uleb128 0x3a
+ 845 00bf 0B       		.uleb128 0xb
+ 846 00c0 3B       		.uleb128 0x3b
+ 847 00c1 0B       		.uleb128 0xb
+ 848 00c2 49       		.uleb128 0x49
+ 849 00c3 13       		.uleb128 0x13
+ 850 00c4 02       		.uleb128 0x2
+ 851 00c5 0A       		.uleb128 0xa
+ 852 00c6 00       		.byte	0
+ 853 00c7 00       		.byte	0
+ 854 00c8 10       		.uleb128 0x10
+ 855 00c9 2E       		.uleb128 0x2e
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 16
+
+
+ 856 00ca 01       		.byte	0x1
+ 857 00cb 3F       		.uleb128 0x3f
+ 858 00cc 0C       		.uleb128 0xc
+ 859 00cd 03       		.uleb128 0x3
+ 860 00ce 0E       		.uleb128 0xe
+ 861 00cf 3A       		.uleb128 0x3a
+ 862 00d0 0B       		.uleb128 0xb
+ 863 00d1 3B       		.uleb128 0x3b
+ 864 00d2 0B       		.uleb128 0xb
+ 865 00d3 27       		.uleb128 0x27
+ 866 00d4 0C       		.uleb128 0xc
+ 867 00d5 49       		.uleb128 0x49
+ 868 00d6 13       		.uleb128 0x13
+ 869 00d7 11       		.uleb128 0x11
+ 870 00d8 01       		.uleb128 0x1
+ 871 00d9 12       		.uleb128 0x12
+ 872 00da 01       		.uleb128 0x1
+ 873 00db 40       		.uleb128 0x40
+ 874 00dc 06       		.uleb128 0x6
+ 875 00dd 9742     		.uleb128 0x2117
+ 876 00df 0C       		.uleb128 0xc
+ 877 00e0 01       		.uleb128 0x1
+ 878 00e1 13       		.uleb128 0x13
+ 879 00e2 00       		.byte	0
+ 880 00e3 00       		.byte	0
+ 881 00e4 11       		.uleb128 0x11
+ 882 00e5 1D       		.uleb128 0x1d
+ 883 00e6 01       		.byte	0x1
+ 884 00e7 31       		.uleb128 0x31
+ 885 00e8 13       		.uleb128 0x13
+ 886 00e9 52       		.uleb128 0x52
+ 887 00ea 01       		.uleb128 0x1
+ 888 00eb 55       		.uleb128 0x55
+ 889 00ec 06       		.uleb128 0x6
+ 890 00ed 58       		.uleb128 0x58
+ 891 00ee 0B       		.uleb128 0xb
+ 892 00ef 59       		.uleb128 0x59
+ 893 00f0 0B       		.uleb128 0xb
+ 894 00f1 01       		.uleb128 0x1
+ 895 00f2 13       		.uleb128 0x13
+ 896 00f3 00       		.byte	0
+ 897 00f4 00       		.byte	0
+ 898 00f5 12       		.uleb128 0x12
+ 899 00f6 898201   		.uleb128 0x4109
+ 900 00f9 01       		.byte	0x1
+ 901 00fa 11       		.uleb128 0x11
+ 902 00fb 01       		.uleb128 0x1
+ 903 00fc 31       		.uleb128 0x31
+ 904 00fd 13       		.uleb128 0x13
+ 905 00fe 00       		.byte	0
+ 906 00ff 00       		.byte	0
+ 907 0100 13       		.uleb128 0x13
+ 908 0101 8A8201   		.uleb128 0x410a
+ 909 0104 00       		.byte	0
+ 910 0105 02       		.uleb128 0x2
+ 911 0106 0A       		.uleb128 0xa
+ 912 0107 9142     		.uleb128 0x2111
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 17
+
+
+ 913 0109 0A       		.uleb128 0xa
+ 914 010a 00       		.byte	0
+ 915 010b 00       		.byte	0
+ 916 010c 14       		.uleb128 0x14
+ 917 010d 898201   		.uleb128 0x4109
+ 918 0110 00       		.byte	0
+ 919 0111 11       		.uleb128 0x11
+ 920 0112 01       		.uleb128 0x1
+ 921 0113 31       		.uleb128 0x31
+ 922 0114 13       		.uleb128 0x13
+ 923 0115 00       		.byte	0
+ 924 0116 00       		.byte	0
+ 925 0117 15       		.uleb128 0x15
+ 926 0118 2E       		.uleb128 0x2e
+ 927 0119 00       		.byte	0
+ 928 011a 3F       		.uleb128 0x3f
+ 929 011b 0C       		.uleb128 0xc
+ 930 011c 03       		.uleb128 0x3
+ 931 011d 0E       		.uleb128 0xe
+ 932 011e 3A       		.uleb128 0x3a
+ 933 011f 0B       		.uleb128 0xb
+ 934 0120 3B       		.uleb128 0x3b
+ 935 0121 0B       		.uleb128 0xb
+ 936 0122 27       		.uleb128 0x27
+ 937 0123 0C       		.uleb128 0xc
+ 938 0124 11       		.uleb128 0x11
+ 939 0125 01       		.uleb128 0x1
+ 940 0126 12       		.uleb128 0x12
+ 941 0127 01       		.uleb128 0x1
+ 942 0128 40       		.uleb128 0x40
+ 943 0129 0A       		.uleb128 0xa
+ 944 012a 9742     		.uleb128 0x2117
+ 945 012c 0C       		.uleb128 0xc
+ 946 012d 00       		.byte	0
+ 947 012e 00       		.byte	0
+ 948 012f 16       		.uleb128 0x16
+ 949 0130 2E       		.uleb128 0x2e
+ 950 0131 01       		.byte	0x1
+ 951 0132 31       		.uleb128 0x31
+ 952 0133 13       		.uleb128 0x13
+ 953 0134 11       		.uleb128 0x11
+ 954 0135 01       		.uleb128 0x1
+ 955 0136 12       		.uleb128 0x12
+ 956 0137 01       		.uleb128 0x1
+ 957 0138 40       		.uleb128 0x40
+ 958 0139 0A       		.uleb128 0xa
+ 959 013a 9742     		.uleb128 0x2117
+ 960 013c 0C       		.uleb128 0xc
+ 961 013d 01       		.uleb128 0x1
+ 962 013e 13       		.uleb128 0x13
+ 963 013f 00       		.byte	0
+ 964 0140 00       		.byte	0
+ 965 0141 17       		.uleb128 0x17
+ 966 0142 898201   		.uleb128 0x4109
+ 967 0145 01       		.byte	0x1
+ 968 0146 11       		.uleb128 0x11
+ 969 0147 01       		.uleb128 0x1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 18
+
+
+ 970 0148 9542     		.uleb128 0x2115
+ 971 014a 0C       		.uleb128 0xc
+ 972 014b 31       		.uleb128 0x31
+ 973 014c 13       		.uleb128 0x13
+ 974 014d 00       		.byte	0
+ 975 014e 00       		.byte	0
+ 976 014f 18       		.uleb128 0x18
+ 977 0150 898201   		.uleb128 0x4109
+ 978 0153 00       		.byte	0
+ 979 0154 11       		.uleb128 0x11
+ 980 0155 01       		.uleb128 0x1
+ 981 0156 9542     		.uleb128 0x2115
+ 982 0158 0C       		.uleb128 0xc
+ 983 0159 31       		.uleb128 0x31
+ 984 015a 13       		.uleb128 0x13
+ 985 015b 00       		.byte	0
+ 986 015c 00       		.byte	0
+ 987 015d 19       		.uleb128 0x19
+ 988 015e 2E       		.uleb128 0x2e
+ 989 015f 01       		.byte	0x1
+ 990 0160 3F       		.uleb128 0x3f
+ 991 0161 0C       		.uleb128 0xc
+ 992 0162 03       		.uleb128 0x3
+ 993 0163 0E       		.uleb128 0xe
+ 994 0164 3A       		.uleb128 0x3a
+ 995 0165 0B       		.uleb128 0xb
+ 996 0166 3B       		.uleb128 0x3b
+ 997 0167 0B       		.uleb128 0xb
+ 998 0168 27       		.uleb128 0x27
+ 999 0169 0C       		.uleb128 0xc
+ 1000 016a 11       		.uleb128 0x11
+ 1001 016b 01       		.uleb128 0x1
+ 1002 016c 12       		.uleb128 0x12
+ 1003 016d 01       		.uleb128 0x1
+ 1004 016e 40       		.uleb128 0x40
+ 1005 016f 06       		.uleb128 0x6
+ 1006 0170 9742     		.uleb128 0x2117
+ 1007 0172 0C       		.uleb128 0xc
+ 1008 0173 01       		.uleb128 0x1
+ 1009 0174 13       		.uleb128 0x13
+ 1010 0175 00       		.byte	0
+ 1011 0176 00       		.byte	0
+ 1012 0177 1A       		.uleb128 0x1a
+ 1013 0178 1D       		.uleb128 0x1d
+ 1014 0179 01       		.byte	0x1
+ 1015 017a 31       		.uleb128 0x31
+ 1016 017b 13       		.uleb128 0x13
+ 1017 017c 11       		.uleb128 0x11
+ 1018 017d 01       		.uleb128 0x1
+ 1019 017e 12       		.uleb128 0x12
+ 1020 017f 01       		.uleb128 0x1
+ 1021 0180 58       		.uleb128 0x58
+ 1022 0181 0B       		.uleb128 0xb
+ 1023 0182 59       		.uleb128 0x59
+ 1024 0183 0B       		.uleb128 0xb
+ 1025 0184 01       		.uleb128 0x1
+ 1026 0185 13       		.uleb128 0x13
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 19
+
+
+ 1027 0186 00       		.byte	0
+ 1028 0187 00       		.byte	0
+ 1029 0188 1B       		.uleb128 0x1b
+ 1030 0189 01       		.uleb128 0x1
+ 1031 018a 01       		.byte	0x1
+ 1032 018b 49       		.uleb128 0x49
+ 1033 018c 13       		.uleb128 0x13
+ 1034 018d 01       		.uleb128 0x1
+ 1035 018e 13       		.uleb128 0x13
+ 1036 018f 00       		.byte	0
+ 1037 0190 00       		.byte	0
+ 1038 0191 1C       		.uleb128 0x1c
+ 1039 0192 21       		.uleb128 0x21
+ 1040 0193 00       		.byte	0
+ 1041 0194 00       		.byte	0
+ 1042 0195 00       		.byte	0
+ 1043 0196 1D       		.uleb128 0x1d
+ 1044 0197 34       		.uleb128 0x34
+ 1045 0198 00       		.byte	0
+ 1046 0199 03       		.uleb128 0x3
+ 1047 019a 0E       		.uleb128 0xe
+ 1048 019b 3A       		.uleb128 0x3a
+ 1049 019c 0B       		.uleb128 0xb
+ 1050 019d 3B       		.uleb128 0x3b
+ 1051 019e 0B       		.uleb128 0xb
+ 1052 019f 49       		.uleb128 0x49
+ 1053 01a0 13       		.uleb128 0x13
+ 1054 01a1 3F       		.uleb128 0x3f
+ 1055 01a2 0C       		.uleb128 0xc
+ 1056 01a3 3C       		.uleb128 0x3c
+ 1057 01a4 0C       		.uleb128 0xc
+ 1058 01a5 00       		.byte	0
+ 1059 01a6 00       		.byte	0
+ 1060 01a7 1E       		.uleb128 0x1e
+ 1061 01a8 2E       		.uleb128 0x2e
+ 1062 01a9 01       		.byte	0x1
+ 1063 01aa 3F       		.uleb128 0x3f
+ 1064 01ab 0C       		.uleb128 0xc
+ 1065 01ac 03       		.uleb128 0x3
+ 1066 01ad 0E       		.uleb128 0xe
+ 1067 01ae 3A       		.uleb128 0x3a
+ 1068 01af 0B       		.uleb128 0xb
+ 1069 01b0 3B       		.uleb128 0x3b
+ 1070 01b1 0B       		.uleb128 0xb
+ 1071 01b2 27       		.uleb128 0x27
+ 1072 01b3 0C       		.uleb128 0xc
+ 1073 01b4 49       		.uleb128 0x49
+ 1074 01b5 13       		.uleb128 0x13
+ 1075 01b6 3C       		.uleb128 0x3c
+ 1076 01b7 0C       		.uleb128 0xc
+ 1077 01b8 01       		.uleb128 0x1
+ 1078 01b9 13       		.uleb128 0x13
+ 1079 01ba 00       		.byte	0
+ 1080 01bb 00       		.byte	0
+ 1081 01bc 1F       		.uleb128 0x1f
+ 1082 01bd 2E       		.uleb128 0x2e
+ 1083 01be 00       		.byte	0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 20
+
+
+ 1084 01bf 3F       		.uleb128 0x3f
+ 1085 01c0 0C       		.uleb128 0xc
+ 1086 01c1 03       		.uleb128 0x3
+ 1087 01c2 0E       		.uleb128 0xe
+ 1088 01c3 3A       		.uleb128 0x3a
+ 1089 01c4 0B       		.uleb128 0xb
+ 1090 01c5 3B       		.uleb128 0x3b
+ 1091 01c6 0B       		.uleb128 0xb
+ 1092 01c7 27       		.uleb128 0x27
+ 1093 01c8 0C       		.uleb128 0xc
+ 1094 01c9 3C       		.uleb128 0x3c
+ 1095 01ca 0C       		.uleb128 0xc
+ 1096 01cb 00       		.byte	0
+ 1097 01cc 00       		.byte	0
+ 1098 01cd 20       		.uleb128 0x20
+ 1099 01ce 2E       		.uleb128 0x2e
+ 1100 01cf 00       		.byte	0
+ 1101 01d0 3F       		.uleb128 0x3f
+ 1102 01d1 0C       		.uleb128 0xc
+ 1103 01d2 03       		.uleb128 0x3
+ 1104 01d3 0E       		.uleb128 0xe
+ 1105 01d4 3A       		.uleb128 0x3a
+ 1106 01d5 0B       		.uleb128 0xb
+ 1107 01d6 3B       		.uleb128 0x3b
+ 1108 01d7 05       		.uleb128 0x5
+ 1109 01d8 27       		.uleb128 0x27
+ 1110 01d9 0C       		.uleb128 0xc
+ 1111 01da 49       		.uleb128 0x49
+ 1112 01db 13       		.uleb128 0x13
+ 1113 01dc 3C       		.uleb128 0x3c
+ 1114 01dd 0C       		.uleb128 0xc
+ 1115 01de 00       		.byte	0
+ 1116 01df 00       		.byte	0
+ 1117 01e0 21       		.uleb128 0x21
+ 1118 01e1 2E       		.uleb128 0x2e
+ 1119 01e2 00       		.byte	0
+ 1120 01e3 3F       		.uleb128 0x3f
+ 1121 01e4 0C       		.uleb128 0xc
+ 1122 01e5 03       		.uleb128 0x3
+ 1123 01e6 0E       		.uleb128 0xe
+ 1124 01e7 3A       		.uleb128 0x3a
+ 1125 01e8 0B       		.uleb128 0xb
+ 1126 01e9 3B       		.uleb128 0x3b
+ 1127 01ea 05       		.uleb128 0x5
+ 1128 01eb 27       		.uleb128 0x27
+ 1129 01ec 0C       		.uleb128 0xc
+ 1130 01ed 3C       		.uleb128 0x3c
+ 1131 01ee 0C       		.uleb128 0xc
+ 1132 01ef 00       		.byte	0
+ 1133 01f0 00       		.byte	0
+ 1134 01f1 00       		.byte	0
+ 1135              		.section	.debug_loc,"",@progbits
+ 1136              	.Ldebug_loc0:
+ 1137              	.LLST0:
+ 1138 0000 00000000 		.4byte	.LVL0
+ 1139 0004 00000000 		.4byte	.LVL1
+ 1140 0008 0001     		.2byte	0x1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 21
+
+
+ 1141 000a 53       		.byte	0x53
+ 1142 000b 00000000 		.4byte	.LVL1
+ 1143 000f 00000000 		.4byte	.LVL2
+ 1144 0013 0003     		.2byte	0x3
+ 1145 0015 73       		.byte	0x73
+ 1146 0016 5C       		.sleb128 -36
+ 1147 0017 9F       		.byte	0x9f
+ 1148 0018 00000000 		.4byte	.LVL2
+ 1149 001c 00000000 		.4byte	.LVL3
+ 1150 0020 0003     		.2byte	0x3
+ 1151 0022 73       		.byte	0x73
+ 1152 0023 58       		.sleb128 -40
+ 1153 0024 9F       		.byte	0x9f
+ 1154 0025 00000000 		.4byte	.LVL3
+ 1155 0029 00000000 		.4byte	.LVL4
+ 1156 002d 0003     		.2byte	0x3
+ 1157 002f 73       		.byte	0x73
+ 1158 0030 50       		.sleb128 -48
+ 1159 0031 9F       		.byte	0x9f
+ 1160 0032 00000000 		.4byte	.LVL4
+ 1161 0036 00000000 		.4byte	.LVL5
+ 1162 003a 0003     		.2byte	0x3
+ 1163 003c 73       		.byte	0x73
+ 1164 003d 4C       		.sleb128 -52
+ 1165 003e 9F       		.byte	0x9f
+ 1166 003f 00000000 		.4byte	.LVL5
+ 1167 0043 00000000 		.4byte	.LVL6
+ 1168 0047 0003     		.2byte	0x3
+ 1169 0049 73       		.byte	0x73
+ 1170 004a 48       		.sleb128 -56
+ 1171 004b 9F       		.byte	0x9f
+ 1172 004c 00000000 		.4byte	.LVL6
+ 1173 0050 00000000 		.4byte	.LVL7
+ 1174 0054 0003     		.2byte	0x3
+ 1175 0056 73       		.byte	0x73
+ 1176 0057 44       		.sleb128 -60
+ 1177 0058 9F       		.byte	0x9f
+ 1178 0059 00000000 		.4byte	.LVL7
+ 1179 005d 00000000 		.4byte	.LVL8
+ 1180 0061 0003     		.2byte	0x3
+ 1181 0063 73       		.byte	0x73
+ 1182 0064 40       		.sleb128 -64
+ 1183 0065 9F       		.byte	0x9f
+ 1184 0066 00000000 		.4byte	.LVL8
+ 1185 006a 00000000 		.4byte	.LVL9
+ 1186 006e 0004     		.2byte	0x4
+ 1187 0070 73       		.byte	0x73
+ 1188 0071 BC7F     		.sleb128 -68
+ 1189 0073 9F       		.byte	0x9f
+ 1190 0074 00000000 		.4byte	.LVL9
+ 1191 0078 00000000 		.4byte	.LVL10
+ 1192 007c 0004     		.2byte	0x4
+ 1193 007e 73       		.byte	0x73
+ 1194 007f B87F     		.sleb128 -72
+ 1195 0081 9F       		.byte	0x9f
+ 1196 0082 00000000 		.4byte	.LVL10
+ 1197 0086 00000000 		.4byte	.LVL11
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 22
+
+
+ 1198 008a 0004     		.2byte	0x4
+ 1199 008c 73       		.byte	0x73
+ 1200 008d B47F     		.sleb128 -76
+ 1201 008f 9F       		.byte	0x9f
+ 1202 0090 00000000 		.4byte	.LVL11
+ 1203 0094 00000000 		.4byte	.LVL12
+ 1204 0098 0004     		.2byte	0x4
+ 1205 009a 73       		.byte	0x73
+ 1206 009b B07F     		.sleb128 -80
+ 1207 009d 9F       		.byte	0x9f
+ 1208 009e 00000000 		.4byte	.LVL12
+ 1209 00a2 00000000 		.4byte	.LVL13
+ 1210 00a6 0004     		.2byte	0x4
+ 1211 00a8 73       		.byte	0x73
+ 1212 00a9 AC7F     		.sleb128 -84
+ 1213 00ab 9F       		.byte	0x9f
+ 1214 00ac 00000000 		.4byte	.LVL13
+ 1215 00b0 00000000 		.4byte	.LVL15
+ 1216 00b4 0004     		.2byte	0x4
+ 1217 00b6 73       		.byte	0x73
+ 1218 00b7 A87F     		.sleb128 -88
+ 1219 00b9 9F       		.byte	0x9f
+ 1220 00ba 00000000 		.4byte	.LVL15
+ 1221 00be 00000000 		.4byte	.LVL16
+ 1222 00c2 0004     		.2byte	0x4
+ 1223 00c4 73       		.byte	0x73
+ 1224 00c5 A47F     		.sleb128 -92
+ 1225 00c7 9F       		.byte	0x9f
+ 1226 00c8 00000000 		.4byte	.LVL16
+ 1227 00cc 00000000 		.4byte	.LVL17
+ 1228 00d0 0004     		.2byte	0x4
+ 1229 00d2 73       		.byte	0x73
+ 1230 00d3 8001     		.sleb128 128
+ 1231 00d5 9F       		.byte	0x9f
+ 1232 00d6 00000000 		.4byte	0
+ 1233 00da 00000000 		.4byte	0
+ 1234              	.LLST1:
+ 1235 00de 00000000 		.4byte	.LVL0
+ 1236 00e2 00000000 		.4byte	.LVL14
+ 1237 00e6 0001     		.2byte	0x1
+ 1238 00e8 55       		.byte	0x55
+ 1239 00e9 00000000 		.4byte	.LVL14
+ 1240 00ed 00000000 		.4byte	.LVL16
+ 1241 00f1 0003     		.2byte	0x3
+ 1242 00f3 73       		.byte	0x73
+ 1243 00f4 DC7E     		.sleb128 -164
+ 1244 00f6 00000000 		.4byte	.LVL16
+ 1245 00fa 00000000 		.4byte	.LFE3
+ 1246 00fe 0002     		.2byte	0x2
+ 1247 0100 73       		.byte	0x73
+ 1248 0101 38       		.sleb128 56
+ 1249 0102 00000000 		.4byte	0
+ 1250 0106 00000000 		.4byte	0
+ 1251              	.LLST2:
+ 1252 010a 00000000 		.4byte	.LFB4
+ 1253 010e 00000000 		.4byte	.LCFI0
+ 1254 0112 0002     		.2byte	0x2
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 23
+
+
+ 1255 0114 71       		.byte	0x71
+ 1256 0115 00       		.sleb128 0
+ 1257 0116 00000000 		.4byte	.LCFI0
+ 1258 011a 00000000 		.4byte	.LCFI1
+ 1259 011e 0002     		.2byte	0x2
+ 1260 0120 71       		.byte	0x71
+ 1261 0121 08       		.sleb128 8
+ 1262 0122 00000000 		.4byte	.LCFI1
+ 1263 0126 00000000 		.4byte	.LFE4
+ 1264 012a 0002     		.2byte	0x2
+ 1265 012c 71       		.byte	0x71
+ 1266 012d 00       		.sleb128 0
+ 1267 012e 00000000 		.4byte	0
+ 1268 0132 00000000 		.4byte	0
+ 1269              	.LLST3:
+ 1270 0136 00000000 		.4byte	.LFB8
+ 1271 013a 00000000 		.4byte	.LCFI2
+ 1272 013e 0002     		.2byte	0x2
+ 1273 0140 71       		.byte	0x71
+ 1274 0141 00       		.sleb128 0
+ 1275 0142 00000000 		.4byte	.LCFI2
+ 1276 0146 00000000 		.4byte	.LCFI3
+ 1277 014a 0002     		.2byte	0x2
+ 1278 014c 71       		.byte	0x71
+ 1279 014d 08       		.sleb128 8
+ 1280 014e 00000000 		.4byte	.LCFI3
+ 1281 0152 00000000 		.4byte	.LFE8
+ 1282 0156 0002     		.2byte	0x2
+ 1283 0158 71       		.byte	0x71
+ 1284 0159 00       		.sleb128 0
+ 1285 015a 00000000 		.4byte	0
+ 1286 015e 00000000 		.4byte	0
+ 1287              		.section	.debug_aranges,"",@progbits
+ 1288 0000 00000044 		.4byte	0x44
+ 1289 0004 0002     		.2byte	0x2
+ 1290 0006 00000000 		.4byte	.Ldebug_info0
+ 1291 000a 04       		.byte	0x4
+ 1292 000b 00       		.byte	0
+ 1293 000c 0000     		.2byte	0
+ 1294 000e 0000     		.2byte	0
+ 1295 0010 00000000 		.4byte	.LFB3
+ 1296 0014 00000122 		.4byte	.LFE3-.LFB3
+ 1297 0018 00000000 		.4byte	.LFB4
+ 1298 001c 0000001E 		.4byte	.LFE4-.LFB4
+ 1299 0020 00000000 		.4byte	.LFB5
+ 1300 0024 00000004 		.4byte	.LFE5-.LFB5
+ 1301 0028 00000000 		.4byte	.LFB6
+ 1302 002c 00000008 		.4byte	.LFE6-.LFB6
+ 1303 0030 00000000 		.4byte	.LFB7
+ 1304 0034 00000004 		.4byte	.LFE7-.LFB7
+ 1305 0038 00000000 		.4byte	.LFB8
+ 1306 003c 0000001A 		.4byte	.LFE8-.LFB8
+ 1307 0040 00000000 		.4byte	0
+ 1308 0044 00000000 		.4byte	0
+ 1309              		.section	.debug_ranges,"",@progbits
+ 1310              	.Ldebug_ranges0:
+ 1311 0000 00000000 		.4byte	.LBB6
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 24
+
+
+ 1312 0004 00000000 		.4byte	.LBE6
+ 1313 0008 00000000 		.4byte	.LBB9
+ 1314 000c 00000000 		.4byte	.LBE9
+ 1315 0010 00000000 		.4byte	0
+ 1316 0014 00000000 		.4byte	0
+ 1317 0018 00000000 		.4byte	.LFB3
+ 1318 001c 00000000 		.4byte	.LFE3
+ 1319 0020 00000000 		.4byte	.LFB4
+ 1320 0024 00000000 		.4byte	.LFE4
+ 1321 0028 00000000 		.4byte	.LFB5
+ 1322 002c 00000000 		.4byte	.LFE5
+ 1323 0030 00000000 		.4byte	.LFB6
+ 1324 0034 00000000 		.4byte	.LFE6
+ 1325 0038 00000000 		.4byte	.LFB7
+ 1326 003c 00000000 		.4byte	.LFE7
+ 1327 0040 00000000 		.4byte	.LFB8
+ 1328 0044 00000000 		.4byte	.LFE8
+ 1329 0048 00000000 		.4byte	0
+ 1330 004c 00000000 		.4byte	0
+ 1331              		.section	.debug_line,"",@progbits
+ 1332              	.Ldebug_line0:
+ 1333 0000 00000340 		.section	.debug_str,"MS",@progbits,1
+ 1333      00020000 
+ 1333      02230201 
+ 1333      FB0E0D00 
+ 1333      01010101 
+ 1334              	.LASF27:
+ 1335 0000 2E2F636F 		.string	"./components/spc5_freertos_component_rla/lib/portable/port.c"
+ 1335      6D706F6E 
+ 1335      656E7473 
+ 1335      2F737063 
+ 1335      355F6672 
+ 1336              	.LASF30:
+ 1337 003d 76656374 		.string	"vector226"
+ 1337      6F723232 
+ 1337      3600
+ 1338              	.LASF18:
+ 1339 0047 7078436F 		.string	"pxCode"
+ 1339      646500
+ 1340              	.LASF24:
+ 1341 004e 6F73616C 		.string	"osalSysTimeReset"
+ 1341      53797354 
+ 1341      696D6552 
+ 1341      65736574 
+ 1341      00
+ 1342              	.LASF25:
+ 1343 005f 76546173 		.string	"vTaskSwitchContext"
+ 1343      6B537769 
+ 1343      74636843 
+ 1343      6F6E7465 
+ 1343      787400
+ 1344              	.LASF4:
+ 1345 0072 73686F72 		.string	"short int"
+ 1345      7420696E 
+ 1345      7400
+ 1346              	.LASF31:
+ 1347 007c 5F5F7364 		.string	"__sdata2_start__"
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 25
+
+
+ 1347      61746132 
+ 1347      5F737461 
+ 1347      72745F5F 
+ 1347      00
+ 1348              	.LASF11:
+ 1349 008d 5461736B 		.string	"TaskFunction_t"
+ 1349      46756E63 
+ 1349      74696F6E 
+ 1349      5F7400
+ 1350              	.LASF15:
+ 1351 009c 70727650 		.string	"prvPortTimerSetup"
+ 1351      6F727454 
+ 1351      696D6572 
+ 1351      53657475 
+ 1351      7000
+ 1352              	.LASF8:
+ 1353 00ae 6C6F6E67 		.string	"long long unsigned int"
+ 1353      206C6F6E 
+ 1353      6720756E 
+ 1353      7369676E 
+ 1353      65642069 
+ 1354              	.LASF3:
+ 1355 00c5 756E7369 		.string	"unsigned char"
+ 1355      676E6564 
+ 1355      20636861 
+ 1355      7200
+ 1356              	.LASF6:
+ 1357 00d3 6C6F6E67 		.string	"long unsigned int"
+ 1357      20756E73 
+ 1357      69676E65 
+ 1357      6420696E 
+ 1357      7400
+ 1358              	.LASF5:
+ 1359 00e5 73686F72 		.string	"short unsigned int"
+ 1359      7420756E 
+ 1359      7369676E 
+ 1359      65642069 
+ 1359      6E7400
+ 1360              	.LASF26:
+ 1361 00f8 474E5520 		.ascii	"GNU C 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         b"
+ 1361      4320342E 
+ 1361      392E3420 
+ 1361      32303136 
+ 1361      30373236 
+ 1362 0134 75696C64 		.ascii	"uild.sh"
+ 1362      2E7368
+ 1363 013b 20726576 		.string	" rev=gd8b6c20 s=F494 ELe200 -V release_gd8b6c20_build_Fed_ELe200_ML0) -mcall-sysv -mcpu=e
+ 1363      3D676438 
+ 1363      62366332 
+ 1363      3020733D 
+ 1363      46343934 
+ 1364              	.LASF9:
+ 1365 023c 5F5F7569 		.string	"__uint32_t"
+ 1365      6E743332 
+ 1365      5F7400
+ 1366              	.LASF33:
+ 1367 0247 78546173 		.string	"xTaskIncrementTick"
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 26
+
+
+ 1367      6B496E63 
+ 1367      72656D65 
+ 1367      6E745469 
+ 1367      636B00
+ 1368              	.LASF29:
+ 1369 025a 76506F72 		.string	"vPortEndScheduler"
+ 1369      74456E64 
+ 1369      53636865 
+ 1369      64756C65 
+ 1369      7200
+ 1370              	.LASF0:
+ 1371 026c 756E7369 		.string	"unsigned int"
+ 1371      676E6564 
+ 1371      20696E74 
+ 1371      00
+ 1372              	.LASF14:
+ 1373 0279 63686172 		.string	"char"
+ 1373      00
+ 1374              	.LASF32:
+ 1375 027e 6F73616C 		.string	"osalSysTimeSetup"
+ 1375      53797354 
+ 1375      696D6553 
+ 1375      65747570 
+ 1375      00
+ 1376              	.LASF13:
+ 1377 028f 73697A65 		.string	"sizetype"
+ 1377      74797065 
+ 1377      00
+ 1378              	.LASF23:
+ 1379 0298 76506F72 		.string	"vPortStartFirstTask"
+ 1379      74537461 
+ 1379      72744669 
+ 1379      72737454 
+ 1379      61736B00 
+ 1380              	.LASF7:
+ 1381 02ac 6C6F6E67 		.string	"long long int"
+ 1381      206C6F6E 
+ 1381      6720696E 
+ 1381      7400
+ 1382              	.LASF16:
+ 1383 02ba 76506F72 		.string	"vPortTimerReset"
+ 1383      7454696D 
+ 1383      65725265 
+ 1383      73657400 
+ 1384              	.LASF21:
+ 1385 02ca 7078506F 		.string	"pxPortInitialiseStack"
+ 1385      7274496E 
+ 1385      69746961 
+ 1385      6C697365 
+ 1385      53746163 
+ 1386              	.LASF19:
+ 1387 02e0 70765061 		.string	"pvParameters"
+ 1387      72616D65 
+ 1387      74657273 
+ 1387      00
+ 1388              	.LASF28:
+ 1389 02ed 433A5C53 		.string	"C:\\SPC5Studio-6.0\\workspace\\Gateway"
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 27
+
+
+ 1389      50433553 
+ 1389      74756469 
+ 1389      6F2D362E 
+ 1389      305C776F 
+ 1390              	.LASF17:
+ 1391 0311 7078546F 		.string	"pxTopOfStack"
+ 1391      704F6653 
+ 1391      7461636B 
+ 1391      00
+ 1392              	.LASF10:
+ 1393 031e 75696E74 		.string	"uint32_t"
+ 1393      33325F74 
+ 1393      00
+ 1394              	.LASF1:
+ 1395 0327 6C6F6E67 		.string	"long int"
+ 1395      20696E74 
+ 1395      00
+ 1396              	.LASF2:
+ 1397 0330 7369676E 		.string	"signed char"
+ 1397      65642063 
+ 1397      68617200 
+ 1398              	.LASF22:
+ 1399 033c 78506F72 		.string	"xPortStartScheduler"
+ 1399      74537461 
+ 1399      72745363 
+ 1399      68656475 
+ 1399      6C657200 
+ 1400              	.LASF20:
+ 1401 0350 73727231 		.string	"srr1"
+ 1401      00
+ 1402              	.LASF12:
+ 1403 0355 42617365 		.string	"BaseType_t"
+ 1403      54797065 
+ 1403      5F7400
+ 1404              		.ident	"GCC: (GNU) 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         build.sh rev=gd8b6c20 s=F4
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s 			page 28
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 port.c
+C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s:10     .text.pxPortInitialiseStack:00000000 pxPortInitialiseStack
+C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s:190    .text.xPortStartScheduler:00000000 xPortStartScheduler
+C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s:234    .text.vPortEndScheduler:00000000 vPortEndScheduler
+C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s:249    .text.prvPortTimerSetup:00000000 prvPortTimerSetup
+C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s:267    .text.vPortTimerReset:00000000 vPortTimerReset
+C:\Users\bayra\AppData\Local\Temp\ccYEDtBp.s:283    .text.vector226:00000000 vector226
+
+UNDEFINED SYMBOLS
+__sdata2_start__
+osalSysTimeSetup
+vPortStartFirstTask
+osalSysTimeReset
+xTaskIncrementTick
+vTaskSwitchContext

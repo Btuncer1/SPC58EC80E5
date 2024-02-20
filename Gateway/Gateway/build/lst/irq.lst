@@ -1,0 +1,563 @@
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s 			page 1
+
+
+   1              		.file	"irq.c"
+   2              		.section	".text","axv"
+   3              	.Ltext0:
+   4              		.cfi_sections	.debug_frame
+   5              		.section	.text.irqInit,"axv",@progbits
+   6              		.align 1
+   7              		.p2align 4,,15
+   8              		.globl irqInit
+   9              		.type	irqInit, @function
+  10              	irqInit:
+  11              	.LFB2:
+  12              		.file 1 "./components/spc58ecxx_irq_component_rla/lib/src/irq.c"
+  13              		.loc 1 51 0
+  14              		.cfi_startproc
+  15 0000 182106F8 		e_stwu %r1,-8(%r1)
+  16              	.LCFI0:
+  17              		.cfi_def_cfa_offset 8
+  18 0004 0080     		se_mflr %r0
+  19 0006 D301     		se_stw %r0,12(%r1)
+  20              		.cfi_offset 65, 4
+  21              		.loc 1 53 0
+  22 0008 78000001 		e_bl irq_cfg_init
+  23              	.LVL0:
+  24              		.loc 1 87 0
+  25 000c C301     		se_lwz %r0,12(%r1)
+  26 000e 0090     		se_mtlr %r0
+  27              		.cfi_restore 65
+  28              		.loc 1 62 0
+  29 0010 4807     		se_li %r7,0
+  30 0012 70DEE404 		e_lis %r6,0xf404
+  31 0016 6516     		se_bseti %r6,17
+  32 0018 D076     		se_stw %r7,0(%r6)
+  33              		.loc 1 65 0
+  34 001a D676     		se_stw %r7,24(%r6)
+  35              		.loc 1 66 0
+  36 001c 70E0E000 		e_lis %r7,_vectors@ha
+  37 0020 1CE70000 		e_la %r7,_vectors@l(%r7)
+  38 0024 DA76     		se_stw %r7,40(%r6)
+  39              		.loc 1 87 0
+  40 0026 2071     		se_addi %r1,8
+  41              	.LCFI1:
+  42              		.cfi_def_cfa_offset 0
+  43 0028 0004     		se_blr
+  44              		.cfi_endproc
+  45              	.LFE2:
+  46              		.size	irqInit, .-irqInit
+  47              		.section	.text.irqSysHalt,"axv",@progbits
+  48              		.align 1
+  49              		.p2align 4,,15
+  50              		.weak	irqSysHalt
+  51              		.type	irqSysHalt, @function
+  52              	irqSysHalt:
+  53              	.LFB3:
+  54              		.loc 1 98 0
+  55              		.cfi_startproc
+  56              		.loc 1 100 0
+  57              	 # 100 "./components/spc58ecxx_irq_component_rla/lib/src/irq.c" 1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s 			page 2
+
+
+  58 0000 7C000146 		wrteei  0
+  59              	 # 0 "" 2
+  60              	.L3:
+  61              		.loc 1 102 0 discriminator 1
+  62 0004 78000000 		e_b .L3
+  63              		.cfi_endproc
+  64              	.LFE3:
+  65              		.size	irqSysHalt, .-irqSysHalt
+  66              		.section	".text","axv"
+  67              	.Letext0:
+  68              		.file 2 "c:\\spc5studio-6.0\\eclipse\\plugins\\com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.
+  69              		.file 3 "c:\\spc5studio-6.0\\eclipse\\plugins\\com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.
+  70              		.file 4 "./components/spc58ecxx_irq_component_rla/lib/include/vectors.h"
+  71              		.file 5 "./components/spc58ecxx_irq_component_rla/cfg/irq_cfg.h"
+  72              		.section	.debug_info,"",@progbits
+  73              	.Ldebug_info0:
+  74 0000 00000100 		.4byte	0x100
+  75 0004 0002     		.2byte	0x2
+  76 0006 00000000 		.4byte	.Ldebug_abbrev0
+  77 000a 04       		.byte	0x4
+  78 000b 01       		.uleb128 0x1
+  79 000c 00000000 		.4byte	.LASF14
+  80 0010 01       		.byte	0x1
+  81 0011 00000000 		.4byte	.LASF15
+  82 0015 00000000 		.4byte	.LASF16
+  83 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  84 001d 00000000 		.4byte	0
+  85 0021 00000000 		.4byte	0
+  86 0025 00000000 		.4byte	.Ldebug_line0
+  87 0029 02       		.uleb128 0x2
+  88 002a 01       		.byte	0x1
+  89 002b 06       		.byte	0x6
+  90 002c 00000000 		.4byte	.LASF0
+  91 0030 03       		.uleb128 0x3
+  92 0031 00000000 		.4byte	.LASF5
+  93 0035 02       		.byte	0x2
+  94 0036 1D       		.byte	0x1d
+  95 0037 0000003B 		.4byte	0x3b
+  96 003b 02       		.uleb128 0x2
+  97 003c 01       		.byte	0x1
+  98 003d 08       		.byte	0x8
+  99 003e 00000000 		.4byte	.LASF1
+ 100 0042 02       		.uleb128 0x2
+ 101 0043 02       		.byte	0x2
+ 102 0044 05       		.byte	0x5
+ 103 0045 00000000 		.4byte	.LASF2
+ 104 0049 02       		.uleb128 0x2
+ 105 004a 02       		.byte	0x2
+ 106 004b 07       		.byte	0x7
+ 107 004c 00000000 		.4byte	.LASF3
+ 108 0050 02       		.uleb128 0x2
+ 109 0051 04       		.byte	0x4
+ 110 0052 05       		.byte	0x5
+ 111 0053 00000000 		.4byte	.LASF4
+ 112 0057 03       		.uleb128 0x3
+ 113 0058 00000000 		.4byte	.LASF6
+ 114 005c 02       		.byte	0x2
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s 			page 3
+
+
+ 115 005d 41       		.byte	0x41
+ 116 005e 00000062 		.4byte	0x62
+ 117 0062 02       		.uleb128 0x2
+ 118 0063 04       		.byte	0x4
+ 119 0064 07       		.byte	0x7
+ 120 0065 00000000 		.4byte	.LASF7
+ 121 0069 02       		.uleb128 0x2
+ 122 006a 08       		.byte	0x8
+ 123 006b 05       		.byte	0x5
+ 124 006c 00000000 		.4byte	.LASF8
+ 125 0070 02       		.uleb128 0x2
+ 126 0071 08       		.byte	0x8
+ 127 0072 07       		.byte	0x7
+ 128 0073 00000000 		.4byte	.LASF9
+ 129 0077 04       		.uleb128 0x4
+ 130 0078 04       		.byte	0x4
+ 131 0079 05       		.byte	0x5
+ 132 007a 696E7400 		.string	"int"
+ 133 007e 02       		.uleb128 0x2
+ 134 007f 04       		.byte	0x4
+ 135 0080 07       		.byte	0x7
+ 136 0081 00000000 		.4byte	.LASF10
+ 137 0085 03       		.uleb128 0x3
+ 138 0086 00000000 		.4byte	.LASF11
+ 139 008a 03       		.byte	0x3
+ 140 008b 15       		.byte	0x15
+ 141 008c 00000030 		.4byte	0x30
+ 142 0090 03       		.uleb128 0x3
+ 143 0091 00000000 		.4byte	.LASF12
+ 144 0095 03       		.byte	0x3
+ 145 0096 2D       		.byte	0x2d
+ 146 0097 00000057 		.4byte	0x57
+ 147 009b 02       		.uleb128 0x2
+ 148 009c 04       		.byte	0x4
+ 149 009d 07       		.byte	0x7
+ 150 009e 00000000 		.4byte	.LASF13
+ 151 00a2 05       		.uleb128 0x5
+ 152 00a3 01       		.byte	0x1
+ 153 00a4 00000000 		.4byte	.LASF17
+ 154 00a8 01       		.byte	0x1
+ 155 00a9 33       		.byte	0x33
+ 156 00aa 01       		.byte	0x1
+ 157 00ab 00000000 		.4byte	.LFB2
+ 158 00af 00000000 		.4byte	.LFE2
+ 159 00b3 00000000 		.4byte	.LLST0
+ 160 00b7 01       		.byte	0x1
+ 161 00b8 000000C6 		.4byte	0xc6
+ 162 00bc 06       		.uleb128 0x6
+ 163 00bd 00000000 		.4byte	.LVL0
+ 164 00c1 000000F9 		.4byte	0xf9
+ 165 00c5 00       		.byte	0
+ 166 00c6 07       		.uleb128 0x7
+ 167 00c7 01       		.byte	0x1
+ 168 00c8 00000000 		.4byte	.LASF18
+ 169 00cc 01       		.byte	0x1
+ 170 00cd 62       		.byte	0x62
+ 171 00ce 01       		.byte	0x1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s 			page 4
+
+
+ 172 00cf 00000000 		.4byte	.LFB3
+ 173 00d3 00000000 		.4byte	.LFE3
+ 174 00d7 02       		.byte	0x2
+ 175 00d8 71       		.byte	0x71
+ 176 00d9 00       		.sleb128 0
+ 177 00da 01       		.byte	0x1
+ 178 00db 08       		.uleb128 0x8
+ 179 00dc 00000090 		.4byte	0x90
+ 180 00e0 000000EC 		.4byte	0xec
+ 181 00e4 09       		.uleb128 0x9
+ 182 00e5 0000009B 		.4byte	0x9b
+ 183 00e9 03FF     		.2byte	0x3ff
+ 184 00eb 00       		.byte	0
+ 185 00ec 0A       		.uleb128 0xa
+ 186 00ed 00000000 		.4byte	.LASF19
+ 187 00f1 04       		.byte	0x4
+ 188 00f2 3A       		.byte	0x3a
+ 189 00f3 000000DB 		.4byte	0xdb
+ 190 00f7 01       		.byte	0x1
+ 191 00f8 01       		.byte	0x1
+ 192 00f9 0B       		.uleb128 0xb
+ 193 00fa 01       		.byte	0x1
+ 194 00fb 00000000 		.4byte	.LASF20
+ 195 00ff 05       		.byte	0x5
+ 196 0100 4B       		.byte	0x4b
+ 197 0101 01       		.byte	0x1
+ 198 0102 01       		.byte	0x1
+ 199 0103 00       		.byte	0
+ 200              		.section	.debug_abbrev,"",@progbits
+ 201              	.Ldebug_abbrev0:
+ 202 0000 01       		.uleb128 0x1
+ 203 0001 11       		.uleb128 0x11
+ 204 0002 01       		.byte	0x1
+ 205 0003 25       		.uleb128 0x25
+ 206 0004 0E       		.uleb128 0xe
+ 207 0005 13       		.uleb128 0x13
+ 208 0006 0B       		.uleb128 0xb
+ 209 0007 03       		.uleb128 0x3
+ 210 0008 0E       		.uleb128 0xe
+ 211 0009 1B       		.uleb128 0x1b
+ 212 000a 0E       		.uleb128 0xe
+ 213 000b 55       		.uleb128 0x55
+ 214 000c 06       		.uleb128 0x6
+ 215 000d 11       		.uleb128 0x11
+ 216 000e 01       		.uleb128 0x1
+ 217 000f 52       		.uleb128 0x52
+ 218 0010 01       		.uleb128 0x1
+ 219 0011 10       		.uleb128 0x10
+ 220 0012 06       		.uleb128 0x6
+ 221 0013 00       		.byte	0
+ 222 0014 00       		.byte	0
+ 223 0015 02       		.uleb128 0x2
+ 224 0016 24       		.uleb128 0x24
+ 225 0017 00       		.byte	0
+ 226 0018 0B       		.uleb128 0xb
+ 227 0019 0B       		.uleb128 0xb
+ 228 001a 3E       		.uleb128 0x3e
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s 			page 5
+
+
+ 229 001b 0B       		.uleb128 0xb
+ 230 001c 03       		.uleb128 0x3
+ 231 001d 0E       		.uleb128 0xe
+ 232 001e 00       		.byte	0
+ 233 001f 00       		.byte	0
+ 234 0020 03       		.uleb128 0x3
+ 235 0021 16       		.uleb128 0x16
+ 236 0022 00       		.byte	0
+ 237 0023 03       		.uleb128 0x3
+ 238 0024 0E       		.uleb128 0xe
+ 239 0025 3A       		.uleb128 0x3a
+ 240 0026 0B       		.uleb128 0xb
+ 241 0027 3B       		.uleb128 0x3b
+ 242 0028 0B       		.uleb128 0xb
+ 243 0029 49       		.uleb128 0x49
+ 244 002a 13       		.uleb128 0x13
+ 245 002b 00       		.byte	0
+ 246 002c 00       		.byte	0
+ 247 002d 04       		.uleb128 0x4
+ 248 002e 24       		.uleb128 0x24
+ 249 002f 00       		.byte	0
+ 250 0030 0B       		.uleb128 0xb
+ 251 0031 0B       		.uleb128 0xb
+ 252 0032 3E       		.uleb128 0x3e
+ 253 0033 0B       		.uleb128 0xb
+ 254 0034 03       		.uleb128 0x3
+ 255 0035 08       		.uleb128 0x8
+ 256 0036 00       		.byte	0
+ 257 0037 00       		.byte	0
+ 258 0038 05       		.uleb128 0x5
+ 259 0039 2E       		.uleb128 0x2e
+ 260 003a 01       		.byte	0x1
+ 261 003b 3F       		.uleb128 0x3f
+ 262 003c 0C       		.uleb128 0xc
+ 263 003d 03       		.uleb128 0x3
+ 264 003e 0E       		.uleb128 0xe
+ 265 003f 3A       		.uleb128 0x3a
+ 266 0040 0B       		.uleb128 0xb
+ 267 0041 3B       		.uleb128 0x3b
+ 268 0042 0B       		.uleb128 0xb
+ 269 0043 27       		.uleb128 0x27
+ 270 0044 0C       		.uleb128 0xc
+ 271 0045 11       		.uleb128 0x11
+ 272 0046 01       		.uleb128 0x1
+ 273 0047 12       		.uleb128 0x12
+ 274 0048 01       		.uleb128 0x1
+ 275 0049 40       		.uleb128 0x40
+ 276 004a 06       		.uleb128 0x6
+ 277 004b 9742     		.uleb128 0x2117
+ 278 004d 0C       		.uleb128 0xc
+ 279 004e 01       		.uleb128 0x1
+ 280 004f 13       		.uleb128 0x13
+ 281 0050 00       		.byte	0
+ 282 0051 00       		.byte	0
+ 283 0052 06       		.uleb128 0x6
+ 284 0053 898201   		.uleb128 0x4109
+ 285 0056 00       		.byte	0
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s 			page 6
+
+
+ 286 0057 11       		.uleb128 0x11
+ 287 0058 01       		.uleb128 0x1
+ 288 0059 31       		.uleb128 0x31
+ 289 005a 13       		.uleb128 0x13
+ 290 005b 00       		.byte	0
+ 291 005c 00       		.byte	0
+ 292 005d 07       		.uleb128 0x7
+ 293 005e 2E       		.uleb128 0x2e
+ 294 005f 00       		.byte	0
+ 295 0060 3F       		.uleb128 0x3f
+ 296 0061 0C       		.uleb128 0xc
+ 297 0062 03       		.uleb128 0x3
+ 298 0063 0E       		.uleb128 0xe
+ 299 0064 3A       		.uleb128 0x3a
+ 300 0065 0B       		.uleb128 0xb
+ 301 0066 3B       		.uleb128 0x3b
+ 302 0067 0B       		.uleb128 0xb
+ 303 0068 27       		.uleb128 0x27
+ 304 0069 0C       		.uleb128 0xc
+ 305 006a 11       		.uleb128 0x11
+ 306 006b 01       		.uleb128 0x1
+ 307 006c 12       		.uleb128 0x12
+ 308 006d 01       		.uleb128 0x1
+ 309 006e 40       		.uleb128 0x40
+ 310 006f 0A       		.uleb128 0xa
+ 311 0070 9742     		.uleb128 0x2117
+ 312 0072 0C       		.uleb128 0xc
+ 313 0073 00       		.byte	0
+ 314 0074 00       		.byte	0
+ 315 0075 08       		.uleb128 0x8
+ 316 0076 01       		.uleb128 0x1
+ 317 0077 01       		.byte	0x1
+ 318 0078 49       		.uleb128 0x49
+ 319 0079 13       		.uleb128 0x13
+ 320 007a 01       		.uleb128 0x1
+ 321 007b 13       		.uleb128 0x13
+ 322 007c 00       		.byte	0
+ 323 007d 00       		.byte	0
+ 324 007e 09       		.uleb128 0x9
+ 325 007f 21       		.uleb128 0x21
+ 326 0080 00       		.byte	0
+ 327 0081 49       		.uleb128 0x49
+ 328 0082 13       		.uleb128 0x13
+ 329 0083 2F       		.uleb128 0x2f
+ 330 0084 05       		.uleb128 0x5
+ 331 0085 00       		.byte	0
+ 332 0086 00       		.byte	0
+ 333 0087 0A       		.uleb128 0xa
+ 334 0088 34       		.uleb128 0x34
+ 335 0089 00       		.byte	0
+ 336 008a 03       		.uleb128 0x3
+ 337 008b 0E       		.uleb128 0xe
+ 338 008c 3A       		.uleb128 0x3a
+ 339 008d 0B       		.uleb128 0xb
+ 340 008e 3B       		.uleb128 0x3b
+ 341 008f 0B       		.uleb128 0xb
+ 342 0090 49       		.uleb128 0x49
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s 			page 7
+
+
+ 343 0091 13       		.uleb128 0x13
+ 344 0092 3F       		.uleb128 0x3f
+ 345 0093 0C       		.uleb128 0xc
+ 346 0094 3C       		.uleb128 0x3c
+ 347 0095 0C       		.uleb128 0xc
+ 348 0096 00       		.byte	0
+ 349 0097 00       		.byte	0
+ 350 0098 0B       		.uleb128 0xb
+ 351 0099 2E       		.uleb128 0x2e
+ 352 009a 00       		.byte	0
+ 353 009b 3F       		.uleb128 0x3f
+ 354 009c 0C       		.uleb128 0xc
+ 355 009d 03       		.uleb128 0x3
+ 356 009e 0E       		.uleb128 0xe
+ 357 009f 3A       		.uleb128 0x3a
+ 358 00a0 0B       		.uleb128 0xb
+ 359 00a1 3B       		.uleb128 0x3b
+ 360 00a2 0B       		.uleb128 0xb
+ 361 00a3 27       		.uleb128 0x27
+ 362 00a4 0C       		.uleb128 0xc
+ 363 00a5 3C       		.uleb128 0x3c
+ 364 00a6 0C       		.uleb128 0xc
+ 365 00a7 00       		.byte	0
+ 366 00a8 00       		.byte	0
+ 367 00a9 00       		.byte	0
+ 368              		.section	.debug_loc,"",@progbits
+ 369              	.Ldebug_loc0:
+ 370              	.LLST0:
+ 371 0000 00000000 		.4byte	.LFB2
+ 372 0004 00000000 		.4byte	.LCFI0
+ 373 0008 0002     		.2byte	0x2
+ 374 000a 71       		.byte	0x71
+ 375 000b 00       		.sleb128 0
+ 376 000c 00000000 		.4byte	.LCFI0
+ 377 0010 00000000 		.4byte	.LCFI1
+ 378 0014 0002     		.2byte	0x2
+ 379 0016 71       		.byte	0x71
+ 380 0017 08       		.sleb128 8
+ 381 0018 00000000 		.4byte	.LCFI1
+ 382 001c 00000000 		.4byte	.LFE2
+ 383 0020 0002     		.2byte	0x2
+ 384 0022 71       		.byte	0x71
+ 385 0023 00       		.sleb128 0
+ 386 0024 00000000 		.4byte	0
+ 387 0028 00000000 		.4byte	0
+ 388              		.section	.debug_aranges,"",@progbits
+ 389 0000 00000024 		.4byte	0x24
+ 390 0004 0002     		.2byte	0x2
+ 391 0006 00000000 		.4byte	.Ldebug_info0
+ 392 000a 04       		.byte	0x4
+ 393 000b 00       		.byte	0
+ 394 000c 0000     		.2byte	0
+ 395 000e 0000     		.2byte	0
+ 396 0010 00000000 		.4byte	.LFB2
+ 397 0014 0000002A 		.4byte	.LFE2-.LFB2
+ 398 0018 00000000 		.4byte	.LFB3
+ 399 001c 00000008 		.4byte	.LFE3-.LFB3
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s 			page 8
+
+
+ 400 0020 00000000 		.4byte	0
+ 401 0024 00000000 		.4byte	0
+ 402              		.section	.debug_ranges,"",@progbits
+ 403              	.Ldebug_ranges0:
+ 404 0000 00000000 		.4byte	.LFB2
+ 405 0004 00000000 		.4byte	.LFE2
+ 406 0008 00000000 		.4byte	.LFB3
+ 407 000c 00000000 		.4byte	.LFE3
+ 408 0010 00000000 		.4byte	0
+ 409 0014 00000000 		.4byte	0
+ 410              		.section	.debug_line,"",@progbits
+ 411              	.Ldebug_line0:
+ 412 0000 00000234 		.section	.debug_str,"MS",@progbits,1
+ 412      00020000 
+ 412      01FD0201 
+ 412      FB0E0D00 
+ 412      01010101 
+ 413              	.LASF20:
+ 414 0000 6972715F 		.string	"irq_cfg_init"
+ 414      6366675F 
+ 414      696E6974 
+ 414      00
+ 415              	.LASF10:
+ 416 000d 756E7369 		.string	"unsigned int"
+ 416      676E6564 
+ 416      20696E74 
+ 416      00
+ 417              	.LASF6:
+ 418 001a 5F5F7569 		.string	"__uint32_t"
+ 418      6E743332 
+ 418      5F7400
+ 419              	.LASF15:
+ 420 0025 2E2F636F 		.string	"./components/spc58ecxx_irq_component_rla/lib/src/irq.c"
+ 420      6D706F6E 
+ 420      656E7473 
+ 420      2F737063 
+ 420      35386563 
+ 421              	.LASF7:
+ 422 005c 6C6F6E67 		.string	"long unsigned int"
+ 422      20756E73 
+ 422      69676E65 
+ 422      6420696E 
+ 422      7400
+ 423              	.LASF9:
+ 424 006e 6C6F6E67 		.string	"long long unsigned int"
+ 424      206C6F6E 
+ 424      6720756E 
+ 424      7369676E 
+ 424      65642069 
+ 425              	.LASF5:
+ 426 0085 5F5F7569 		.string	"__uint8_t"
+ 426      6E74385F 
+ 426      7400
+ 427              	.LASF17:
+ 428 008f 69727149 		.string	"irqInit"
+ 428      6E697400 
+ 429              	.LASF11:
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s 			page 9
+
+
+ 430 0097 75696E74 		.string	"uint8_t"
+ 430      385F7400 
+ 431              	.LASF1:
+ 432 009f 756E7369 		.string	"unsigned char"
+ 432      676E6564 
+ 432      20636861 
+ 432      7200
+ 433              	.LASF12:
+ 434 00ad 75696E74 		.string	"uint32_t"
+ 434      33325F74 
+ 434      00
+ 435              	.LASF4:
+ 436 00b6 6C6F6E67 		.string	"long int"
+ 436      20696E74 
+ 436      00
+ 437              	.LASF8:
+ 438 00bf 6C6F6E67 		.string	"long long int"
+ 438      206C6F6E 
+ 438      6720696E 
+ 438      7400
+ 439              	.LASF19:
+ 440 00cd 5F766563 		.string	"_vectors"
+ 440      746F7273 
+ 440      00
+ 441              	.LASF3:
+ 442 00d6 73686F72 		.string	"short unsigned int"
+ 442      7420756E 
+ 442      7369676E 
+ 442      65642069 
+ 442      6E7400
+ 443              	.LASF0:
+ 444 00e9 7369676E 		.string	"signed char"
+ 444      65642063 
+ 444      68617200 
+ 445              	.LASF18:
+ 446 00f5 69727153 		.string	"irqSysHalt"
+ 446      79734861 
+ 446      6C7400
+ 447              	.LASF13:
+ 448 0100 73697A65 		.string	"sizetype"
+ 448      74797065 
+ 448      00
+ 449              	.LASF2:
+ 450 0109 73686F72 		.string	"short int"
+ 450      7420696E 
+ 450      7400
+ 451              	.LASF16:
+ 452 0113 433A5C53 		.string	"C:\\SPC5Studio-6.0\\workspace\\Gateway"
+ 452      50433553 
+ 452      74756469 
+ 452      6F2D362E 
+ 452      305C776F 
+ 453              	.LASF14:
+ 454 0137 474E5520 		.ascii	"GNU C 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         b"
+ 454      4320342E 
+ 454      392E3420 
+ 454      32303136 
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s 			page 10
+
+
+ 454      30373236 
+ 455 0173 75696C64 		.ascii	"uild.sh"
+ 455      2E7368
+ 456 017a 20726576 		.string	" rev=gd8b6c20 s=F494 ELe200 -V release_gd8b6c20_build_Fed_ELe200_ML0) -mcall-sysv -mcpu=e
+ 456      3D676438 
+ 456      62366332 
+ 456      3020733D 
+ 456      46343934 
+ 457              		.ident	"GCC: (GNU) 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         build.sh rev=gd8b6c20 s=F4
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 irq.c
+C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s:10     .text.irqInit:00000000 irqInit
+C:\Users\bayra\AppData\Local\Temp\ccjkS12E.s:52     .text.irqSysHalt:00000000 irqSysHalt
+
+UNDEFINED SYMBOLS
+irq_cfg_init
+_vectors
