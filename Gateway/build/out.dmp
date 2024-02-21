@@ -7,8 +7,8 @@ start address 0x00fc0030
 
 Program Header:
     LOAD off    0x00004000 vaddr 0x00fc0000 paddr 0x00fc0000 align 2**14
-         filesz 0x00008720 memsz 0x00008720 flags r-x 10000000
-    LOAD off    0x00010000 vaddr 0x400a8000 paddr 0x00fc8720 align 2**14
+         filesz 0x000086c0 memsz 0x000086c0 flags r-x 10000000
+    LOAD off    0x00010000 vaddr 0x400a8000 paddr 0x00fc86c0 align 2**14
          filesz 0x00000228 memsz 0x00008584 flags rw-
     LOAD off    0x00014000 vaddr 0x50800000 paddr 0x50800000 align 2**14
          filesz 0x00000000 memsz 0x00000800 flags rw-
@@ -21,19 +21,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE, VLE
   1 .boot1        00001b92  00fc0470  00fc0470  00004470  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE, VLE
-  2 .text         00006416  00fc2010  00fc2010  00006010  2**4
+  2 .text         000063b6  00fc2010  00fc2010  00006010  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE, VLE
-  3 .rodata       000002f0  00fc8430  00fc8430  0000c430  2**4
+  3 .rodata       000002f0  00fc83d0  00fc83d0  0000c3d0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   4 .core0_stacks 00000800  50800000  50800000  00014000  2**4
                   ALLOC
   5 .core2_stacks 00001000  52800000  52800000  00014000  2**4
                   ALLOC
-  6 .data         00000226  400a8000  00fc8720  00010000  2**2
+  6 .data         00000226  400a8000  00fc86c0  00010000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .sdata        00000002  400a8226  00fc8946  00010226  2**0
+  7 .sdata        00000002  400a8226  00fc88e6  00010226  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .bss          0000835c  400a8228  00fc8948  00010228  2**2
+  8 .bss          0000835c  400a8228  00fc88e8  00010228  2**2
                   ALLOC
   9 .PPC.EMB.apuinfo 0000001c  00000000  00000000  00010228  2**0
                   CONTENTS, READONLY
@@ -41,27 +41,27 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  11 .gnu.attributes 00000010  00000000  00000000  000102d2  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00023f2d  00000000  00000000  000102e2  2**0
+ 12 .debug_info   00024126  00000000  00000000  000102e2  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_abbrev 00003120  00000000  00000000  0003420f  2**0
+ 13 .debug_abbrev 00003176  00000000  00000000  00034408  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    0000bab3  00000000  00000000  0003732f  2**0
+ 14 .debug_loc    0000be56  00000000  00000000  0003757e  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_aranges 00000b38  00000000  00000000  00042de2  2**0
+ 15 .debug_aranges 00000b80  00000000  00000000  000433d4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00001550  00000000  00000000  0004391a  2**0
+ 16 .debug_ranges 00001598  00000000  00000000  00043f54  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   00006e8e  00000000  00000000  00044e6a  2**0
+ 17 .debug_line   00006f0f  00000000  00000000  000454ec  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    00006f81  00000000  00000000  0004bcf8  2**0
+ 18 .debug_str    0000705d  00000000  00000000  0004c3fb  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .debug_frame  00003158  00000000  00000000  00052c7c  2**2
+ 19 .debug_frame  000031e0  00000000  00000000  00053458  2**2
                   CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 00fc0000 l    d  .boot0	00000000 .boot0
 00fc0470 l    d  .boot1	00000000 .boot1
 00fc2010 l    d  .text	00000000 .text
-00fc8430 l    d  .rodata	00000000 .rodata
+00fc83d0 l    d  .rodata	00000000 .rodata
 50800000 l    d  .core0_stacks	00000000 .core0_stacks
 52800000 l    d  .core2_stacks	00000000 .core2_stacks
 400a8000 l    d  .data	00000000 .data
@@ -123,11 +123,11 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 fp-bit.c
 00000000 l    df *ABS*	00000000 spc5_lld.c
 00000000 l    df *ABS*	00000000 spc5_edma.c
-00fc85a0 l     O .rodata	00000010 dma1_g0
-00fc85b0 l     O .rodata	00000010 dma1_g1
+00fc8540 l     O .rodata	00000010 dma1_g0
+00fc8550 l     O .rodata	00000010 dma1_g1
 400a8228 l     O .bss	00000100 channels
-00fc85c0 l     O .rodata	00000010 dma1_g2
-00fc85d0 l     O .rodata	00000010 dma1_g3
+00fc8560 l     O .rodata	00000010 dma1_g2
+00fc8570 l     O .rodata	00000010 dma1_g3
 00000000 l    df *ABS*	00000000 can_lld.c
 00fc4d30 l     F .text	00000440 can_lld_l0_handler
 00fc5170 l     F .text	00000410 can_lld_l1_handler
@@ -182,13 +182,13 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 irq_cfg.c
 00000000 l    df *ABS*	00000000 swirq_cfg.c
 00000000 l    df *ABS*	00000000 main.c
-400b04c6 l     O .bss	00000001 lastEnable.20961
-400b04d0 l     O .bss	00000004 cnt.20976
-400b0570 l     O .bss	00000004 cnt.21014
-400b057c l     O .bss	00000004 cnt.20993
-400b0580 l     O .bss	00000004 cnt.21009
+400b0470 l     O .bss	00000004 cnt.21015
+400b056c l     O .bss	00000004 cnt.21036
+400b0570 l     O .bss	00000001 lastEnable.20983
+400b0574 l     O .bss	00000004 cnt.21031
+400b0578 l     O .bss	00000004 cnt.20998
 00000000 l    df *ABS*	00000000 crc.c
-00fc8620 l     O .rodata	00000100 crc8H2F_tab
+00fc85c0 l     O .rodata	00000100 crc8H2F_tab
 00000000 l    df *ABS*	00000000 CANparse.c
 00000000 l    df *ABS*	00000000 components.c
 00000000 l    df *ABS*	00000000 memcpy.c
@@ -280,7 +280,7 @@ SYMBOL TABLE:
 400b0228 g       .sdata	00000000 __sdata_start__
 00fc2000  w      .boot1	00000000 vector306
 00fc2000  w      .boot1	00000000 vector1014
-00fc7d10 g     F .text	0000002c can1_can1rx
+00fc7cd0 g     F .text	0000002c can1_can1rx
 00fc2000  w      .boot1	00000000 vector539
 00fc2000  w      .boot1	00000000 vector475
 00fc2000  w      .boot1	00000000 vector189
@@ -334,7 +334,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector919
 00fc2000  w      .boot1	00000000 vector522
 00fc2000  w      .boot1	00000000 vector172
-00fd0720 g       .rodata	00000000 __sdata2_start__
+00fd06c0 g       .rodata	00000000 __sdata2_start__
 00fc2000  w      .boot1	00000000 vector877
 00fc2000  w      .boot1	00000000 vector461
 00fc2000  w      .boot1	00000000 vector611
@@ -416,14 +416,14 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector1013
 00fc2000  w      .boot1	00000000 vector217
 00fc2000  w      .boot1	00000000 vector355
-00fc8720 g       .rodata	00000000 __romdata_start__
+00fc86c0 g       .rodata	00000000 __romdata_start__
 00fc2000  w      .boot1	00000000 vector661
 00fc2000  w      .boot1	00000000 vector291
 00fc2000  w      .boot1	00000000 vector970
 00fc6b60 g     F .text	0000001e xPortStartScheduler
 00fc2000  w      .boot1	00000000 vector998
 00fc2000  w      .boot1	00000000 vector436
-00fc83f0 g     F .text	0000001a memcpy
+00fc8390 g     F .text	0000001a memcpy
 00fc2000  w      .boot1	00000000 vector650
 00fc2000  w      .boot1	00000000 vector280
 00fc2000  w      .boot1	00000000 vector980
@@ -439,7 +439,7 @@ SYMBOL TABLE:
 00fc4c00 g     F .text	0000012a can_lld_readBuffer
 00fc2000  w      .boot1	00000000 vector608
 00fc2000  w      .boot1	00000000 vector238
-400b04c8 g     O .bss	00000004 steeringangle
+400b0514 g     O .bss	00000004 steeringangle
 00fc2000  w      .boot1	00000000 vector557
 00fc2000  w      .boot1	00000000 vector697
 00fc2000  w      .boot1	00000000 vector311
@@ -455,7 +455,6 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector929
 00fc2000  w      .boot1	00000000 vector349
 00fc2000  w      .boot1	00000000 vector354
-400b0470 g     O .bss	00000002 motortork
 00fc2000  w      .boot1	00000000 vector624
 00fc2000  w      .boot1	00000000 vector254
 52801000 g       .core2_stacks	00000000 __main_thread_stack_end__
@@ -604,8 +603,8 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector206
 00fc2000  w      .boot1	00000000 vector560
 00fc2000  w      .boot1	00000000 vector922
-400b0474 g     O .bss	00000050 rx
-00fc7d50 g     F .text	00000536 Crc_CalculateCRC8H2F
+400b04c4 g     O .bss	00000050 rx
+00fc7d10 g     F .text	00000536 Crc_CalculateCRC8H2F
 00fc2000  w      .boot1	00000000 vector625
 00fc2000  w      .boot1	00000000 vector255
 00fc72a0 g     F .text	0000002a irqInit
@@ -663,7 +662,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector860
 00fc2000  w      .boot1	00000000 vector142
 00fc2000  w      .boot1	00000000 vector458
-00fc8390 g     F .text	0000002c GetMotorRPM
+00fc8330 g     F .text	0000002c GetMotorRPM
 00fc2000  w      .boot1	00000000 vector394
 00fc4480 g     F .text	00000060 vector100
 00fc2000  w      .boot1	00000000 vector811
@@ -676,7 +675,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector201
 00fc000c g     F .boot0	00000000 _reset_address0
 00fc2000  w      .boot1	00000000 vector745
-400b04c4 g     O .bss	00000002 RPM
+400b0474 g     O .bss	00000002 RPM
 00fc2000  w      .boot1	00000000 vector935
 00fc2000  w      .boot1	00000000 vector792
 00fc2000  w      .boot1	00000000 vector597
@@ -697,7 +696,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector488
 00fc2000  w      .boot1	00000000 vector932
 00fc2000  w      .boot1	00000000 vector329
-400b04d4 g     O .bss	0000004c tx14D
+400b0520 g     O .bss	0000004c tx14D
 00fc2000  w      .boot1	00000000 vector747
 00fc2000  w      .boot1	00000000 vector606
 00fc2000  w      .boot1	00000000 vector236
@@ -750,7 +749,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector32
 00fc2000  w      .boot1	00000000 vector693
 00fc76b0 g     F .text	00000024 osalSysTimeSetup
-00fc8350 g     F .text	00000020 GetSteeringWheelRate
+00fc8310 g     F .text	00000020 GetSteeringWheelRate
 00fc2000  w      .boot1	00000000 vector951
 00fc2000  w      .boot1	00000000 vector810
 00fc2000  w      .boot1	00000000 vector549
@@ -860,7 +859,7 @@ SYMBOL TABLE:
 400a8328 g     O .bss	00000010 CAND2
 00fc2000  w      .boot1	00000000 vector916
 00fc39a0 g     F .text	00000060 vector71
-00fc7c40 g     F .text	000000c4 can4_Can4rx_new
+00fc7c40 g     F .text	0000008c can4_Can4rx_new
 00fc2000  w      .boot1	00000000 vector842
 00fc2000  w      .boot1	00000000 vector510
 00fc2000  w      .boot1	00000000 vector160
@@ -876,7 +875,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector507
 00fc2000  w      .boot1	00000000 vector157
 00fc2000  w      .boot1	00000000 vector416
-00fc83f0  w    F .text	0000001a largememcpy
+00fc8390  w    F .text	0000001a largememcpy
 00fc2000  w      .boot1	00000000 vector490
 00fc4900 g     F .text	00000060 vector112
 00fc3160 g     F .text	000000ba .hidden __fpcmp_parts_d
@@ -928,9 +927,9 @@ SYMBOL TABLE:
 00fc6b80 g     F .text	0000001a vector226
 00fc26a0 g     F .text	00000264 .hidden __muldf3
 00fc2000  w      .boot1	00000000 vector670
-00fc8570 g     O .rodata	00000010 .hidden __thenan_sf
+00fc8510 g     O .rodata	00000010 .hidden __thenan_sf
 00fc2000  w      .boot1	00000000 vector49
-00fc7d40 g     F .text	00000010 can4_can4rx
+00fc7d00 g     F .text	00000010 can4_can4rx
 00fc2000  w      .boot1	00000000 vector44
 00fc3c40 g     F .text	00000060 vector78
 00fc2000  w      .boot1	00000000 vector643
@@ -966,7 +965,7 @@ SYMBOL TABLE:
 00fc6dd0 g     F .text	00000104 pal_init
 00fc2000  w      .boot1	00000000 vector407
 00fc2000  w      .boot1	00000000 vector878
-00fc8410 g     F .text	00000016 memset
+00fc83b0 g     F .text	00000016 memset
 00fc2000  w      .boot1	00000000 vector387
 00fc0204  w      .boot0	00000000 _IVOR7
 00fc2000  w      .boot1	00000000 vector933
@@ -1004,7 +1003,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector464
 00fc2000  w      .boot1	00000000 vector198
 00fc2000  w      .boot1	00000000 vector971
-400b0520 g     O .bss	00000004 rtoscnt
+400b051c g     O .bss	00000004 rtoscnt
 00fc2000  w      .boot1	00000000 vector120
 00fc03e0 g     F .boot0	00000000 _boot_address
 00fc2000  w      .boot1	00000000 vector646
@@ -1032,7 +1031,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector569
 00fc2000  w      .boot1	00000000 vector664
 00fc2000  w      .boot1	00000000 vector294
-00fc8580 g     O .rodata	00000018 .hidden __thenan_df
+00fc8520 g     O .rodata	00000018 .hidden __thenan_df
 00fc2000  w      .boot1	00000000 vector529
 00fc2000  w      .boot1	00000000 vector179
 00fc2000  w      .boot1	00000000 vector764
@@ -1125,11 +1124,10 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector248
 400a8338 g     O .bss	00000010 CAND7
 00fc2000  w      .boot1	00000000 vector479
-00fc8370 g     F .text	00000012 GetMotorTorque
 00fc2000  w      .boot1	00000000 vector343
 00fc0204  w      .boot0	00000000 _IVOR0
 00fc2000  w      .boot1	00000000 vector123
-00fc8290 g     F .text	00000034 converto1byteorder
+00fc8250 g     F .text	00000034 converto1byteorder
 00fc2000  w      .boot1	00000000 vector865
 00fc4300 g     F .text	00000060 vector96
 00fc2000  w      .boot1	00000000 vector665
@@ -1153,7 +1151,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector153
 00fc2000  w      .boot1	00000000 vector514
 00fc2000  w      .boot1	00000000 vector164
-400b04cc g     O .bss	00000002 steeringrate
+400b0518 g     O .bss	00000002 steeringrate
 00fc2000  w      .boot1	00000000 vector973
 00fc55d0 g     F .text	00000118 can_lld_writeTxBuffer
 00fc2000  w      .boot1	00000000 vector1012
@@ -1181,7 +1179,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector836
 00fc2000  w      .boot1	00000000 vector318
 00fc2000  w      .boot1	00000000 vector365
-400b0524 g     O .bss	0000004c tx10B
+400b0478 g     O .bss	0000004c tx10B
 00fc2000  w      .boot1	00000000 vector620
 00fc2000  w      .boot1	00000000 vector250
 00fc2000  w      .boot1	00000000 vector591
@@ -1275,7 +1273,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector831
 00fc2000  w      .boot1	00000000 vector1005
 00fc4a80 g     F .text	00000060 vector116
-00fc82d0 g     F .text	00000034 converto4byteorder
+00fc8290 g     F .text	00000034 converto4byteorder
 00fc2000  w      .boot1	00000000 vector654
 00fc2000  w      .boot1	00000000 vector284
 00fc2000  w      .boot1	00000000 vector452
@@ -1321,7 +1319,7 @@ SYMBOL TABLE:
 00fc0200  w      .boot0	00000000 _C0_IVOR5
 00fc2000  w      .boot1	00000000 vector540
 00fc2000  w      .boot1	00000000 vector190
-400b0574 g     O .bss	00000008 h303st
+400b057c g     O .bss	00000008 h303st
 00fc2000  w      .boot1	00000000 vector609
 00fc2000  w      .boot1	00000000 vector239
 00fc4240 g     F .text	00000060 vector94
@@ -1337,7 +1335,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector692
 00fc2000  w      .boot1	00000000 vector847
 00000800 g       *ABS*	00000000 __core0_process_stack_size__
-00fc83c0 g     F .text	0000002a componentsInit
+00fc8360 g     F .text	0000002a componentsInit
 00fc2000  w      .boot1	00000000 vector48
 00fc77c0 g     F .text	0000000c boardInit
 00fc2000  w      .boot1	00000000 vector659
@@ -1360,7 +1358,7 @@ SYMBOL TABLE:
 00fc2000  w      .boot1	00000000 vector504
 00fc2000  w      .boot1	00000000 vector154
 00fc2000  w      .boot1	00000000 vector36
-00fc8310 g     F .text	00000038 GetSteeringWheelAngle
+00fc82d0 g     F .text	00000038 GetSteeringWheelAngle
 00fc2634 g     F .text	00000062 .hidden __subdf3
 00fc2000  w      .boot1	00000000 vector894
 00fc2000  w      .boot1	00000000 vector605

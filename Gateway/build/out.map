@@ -76,7 +76,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 build/obj/core0.o
  .debug_line    0x00000000       0x1d build/obj/core0.o
- .debug_str     0x00000000      0x233 build/obj/core0.o
+ .debug_str     0x00000000      0x230 build/obj/core0.o
  .comment       0x00000000       0x8f build/obj/core0.o
  .text          0x00000000        0x0 build/obj/cache.o
  .data          0x00000000        0x0 build/obj/cache.o
@@ -416,8 +416,10 @@ Discarded input sections
  .text          0x00000000        0x0 build/obj/main.o
  .data          0x00000000        0x0 build/obj/main.o
  .bss           0x00000000        0x0 build/obj/main.o
- .bss.rx10B     0x00000000       0x50 build/obj/main.o
+ .bss.motortork
+                0x00000000        0x2 build/obj/main.o
  .bss.core0cnt  0x00000000        0x4 build/obj/main.o
+ .bss.rx10B     0x00000000       0x50 build/obj/main.o
  .bss.rtr       0x00000000        0x4 build/obj/main.o
  .bss.tx        0x00000000       0x4c build/obj/main.o
  .text          0x00000000        0x0 build/obj/h10B.o
@@ -461,6 +463,17 @@ Discarded input sections
                 0x00000000       0x2c build/obj/CANparse.o
  .text.GetBrakePedalPos
                 0x00000000        0x4 build/obj/CANparse.o
+ .text.GetGear  0x00000000        0x6 build/obj/CANparse.o
+ .text.GetGearLevel
+                0x00000000        0x6 build/obj/CANparse.o
+ .text.GetKL75status
+                0x00000000        0x8 build/obj/CANparse.o
+ .text.GetVehicleMassEst
+                0x00000000        0x6 build/obj/CANparse.o
+ .text.GetPitchVal
+                0x00000000       0x2e build/obj/CANparse.o
+ .text.GetFuelLevel
+                0x00000000        0x8 build/obj/CANparse.o
  .text          0x00000000        0x0 build/obj/components.o
  .data          0x00000000        0x0 build/obj/components.o
  .bss           0x00000000        0x0 build/obj/components.o
@@ -1629,7 +1642,7 @@ destructors     0x00fc2004        0x0
  *(.text_vle.*)
  *(.gnu.linkonce.t_vle.*)
 
-.text           0x00fc2010     0x63f6
+.text           0x00fc2010     0x63b6
  *(.text)
  .text          0x00fc2010       0x56 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_fixunsdfsi.o)
                 0x00fc2010                __fixunsdfsi
@@ -2150,91 +2163,91 @@ destructors     0x00fc2004        0x0
                 0x00fc7a10                can1_Can1new
  *fill*         0x00fc7c3e        0x2 
  .text.can4_Can4rx_new
-                0x00fc7c40       0xc4 build/obj/main.o
+                0x00fc7c40       0x8c build/obj/main.o
                 0x00fc7c40                can4_Can4rx_new
- *fill*         0x00fc7d04        0xc 
+ *fill*         0x00fc7ccc        0x4 
  .text.can1_can1rx
-                0x00fc7d10       0x2c build/obj/main.o
-                0x00fc7d10                can1_can1rx
- *fill*         0x00fc7d3c        0x4 
+                0x00fc7cd0       0x2c build/obj/main.o
+                0x00fc7cd0                can1_can1rx
+ *fill*         0x00fc7cfc        0x4 
  .text.can4_can4rx
-                0x00fc7d40       0x10 build/obj/main.o
-                0x00fc7d40                can4_can4rx
+                0x00fc7d00       0x10 build/obj/main.o
+                0x00fc7d00                can4_can4rx
  .text.Crc_CalculateCRC8H2F
-                0x00fc7d50      0x536 build/obj/crc.o
-                0x00fc7d50                Crc_CalculateCRC8H2F
- *fill*         0x00fc8286        0xa 
+                0x00fc7d10      0x536 build/obj/crc.o
+                0x00fc7d10                Crc_CalculateCRC8H2F
+ *fill*         0x00fc8246        0xa 
  .text.converto1byteorder
-                0x00fc8290       0x34 build/obj/crc.o
-                0x00fc8290                converto1byteorder
- *fill*         0x00fc82c4        0xc 
+                0x00fc8250       0x34 build/obj/crc.o
+                0x00fc8250                converto1byteorder
+ *fill*         0x00fc8284        0xc 
  .text.converto4byteorder
-                0x00fc82d0       0x34 build/obj/crc.o
-                0x00fc82d0                converto4byteorder
- *fill*         0x00fc8304        0xc 
+                0x00fc8290       0x34 build/obj/crc.o
+                0x00fc8290                converto4byteorder
+ *fill*         0x00fc82c4        0xc 
  .text.GetSteeringWheelAngle
-                0x00fc8310       0x38 build/obj/CANparse.o
-                0x00fc8310                GetSteeringWheelAngle
- *fill*         0x00fc8348        0x8 
+                0x00fc82d0       0x38 build/obj/CANparse.o
+                0x00fc82d0                GetSteeringWheelAngle
+ *fill*         0x00fc8308        0x8 
  .text.GetSteeringWheelRate
-                0x00fc8350       0x20 build/obj/CANparse.o
-                0x00fc8350                GetSteeringWheelRate
+                0x00fc8310       0x20 build/obj/CANparse.o
+                0x00fc8310                GetSteeringWheelRate
  .text.GetMotorRPM
-                0x00fc8370       0x2c build/obj/CANparse.o
-                0x00fc8370                GetMotorRPM
- *fill*         0x00fc839c        0x4 
+                0x00fc8330       0x2c build/obj/CANparse.o
+                0x00fc8330                GetMotorRPM
+ *fill*         0x00fc835c        0x4 
  .text.componentsInit
-                0x00fc83a0       0x2a build/obj/components.o
-                0x00fc83a0                componentsInit
- *fill*         0x00fc83ca        0x6 
- .text.memcpy   0x00fc83d0       0x1a c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/../../../../powerpc-eabivle/lib/e200z4\libc.a(lib_a-memcpy.o)
-                0x00fc83d0                memcpy
-                0x00fc83d0                largememcpy
- *fill*         0x00fc83ea        0x6 
- .text.memset   0x00fc83f0       0x16 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/../../../../powerpc-eabivle/lib/e200z4\libc.a(lib_a-memset.o)
-                0x00fc83f0                memset
+                0x00fc8360       0x2a build/obj/components.o
+                0x00fc8360                componentsInit
+ *fill*         0x00fc838a        0x6 
+ .text.memcpy   0x00fc8390       0x1a c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/../../../../powerpc-eabivle/lib/e200z4\libc.a(lib_a-memcpy.o)
+                0x00fc8390                memcpy
+                0x00fc8390                largememcpy
+ *fill*         0x00fc83aa        0x6 
+ .text.memset   0x00fc83b0       0x16 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/../../../../powerpc-eabivle/lib/e200z4\libc.a(lib_a-memset.o)
+                0x00fc83b0                memset
  *(.gnu.linkonce.t.*)
 
-.glink          0x00fc8406        0x0
- .glink         0x00fc8406        0x0 build/obj/boot.o
+.glink          0x00fc83c6        0x0
+ .glink         0x00fc83c6        0x0 build/obj/boot.o
 
-.rodata         0x00fc8410      0x2f0
+.rodata         0x00fc83d0      0x2f0
  *(.glue_7t)
  *(.glue_7)
  *(.gcc*)
  *(.rodata)
- .rodata        0x00fc8410      0x140 build/obj/crc.o
- .rodata        0x00fc8550       0x10 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_thenan_sf.o)
-                0x00fc8550                __thenan_sf
- .rodata        0x00fc8560       0x18 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_thenan_df.o)
-                0x00fc8560                __thenan_df
+ .rodata        0x00fc83d0      0x140 build/obj/crc.o
+ .rodata        0x00fc8510       0x10 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_thenan_sf.o)
+                0x00fc8510                __thenan_sf
+ .rodata        0x00fc8520       0x18 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_thenan_df.o)
+                0x00fc8520                __thenan_df
  *(.rodata.*)
- *fill*         0x00fc8578        0x8 
+ *fill*         0x00fc8538        0x8 
  .rodata.dma1_g0
-                0x00fc8580       0x10 build/obj/spc5_edma.o
+                0x00fc8540       0x10 build/obj/spc5_edma.o
  .rodata.dma1_g1
-                0x00fc8590       0x10 build/obj/spc5_edma.o
+                0x00fc8550       0x10 build/obj/spc5_edma.o
  .rodata.dma1_g2
-                0x00fc85a0       0x10 build/obj/spc5_edma.o
+                0x00fc8560       0x10 build/obj/spc5_edma.o
  .rodata.dma1_g3
-                0x00fc85b0       0x10 build/obj/spc5_edma.o
+                0x00fc8570       0x10 build/obj/spc5_edma.o
  .rodata.can_lld_getframesize
-                0x00fc85c0       0x1c build/obj/can_lld.o
- *fill*         0x00fc85dc        0x4 
+                0x00fc8580       0x1c build/obj/can_lld.o
+ *fill*         0x00fc859c        0x4 
  .rodata.str1.4
-                0x00fc85e0        0x5 build/obj/tasks.o
- *fill*         0x00fc85e5        0xb 
+                0x00fc85a0        0x5 build/obj/tasks.o
+ *fill*         0x00fc85a5        0xb 
  .rodata.str1.4
-                0x00fc85f0        0x8 build/obj/main.o
- *fill*         0x00fc85f8        0x8 
+                0x00fc85b0        0x8 build/obj/main.o
+ *fill*         0x00fc85b8        0x8 
  .rodata.crc8H2F_tab
-                0x00fc8600      0x100 build/obj/crc.o
+                0x00fc85c0      0x100 build/obj/crc.o
  *(.rodata1)
 
-.sdata2         0x00fc8700        0x0
-                0x00fd0700                __sdata2_start__ = (. + 0x8000)
+.sdata2         0x00fc86c0        0x0
+                0x00fd06c0                __sdata2_start__ = (. + 0x8000)
  *(.sdata2)
- .sdata2        0x00fc8700        0x0 build/obj/boot.o
+ .sdata2        0x00fc86c0        0x0 build/obj/boot.o
  *(.sdata2.*)
  *(.gnu.linkonce.s2.*)
  *(.sbss2)
@@ -2244,35 +2257,35 @@ destructors     0x00fc2004        0x0
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00fc8700        0x0
+.eh_frame       0x00fc86c0        0x0
  *(.eh_frame)
- .eh_frame      0x00fc8700        0x0 build/obj/boot.o
+ .eh_frame      0x00fc86c0        0x0 build/obj/boot.o
 
-.rela.dyn       0x00fc8700        0x0
- .rela.iplt     0x00fc8700        0x0 build/obj/boot.o
- .rela.vectors  0x00fc8700        0x0 build/obj/boot.o
+.rela.dyn       0x00fc86c0        0x0
+ .rela.iplt     0x00fc86c0        0x0 build/obj/boot.o
+ .rela.vectors  0x00fc86c0        0x0 build/obj/boot.o
  .rela.text.pxPortInitialiseStack
-                0x00fc8700        0x0 build/obj/boot.o
+                0x00fc86c0        0x0 build/obj/boot.o
  .rela.text.manage_eirq_interrupt
-                0x00fc8700        0x0 build/obj/boot.o
+                0x00fc86c0        0x0 build/obj/boot.o
  .rela.text.vector243
-                0x00fc8700        0x0 build/obj/boot.o
+                0x00fc86c0        0x0 build/obj/boot.o
  .rela.text.vector244
-                0x00fc8700        0x0 build/obj/boot.o
+                0x00fc86c0        0x0 build/obj/boot.o
  .rela.text.vector245
-                0x00fc8700        0x0 build/obj/boot.o
+                0x00fc86c0        0x0 build/obj/boot.o
  .rela.text.vector246
-                0x00fc8700        0x0 build/obj/boot.o
+                0x00fc86c0        0x0 build/obj/boot.o
  .rela.text.eirqInit
-                0x00fc8700        0x0 build/obj/boot.o
+                0x00fc86c0        0x0 build/obj/boot.o
  .rela.data.can_config_can1
-                0x00fc8700        0x0 build/obj/boot.o
+                0x00fc86c0        0x0 build/obj/boot.o
  .rela.data.can_config_can4
-                0x00fc8700        0x0 build/obj/boot.o
- .rela.text     0x00fc8700        0x0 build/obj/boot.o
+                0x00fc86c0        0x0 build/obj/boot.o
+ .rela.text     0x00fc86c0        0x0 build/obj/boot.o
 
-.romdata        0x00fc8700        0x0
-                0x00fc8700                __romdata_start__ = .
+.romdata        0x00fc86c0        0x0
+                0x00fc86c0                __romdata_start__ = .
 
 .core0_stacks   0x50800000      0x800
                 0x50800000                . = ALIGN (0x8)
@@ -2302,7 +2315,7 @@ destructors     0x00fc2004        0x0
                 0x52801000                __process_stack_end__ = .
                 0x52801000                __main_thread_stack_end__ = .
 
-.data           0x400a8000      0x226 load address 0x00fc8700
+.data           0x400a8000      0x226 load address 0x00fc86c0
                 0x400a8000                . = ALIGN (0x4)
                 0x400a8000                __data_start__ = .
  *(.data)
@@ -2328,7 +2341,7 @@ destructors     0x00fc2004        0x0
                 0x400a8220                h10Bst
  *(.gnu.linkonce.d.*)
 
-.sdata          0x400a8226        0x2 load address 0x00fc8926
+.sdata          0x400a8226        0x2 load address 0x00fc88e6
                 0x400a8228                . = ALIGN (0x4)
  *fill*         0x400a8226        0x2 
                 0x400b0228                __sdata_start__ = (. + 0x8000)
@@ -2346,7 +2359,7 @@ destructors     0x00fc2004        0x0
  *(.gnu.linkonce.sb.*)
  *(.scommon)
 
-.bss            0x400a8228     0x835c load address 0x00fc8928
+.bss            0x400a8228     0x835c load address 0x00fc88e8
  *(.bss)
  *(.bss.*)
  .bss.channels  0x400a8228      0x100 build/obj/spc5_edma.o
@@ -2408,37 +2421,35 @@ destructors     0x00fc2004        0x0
                 0x400b043c        0x4 build/obj/osal.o
  .bss.osalTimeOps
                 0x400b0440       0x30 build/obj/osal.o
- .bss.motortork
-                0x400b0470        0x2 build/obj/main.o
-                0x400b0470                motortork
- .bss.steeringrate
-                0x400b0472        0x2 build/obj/main.o
-                0x400b0472                steeringrate
+ .bss.cnt.21015
+                0x400b0470        0x4 build/obj/main.o
  .bss.RPM       0x400b0474        0x2 build/obj/main.o
                 0x400b0474                RPM
  *fill*         0x400b0476        0x2 
- .bss.cnt.21015
-                0x400b0478        0x4 build/obj/main.o
- .bss.rx        0x400b047c       0x50 build/obj/main.o
-                0x400b047c                rx
- .bss.cnt.21020
-                0x400b04cc        0x4 build/obj/main.o
+ .bss.tx10B     0x400b0478       0x4c build/obj/main.o
+                0x400b0478                tx10B
+ .bss.rx        0x400b04c4       0x50 build/obj/main.o
+                0x400b04c4                rx
  .bss.steeringangle
-                0x400b04d0        0x4 build/obj/main.o
-                0x400b04d0                steeringangle
- .bss.lastEnable.20965
-                0x400b04d4        0x1 build/obj/main.o
- *fill*         0x400b04d5        0x3 
- .bss.cnt.20980
-                0x400b04d8        0x4 build/obj/main.o
- .bss.tx14D     0x400b04dc       0x4c build/obj/main.o
-                0x400b04dc                tx14D
- .bss.rtoscnt   0x400b0528        0x4 build/obj/main.o
-                0x400b0528                rtoscnt
- .bss.cnt.20997
-                0x400b052c        0x4 build/obj/main.o
- .bss.tx10B     0x400b0530       0x4c build/obj/main.o
-                0x400b0530                tx10B
+                0x400b0514        0x4 build/obj/main.o
+                0x400b0514                steeringangle
+ .bss.steeringrate
+                0x400b0518        0x2 build/obj/main.o
+                0x400b0518                steeringrate
+ *fill*         0x400b051a        0x2 
+ .bss.rtoscnt   0x400b051c        0x4 build/obj/main.o
+                0x400b051c                rtoscnt
+ .bss.tx14D     0x400b0520       0x4c build/obj/main.o
+                0x400b0520                tx14D
+ .bss.cnt.21036
+                0x400b056c        0x4 build/obj/main.o
+ .bss.lastEnable.20983
+                0x400b0570        0x1 build/obj/main.o
+ *fill*         0x400b0571        0x3 
+ .bss.cnt.21031
+                0x400b0574        0x4 build/obj/main.o
+ .bss.cnt.20998
+                0x400b0578        0x4 build/obj/main.o
  .bss.h303st    0x400b057c        0x8 build/obj/main.o
                 0x400b057c                h303st
  *(.gnu.linkonce.b.*)
@@ -2451,7 +2462,7 @@ LOAD c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.wi
 LOAD c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a
 OUTPUT(build/out.elf elf32-powerpc)
 
-.iplt           0x400b0590        0x0 load address 0x00fd0c90
+.iplt           0x400b0590        0x0 load address 0x00fd0c50
  .iplt          0x400b0590        0x0 build/obj/boot.o
 
 .PPC.EMB.apuinfo
@@ -2635,7 +2646,7 @@ OUTPUT(build/out.elf elf32-powerpc)
  .gnu.attributes
                 0x00000120       0x10 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_pack_df.o)
 
-.debug_info     0x00000000    0x23ff7
+.debug_info     0x00000000    0x24126
  .debug_info    0x00000000      0x673 build/obj/cache.o
  .debug_info    0x00000673       0xbb build/obj/spc5_lld.o
  .debug_info    0x0000072e     0x35a1 build/obj/spc5_edma.o
@@ -2659,13 +2670,13 @@ OUTPUT(build/out.elf elf32-powerpc)
  .debug_info    0x0001f089       0x8c build/obj/irq_cfg.o
  .debug_info    0x0001f115      0x126 build/obj/eirq_cfg.o
  .debug_info    0x0001f23b       0x8c build/obj/swirq_cfg.o
- .debug_info    0x0001f2c7     0x42bf build/obj/main.o
- .debug_info    0x00023586      0x1b5 build/obj/h10B.o
- .debug_info    0x0002373b      0x224 build/obj/crc.o
- .debug_info    0x0002395f      0x57f build/obj/CANparse.o
- .debug_info    0x00023ede      0x119 build/obj/components.o
+ .debug_info    0x0001f2c7     0x427c build/obj/main.o
+ .debug_info    0x00023543      0x1b5 build/obj/h10B.o
+ .debug_info    0x000236f8      0x224 build/obj/crc.o
+ .debug_info    0x0002391c      0x6f1 build/obj/CANparse.o
+ .debug_info    0x0002400d      0x119 build/obj/components.o
 
-.debug_abbrev   0x00000000     0x3138
+.debug_abbrev   0x00000000     0x3176
  .debug_abbrev  0x00000000      0x257 build/obj/cache.o
  .debug_abbrev  0x00000257       0x70 build/obj/spc5_lld.o
  .debug_abbrev  0x000002c7      0x334 build/obj/spc5_edma.o
@@ -2689,13 +2700,13 @@ OUTPUT(build/out.elf elf32-powerpc)
  .debug_abbrev  0x00002900       0x44 build/obj/irq_cfg.o
  .debug_abbrev  0x00002944       0x82 build/obj/eirq_cfg.o
  .debug_abbrev  0x000029c6       0x44 build/obj/swirq_cfg.o
- .debug_abbrev  0x00002a0a      0x40c build/obj/main.o
- .debug_abbrev  0x00002e16       0xde build/obj/h10B.o
- .debug_abbrev  0x00002ef4       0xec build/obj/crc.o
- .debug_abbrev  0x00002fe0       0xd7 build/obj/CANparse.o
- .debug_abbrev  0x000030b7       0x81 build/obj/components.o
+ .debug_abbrev  0x00002a0a      0x3f4 build/obj/main.o
+ .debug_abbrev  0x00002dfe       0xde build/obj/h10B.o
+ .debug_abbrev  0x00002edc       0xec build/obj/crc.o
+ .debug_abbrev  0x00002fc8      0x12d build/obj/CANparse.o
+ .debug_abbrev  0x000030f5       0x81 build/obj/components.o
 
-.debug_loc      0x00000000     0xbc2d
+.debug_loc      0x00000000     0xbe56
  .debug_loc     0x00000000      0x9a6 build/obj/cache.o
  .debug_loc     0x000009a6       0x2c build/obj/spc5_lld.o
  .debug_loc     0x000009d2     0x12d8 build/obj/spc5_edma.o
@@ -2714,13 +2725,13 @@ OUTPUT(build/out.elf elf32-powerpc)
  .debug_loc     0x0000a158       0xe9 build/obj/swirq.o
  .debug_loc     0x0000a241      0x2d8 build/obj/osal.o
  .debug_loc     0x0000a519       0x58 build/obj/systimer.o
- .debug_loc     0x0000a571      0x2de build/obj/main.o
- .debug_loc     0x0000a84f      0x164 build/obj/h10B.o
- .debug_loc     0x0000a9b3      0x8fe build/obj/crc.o
- .debug_loc     0x0000b2b1      0x950 build/obj/CANparse.o
- .debug_loc     0x0000bc01       0x2c build/obj/components.o
+ .debug_loc     0x0000a571      0x2ac build/obj/main.o
+ .debug_loc     0x0000a81d      0x164 build/obj/h10B.o
+ .debug_loc     0x0000a981      0x8fe build/obj/crc.o
+ .debug_loc     0x0000b27f      0xbab build/obj/CANparse.o
+ .debug_loc     0x0000be2a       0x2c build/obj/components.o
 
-.debug_aranges  0x00000000      0xb50
+.debug_aranges  0x00000000      0xb80
  .debug_aranges
                 0x00000000       0x68 build/obj/cache.o
  .debug_aranges
@@ -2774,11 +2785,11 @@ OUTPUT(build/out.elf elf32-powerpc)
  .debug_aranges
                 0x00000a58       0x30 build/obj/crc.o
  .debug_aranges
-                0x00000a88       0xa8 build/obj/CANparse.o
+                0x00000a88       0xd8 build/obj/CANparse.o
  .debug_aranges
-                0x00000b30       0x20 build/obj/components.o
+                0x00000b60       0x20 build/obj/components.o
 
-.debug_ranges   0x00000000     0x15b8
+.debug_ranges   0x00000000     0x1598
  .debug_ranges  0x00000000       0xb8 build/obj/cache.o
  .debug_ranges  0x000000b8       0x10 build/obj/spc5_lld.o
  .debug_ranges  0x000000c8      0x268 build/obj/spc5_edma.o
@@ -2800,13 +2811,13 @@ OUTPUT(build/out.elf elf32-powerpc)
  .debug_ranges  0x00001388       0x10 build/obj/board.o
  .debug_ranges  0x00001398       0x10 build/obj/irq_cfg.o
  .debug_ranges  0x000013a8       0x10 build/obj/swirq_cfg.o
- .debug_ranges  0x000013b8      0x110 build/obj/main.o
- .debug_ranges  0x000014c8       0x10 build/obj/h10B.o
- .debug_ranges  0x000014d8       0x38 build/obj/crc.o
- .debug_ranges  0x00001510       0x98 build/obj/CANparse.o
- .debug_ranges  0x000015a8       0x10 build/obj/components.o
+ .debug_ranges  0x000013b8       0xc0 build/obj/main.o
+ .debug_ranges  0x00001478       0x10 build/obj/h10B.o
+ .debug_ranges  0x00001488       0x38 build/obj/crc.o
+ .debug_ranges  0x000014c0       0xc8 build/obj/CANparse.o
+ .debug_ranges  0x00001588       0x10 build/obj/components.o
 
-.debug_line     0x00000000     0x6ec4
+.debug_line     0x00000000     0x6f0f
  .debug_line    0x00000000      0x388 build/obj/cache.o
  .debug_line    0x00000388       0xe0 build/obj/spc5_lld.o
  .debug_line    0x00000468      0xced build/obj/spc5_edma.o
@@ -2830,13 +2841,13 @@ OUTPUT(build/out.elf elf32-powerpc)
  .debug_line    0x00005e5a       0x66 build/obj/irq_cfg.o
  .debug_line    0x00005ec0      0x1cb build/obj/eirq_cfg.o
  .debug_line    0x0000608b       0x68 build/obj/swirq_cfg.o
- .debug_line    0x000060f3      0x50d build/obj/main.o
- .debug_line    0x00006600      0x1b1 build/obj/h10B.o
- .debug_line    0x000067b1      0x27d build/obj/crc.o
- .debug_line    0x00006a2e      0x2d6 build/obj/CANparse.o
- .debug_line    0x00006d04      0x1c0 build/obj/components.o
+ .debug_line    0x000060f3      0x4ec build/obj/main.o
+ .debug_line    0x000065df      0x1b1 build/obj/h10B.o
+ .debug_line    0x00006790      0x27d build/obj/crc.o
+ .debug_line    0x00006a0d      0x342 build/obj/CANparse.o
+ .debug_line    0x00006d4f      0x1c0 build/obj/components.o
 
-.debug_str      0x00000000     0x6fe8
+.debug_str      0x00000000     0x705d
  .debug_str     0x00000000      0x38f build/obj/cache.o
                                 0x3e7 (size before relaxing)
  .debug_str     0x0000038f       0x75 build/obj/spc5_lld.o
@@ -2883,18 +2894,18 @@ OUTPUT(build/out.elf elf32-powerpc)
                                 0x2ab (size before relaxing)
  .debug_str     0x00006b3a       0x39 build/obj/swirq_cfg.o
                                 0x23e (size before relaxing)
- .debug_str     0x00006b73      0x1f7 build/obj/main.o
-                               0x12ee (size before relaxing)
- .debug_str     0x00006d6a       0x32 build/obj/h10B.o
+ .debug_str     0x00006b73      0x209 build/obj/main.o
+                               0x12dc (size before relaxing)
+ .debug_str     0x00006d7c       0x32 build/obj/h10B.o
                                 0x286 (size before relaxing)
- .debug_str     0x00006d9c       0x64 build/obj/crc.o
+ .debug_str     0x00006dae       0x64 build/obj/crc.o
                                 0x2c7 (size before relaxing)
- .debug_str     0x00006e00      0x1ce build/obj/CANparse.o
-                                0x44b (size before relaxing)
- .debug_str     0x00006fce       0x1a build/obj/components.o
-                                0x262 (size before relaxing)
+ .debug_str     0x00006e12      0x231 build/obj/CANparse.o
+                                0x4b0 (size before relaxing)
+ .debug_str     0x00007043       0x1a build/obj/components.o
+                                0x25f (size before relaxing)
 
-.debug_frame    0x00000000     0x3188
+.debug_frame    0x00000000     0x31e0
  .debug_frame   0x00000000      0x174 build/obj/cache.o
  .debug_frame   0x00000174       0x30 build/obj/spc5_lld.o
  .debug_frame   0x000001a4      0xc80 build/obj/spc5_edma.o
@@ -2916,34 +2927,34 @@ OUTPUT(build/out.elf elf32-powerpc)
  .debug_frame   0x0000283c       0x20 build/obj/board.o
  .debug_frame   0x0000285c       0x20 build/obj/irq_cfg.o
  .debug_frame   0x0000287c       0x20 build/obj/swirq_cfg.o
- .debug_frame   0x0000289c      0x138 build/obj/main.o
- .debug_frame   0x000029d4       0x40 build/obj/h10B.o
- .debug_frame   0x00002a14       0x4c build/obj/crc.o
- .debug_frame   0x00002a60      0x1d4 build/obj/CANparse.o
- .debug_frame   0x00002c34       0x30 build/obj/components.o
- .debug_frame   0x00002c64       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/../../../../powerpc-eabivle/lib/e200z4\libc.a(lib_a-memcpy.o)
- .debug_frame   0x00002c84       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/../../../../powerpc-eabivle/lib/e200z4\libc.a(lib_a-memset.o)
- .debug_frame   0x00002ca4       0x40 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_fixunsdfsi.o)
- .debug_frame   0x00002ce4       0x7c c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_addsub_sf.o)
- .debug_frame   0x00002d60       0x3c c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_mul_sf.o)
- .debug_frame   0x00002d9c       0x38 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_gt_sf.o)
- .debug_frame   0x00002dd4       0x30 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_sf_to_df.o)
- .debug_frame   0x00002e04       0x44 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_usi_to_sf.o)
- .debug_frame   0x00002e48       0x9c c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_addsub_df.o)
- .debug_frame   0x00002ee4       0x4c c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_mul_df.o)
- .debug_frame   0x00002f30       0x38 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_div_df.o)
- .debug_frame   0x00002f68       0x38 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_ge_df.o)
- .debug_frame   0x00002fa0       0x30 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_si_to_df.o)
- .debug_frame   0x00002fd0       0x40 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_df_to_si.o)
- .debug_frame   0x00003010       0x30 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_make_df.o)
- .debug_frame   0x00003040       0x30 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_df_to_sf.o)
- .debug_frame   0x00003070       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_pack_sf.o)
- .debug_frame   0x00003090       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_unpack_sf.o)
- .debug_frame   0x000030b0       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_fpcmp_parts_sf.o)
- .debug_frame   0x000030d0       0x30 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_make_sf.o)
- .debug_frame   0x00003100       0x48 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_pack_df.o)
- .debug_frame   0x00003148       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_unpack_df.o)
- .debug_frame   0x00003168       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_fpcmp_parts_df.o)
+ .debug_frame   0x0000289c      0x120 build/obj/main.o
+ .debug_frame   0x000029bc       0x40 build/obj/h10B.o
+ .debug_frame   0x000029fc       0x4c build/obj/crc.o
+ .debug_frame   0x00002a48      0x244 build/obj/CANparse.o
+ .debug_frame   0x00002c8c       0x30 build/obj/components.o
+ .debug_frame   0x00002cbc       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/../../../../powerpc-eabivle/lib/e200z4\libc.a(lib_a-memcpy.o)
+ .debug_frame   0x00002cdc       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/../../../../powerpc-eabivle/lib/e200z4\libc.a(lib_a-memset.o)
+ .debug_frame   0x00002cfc       0x40 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_fixunsdfsi.o)
+ .debug_frame   0x00002d3c       0x7c c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_addsub_sf.o)
+ .debug_frame   0x00002db8       0x3c c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_mul_sf.o)
+ .debug_frame   0x00002df4       0x38 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_gt_sf.o)
+ .debug_frame   0x00002e2c       0x30 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_sf_to_df.o)
+ .debug_frame   0x00002e5c       0x44 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_usi_to_sf.o)
+ .debug_frame   0x00002ea0       0x9c c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_addsub_df.o)
+ .debug_frame   0x00002f3c       0x4c c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_mul_df.o)
+ .debug_frame   0x00002f88       0x38 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_div_df.o)
+ .debug_frame   0x00002fc0       0x38 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_ge_df.o)
+ .debug_frame   0x00002ff8       0x30 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_si_to_df.o)
+ .debug_frame   0x00003028       0x40 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_df_to_si.o)
+ .debug_frame   0x00003068       0x30 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_make_df.o)
+ .debug_frame   0x00003098       0x30 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_df_to_sf.o)
+ .debug_frame   0x000030c8       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_pack_sf.o)
+ .debug_frame   0x000030e8       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_unpack_sf.o)
+ .debug_frame   0x00003108       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_fpcmp_parts_sf.o)
+ .debug_frame   0x00003128       0x30 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_make_sf.o)
+ .debug_frame   0x00003158       0x48 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_pack_df.o)
+ .debug_frame   0x000031a0       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_unpack_df.o)
+ .debug_frame   0x000031c0       0x20 c:/spc5studio-6.0/eclipse/plugins/com.st.tools.spc5.tools.gnu.gcc.ppcvle.win32_4.9.4.20200908161514/toolchain/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4\libgcc.a(_fpcmp_parts_df.o)
 
 Cross Reference Table
 
@@ -2960,11 +2971,15 @@ GetBrakePedalPos                                  build/obj/CANparse.o
 GetBrakePressure                                  build/obj/CANparse.o
 GetDriverBrake                                    build/obj/CANparse.o
 GetEPBStatus                                      build/obj/CANparse.o
+GetFuelLevel                                      build/obj/CANparse.o
+GetGear                                           build/obj/CANparse.o
+GetGearLevel                                      build/obj/CANparse.o
+GetKL75status                                     build/obj/CANparse.o
 GetLateralACC                                     build/obj/CANparse.o
 GetLongitudinalACC                                build/obj/CANparse.o
 GetMotorRPM                                       build/obj/CANparse.o
                                                   build/obj/main.o
-GetMotorTorque                                    build/obj/main.o
+GetPitchVal                                       build/obj/CANparse.o
 GetSteeringWheelAngle                             build/obj/CANparse.o
                                                   build/obj/main.o
 GetSteeringWheelRate                              build/obj/CANparse.o
@@ -2974,6 +2989,7 @@ GetTargetMotorTorqueFiltered                      build/obj/CANparse.o
 GetTargetMotorTorqueRaw                           build/obj/CANparse.o
 GetTargetMotorTorqueTotal                         build/obj/CANparse.o
 GetThrottlePedalRawValue                          build/obj/CANparse.o
+GetVehicleMassEst                                 build/obj/CANparse.o
 Get_WheelSpeed_BL                                 build/obj/CANparse.o
 Get_WheelSpeed_BR                                 build/obj/CANparse.o
 Get_WheelSpeed_FL                                 build/obj/CANparse.o

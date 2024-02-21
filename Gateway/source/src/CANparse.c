@@ -222,3 +222,66 @@ uint8_t GetBrakePedalPos(const uint8_t* data)
 {
 	return data[5];
 }
+
+/*
+ * 0x394
+ */
+
+uint8_t GetGear(const uint8_t* data)//D N R P
+{
+	uint8_t Gear = 0;
+
+	Gear = (data[1] & 0xF0) >> 4;
+	return Gear;
+}
+
+uint8_t GetGearLevel(const uint8_t* data)//Not works all the time
+{
+	uint8_t gear = 0;
+	gear = data[3] & 0x0F;
+	return gear;
+
+}
+
+
+
+/*
+ * 0x3BE Motor_14
+ */
+
+uint8_t GetKL75status(const uint8_t* data)
+{
+	uint8_t KL75;
+	KL75 = (data[2] & 0b00000100) >> 2;
+	return KL75;
+}
+
+/*
+ * 0x65F Motor 16
+ */
+
+uint16_t GetVehicleMassEst(const uint8_t* data)//kg
+{
+	uint16_t mass = 0;
+	mass = data[6] * 32;
+	return mass;
+}
+
+float GetPitchVal(const uint8_t* data)
+{
+	float pitch = 0;
+	pitch = ((float)data[7] * 0.8f) - 101.6f;
+	return pitch;
+
+}
+
+/*
+ * 0x6B7 Kombi_02
+ */
+uint8_t GetFuelLevel(const uint8_t* data)//liter
+{
+	uint8_t fuel = 0;
+	fuel = data[5] & 0b01111111;
+	return fuel;
+}
+

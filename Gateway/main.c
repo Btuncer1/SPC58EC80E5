@@ -271,7 +271,7 @@ can4_Can4rx_new(uint32_t msgbuf, CANRxFrame crfp){
 		steeringrate = GetSteeringWheelRate(buffer);
 		break;
 	case 0xA7:
-		motortork = GetMotorTorque(buffer);
+		//motortork = GetMotorTorque(buffer);
 		break;
 	case 0xA8:
 		RPM = GetMotorRPM(buffer);

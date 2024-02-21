@@ -43,5 +43,21 @@ float GetBrakePressure(const uint8_t* data);// bar
 
 uint8_t GetDriverBrake(const uint8_t* data);
 
+uint8_t GetEPBStatus(const uint8_t* data);
+
+float GetThrottlePedalRawValue(const uint8_t* data);
+
+uint8_t GetBrakePedalPos(const uint8_t* data);
+
+uint8_t GetGear(const uint8_t* data);//D N R P
+uint8_t GetGearLevel(const uint8_t* data);//Not works all the time
+
+uint8_t GetKL75status(const uint8_t* data);
+
+uint16_t GetVehicleMassEst(const uint8_t* data);//kg
+float GetPitchVal(const uint8_t* data);
+
+uint8_t GetFuelLevel(const uint8_t* data);//liter
+
 
 #endif /* INC_CANPARSE_H_ */
