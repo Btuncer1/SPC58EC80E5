@@ -1,66 +1,6 @@
-18:16:24 **** Build of configuration Default for project Gateway ****
+13:54:16 **** Build of configuration Default for project Gateway ****
 make -j20 all 
-Compiling core0.c
-Compiling spc5_lld.c
-Compiling spc5_edma.c
-Compiling can_lld.c
-Compiling can_lld_cfg.c
-Compiling main.c
-Compiling components.c
-main.c:152:1: warning: return type defaults to 'int'
- can1_Can1new(uint32_t msgbuf, CANRxFrame crfp){
- ^
-main.c:152:1: warning: conflicting types for 'can1_Can1new'
-In file included from main.c:17:0:
-./components/spc58ecxx_low_level_drivers_component_rla/cfg/can_lld_cfg.h:62:6: note: previous declaration of 'can1_Can1new' was here
- void can1_Can1new(uint32_t msgbuf, CANRxFrame crfp);
-      ^
-main.c: In function 'can1_Can1new':
-main.c:152:23: warning: unused parameter 'msgbuf' [-Wunused-parameter]
- can1_Can1new(uint32_t msgbuf, CANRxFrame crfp){
-                       ^
-main.c: At top level:
-main.c:251:1: warning: return type defaults to 'int'
- can4_Can4rx_new(uint32_t msgbuf, CANRxFrame crfp){
- ^
-main.c:251:1: warning: conflicting types for 'can4_Can4rx_new'
-In file included from main.c:17:0:
-./components/spc58ecxx_low_level_drivers_component_rla/cfg/can_lld_cfg.h:64:6: note: previous declaration of 'can4_Can4rx_new' was here
- void can4_Can4rx_new(uint32_t msgbuf, CANRxFrame crfp);
-      ^
-main.c: In function 'can4_Can4rx_new':
-main.c:251:26: warning: unused parameter 'msgbuf' [-Wunused-parameter]
- can4_Can4rx_new(uint32_t msgbuf, CANRxFrame crfp){
-                          ^
-main.c: At top level:
-main.c:331:1: warning: return type defaults to 'int'
- can1_can1rx(uint32_t msgbuf, CANRxFrame crfp)
- ^
-main.c:331:1: warning: conflicting types for 'can1_can1rx'
-In file included from main.c:17:0:
-./components/spc58ecxx_low_level_drivers_component_rla/cfg/can_lld_cfg.h:61:6: note: previous declaration of 'can1_can1rx' was here
- void can1_can1rx(uint32_t msgbuf, CANRxFrame crfp);
-      ^
-main.c: In function 'can1_can1rx':
-main.c:331:22: warning: unused parameter 'msgbuf' [-Wunused-parameter]
- can1_can1rx(uint32_t msgbuf, CANRxFrame crfp)
-                      ^
-main.c: At top level:
-main.c:338:1: warning: return type defaults to 'int'
- can4_can4rx(uint32_t msgbuf, CANRxFrame crfp)
- ^
-main.c:338:1: warning: conflicting types for 'can4_can4rx'
-In file included from main.c:17:0:
-./components/spc58ecxx_low_level_drivers_component_rla/cfg/can_lld_cfg.h:63:6: note: previous declaration of 'can4_can4rx' was here
- void can4_can4rx(uint32_t msgbuf, CANRxFrame crfp);
-      ^
-main.c: In function 'can4_can4rx':
-main.c:338:22: warning: unused parameter 'msgbuf' [-Wunused-parameter]
- can4_can4rx(uint32_t msgbuf, CANRxFrame crfp)
-                      ^
-main.c:338:41: warning: unused parameter 'crfp' [-Wunused-parameter]
- can4_can4rx(uint32_t msgbuf, CANRxFrame crfp)
-                                         ^
+Compiling h302.c
 Linking build/out.elf
 Creating build/out.hex
 Creating build/out.mot
@@ -72,5 +12,5 @@ Creating build/out.dmp
 
 Done
 
-18:16:25 Build Finished. 0 errors, 13 warnings. (took 1s.173ms)
+13:54:17 Build Finished. 0 errors, 0 warnings. (took 717ms)
 

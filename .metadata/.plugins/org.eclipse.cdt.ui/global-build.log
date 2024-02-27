@@ -859,3 +859,86 @@ Creating build/out.dmp
   50402	    616	  39900	  90918	  16326	build/out.elf
 
 Done
+13:53:04 **** Build of configuration Default for project Gateway ****
+make -j20 all 
+Compiling h302.c
+Compiling h14D.c
+In file included from ./source/src/h302.c:15:0:
+./source/inc/h302.h:13:22: error: unknown type name 'uint8_t'
+ void Steering_assist(uint8_t *data, float steeringangle,uint8_t steertorque,uint8_t enable);
+                      ^
+./source/inc/h302.h:13:57: error: unknown type name 'uint8_t'
+ void Steering_assist(uint8_t *data, float steeringangle,uint8_t steertorque,uint8_t enable);
+                                                         ^
+./source/inc/h302.h:13:77: error: unknown type name 'uint8_t'
+ void Steering_assist(uint8_t *data, float steeringangle,uint8_t steertorque,uint8_t enable);
+                                                                             ^
+./source/src/h302.c:17:22: error: unknown type name 'uint8_t'
+ void Steering_assist(uint8_t *data, float steeringangle,uint8_t steertorque,uint8_t enable)
+                      ^
+./source/src/h302.c:17:57: error: unknown type name 'uint8_t'
+ void Steering_assist(uint8_t *data, float steeringangle,uint8_t steertorque,uint8_t enable)
+                                                         ^
+./source/src/h302.c:17:77: error: unknown type name 'uint8_t'
+ void Steering_assist(uint8_t *data, float steeringangle,uint8_t steertorque,uint8_t enable)
+                                                                             ^
+make: *** [components/spc58ecxx_platform_component_rla/lib/rsc/rules.mk:137: build/obj/h302.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+13:53:09 **** Build of configuration Default for project Gateway ****
+make -j20 all 
+Compiling h302.c
+In file included from ./source/src/h302.c:15:0:
+./source/inc/h302.h:13:22: error: unknown type name 'uint8_t'
+ void Steering_assist(uint8_t *data, float steeringangle,uint8_t steertorque,uint8_t enable);
+                      ^
+./source/inc/h302.h:13:57: error: unknown type name 'uint8_t'
+ void Steering_assist(uint8_t *data, float steeringangle,uint8_t steertorque,uint8_t enable);
+                                                         ^
+./source/inc/h302.h:13:77: error: unknown type name 'uint8_t'
+ void Steering_assist(uint8_t *data, float steeringangle,uint8_t steertorque,uint8_t enable);
+                                                                             ^
+./source/src/h302.c:17:22: error: unknown type name 'uint8_t'
+ void Steering_assist(uint8_t *data, float steeringangle,uint8_t steertorque,uint8_t enable)
+                      ^
+./source/src/h302.c:17:57: error: unknown type name 'uint8_t'
+ void Steering_assist(uint8_t *data, float steeringangle,uint8_t steertorque,uint8_t enable)
+                                                         ^
+./source/src/h302.c:17:77: error: unknown type name 'uint8_t'
+ void Steering_assist(uint8_t *data, float steeringangle,uint8_t steertorque,uint8_t enable)
+                                                                             ^
+make: *** [components/spc58ecxx_platform_component_rla/lib/rsc/rules.mk:137: build/obj/h302.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+13:53:53 **** Build of configuration Default for project Gateway ****
+make -j20 all 
+Compiling h302.c
+./source/src/h302.c: In function 'Steering_assist':
+./source/src/h302.c:29:3: warning: implicit declaration of function 'fabs' [-Wimplicit-function-declaration]
+   setsteer_u16 = (uint16_t)(fabs(steerangle) / 0.0184);
+   ^
+./source/src/h302.c:29:29: warning: incompatible implicit declaration of built-in function 'fabs'
+   setsteer_u16 = (uint16_t)(fabs(steerangle) / 0.0184);
+                             ^
+Linking build/out.elf
+Creating build/out.hex
+Creating build/out.mot
+Creating build/out.bin
+Creating build/out.dmp
+
+   text	   data	    bss	    dec	    hex	filename
+  50402	    616	  39900	  90918	  16326	build/out.elf
+
+Done
+13:54:16 **** Build of configuration Default for project Gateway ****
+make -j20 all 
+Compiling h302.c
+Linking build/out.elf
+Creating build/out.hex
+Creating build/out.mot
+Creating build/out.bin
+Creating build/out.dmp
+
+   text	   data	    bss	    dec	    hex	filename
+  50402	    616	  39900	  90918	  16326	build/out.elf
+
+Done
