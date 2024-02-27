@@ -19,7 +19,7 @@ COMPILER=freegcc
 
 # Compiler options here.
 ifeq ($(USE_OPT),)
-  USE_OPT = -O2  -gdwarf-2 -fomit-frame-pointer -falign-functions=16 -fno-gcse -std=gnu99
+  USE_OPT = -O0  -gdwarf-2 -fomit-frame-pointer -falign-functions=16 -fno-gcse -std=gnu99
 endif
 
 # C specific options here (added to USE_OPT).
@@ -44,7 +44,7 @@ endif
 
 # Linker options here.
 ifeq ($(USE_LDOPT),)
-  USE_LDOPT = -lm,-lc,-z,max-page-size=16384
+  USE_LDOPT = -lm,-lc,-z,max-page-size=32768
 endif
 
 # If enabled, this option allows to compile the application in VLE mode.

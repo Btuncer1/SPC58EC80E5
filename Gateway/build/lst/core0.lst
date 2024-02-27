@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccpspxii.s 			page 1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYHAFHA.s 			page 1
 
 
    1              		.file	"core0.c"
@@ -58,7 +58,7 @@ GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccpspxii.s 			page 1
   55 005d 04       		.byte	0x4
   56 005e 07       		.byte	0x7
   57 005f 00000000 		.4byte	.LASF8
-GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccpspxii.s 			page 2
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYHAFHA.s 			page 2
 
 
   58 0063 02       		.uleb128 0x2
@@ -118,7 +118,7 @@ GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccpspxii.s 			page 1
  112 0014 00000000 		.4byte	0
  113              		.section	.debug_line,"",@progbits
  114              	.Ldebug_line0:
-GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccpspxii.s 			page 3
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYHAFHA.s 			page 3
 
 
  115 0000 00000019 		.section	.debug_str,"MS",@progbits,1
@@ -147,56 +147,56 @@ GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccpspxii.s 			page 1
  123      7369676E 
  123      65642069 
  123      6E7400
- 124              	.LASF2:
- 125 003e 73686F72 		.string	"short int"
- 125      7420696E 
- 125      7400
- 126              	.LASF7:
- 127 0048 6C6F6E67 		.string	"long long unsigned int"
- 127      206C6F6E 
- 127      6720756E 
- 127      7369676E 
- 127      65642069 
- 128              	.LASF1:
- 129 005f 756E7369 		.string	"unsigned char"
- 129      676E6564 
- 129      20636861 
- 129      7200
- 130              	.LASF4:
- 131 006d 6C6F6E67 		.string	"long int"
- 131      20696E74 
- 131      00
- 132              	.LASF9:
- 133 0076 73697A65 		.string	"sizetype"
- 133      74797065 
+ 124              	.LASF10:
+ 125 003e 474E5520 		.ascii	"GNU C 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         b"
+ 125      4320342E 
+ 125      392E3420 
+ 125      32303136 
+ 125      30373236 
+ 126 007a 75696C64 		.ascii	"uild.sh"
+ 126      2E7368
+ 127 0081 20726576 		.string	" rev=gd8b6c20 s=F494 ELe200 -V release_gd8b6c20_build_Fed_ELe200_ML0) -mcall-sysv -mcpu=e
+ 127      3D676438 
+ 127      62366332 
+ 127      3020733D 
+ 127      46343934 
+ 128              	.LASF7:
+ 129 0182 6C6F6E67 		.string	"long long unsigned int"
+ 129      206C6F6E 
+ 129      6720756E 
+ 129      7369676E 
+ 129      65642069 
+ 130              	.LASF1:
+ 131 0199 756E7369 		.string	"unsigned char"
+ 131      676E6564 
+ 131      20636861 
+ 131      7200
+ 132              	.LASF4:
+ 133 01a7 6C6F6E67 		.string	"long int"
+ 133      20696E74 
  133      00
- 134              	.LASF6:
- 135 007f 6C6F6E67 		.string	"long long int"
- 135      206C6F6E 
- 135      6720696E 
- 135      7400
- 136              	.LASF11:
- 137 008d 2E2F636F 		.string	"./components/spc58ecxx_platform_component_rla/lib/src/core0.c"
- 137      6D706F6E 
-GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccpspxii.s 			page 4
+ 134              	.LASF9:
+ 135 01b0 73697A65 		.string	"sizetype"
+ 135      74797065 
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYHAFHA.s 			page 4
 
 
- 137      656E7473 
- 137      2F737063 
- 137      35386563 
- 138              	.LASF10:
- 139 00cb 474E5520 		.ascii	"GNU C 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         b"
- 139      4320342E 
- 139      392E3420 
- 139      32303136 
- 139      30373236 
- 140 0107 75696C64 		.ascii	"uild.sh"
- 140      2E7368
- 141 010e 20726576 		.string	" rev=gd8b6c20 s=F494 ELe200 -V release_gd8b6c20_build_Fed_ELe200_ML0) -mcall-sysv -mcpu=e
- 141      3D676438 
- 141      62366332 
- 141      3020733D 
- 141      46343934 
+ 135      00
+ 136              	.LASF2:
+ 137 01b9 73686F72 		.string	"short int"
+ 137      7420696E 
+ 137      7400
+ 138              	.LASF6:
+ 139 01c3 6C6F6E67 		.string	"long long int"
+ 139      206C6F6E 
+ 139      6720696E 
+ 139      7400
+ 140              	.LASF11:
+ 141 01d1 2E2F636F 		.string	"./components/spc58ecxx_platform_component_rla/lib/src/core0.c"
+ 141      6D706F6E 
+ 141      656E7473 
+ 141      2F737063 
+ 141      35386563 
  142              	.LASF12:
  143 020f 443A5C47 		.string	"D:\\GitKraken\\SPC58EC80E5\\Gateway"
  143      69744B72 
@@ -204,7 +204,7 @@ GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccpspxii.s 			page 1
  143      5C535043 
  143      35384543 
  144              		.ident	"GCC: (GNU) 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         build.sh rev=gd8b6c20 s=F4
-GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccpspxii.s 			page 5
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccYHAFHA.s 			page 5
 
 
 DEFINED SYMBOLS

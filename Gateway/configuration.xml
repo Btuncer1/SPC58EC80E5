@@ -71,10 +71,10 @@
           <core_2_cache_enable index="0">
             <value>None</value>
           </core_2_cache_enable>
-          <boot_mode index="0">
-            <value>Execute from Flash</value>
+          <boot_mode index="2">
+            <value>Load in RAM</value>
           </boot_mode>
-          <load_address index="0">
+          <load_address disabled="true" index="0">
             <value>0x00FC0000</value>
           </load_address>
           <disable_watchdog>
@@ -88,8 +88,8 @@
           <compiler_variant>
             <value>FreeGCC with VLE support</value>
           </compiler_variant>
-          <optimization_level index="3">
-            <value>-O2 speed</value>
+          <optimization_level index="0">
+            <value>-O0 none</value>
           </optimization_level>
           <use_fpu>
             <value>false</value>

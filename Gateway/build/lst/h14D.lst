@@ -1,0 +1,44 @@
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccZ9FWgE.s 			page 1
+
+
+   1              		.file	"h14D.c"
+   2              		.section	".text","axv"
+   3              	.Ltext0:
+   4              		.cfi_sections	.debug_frame
+   5              	.Letext0:
+   6              		.section	.debug_line,"",@progbits
+   7              	.Ldebug_line0:
+   8              		.section	.debug_str,"MS",@progbits,1
+   9              	.LASF0:
+  10 0000 443A5C47 		.string	"D:\\GitKraken\\SPC58EC80E5\\Gateway"
+  10      69744B72 
+  10      616B656E 
+  10      5C535043 
+  10      35384543 
+  11              	.LASF1:
+  12 0021 474E5520 		.ascii	"GNU C 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         b"
+  12      4320342E 
+  12      392E3420 
+  12      32303136 
+  12      30373236 
+  13 005d 75696C64 		.ascii	"uild.sh"
+  13      2E7368
+  14 0064 20726576 		.string	" rev=gd8b6c20 s=F494 ELe200 -V release_gd8b6c20_build_Fed_ELe200_ML0) -mcall-sysv -mcpu=e
+  14      3D676438 
+  14      62366332 
+  14      3020733D 
+  14      46343934 
+  15              	.LASF2:
+  16 0165 2E2F736F 		.string	"./source/src/h14D.c"
+  16      75726365 
+  16      2F737263 
+  16      2F683134 
+  16      442E6300 
+  17              		.ident	"GCC: (GNU) 4.9.4 20160726 (Sat May 27 11:09:55 CDT 2017         build.sh rev=gd8b6c20 s=F4
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccZ9FWgE.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 h14D.c
+
+NO UNDEFINED SYMBOLS

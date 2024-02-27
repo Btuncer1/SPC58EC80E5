@@ -243,10 +243,11 @@ can1_Can1new(uint32_t msgbuf, CANRxFrame crfp){
 
 
 }
-float steeringangle;
+float steeringangle, speedFL,speedFR,speedBL,speedBR,latACC,longACC,brakepress,throttlepedal,pitch;
 int16_t steeringrate;
-int16_t motortork;
-uint16_t RPM;
+int16_t motortorkfiltered,motortorkraw, motortorktotal;
+uint16_t RPM,vehiclemass;
+uint8_t targetgear,driverbrake,EPB,brakepedal,gear,gearlvl,KL75,fuel;
 can4_Can4rx_new(uint32_t msgbuf, CANRxFrame crfp){
 	static int cnt = 0;
 	cnt++;
@@ -271,18 +272,59 @@ can4_Can4rx_new(uint32_t msgbuf, CANRxFrame crfp){
 		steeringrate = GetSteeringWheelRate(buffer);
 		break;
 	case 0xA7:
-		//motortork = GetMotorTorque(buffer);
+		motortorkfiltered = GetTargetMotorTorqueFiltered(buffer);
+		motortorktotal = GetTargetMotorTorqueTotal(buffer);
+		motortorkraw = GetTargetMotorTorqueRaw(buffer);
 		break;
 	case 0xA8:
 		RPM = GetMotorRPM(buffer);
 		break;
-
+	case 0xAD:
+		targetgear = GetTargetGearLevel(buffer);
+		break;
+	case 0xB2:
+		speedFR = Get_WheelSpeed_FR(buffer); // km/h
+		speedFL = Get_WheelSpeed_FL(buffer); // km/h
+		speedBR = Get_WheelSpeed_BR(buffer); // km/h
+		speedBL = Get_WheelSpeed_BL(buffer); // km/h
+		break;
+	case 0x101:
+		latACC = GetLateralACC(buffer);// g
+		longACC = GetLongitudinalACC(buffer);// m/s^2
+		break;
+	case 0x106:
+		brakepress =  GetBrakePressure(buffer);// bar
+		driverbrake = GetDriverBrake(buffer);
+		break;
+	case 0x104:
+		EPB = GetEPBStatus(buffer);
+		break;
+	case 0x121:
+		throttlepedal = GetThrottlePedalRawValue(buffer);
+		break;
+	case 0x176:
+		brakepedal = GetBrakePedalPos(buffer);
+		break;
+	case 0x394:
+		gear = GetGear(buffer);//D N R P
+		gearlvl = GetGearLevel(buffer);//Not works all the time
+		break;
+	case 0x3BE:
+		KL75 = GetKL75status(buffer);
+		break;
+	case 0x65F:
+		vehiclemass = GetVehicleMassEst(buffer);//kg
+		pitch = GetPitchVal(buffer);
+		break;
+	case 0x6B7:
+		fuel = GetFuelLevel(buffer);//liter
+		break;
 	default:
 		break;
 	}
 
 
-	//can_lld_transmit(&CAND2, CAN_DEDICATED_TXBUFFER, &tx2);
+	can_lld_transmit(&CAND2, CAN_DEDICATED_TXBUFFER, &tx2);
 }
 
 
@@ -292,9 +334,10 @@ can1_can1rx(uint32_t msgbuf, CANRxFrame crfp)
 	cnt++;
 	rx = crfp;
 }
+int can4cnt = 0;
 can4_can4rx(uint32_t msgbuf, CANRxFrame crfp)
 {
-	static int cnt = 0;
-	cnt++;
+
+	can4cnt++;
 }
 

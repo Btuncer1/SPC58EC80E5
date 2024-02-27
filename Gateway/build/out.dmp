@@ -3,70 +3,68 @@ build/out.elf:     file format elf32-powerpc
 build/out.elf
 architecture: powerpc:vle, flags 0x00000112:
 EXEC_P, HAS_SYMS, D_PAGED
-start address 0x00fc0030
+start address 0x400a8030
 
 Program Header:
-    LOAD off    0x00004000 vaddr 0x00fc0000 paddr 0x00fc0000 align 2**14
-         filesz 0x000086c0 memsz 0x000086c0 flags r-x 10000000
-    LOAD off    0x00010000 vaddr 0x400a8000 paddr 0x00fc86c0 align 2**14
-         filesz 0x00000228 memsz 0x00008584 flags rw-
-    LOAD off    0x00014000 vaddr 0x50800000 paddr 0x50800000 align 2**14
+    LOAD off    0x00008000 vaddr 0x400a8000 paddr 0x400a8000 align 2**15
+         filesz 0x0000c768 memsz 0x00014b44 flags rwx 10000000
+    LOAD off    0x00018000 vaddr 0x50800000 paddr 0x50800000 align 2**15
          filesz 0x00000000 memsz 0x00000800 flags rw-
-    LOAD off    0x00014000 vaddr 0x52800000 paddr 0x52800000 align 2**14
+    LOAD off    0x00018000 vaddr 0x52800000 paddr 0x52800000 align 2**15
          filesz 0x00000000 memsz 0x00001000 flags rw-
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .boot0        00000462  00fc0000  00fc0000  00004000  2**4
+  0 .boot0        0000042a  400a8000  400a8000  00008000  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE, VLE
-  1 .boot1        00001b92  00fc0470  00fc0470  00004470  2**4
+  1 .boot1        00001bd2  400a8430  400a8430  00008430  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE, VLE
-  2 .text         000063b6  00fc2010  00fc2010  00006010  2**4
+  2 .text         0000a236  400aa010  400aa010  0000a010  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE, VLE
-  3 .rodata       000002f0  00fc83d0  00fc83d0  0000c3d0  2**4
+  3 .rodata       000002b0  400b4250  400b4250  00014250  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  4 .core0_stacks 00000800  50800000  50800000  00014000  2**4
+  4 .core0_stacks 00000800  50800000  50800000  00018000  2**4
                   ALLOC
-  5 .core2_stacks 00001000  52800000  52800000  00014000  2**4
+  5 .core2_stacks 00001000  52800000  52800000  00018000  2**4
                   ALLOC
-  6 .data         00000226  400a8000  00fc86c0  00010000  2**2
+  6 .data         00000266  400b4500  400b4500  00014500  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .sdata        00000002  400a8226  00fc88e6  00010226  2**0
+  7 .sdata        00000002  400b4766  400b4766  00014766  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .bss          0000835c  400a8228  00fc88e8  00010228  2**2
+  8 .bss          000083dc  400b4768  400b4768  00014768  2**2
                   ALLOC
-  9 .PPC.EMB.apuinfo 0000001c  00000000  00000000  00010228  2**0
+  9 .PPC.EMB.apuinfo 0000001c  00000000  00000000  00014768  2**0
                   CONTENTS, READONLY
- 10 .comment      0000008e  00000000  00000000  00010244  2**0
+ 10 .comment      0000008e  00000000  00000000  00014784  2**0
                   CONTENTS, READONLY
- 11 .gnu.attributes 00000010  00000000  00000000  000102d2  2**0
+ 11 .gnu.attributes 00000010  00000000  00000000  00014812  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00024126  00000000  00000000  000102e2  2**0
+ 12 .debug_info   000200cd  00000000  00000000  00014822  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_abbrev 00003176  00000000  00000000  00034408  2**0
+ 13 .debug_abbrev 000022c3  00000000  00000000  000348ef  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    0000be56  00000000  00000000  0003757e  2**0
+ 14 .debug_loc    0000326c  00000000  00000000  00036bb2  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_aranges 00000b80  00000000  00000000  000433d4  2**0
+ 15 .debug_aranges 00000c78  00000000  00000000  00039e1e  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00001598  00000000  00000000  00043f54  2**0
+ 16 .debug_ranges 00000a98  00000000  00000000  0003aa96  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   00006f0f  00000000  00000000  000454ec  2**0
+ 17 .debug_line   00005cb9  00000000  00000000  0003b52e  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    0000705d  00000000  00000000  0004c3fb  2**0
+ 18 .debug_str    000070d6  00000000  00000000  000411e7  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .debug_frame  000031e0  00000000  00000000  00053458  2**2
+ 19 .debug_frame  00002714  00000000  00000000  000482c0  2**2
                   CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
-00fc0000 l    d  .boot0	00000000 .boot0
-00fc0470 l    d  .boot1	00000000 .boot1
-00fc2010 l    d  .text	00000000 .text
-00fc83d0 l    d  .rodata	00000000 .rodata
+400a8000 l    d  .boot0	00000000 .boot0
+400a8430 l    d  .boot1	00000000 .boot1
+400aa010 l    d  .text	00000000 .text
+400b4250 l    d  .rodata	00000000 .rodata
 50800000 l    d  .core0_stacks	00000000 .core0_stacks
 52800000 l    d  .core2_stacks	00000000 .core2_stacks
-400a8000 l    d  .data	00000000 .data
-400a8226 l    d  .sdata	00000000 .sdata
-400a8228 l    d  .bss	00000000 .bss
+400b4500 l    d  .data	00000000 .data
+400b4766 l    d  .sdata	00000000 .sdata
+400b4768 l    d  .bss	00000000 .bss
 00000000 l    d  .PPC.EMB.apuinfo	00000000 .PPC.EMB.apuinfo
 00000000 l    d  .comment	00000000 .comment
 00000000 l    d  .gnu.attributes	00000000 .gnu.attributes
@@ -79,36 +77,38 @@ SYMBOL TABLE:
 00000000 l    d  .debug_str	00000000 .debug_str
 00000000 l    d  .debug_frame	00000000 .debug_frame
 00000000 l    df *ABS*	00000000 build/obj/boot.o
-00fc00cc l       .boot0	00000000 _regclear
-00fc0174 l       .boot0	00000000 _ram0init
-00fc01bc l       .boot0	00000000 _iv0init
-00fc005e l       .boot0	00000000 _disablewatchdog
-00fc0150 l       .boot0	00000000 _sysraminit
-00fc0198 l       .boot0	00000000 _ram2init
-00fc01d8 l       .boot0	00000000 _iv2init
-00fc005c l       .boot0	00000000 .noboot
-00fc0160 l       .boot0	00000000 .sramclrloop
-00fc0170 l       .boot0	00000000 .sramclrend
-00fc0184 l       .boot0	00000000 .dram0clrloop
-00fc0194 l       .boot0	00000000 .dram0clrend
-00fc01a8 l       .boot0	00000000 .dram2clrloop
-00fc01b8 l       .boot0	00000000 .dram2clrend
-00fc0200 l       .boot0	00000000 .unhandled_exception0
-00fc0204 l       .boot0	00000000 .unhandled_exception2
+400a80c8 l       .boot0	00000000 _regclear
+400a8170 l       .boot0	00000000 _ram0init
+400a81b8 l       .boot0	00000000 _iv0init
+400a805a l       .boot0	00000000 _disablewatchdog
+400a8194 l       .boot0	00000000 _ram2init
+400a81d4 l       .boot0	00000000 _iv2init
+400a8058 l       .boot0	00000000 .noboot
+400a814c l       .boot0	00000000 _sysraminit
+400a815c l       .boot0	00000000 .sramclrloop
+400a816c l       .boot0	00000000 .sramclrend
+400a8180 l       .boot0	00000000 .dram0clrloop
+400a8190 l       .boot0	00000000 .dram0clrend
+400a81a4 l       .boot0	00000000 .dram2clrloop
+400a81b4 l       .boot0	00000000 .dram2clrend
+400a81f0 l       .boot0	00000000 .unhandled_exception0
+400a81f4 l       .boot0	00000000 .unhandled_exception2
 00000000 l    df *ABS*	00000000 build/obj/portasm.o
 0000009c l       *ABS*	00000000 CONTEXT_SIZE
 00000000 l    df *ABS*	00000000 build/obj/crt0.o
-00fc0418 l       .boot0	00000000 .bssloop
-00fc0424 l       .boot0	00000000 .bssend
-00fc043c l       .boot0	00000000 .dataloop
-00fc044c l       .boot0	00000000 .dataend
+400a8408 l       .boot0	00000000 .bssloop
+400a8414 l       .boot0	00000000 .bssend
 00000000 l    df *ABS*	00000000 libgcc2.c
 00000000 l    df *ABS*	00000000 fp-bit.c
+400aa070 l     F .text	000001a4 _fpadd_parts
 00000000 l    df *ABS*	00000000 fp-bit.c
 00000000 l    df *ABS*	00000000 fp-bit.c
 00000000 l    df *ABS*	00000000 fp-bit.c
 00000000 l    df *ABS*	00000000 fp-bit.c
-00fc2320 l     F .text	000002b6 _fpadd_parts
+00000000 l    df *ABS*	00000000 fp-bit.c
+400aa570 l     F .text	000002b6 _fpadd_parts
+00000000 l    df *ABS*	00000000 fp-bit.c
+00000000 l    df *ABS*	00000000 fp-bit.c
 00000000 l    df *ABS*	00000000 fp-bit.c
 00000000 l    df *ABS*	00000000 fp-bit.c
 00000000 l    df *ABS*	00000000 fp-bit.c
@@ -123,72 +123,78 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 fp-bit.c
 00000000 l    df *ABS*	00000000 spc5_lld.c
 00000000 l    df *ABS*	00000000 spc5_edma.c
-00fc8540 l     O .rodata	00000010 dma1_g0
-00fc8550 l     O .rodata	00000010 dma1_g1
-400a8228 l     O .bss	00000100 channels
-00fc8560 l     O .rodata	00000010 dma1_g2
-00fc8570 l     O .rodata	00000010 dma1_g3
+400b4500 l     O .data	00000010 dma1_g0
+400b4510 l     O .data	00000010 dma1_g1
+400b4520 l     O .data	00000010 dma1_g2
+400b4530 l     O .data	00000010 dma1_g3
+400b4768 l     O .bss	00000100 channels
 00000000 l    df *ABS*	00000000 can_lld.c
-00fc4d30 l     F .text	00000440 can_lld_l0_handler
-00fc5170 l     F .text	00000410 can_lld_l1_handler
+400ad9c0 l     F .text	00000834 can_lld_l0_handler
+400ae200 l     F .text	0000078c can_lld_l1_handler
 00000000 l    df *ABS*	00000000 list.c
 00000000 l    df *ABS*	00000000 tasks.c
-00fc6140 l     F .text	00000016 prvIdleTask
-00fc6160 l     F .text	00000018 prvResetNextTaskUnblockTime.part.1
-00fc6180 l     F .text	000000ae prvAddCurrentTaskToDelayedList
-00fc6230 l     F .text	00000098 vTaskSwitchContext.part.4
-00fc62d0 l     F .text	0000001c vTaskEnterCritical.part.5
-400a8348 l     O .bss	00000004 pxDelayedTaskList
-400a834c l     O .bss	00000004 xNumOfOverflows
-400a8350 l     O .bss	00000004 uxPendedTicks
-400a8354 l     O .bss	00000050 pxReadyTasksLists
-400a83a4 l     O .bss	00000004 uxSchedulerSuspended
-400a83a8 l     O .bss	00000004 uxCurrentNumberOfTasks
-400a83b0 l     O .bss	00000004 xNextTaskUnblockTime
-400a83b4 l     O .bss	00000014 xDelayedTaskList1
-400a83c8 l     O .bss	00000004 xTickCount
-400a83cc l     O .bss	00000004 pxOverflowDelayedTaskList
-400a83d0 l     O .bss	00000014 xPendingReadyList
-400a83e4 l     O .bss	00000004 uxTaskNumber
-400a83e8 l     O .bss	00000004 xSchedulerRunning
-400a83ec l     O .bss	00000014 xDelayedTaskList2
-400a8400 l     O .bss	00000004 xIdleTaskHandle
-400a8404 l     O .bss	00000014 xSuspendedTaskList
-400a8418 l     O .bss	00000004 uxTopReadyPriority
-400a841c l     O .bss	00000004 xYieldPending
+400b488c l     O .bss	00000050 pxReadyTasksLists
+400b48dc l     O .bss	00000014 xDelayedTaskList1
+400b48f0 l     O .bss	00000014 xDelayedTaskList2
+400b4904 l     O .bss	00000004 pxDelayedTaskList
+400b4908 l     O .bss	00000004 pxOverflowDelayedTaskList
+400b490c l     O .bss	00000014 xPendingReadyList
+400b4920 l     O .bss	00000014 xSuspendedTaskList
+400b4934 l     O .bss	00000004 uxCurrentNumberOfTasks
+400b4938 l     O .bss	00000004 xTickCount
+400b493c l     O .bss	00000004 uxTopReadyPriority
+400b4940 l     O .bss	00000004 xSchedulerRunning
+400b4944 l     O .bss	00000004 uxPendedTicks
+400b4948 l     O .bss	00000004 xYieldPending
+400b494c l     O .bss	00000004 xNumOfOverflows
+400b4950 l     O .bss	00000004 uxTaskNumber
+400b4954 l     O .bss	00000004 xNextTaskUnblockTime
+400b4958 l     O .bss	00000004 xIdleTaskHandle
+400b495c l     O .bss	00000004 uxSchedulerSuspended
+400afe00 l     F .text	0000018a prvInitialiseNewTask
+400aff90 l     F .text	0000016c prvAddNewTaskToReadyList
+400b08a0 l     F .text	000000a0 prvInitialiseTaskLists
+400b0a60 l     F .text	0000010a prvAddCurrentTaskToDelayedList
+400b0950 l     F .text	00000050 prvResetNextTaskUnblockTime
+400b0860 l     F .text	00000034 prvIdleTask
+400b0940 l     F .text	00000002 prvCheckTasksWaitingTermination
 00000000 l    df *ABS*	00000000 port.c
 00000000 l    df *ABS*	00000000 heap_4.c
-00fc6ba0 l     F .text	00000062 prvInsertBlockIntoFreeList
-400a8420 l     O .bss	00000004 xFreeBytesRemaining
-400a8424 l     O .bss	00000004 pxEnd
-400a8428 l     O .bss	00000008 xStart
-400a8430 l     O .bss	00008000 ucHeap
-400b0430 l     O .bss	00000004 xBlockAllocatedBit
-400b0434 l     O .bss	00000004 xMinimumEverFreeBytesRemaining
+400b4960 l     O .bss	00008000 ucHeap
+400bc960 l     O .bss	00000008 xStart
+400bc968 l     O .bss	00000004 pxEnd
+400bc96c l     O .bss	00000004 xFreeBytesRemaining
+400bc970 l     O .bss	00000004 xMinimumEverFreeBytesRemaining
+400bc974 l     O .bss	00000004 xBlockAllocatedBit
+400b1130 l     F .text	000000e6 prvHeapInit
+400b1220 l     F .text	00000104 prvInsertBlockIntoFreeList
 00000000 l    df *ABS*	00000000 pal.c
 00000000 l    df *ABS*	00000000 clock.c
+400b1480 l     F .text	00000128 spc_clear_fccu_rgm
+400b15b0 l     F .text	0000018c SPCSetPFlashController
+400b1740 l     F .text	000000c2 SPCSetPRamController
 00000000 l    df *ABS*	00000000 irq.c
 00000000 l    df *ABS*	00000000 eirq.c
 00000000 l    df *ABS*	00000000 swirq.c
 00000000 l    df *ABS*	00000000 osal.c
-400b0438 l     O .bss	00000004 osalsystime
-400b043c l     O .bss	00000004 osal_ticks_per_sec
-400b0440 l     O .bss	00000030 osalTimeOps
+400bc978 l     O .bss	00000030 osalTimeOps
+400bc9a8 l     O .bss	00000004 osal_ticks_per_sec
+400bc9ac l     O .bss	00000004 osalsystime
 00000000 l    df *ABS*	00000000 systimer.c
 00000000 l    df *ABS*	00000000 board.c
-400a81b8 l     O .data	0000003c spc_mscr_io_init
-400a81f4 l     O .data	00000008 pal_default_config
-400a81fc l     O .data	00000018 spc_mscr_mux_init
+400b46f8 l     O .data	0000003c spc_mscr_io_init
+400b4734 l     O .data	00000018 spc_mscr_mux_init
+400b474c l     O .data	00000008 pal_default_config
 00000000 l    df *ABS*	00000000 irq_cfg.c
 00000000 l    df *ABS*	00000000 swirq_cfg.c
 00000000 l    df *ABS*	00000000 main.c
-400b0470 l     O .bss	00000004 cnt.21015
-400b056c l     O .bss	00000004 cnt.21036
-400b0570 l     O .bss	00000001 lastEnable.20983
-400b0574 l     O .bss	00000004 cnt.21031
-400b0578 l     O .bss	00000004 cnt.20998
+400bcb30 l     O .bss	00000001 lastEnable.20985
+400bcb34 l     O .bss	00000004 cnt.20991
+400bcb38 l     O .bss	00000004 cnt.21000
+400bcb3c l     O .bss	00000004 cnt.21037
+400bcb40 l     O .bss	00000004 cnt.21064
 00000000 l    df *ABS*	00000000 crc.c
-00fc85c0 l     O .rodata	00000100 crc8H2F_tab
+400b4400 l     O .rodata	00000100 crc8H2F_tab
 00000000 l    df *ABS*	00000000 CANparse.c
 00000000 l    df *ABS*	00000000 components.c
 00000000 l    df *ABS*	00000000 memcpy.c
@@ -202,1214 +208,1264 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 queue.c
 00000000 l    df *ABS*	00000000 stream_buffer.c
 00000000 l    df *ABS*	00000000 h10B.c
-00000000 l    df *ABS*	00000000 fp-bit.c
-00000000 l    df *ABS*	00000000 fp-bit.c
-00000000 l    df *ABS*	00000000 fp-bit.c
-00fc0500 g       .boot1	00000000 __ivpr0_base__
-00fc2000  w      .boot1	00000000 vector723
-00fc2000  w      .boot1	00000000 vector767
-00fc2000  w      .boot1	00000000 vector612
-00fc2000  w      .boot1	00000000 vector242
-00fc2000  w      .boot1	00000000 vector119
-00fc2000  w      .boot1	00000000 vector829
-00fc3fa0 g     F .text	00000060 vector87
-00fc3f40 g     F .text	00000060 vector86
-00fc2000  w      .boot1	00000000 vector720
-00fc2000  w      .boot1	00000000 vector626
-00fc2000  w      .boot1	00000000 vector256
-00fc2000  w      .boot1	00000000 vector621
-00fc2000  w      .boot1	00000000 vector251
-00fc2000  w      .boot1	00000000 vector429
-00fc2000  w    F .boot1	00000000 _unhandled_irq
-00fc2000  w      .boot1	00000000 vector584
-00fc2000  w      .boot1	00000000 vector345
-00fc2000  w      .boot1	00000000 vector718
-00fc2000  w      .boot1	00000000 vector762
-00fc2000  w      .boot1	00000000 vector795
-00fc4120 g     F .text	00000060 vector91
-00fc2000  w      .boot1	00000000 vector33
-00fc2000  w      .boot1	00000000 vector512
-00fc2000  w      .boot1	00000000 vector162
-00fc2000  w      .boot1	00000000 vector419
-00fc2000  w      .boot1	00000000 vector666
-00fc2000  w      .boot1	00000000 vector296
-00fc2000  w      .boot1	00000000 vector715
-00fc2000  w      .boot1	00000000 vector213
-00fc2000  w      .boot1	00000000 vector985
-00fc4780 g     F .text	00000060 vector108
-00fc2000  w      .boot1	00000000 vector947
-00fc2000  w      .boot1	00000000 vector493
-00fc2000  w      .boot1	00000000 vector43
-00fc2000  w      .boot1	00000000 vector682
-00fc2000  w      .boot1	00000000 vector451
-00fc2000  w      .boot1	00000000 vector900
-00fc2000  w      .boot1	00000000 vector750
-00fc2000  w      .boot1	00000000 vector435
-00fc2000  w      .boot1	00000000 vector496
-00fc2000  w      .boot1	00000000 vector515
-00fc2000  w      .boot1	00000000 vector165
-00fc2000  w      .boot1	00000000 vector571
-00fc2000  w      .boot1	00000000 vector535
-00fc2000  w      .boot1	00000000 vector185
-00fc0200  w      .boot0	00000000 _C0_IVOR15
-00fc2000  w      .boot1	00000000 vector760
-00fc76f0 g     F .text	0000004e osalInit
-00fc2000  w      .boot1	00000000 vector942
-00fc2000  w      .boot1	00000000 vector748
-400a8000 g       .data	00000000 __data_start__
-00fc2000  w      .boot1	00000000 vector580
-00fc2000  w      .boot1	00000000 vector333
-00fc2000  w      .boot1	00000000 vector817
-00fc4a20 g     F .text	00000060 vector115
-00fc0600 g       .boot1	00000000 __ivpr2_base__
-00fc0204  w    F .boot0	00000000 _unhandled_exception2
-00fc2000  w      .boot1	00000000 vector578
-00fc2000  w      .boot1	00000000 vector122
-00fc2000  w      .boot1	00000000 vector376
-00fc2000  w      .boot1	00000000 vector412
-00fc2000  w      .boot1	00000000 vector676
-00fc2000  w      .boot1	00000000 vector709
-00fc2000  w      .boot1	00000000 vector398
-00fc2000  w      .boot1	00000000 vector430
-00fc2000  w      .boot1	00000000 vector506
-00fc2000  w      .boot1	00000000 vector156
-00fc2000  w      .boot1	00000000 vector975
-00fc2000  w      .boot1	00000000 vector615
-00fc7440 g     F .text	000000a6 vector245
-00fc2000  w      .boot1	00000000 vector816
-400b0228 g       .sdata	00000000 __sdata_start__
-00fc2000  w      .boot1	00000000 vector306
-00fc2000  w      .boot1	00000000 vector1014
-00fc7cd0 g     F .text	0000002c can1_can1rx
-00fc2000  w      .boot1	00000000 vector539
-00fc2000  w      .boot1	00000000 vector475
-00fc2000  w      .boot1	00000000 vector189
-00fc2000  w      .boot1	00000000 vector7
-00fc2000  w      .boot1	00000000 vector802
-00fc2000  w      .boot1	00000000 vector431
-00fc2000  w      .boot1	00000000 vector380
-00fc2000  w      .boot1	00000000 vector862
-00fc35e0 g     F .text	0000005c vector61
-00fc2000  w      .boot1	00000000 vector24
-00fc48a0 g     F .text	00000060 vector111
-00fc2000  w      .boot1	00000000 vector711
-00fc2000  w      .boot1	00000000 vector930
-00fc2000  w      .boot1	00000000 vector200
-00fc2000  w      .boot1	00000000 vector655
-00fc2000  w      .boot1	00000000 vector285
-00fc2000  w      .boot1	00000000 vector414
-00fc0200  w      .boot0	00000000 _C0_IVOR0
-00fc2000  w      .boot1	00000000 vector476
-00fc2000  w      .boot1	00000000 vector736
-00fc2000  w      .boot1	00000000 vector928
-00fc3820 g     F .text	0000005c vector67
-00fc2000  w      .boot1	00000000 vector974
-00fc2000  w      .boot1	00000000 vector562
-400a8220 g     O .data	00000006 h10Bst
-00fc2000  w      .boot1	00000000 vector773
-00fc2000  w      .boot1	00000000 vector138
-00fc2000  w      .boot1	00000000 vector864
-00fc3ac0 g     F .text	00000060 vector74
-00fc2000  w      .boot1	00000000 vector627
-00fc2000  w      .boot1	00000000 vector257
-00fc3460 g     F .text	0000005c vector57
-00fc2000  w      .boot1	00000000 vector999
-00fc64b0 g     F .text	00000014 vTaskEnterCritical
-00fc0204  w      .boot0	00000000 _IVOR1
-00fc1000 g       .boot1	00000000 _vectors
-00fc2000  w      .boot1	00000000 vector819
-00fc2000  w      .boot1	00000000 vector783
-00fc2000  w      .boot1	00000000 vector214
-00fc2000  w      .boot1	00000000 vector870
-00fc4420 g     F .text	00000060 vector99
-00fc2000  w      .boot1	00000000 vector770
-00fc2000  w      .boot1	00000000 vector954
-00fc2000  w      .boot1	00000000 vector404
-00fc2000  w      .boot1	00000000 vector348
-00fc2000  w      .boot1	00000000 vector141
-00fc2000  w      .boot1	00000000 vector812
-00fc2000  w      .boot1	00000000 vector859
-00fc2000  w      .boot1	00000000 vector961
-00fc2000  w      .boot1	00000000 vector740
-00fc2000  w      .boot1	00000000 vector919
-00fc2000  w      .boot1	00000000 vector522
-00fc2000  w      .boot1	00000000 vector172
-00fd06c0 g       .rodata	00000000 __sdata2_start__
-00fc2000  w      .boot1	00000000 vector877
-00fc2000  w      .boot1	00000000 vector461
-00fc2000  w      .boot1	00000000 vector611
-00fc2000  w      .boot1	00000000 vector241
-00fc76a0 g     F .text	00000004 swirqInit
-00fc2000  w      .boot1	00000000 vector876
-00fc2000  w      .boot1	00000000 vector623
-00fc2000  w      .boot1	00000000 vector253
-00fc2000  w      .boot1	00000000 vector3
-00fc2000  w      .boot1	00000000 vector2
-00fc2000  w      .boot1	00000000 vector359
+00000000 l    df *ABS*	00000000 h106.c
+400a8500 g       .boot1	00000000 __ivpr0_base__
+400aa000  w      .boot1	00000000 vector723
+400aa000  w      .boot1	00000000 vector767
+400aa000  w      .boot1	00000000 vector612
+400aa000  w      .boot1	00000000 vector242
+400aa000  w      .boot1	00000000 vector119
+400aa000  w      .boot1	00000000 vector829
+400ac530 g     F .text	00000066 vector87
+400ac4c0 g     F .text	00000066 vector86
+400aa000  w      .boot1	00000000 vector720
+400aa000  w      .boot1	00000000 vector626
+400aa000  w      .boot1	00000000 vector256
+400aa000  w      .boot1	00000000 vector621
+400aa000  w      .boot1	00000000 vector251
+400aa000  w      .boot1	00000000 vector429
+400aa000  w    F .boot1	00000000 _unhandled_irq
+400aa000  w      .boot1	00000000 vector584
+400aa000  w      .boot1	00000000 vector345
+400aa000  w      .boot1	00000000 vector718
+400aa000  w      .boot1	00000000 vector762
+400aa000  w      .boot1	00000000 vector795
+400ac6f0 g     F .text	00000066 vector91
+400aa000  w      .boot1	00000000 vector33
+400aa000  w      .boot1	00000000 vector512
+400aa000  w      .boot1	00000000 vector162
+400aa000  w      .boot1	00000000 vector419
+400aa000  w      .boot1	00000000 vector666
+400aa000  w      .boot1	00000000 vector296
+400aa000  w      .boot1	00000000 vector715
+400aa000  w      .boot1	00000000 vector213
+400aa000  w      .boot1	00000000 vector985
+400ace60 g     F .text	00000066 vector108
+400aa000  w      .boot1	00000000 vector947
+400aa000  w      .boot1	00000000 vector493
+400aa000  w      .boot1	00000000 vector43
+400aa000  w      .boot1	00000000 vector682
+400aa000  w      .boot1	00000000 vector451
+400bcb25 g     O .bss	00000001 driverbrake
+400aa000  w      .boot1	00000000 vector900
+400aa000  w      .boot1	00000000 vector750
+400aa000  w      .boot1	00000000 vector435
+400aa000  w      .boot1	00000000 vector496
+400aa000  w      .boot1	00000000 vector515
+400aa000  w      .boot1	00000000 vector165
+400aa000  w      .boot1	00000000 vector571
+400aa000  w      .boot1	00000000 vector535
+400aa000  w      .boot1	00000000 vector185
+400a81f0  w      .boot0	00000000 _C0_IVOR15
+400aa000  w      .boot1	00000000 vector760
+400b22c0 g     F .text	00000068 osalInit
+400aa000  w      .boot1	00000000 vector942
+400aa000  w      .boot1	00000000 vector748
+400b4500 g       .data	00000000 __data_start__
+400aa000  w      .boot1	00000000 vector580
+400aa000  w      .boot1	00000000 vector333
+400aa000  w      .boot1	00000000 vector817
+400ad170 g     F .text	00000066 vector115
+400a8600 g       .boot1	00000000 __ivpr2_base__
+400a81f4  w    F .boot0	00000000 _unhandled_exception2
+400aa000  w      .boot1	00000000 vector578
+400bcb04 g     O .bss	00000004 latACC
+400b41b0 g     F .text	00000022 GetFuelLevel
+400aa000  w      .boot1	00000000 vector122
+400aa000  w      .boot1	00000000 vector376
+400b4150 g     F .text	00000052 GetPitchVal
+400aa000  w      .boot1	00000000 vector412
+400aa000  w      .boot1	00000000 vector676
+400aa000  w      .boot1	00000000 vector709
+400aa000  w      .boot1	00000000 vector398
+400aa000  w      .boot1	00000000 vector430
+400aa000  w      .boot1	00000000 vector506
+400aa000  w      .boot1	00000000 vector156
+400aa000  w      .boot1	00000000 vector975
+400aa000  w      .boot1	00000000 vector615
+400b1fd0 g     F .text	0000007a vector245
+400b3de0 g     F .text	00000060 Get_WheelSpeed_BR
+400bcb26 g     O .bss	00000001 EPB
+400aa000  w      .boot1	00000000 vector816
+400bc768 g       .sdata	00000000 __sdata_start__
+400aa000  w      .boot1	00000000 vector306
+400aa000  w      .boot1	00000000 vector1014
+400b3070 g     F .text	00000044 can1_can1rx
+400aa000  w      .boot1	00000000 vector539
+400aa000  w      .boot1	00000000 vector475
+400aa000  w      .boot1	00000000 vector189
+400aa000  w      .boot1	00000000 vector7
+400aa000  w      .boot1	00000000 vector802
+400aa000  w      .boot1	00000000 vector431
+400b0e00 g     F .text	00000018 prvPortTimerSetup
+400aa000  w      .boot1	00000000 vector380
+400aa000  w      .boot1	00000000 vector862
+400aba50 g     F .text	00000060 vector61
+400aa000  w      .boot1	00000000 vector24
+400acfb0 g     F .text	00000066 vector111
+400aa000  w      .boot1	00000000 vector711
+400aa000  w      .boot1	00000000 vector930
+400aa000  w      .boot1	00000000 vector200
+400aa000  w      .boot1	00000000 vector655
+400aa000  w      .boot1	00000000 vector285
+400aa000  w      .boot1	00000000 vector414
+400a81f0  w      .boot0	00000000 _C0_IVOR0
+400aa000  w      .boot1	00000000 vector476
+400aa000  w      .boot1	00000000 vector736
+400aa000  w      .boot1	00000000 vector928
+400abc90 g     F .text	00000060 vector67
+400aa000  w      .boot1	00000000 vector974
+400aa000  w      .boot1	00000000 vector562
+400b475c g     O .data	00000006 h10Bst
+400aa000  w      .boot1	00000000 vector773
+400aa000  w      .boot1	00000000 vector138
+400aa000  w      .boot1	00000000 vector864
+400abf80 g     F .text	00000066 vector74
+400aa000  w      .boot1	00000000 vector627
+400aa000  w      .boot1	00000000 vector257
+400b40c0 g     F .text	00000020 GetGear
+400ab8d0 g     F .text	00000060 vector57
+400aa000  w      .boot1	00000000 vector999
+400b09a0 g     F .text	0000003e vTaskEnterCritical
+400a81f4  w      .boot0	00000000 _IVOR1
+400a9000 g       .boot1	00000000 _vectors
+400aa000  w      .boot1	00000000 vector819
+400aa000  w      .boot1	00000000 vector783
+400aa000  w      .boot1	00000000 vector214
+400aa000  w      .boot1	00000000 vector870
+400aca70 g     F .text	00000066 vector99
+400aa000  w      .boot1	00000000 vector770
+400aa000  w      .boot1	00000000 vector954
+400aa000  w      .boot1	00000000 vector404
+400aa000  w      .boot1	00000000 vector348
+400aa000  w      .boot1	00000000 vector141
+400aa000  w      .boot1	00000000 vector812
+400aa000  w      .boot1	00000000 vector859
+400aa000  w      .boot1	00000000 vector961
+400aa000  w      .boot1	00000000 vector740
+400aa000  w      .boot1	00000000 vector919
+400aa000  w      .boot1	00000000 vector522
+400aa000  w      .boot1	00000000 vector172
+400bc500 g       .rodata	00000000 __sdata2_start__
+400aa000  w      .boot1	00000000 vector877
+400aa000  w      .boot1	00000000 vector461
+400aa000  w      .boot1	00000000 vector611
+400aa000  w      .boot1	00000000 vector241
+400b2250 g     F .text	00000014 swirqInit
+400aa000  w      .boot1	00000000 vector876
+400aa000  w      .boot1	00000000 vector623
+400aa000  w      .boot1	00000000 vector253
+400aa000  w      .boot1	00000000 vector3
+400aa000  w      .boot1	00000000 vector2
+400aa000  w      .boot1	00000000 vector359
 52800000 g       .boot0	00000000 __dram2_start__
-00fc2000  w      .boot1	00000000 vector833
-00fc2000  w      .boot1	00000000 vector565
-400a83ac g     O .bss	00000004 pxCurrentTCB
-00fc2000  w      .boot1	00000000 vector568
-00fc0204  w      .boot0	00000000 _IVOR12
-00fc2000  w      .boot1	00000000 vector639
-00fc2000  w      .boot1	00000000 vector269
-00fc2000  w      .boot1	00000000 vector332
-00fc2000  w      .boot1	00000000 vector227
-00fc2000  w      .boot1	00000000 vector834
-400b0584 g       .bss	00000000 __heap_base__
-00fc2000  w      .boot1	00000000 vector363
-00fc2000  w      .boot1	00000000 vector983
-00fc2000  w      .boot1	00000000 vector210
-00fc2000  w      .boot1	00000000 vector671
-00fc2000  w      .boot1	00000000 vector316
-00fc2000  w      .boot1	00000000 vector905
-00fc2000  w      .boot1	00000000 vector375
-00fc2000  w      .boot1	00000000 vector1022
-00fc2000  w      .boot1	00000000 vector335
-00fc2c30 g     F .text	00000026 .hidden __make_dp
-00fc0030 g     F .boot0	00000000 _reset_address2
-00fc2000  w      .boot1	00000000 vector307
-00fc2000  w      .boot1	00000000 vector1011
-00fc2000  w      .boot1	00000000 vector224
-00fc2000  w      .boot1	00000000 vector790
-00fc2000  w      .boot1	00000000 vector381
-00fc2000  w      .boot1	00000000 vector346
-00fc2000  w      .boot1	00000000 vector940
-00fc2000  w      .boot1	00000000 vector738
-00fc2000  w      .boot1	00000000 vector378
-00fc2000  w      .boot1	00000000 vector41
-00fc2000  w      .boot1	00000000 vector872
-00fc2000  w      .boot1	00000000 vector432
-00fc2000  w      .boot1	00000000 vector1018
-00fc2000  w      .boot1	00000000 vector728
-00fc2000  w      .boot1	00000000 vector21
-00fc2000  w      .boot1	00000000 vector803
-00fc2000  w      .boot1	00000000 vector527
-00fc2000  w      .boot1	00000000 vector177
-00fc2000  w      .boot1	00000000 vector425
-00fc2000  w      .boot1	00000000 vector118
-00fc2000  w      .boot1	00000000 vector328
-00fc2000  w      .boot1	00000000 vector918
-00fc3940 g     F .text	00000060 vector70
-00fc2000  w      .boot1	00000000 vector477
-00fc2000  w      .boot1	00000000 vector579
-00fc0200  w      .boot0	00000000 _C0_IVOR6
-00fc2000  w      .boot1	00000000 vector647
-00fc2000  w      .boot1	00000000 vector277
-00fc38e0 g     F .text	00000060 vector69
-00fc2000  w      .boot1	00000000 vector607
-00fc2000  w      .boot1	00000000 vector237
-00fc3700 g     F .text	0000005c vector64
-00fc2000  w      .boot1	00000000 vector27
-00fc2000  w      .boot1	00000000 vector468
+400aa000  w      .boot1	00000000 vector833
+400aa000  w      .boot1	00000000 vector565
+400b4888 g     O .bss	00000004 pxCurrentTCB
+400aa000  w      .boot1	00000000 vector568
+400a81f4  w      .boot0	00000000 _IVOR12
+400aa000  w      .boot1	00000000 vector639
+400aa000  w      .boot1	00000000 vector269
+400aa000  w      .boot1	00000000 vector332
+400aa000  w      .boot1	00000000 vector227
+400aa000  w      .boot1	00000000 vector834
+400bcb44 g       .bss	00000000 __heap_base__
+400aa000  w      .boot1	00000000 vector363
+400aa000  w      .boot1	00000000 vector983
+400aa000  w      .boot1	00000000 vector210
+400aa000  w      .boot1	00000000 vector671
+400aa000  w      .boot1	00000000 vector316
+400aa000  w      .boot1	00000000 vector905
+400aa000  w      .boot1	00000000 vector375
+400aa000  w      .boot1	00000000 vector1022
+400aa000  w      .boot1	00000000 vector335
+400b3f20 g     F .text	0000006a GetLongitudinalACC
+400aae80 g     F .text	00000026 .hidden __make_dp
+400a8030 g     F .boot0	00000000 _reset_address2
+400bcb28 g     O .bss	00000001 gear
+400aa000  w      .boot1	00000000 vector307
+400aa000  w      .boot1	00000000 vector1011
+400aa000  w      .boot1	00000000 vector224
+400aa000  w      .boot1	00000000 vector790
+400aa000  w      .boot1	00000000 vector381
+400aa000  w      .boot1	00000000 vector346
+400aa000  w      .boot1	00000000 vector940
+400aa000  w      .boot1	00000000 vector738
+400aa000  w      .boot1	00000000 vector378
+400aa000  w      .boot1	00000000 vector41
+400aa000  w      .boot1	00000000 vector872
+400ab150 g     F .text	00000020 .hidden __make_fp
+400aa260 g     F .text	00000052 .hidden __subsf3
+400aa000  w      .boot1	00000000 vector432
+400aa000  w      .boot1	00000000 vector1018
+400aa000  w      .boot1	00000000 vector728
+400aa000  w      .boot1	00000000 vector21
+400aa000  w      .boot1	00000000 vector803
+400b4000 g     F .text	0000001a GetDriverBrake
+400aa000  w      .boot1	00000000 vector527
+400aa000  w      .boot1	00000000 vector177
+400aa000  w      .boot1	00000000 vector425
+400aa000  w      .boot1	00000000 vector118
+400aa000  w      .boot1	00000000 vector328
+400aa000  w      .boot1	00000000 vector918
+400abdc0 g     F .text	00000066 vector70
+400aa000  w      .boot1	00000000 vector477
+400aa000  w      .boot1	00000000 vector579
+400a81f0  w      .boot0	00000000 _C0_IVOR6
+400aa000  w      .boot1	00000000 vector647
+400aa000  w      .boot1	00000000 vector277
+400abd50 g     F .text	00000066 vector69
+400aa000  w      .boot1	00000000 vector607
+400aa000  w      .boot1	00000000 vector237
+400abb70 g     F .text	00000060 vector64
+400aa000  w      .boot1	00000000 vector27
+400aa000  w      .boot1	00000000 vector468
 00010000 g       *ABS*	00000000 __dram2_size__
-00fc2000  w      .boot1	00000000 vector701
-00fc2000  w      .boot1	00000000 vector312
-00fc2000  w      .boot1	00000000 vector132
-00fc2000  w      .boot1	00000000 vector372
-00fc2000  w      .boot1	00000000 vector583
-00fc2000  w      .boot1	00000000 vector807
-00fc2000  w      .boot1	00000000 vector390
-00fc2000  w      .boot1	00000000 vector536
-00fc2000  w      .boot1	00000000 vector186
-00fc2000  w      .boot1	00000000 vector1013
-00fc2000  w      .boot1	00000000 vector217
-00fc2000  w      .boot1	00000000 vector355
-00fc86c0 g       .rodata	00000000 __romdata_start__
-00fc2000  w      .boot1	00000000 vector661
-00fc2000  w      .boot1	00000000 vector291
-00fc2000  w      .boot1	00000000 vector970
-00fc6b60 g     F .text	0000001e xPortStartScheduler
-00fc2000  w      .boot1	00000000 vector998
-00fc2000  w      .boot1	00000000 vector436
-00fc8390 g     F .text	0000001a memcpy
-00fc2000  w      .boot1	00000000 vector650
-00fc2000  w      .boot1	00000000 vector280
-00fc2000  w      .boot1	00000000 vector980
-00fc2000  w      .boot1	00000000 vector1
-00fc2000  w      .boot1	00000000 vector528
-00fc2000  w      .boot1	00000000 vector178
-00fc2000  w      .boot1	00000000 vector38
-00fc5720 g     F .text	0000000c vector695
-00fc2000  w      .boot1	00000000 vector953
-00fc2000  w      .boot1	00000000 vector652
-00fc2000  w      .boot1	00000000 vector282
-00fc2b00 g     F .text	00000080 .hidden __floatsidf
-00fc4c00 g     F .text	0000012a can_lld_readBuffer
-00fc2000  w      .boot1	00000000 vector608
-00fc2000  w      .boot1	00000000 vector238
-400b0514 g     O .bss	00000004 steeringangle
-00fc2000  w      .boot1	00000000 vector557
-00fc2000  w      .boot1	00000000 vector697
-00fc2000  w      .boot1	00000000 vector311
-00fc2000  w      .boot1	00000000 vector133
-00fc3a60 g     F .text	00000060 vector73
-00fc2000  w      .boot1	00000000 vector144
-00fc2000  w      .boot1	00000000 vector644
-00fc2000  w      .boot1	00000000 vector274
-00fc2000  w      .boot1	00000000 vector737
-00fc2000  w      .boot1	00000000 vector967
-00fc2000  w      .boot1	00000000 vector687
-00fc6d60 g     F .text	0000006c vPortFree
-00fc2000  w      .boot1	00000000 vector929
-00fc2000  w      .boot1	00000000 vector349
-00fc2000  w      .boot1	00000000 vector354
-00fc2000  w      .boot1	00000000 vector624
-00fc2000  w      .boot1	00000000 vector254
+400b3e40 g     F .text	0000005e Get_WheelSpeed_BL
+400aa000  w      .boot1	00000000 vector701
+400aa000  w      .boot1	00000000 vector312
+400aa000  w      .boot1	00000000 vector132
+400aa000  w      .boot1	00000000 vector372
+400aa000  w      .boot1	00000000 vector583
+400aa000  w      .boot1	00000000 vector807
+400bcb2c g     O .bss	00000004 can4cnt
+400aa000  w      .boot1	00000000 vector390
+400aa000  w      .boot1	00000000 vector536
+400aa000  w      .boot1	00000000 vector186
+400aa000  w      .boot1	00000000 vector1013
+400aa000  w      .boot1	00000000 vector217
+400aa000  w      .boot1	00000000 vector355
+400b4500 g       .rodata	00000000 __romdata_start__
+400aa000  w      .boot1	00000000 vector661
+400aa000  w      .boot1	00000000 vector291
+400aa000  w      .boot1	00000000 vector970
+400b0de0 g     F .text	0000001c xPortStartScheduler
+400aa000  w      .boot1	00000000 vector998
+400aa000  w      .boot1	00000000 vector436
+400b4210 g     F .text	0000001a memcpy
+400aa000  w      .boot1	00000000 vector650
+400aa000  w      .boot1	00000000 vector280
+400aa000  w      .boot1	00000000 vector980
+400aa000  w      .boot1	00000000 vector1
+400aa000  w      .boot1	00000000 vector528
+400aa000  w      .boot1	00000000 vector178
+400aa000  w      .boot1	00000000 vector38
+400ae9f0 g     F .text	0000001c vector695
+400aa000  w      .boot1	00000000 vector953
+400aa000  w      .boot1	00000000 vector652
+400aa000  w      .boot1	00000000 vector282
+400aad50 g     F .text	00000080 .hidden __floatsidf
+400ad3b0 g     F .text	0000026e can_lld_readBuffer
+400aa000  w      .boot1	00000000 vector608
+400aa000  w      .boot1	00000000 vector238
+400bcaf0 g     O .bss	00000004 steeringangle
+400aa000  w      .boot1	00000000 vector557
+400aa000  w      .boot1	00000000 vector697
+400aa000  w      .boot1	00000000 vector311
+400aa000  w      .boot1	00000000 vector133
+400abf10 g     F .text	00000066 vector73
+400aa000  w      .boot1	00000000 vector144
+400aa000  w      .boot1	00000000 vector644
+400aa000  w      .boot1	00000000 vector274
+400aa000  w      .boot1	00000000 vector737
+400aa000  w      .boot1	00000000 vector967
+400aa000  w      .boot1	00000000 vector687
+400b1070 g     F .text	000000b4 vPortFree
+400aa000  w      .boot1	00000000 vector929
+400aa000  w      .boot1	00000000 vector349
+400aa000  w      .boot1	00000000 vector354
+400aa000  w      .boot1	00000000 vector624
+400aa000  w      .boot1	00000000 vector254
 52801000 g       .core2_stacks	00000000 __main_thread_stack_end__
-00fc2000  w      .boot1	00000000 vector763
-00fc2000  w      .boot1	00000000 vector1001
-00fc2000  w      .boot1	00000000 vector300
-00fc2000  w      .boot1	00000000 vector798
-00fc2000  w      .boot1	00000000 vector362
-00fc44e0 g     F .text	00000060 vector101
-00fc5f40 g     F .text	00000120 can_lld_transmit
-00fc2000  w      .boot1	00000000 vector211
-00fc2000  w      .boot1	00000000 vector418
-00fc2000  w      .boot1	00000000 vector889
-00fc2000  w      .boot1	00000000 vector450
-00fc2000  w      .boot1	00000000 vector524
-00fc2000  w      .boot1	00000000 vector174
-00fc2000  w      .boot1	00000000 vector924
-00fc2000  w      .boot1	00000000 vector993
-00fc2000  w      .boot1	00000000 vector613
-00fc72e0 g     F .text	000000a6 vector243
-00fc0210 g     F .boot0	00000000 _IVOR8
-00fc2000  w      .boot1	00000000 vector492
-00fc2000  w      .boot1	00000000 vector495
-00fc2000  w      .boot1	00000000 vector128
-00fc2000  w      .boot1	00000000 vector753
-00fc2000  w      .boot1	00000000 vector844
-00fc3d60 g     F .text	00000060 vector81
-00fc2000  w      .boot1	00000000 vector552
-00fc2000  w      .boot1	00000000 vector765
-00fc2000  w      .boot1	00000000 vector1008
-00fc2000  w      .boot1	00000000 vector677
-00fc2000  w      .boot1	00000000 vector13
-00fc2000  w      .boot1	00000000 vector460
-00fc2000  w      .boot1	00000000 vector51
-00fc2000  w      .boot1	00000000 vector16
-00fc0200  w    F .boot0	00000000 _unhandled_exception0
-00fc2000  w      .boot1	00000000 vector960
-00fc2000  w      .boot1	00000000 vector714
-00fc2010 g     F .text	00000056 .hidden __fixunsdfsi
-00fc2000  w      .boot1	00000000 vector595
-00fc6090 g     F .text	00000018 vListInsertEnd
-00fc2000  w      .boot1	00000000 vector946
-00fc2000  w      .boot1	00000000 vector839
-00fc75a0 g     F .text	000000f4 eirqInit
-00fc2000  w      .boot1	00000000 vector989
-00fc2000  w      .boot1	00000000 vector610
-00fc2000  w      .boot1	00000000 vector240
-00fc2000  w      .boot1	00000000 vector791
-00fc3340 g     F .text	0000005c vector54
-00fc2000  w      .boot1	00000000 vector19
-400a80dc g     O .data	000000dc can_config_can4
+400aa000  w      .boot1	00000000 vector763
+400aa000  w      .boot1	00000000 vector1001
+400aa000  w      .boot1	00000000 vector300
+400aa000  w      .boot1	00000000 vector798
+400aa000  w      .boot1	00000000 vector362
+400acb50 g     F .text	00000066 vector101
+400af8b0 g     F .text	000002f6 can_lld_transmit
+400aa000  w      .boot1	00000000 vector211
+400aa000  w      .boot1	00000000 vector418
+400aa000  w      .boot1	00000000 vector889
+400aa000  w      .boot1	00000000 vector450
+400aa000  w      .boot1	00000000 vector524
+400aa000  w      .boot1	00000000 vector174
+400aa000  w      .boot1	00000000 vector924
+400aa000  w      .boot1	00000000 vector993
+400aa000  w      .boot1	00000000 vector613
+400b1ed0 g     F .text	0000007a vector243
+400a8200 g     F .boot0	00000000 _IVOR8
+400aa000  w      .boot1	00000000 vector492
+400aa000  w      .boot1	00000000 vector495
+400aa000  w      .boot1	00000000 vector128
+400aa000  w      .boot1	00000000 vector753
+400aa000  w      .boot1	00000000 vector844
+400ac290 g     F .text	00000066 vector81
+400aa000  w      .boot1	00000000 vector552
+400aa000  w      .boot1	00000000 vector765
+400aa000  w      .boot1	00000000 vector1008
+400aa000  w      .boot1	00000000 vector677
+400aa000  w      .boot1	00000000 vector13
+400aa000  w      .boot1	00000000 vector460
+400aa000  w      .boot1	00000000 vector51
+400aa000  w      .boot1	00000000 vector16
+400a81f0  w    F .boot0	00000000 _unhandled_exception0
+400aa000  w      .boot1	00000000 vector960
+400aa000  w      .boot1	00000000 vector714
+400aa010 g     F .text	00000056 .hidden __fixunsdfsi
+400aa000  w      .boot1	00000000 vector595
+400afc00 g     F .text	00000040 vListInsertEnd
+400aa000  w      .boot1	00000000 vector946
+400aa000  w      .boot1	00000000 vector839
+400b20d0 g     F .text	0000017a eirqInit
+400aa000  w      .boot1	00000000 vector989
+400aa000  w      .boot1	00000000 vector610
+400aa000  w      .boot1	00000000 vector240
+400aa000  w      .boot1	00000000 vector791
+400ab7b0 g     F .text	00000060 vector54
+400aa000  w      .boot1	00000000 vector19
+400b461c g     O .data	000000dc can_config_can4
 40108000 g       *ABS*	00000000 __heap_end__
-400a8228 g       .sdata	00000000 __bss_start__
-00fc0204  w      .boot0	00000000 _IVOR3
-00fc2000  w      .boot1	00000000 vector453
-00fc2000  w      .boot1	00000000 vector846
-00fc2000  w      .boot1	00000000 vector305
-00fc4180 g     F .text	00000060 vector92
-00fc0200  w      .boot0	00000000 _C0_IVOR3
-00fc2000  w      .boot1	00000000 vector733
-00fc2000  w      .boot1	00000000 vector778
-00fc2000  w      .boot1	00000000 vector614
-00fc7390 g     F .text	000000a6 vector244
-00fc2000  w      .boot1	00000000 vector1006
-00fc2000  w      .boot1	00000000 vector140
-00fc2000  w      .boot1	00000000 vector498
-00fc2000  w      .boot1	00000000 vector806
-00fc2000  w      .boot1	00000000 vector797
-00fc6ee0 g     F .text	00000032 clockInit
-00fc2000  w      .boot1	00000000 vector45
-00fc3ca0 g     F .text	00000060 vector79
-00fc2000  w      .boot1	00000000 vector229
-00fc2000  w      .boot1	00000000 vector508
-00fc2000  w      .boot1	00000000 vector158
-00fc2000  w      .boot1	00000000 vector752
-00fc2000  w      .boot1	00000000 vector673
-00fc2000  w      .boot1	00000000 vector428
-400a821c g     O .data	00000004 h14Dst
-00fc2000  w      .boot1	00000000 vector39
-00fc2000  w      .boot1	00000000 vector518
-00fc2000  w      .boot1	00000000 vector168
-00fc0200  w      .boot0	00000000 _C0_IVOR9
-00fc2000  w      .boot1	00000000 vector592
-00fc6080 g     F .text	00000006 vListInitialiseItem
-00fc2000  w      .boot1	00000000 vector871
-00fc2000  w      .boot1	00000000 vector35
-00fc4960 g     F .text	00000060 vector113
-00fc2000  w      .boot1	00000000 vector885
-00fc30b0 g     F .text	000000b0 .hidden __unpack_d
-00fc2000  w      .boot1	00000000 vector125
-00fc2000  w      .boot1	00000000 vector1016
-00fc2000  w      .boot1	00000000 vector645
-00fc2000  w      .boot1	00000000 vector275
-00fc2000  w      .boot1	00000000 vector793
-00fc0204  w      .boot0	00000000 _IVOR6
-00fc2000  w      .boot1	00000000 vector440
-00fc2000  w      .boot1	00000000 vector840
-00fc2000  w      .boot1	00000000 vector409
-00fc2250 g     F .text	00000038 .hidden __extendsfdf2
-00fc56f0 g     F .text	0000000c vector688
-00fc2000  w      .boot1	00000000 vector313
-00fc25d8 g     F .text	0000005a .hidden __adddf3
-00fc2000  w      .boot1	00000000 vector895
-00fc2000  w      .boot1	00000000 vector483
-00fc2000  w      .boot1	00000000 vector813
-00fc2000  w      .boot1	00000000 vector702
-00fc2000  w      .boot1	00000000 vector391
-00fc2000  w      .boot1	00000000 vector324
-00fc2000  w      .boot1	00000000 vector981
-00fc2000  w      .boot1	00000000 vector356
-00fc2000  w      .boot1	00000000 vector216
-00fc36a0 g     F .text	0000005c vector63
-00fc2000  w      .boot1	00000000 vector26
-00fc2000  w      .boot1	00000000 vector875
+400b4768 g       .sdata	00000000 __bss_start__
+400a81f4  w      .boot0	00000000 _IVOR3
+400aa000  w      .boot1	00000000 vector453
+400aa000  w      .boot1	00000000 vector846
+400aa000  w      .boot1	00000000 vector305
+400ac760 g     F .text	00000066 vector92
+400a81f0  w      .boot0	00000000 _C0_IVOR3
+400aa000  w      .boot1	00000000 vector733
+400aa000  w      .boot1	00000000 vector778
+400aa000  w      .boot1	00000000 vector614
+400b1f50 g     F .text	0000007a vector244
+400aa000  w      .boot1	00000000 vector1006
+400aa000  w      .boot1	00000000 vector140
+400aa000  w      .boot1	00000000 vector498
+400aa000  w      .boot1	00000000 vector806
+400aa000  w      .boot1	00000000 vector797
+400b1810 g     F .text	00000032 clockInit
+400aa000  w      .boot1	00000000 vector45
+400ac1b0 g     F .text	00000066 vector79
+400aa000  w      .boot1	00000000 vector229
+400aa000  w      .boot1	00000000 vector508
+400aa000  w      .boot1	00000000 vector158
+400aa000  w      .boot1	00000000 vector752
+400aa000  w      .boot1	00000000 vector673
+400bcb22 g     O .bss	00000002 vehiclemass
+400aa000  w      .boot1	00000000 vector428
+400b4762 g     O .data	00000004 h14Dst
+400aa000  w      .boot1	00000000 vector39
+400aa000  w      .boot1	00000000 vector518
+400aa000  w      .boot1	00000000 vector168
+400a81f0  w      .boot0	00000000 _C0_IVOR9
+400aa000  w      .boot1	00000000 vector592
+400afbf0 g     F .text	00000010 vListInitialiseItem
+400aa000  w      .boot1	00000000 vector871
+400aa000  w      .boot1	00000000 vector35
+400ad090 g     F .text	00000066 vector113
+400aa000  w      .boot1	00000000 vector885
+400ab370 g     F .text	000000b0 .hidden __unpack_d
+400aa000  w      .boot1	00000000 vector125
+400aa000  w      .boot1	00000000 vector1016
+400aa000  w      .boot1	00000000 vector645
+400aa000  w      .boot1	00000000 vector275
+400aa000  w      .boot1	00000000 vector793
+400a81f4  w      .boot0	00000000 _IVOR6
+400aa000  w      .boot1	00000000 vector440
+400aa000  w      .boot1	00000000 vector840
+400aa000  w      .boot1	00000000 vector409
+400aa4a0 g     F .text	00000038 .hidden __extendsfdf2
+400ae990 g     F .text	0000001c vector688
+400aa000  w      .boot1	00000000 vector313
+400aa828 g     F .text	0000005a .hidden __adddf3
+400aa000  w      .boot1	00000000 vector895
+400aa000  w      .boot1	00000000 vector483
+400aa000  w      .boot1	00000000 vector813
+400aa000  w      .boot1	00000000 vector702
+400aa000  w      .boot1	00000000 vector391
+400aa000  w      .boot1	00000000 vector324
+400aa000  w      .boot1	00000000 vector981
+400bcb10 g     O .bss	00000004 throttlepedal
+400aa000  w      .boot1	00000000 vector356
+400aa000  w      .boot1	00000000 vector216
+400abb10 g     F .text	00000060 vector63
+400aa000  w      .boot1	00000000 vector26
+400aa000  w      .boot1	00000000 vector875
 52810000 g       .boot0	00000000 __dram2_end__
-00fc2000  w      .boot1	00000000 vector543
-00fc2000  w      .boot1	00000000 vector193
-00fc2000  w      .boot1	00000000 vector546
-00fc2000  w      .boot1	00000000 vector196
+400aa000  w      .boot1	00000000 vector543
+400aa000  w      .boot1	00000000 vector193
+400aa000  w      .boot1	00000000 vector546
+400aa000  w      .boot1	00000000 vector196
 50810000 g       .boot0	00000000 __dram0_end__
-00fc2000  w      .boot1	00000000 vector588
-00fc2000  w      .boot1	00000000 vector660
-00fc2000  w      .boot1	00000000 vector290
-00fc2000  w      .boot1	00000000 vector629
-00fc2000  w      .boot1	00000000 vector259
-00fc2000  w      .boot1	00000000 vector209
-00fc2000  w      .boot1	00000000 vector369
-00fc2000  w      .boot1	00000000 vector433
-00fc2000  w      .boot1	00000000 vector917
-00fc2000  w      .boot1	00000000 vector852
-00fc2000  w      .boot1	00000000 vector478
-00fc2000  w      .boot1	00000000 vector965
-00fc2000  w      .boot1	00000000 vector691
-00fc2000  w      .boot1	00000000 vector4
-00fc2000  w      .boot1	00000000 vector706
-00fc2000  w      .boot1	00000000 vector399
-00fc2000  w      .boot1	00000000 vector1004
-00fc2000  w      .boot1	00000000 vector832
-00fc2000  w      .boot1	00000000 vector395
-00fc2000  w      .boot1	00000000 vector520
-00fc2000  w      .boot1	00000000 vector170
-00fc2000  w      .boot1	00000000 vector136
-00fc2000  w      .boot1	00000000 vector10
-00fc5710 g     F .text	0000000c vector694
-00fc2000  w      .boot1	00000000 vector808
-00fc2000  w      .boot1	00000000 vector206
-00fc2000  w      .boot1	00000000 vector560
-00fc2000  w      .boot1	00000000 vector922
-400b04c4 g     O .bss	00000050 rx
-00fc7d10 g     F .text	00000536 Crc_CalculateCRC8H2F
-00fc2000  w      .boot1	00000000 vector625
-00fc2000  w      .boot1	00000000 vector255
-00fc72a0 g     F .text	0000002a irqInit
-00fc2000  w      .boot1	00000000 vector400
-00fc2000  w      .boot1	00000000 vector317
-00fc2000  w      .boot1	00000000 vector371
-00fc2000  w      .boot1	00000000 vector531
-00fc2000  w      .boot1	00000000 vector181
-00fc2000  w      .boot1	00000000 vector890
-00fc6c10 g     F .text	00000142 pvPortMalloc
-00fc2000  w      .boot1	00000000 vector801
-00fc3520 g     F .text	0000005c vector59
-00fc3ee0 g     F .text	00000060 vector85
-00fc3e80 g     F .text	00000060 vector84
-00fc2000  w      .boot1	00000000 vector558
-00fc2000  w      .boot1	00000000 vector574
-00fc2000  w      .boot1	00000000 vector825
-00fc2000  w      .boot1	00000000 vector533
-00fc2000  w      .boot1	00000000 vector183
-00fc2000  w      .boot1	00000000 vector509
-00fc2000  w      .boot1	00000000 vector159
-00fc2000  w      .boot1	00000000 vector212
-00fc2000  w      .boot1	00000000 vector856
+400aa000  w      .boot1	00000000 vector588
+400aa000  w      .boot1	00000000 vector660
+400aa000  w      .boot1	00000000 vector290
+400aa000  w      .boot1	00000000 vector629
+400aa000  w      .boot1	00000000 vector259
+400aa000  w      .boot1	00000000 vector209
+400aa000  w      .boot1	00000000 vector369
+400aa000  w      .boot1	00000000 vector433
+400aa000  w      .boot1	00000000 vector917
+400aa000  w      .boot1	00000000 vector852
+400aa000  w      .boot1	00000000 vector478
+400aa000  w      .boot1	00000000 vector965
+400aa000  w      .boot1	00000000 vector691
+400aa000  w      .boot1	00000000 vector4
+400aa000  w      .boot1	00000000 vector706
+400aa000  w      .boot1	00000000 vector399
+400aa000  w      .boot1	00000000 vector1004
+400aa000  w      .boot1	00000000 vector832
+400aa000  w      .boot1	00000000 vector395
+400aa000  w      .boot1	00000000 vector520
+400aa000  w      .boot1	00000000 vector170
+400aa000  w      .boot1	00000000 vector136
+400aa000  w      .boot1	00000000 vector10
+400ae9d0 g     F .text	0000001c vector694
+400aa000  w      .boot1	00000000 vector808
+400aa000  w      .boot1	00000000 vector206
+400aa000  w      .boot1	00000000 vector560
+400aa000  w      .boot1	00000000 vector922
+400bca04 g     O .bss	00000050 rx
+400b30e0 g     F .text	00000882 Crc_CalculateCRC8H2F
+400aa000  w      .boot1	00000000 vector625
+400aa000  w      .boot1	00000000 vector255
+400b1db0 g     F .text	0000003c irqInit
+400aa000  w      .boot1	00000000 vector400
+400aa000  w      .boot1	00000000 vector317
+400aa000  w      .boot1	00000000 vector371
+400aa000  w      .boot1	00000000 vector531
+400aa000  w      .boot1	00000000 vector181
+400aa000  w      .boot1	00000000 vector890
+400b0e60 g     F .text	00000210 pvPortMalloc
+400aa000  w      .boot1	00000000 vector801
+400ab990 g     F .text	00000060 vector59
+400ac450 g     F .text	00000066 vector85
+400ac3e0 g     F .text	00000066 vector84
+400aa000  w      .boot1	00000000 vector558
+400aa000  w      .boot1	00000000 vector574
+400aa000  w      .boot1	00000000 vector825
+400aa000  w      .boot1	00000000 vector533
+400aa000  w      .boot1	00000000 vector183
+400aa000  w      .boot1	00000000 vector509
+400aa000  w      .boot1	00000000 vector159
+400aa000  w      .boot1	00000000 vector212
+400aa000  w      .boot1	00000000 vector856
 00000000 g       *ABS*	00000000 __core0_irq_stack_size__
-00fc6060 g     F .text	00000014 vListInitialise
-00fc2000  w      .boot1	00000000 vector672
-00fc2000  w      .boot1	00000000 vector576
-00fc2000  w      .boot1	00000000 vector899
-00fc2000  w      .boot1	00000000 vector47
-00fc2000  w      .boot1	00000000 vector948
-00fc2000  w      .boot1	00000000 vector228
-00fc2000  w      .boot1	00000000 vector42
-00fc2000  w      .boot1	00000000 vector334
-00fc49c0 g     F .text	00000060 vector114
-400a8000 g     O .data	000000dc can_config_can1
-00fc2000  w      .boot1	00000000 vector901
-00fc0200  w      .boot0	00000000 _C0_IVOR11
-00fc2000  w      .boot1	00000000 vector674
-00fc2000  w      .boot1	00000000 vector525
-00fc2000  w      .boot1	00000000 vector175
-00fc2000  w      .boot1	00000000 vector143
-00fc0204  w      .boot0	00000000 _IVOR5
-00fc69f0 g     F .text	00000034 xTaskGetTickCount
-00fc2000  w      .boot1	00000000 vector913
-00fc2000  w      .boot1	00000000 vector958
-00fc2000  w      .boot1	00000000 vector377
-00fc2000  w      .boot1	00000000 vector130
-00fc2000  w      .boot1	00000000 vector788
-00fc2000  w      .boot1	00000000 vector616
-00fc74f0 g     F .text	000000a6 vector246
-00fc2000  w      .boot1	00000000 vector858
-00fc2000  w      .boot1	00000000 vector705
-00fc2000  w      .boot1	00000000 vector331
-00fc2000  w      .boot1	00000000 vector9
-00fc2000  w      .boot1	00000000 vector860
-00fc2000  w      .boot1	00000000 vector142
-00fc2000  w      .boot1	00000000 vector458
-00fc8330 g     F .text	0000002c GetMotorRPM
-00fc2000  w      .boot1	00000000 vector394
-00fc4480 g     F .text	00000060 vector100
-00fc2000  w      .boot1	00000000 vector811
-00fc2d80 g     F .text	00000080 .hidden __unpack_f
-00fc2000  w      .boot1	00000000 vector962
-00fc2000  w      .boot1	00000000 vector903
-00fc2000  w      .boot1	00000000 vector554
-00fc2000  w      .boot1	00000000 vector327
-00fc2000  w      .boot1	00000000 vector374
-00fc2000  w      .boot1	00000000 vector201
-00fc000c g     F .boot0	00000000 _reset_address0
-00fc2000  w      .boot1	00000000 vector745
-400b0474 g     O .bss	00000002 RPM
-00fc2000  w      .boot1	00000000 vector935
-00fc2000  w      .boot1	00000000 vector792
-00fc2000  w      .boot1	00000000 vector597
-00fc2000  w      .boot1	00000000 vector361
-00fc2b80 g     F .text	000000a4 .hidden __fixdfsi
-00fc2000  w      .boot1	00000000 vector845
-00fc2000  w      .boot1	00000000 vector631
-00fc2000  w      .boot1	00000000 vector261
-00fc2000  w      .boot1	00000000 vector445
-00fc2000  w      .boot1	00000000 vector678
-00fc2000  w      .boot1	00000000 vector470
-00fc2000  w      .boot1	00000000 vector758
-00fc2000  w      .boot1	00000000 vector977
-00fc2000  w      .boot1	00000000 vector473
-00fc3580 g     F .text	0000005c vector60
-00fc2000  w      .boot1	00000000 vector23
-00fc2000  w      .boot1	00000000 vector779
-00fc2000  w      .boot1	00000000 vector488
-00fc2000  w      .boot1	00000000 vector932
-00fc2000  w      .boot1	00000000 vector329
-400b0520 g     O .bss	0000004c tx14D
-00fc2000  w      .boot1	00000000 vector747
-00fc2000  w      .boot1	00000000 vector606
-00fc2000  w      .boot1	00000000 vector236
-00fc2000  w      .boot1	00000000 vector1020
-00fc2000  w      .boot1	00000000 vector648
-00fc2000  w      .boot1	00000000 vector278
-00fc2000  w      .boot1	00000000 vector384
-00fc2000  w      .boot1	00000000 vector734
-00fc2000  w      .boot1	00000000 vector601
-00fc2000  w      .boot1	00000000 vector231
-00fc2000  w      .boot1	00000000 vector968
-00fc7740 g     F .text	00000058 sysTimeSetup
-00fc37c0 g     F .text	0000005c vector66
-00fc2000  w      .boot1	00000000 vector29
-00fc21f0 g     F .text	0000005a .hidden __gtsf2
-00fc2000  w      .boot1	00000000 vector135
+400afbb0 g     F .text	00000034 vListInitialise
+400aa000  w      .boot1	00000000 vector672
+400aa000  w      .boot1	00000000 vector576
+400aa000  w      .boot1	00000000 vector899
+400aa000  w      .boot1	00000000 vector47
+400aa000  w      .boot1	00000000 vector948
+400aa000  w      .boot1	00000000 vector228
+400aa000  w      .boot1	00000000 vector42
+400bcb1a g     O .bss	00000002 motortorkfiltered
+400aa000  w      .boot1	00000000 vector334
+400ad100 g     F .text	00000066 vector114
+400b4540 g     O .data	000000dc can_config_can1
+400aa000  w      .boot1	00000000 vector901
+400a81f0  w      .boot0	00000000 _C0_IVOR11
+400aa000  w      .boot1	00000000 vector674
+400aa000  w      .boot1	00000000 vector525
+400aa000  w      .boot1	00000000 vector175
+400aa000  w      .boot1	00000000 vector143
+400a81f4  w      .boot0	00000000 _IVOR5
+400b0500 g     F .text	00000026 xTaskGetTickCount
+400aa000  w      .boot1	00000000 vector913
+400aa000  w      .boot1	00000000 vector958
+400aa000  w      .boot1	00000000 vector377
+400aa000  w      .boot1	00000000 vector130
+400aa000  w      .boot1	00000000 vector788
+400aa000  w      .boot1	00000000 vector616
+400b2050 g     F .text	0000007a vector246
+400aa000  w      .boot1	00000000 vector858
+400aa000  w      .boot1	00000000 vector705
+400aa000  w      .boot1	00000000 vector331
+400aa000  w      .boot1	00000000 vector9
+400aa000  w      .boot1	00000000 vector860
+400aa000  w      .boot1	00000000 vector142
+400aa000  w      .boot1	00000000 vector458
+400b3c90 g     F .text	00000062 GetMotorRPM
+400aa000  w      .boot1	00000000 vector394
+400acae0 g     F .text	00000066 vector100
+400aa000  w      .boot1	00000000 vector811
+400ab020 g     F .text	00000080 .hidden __unpack_f
+400aa000  w      .boot1	00000000 vector962
+400aa000  w      .boot1	00000000 vector903
+400aa000  w      .boot1	00000000 vector554
+400aa000  w      .boot1	00000000 vector327
+400aa000  w      .boot1	00000000 vector374
+400aa000  w      .boot1	00000000 vector201
+400a800c g     F .boot0	00000000 _reset_address0
+400aa000  w      .boot1	00000000 vector745
+400bcb20 g     O .bss	00000002 RPM
+400aa000  w      .boot1	00000000 vector935
+400aa000  w      .boot1	00000000 vector792
+400aa000  w      .boot1	00000000 vector597
+400aa000  w      .boot1	00000000 vector361
+400bcb08 g     O .bss	00000004 longACC
+400aadd0 g     F .text	000000a4 .hidden __fixdfsi
+400aa000  w      .boot1	00000000 vector845
+400aa000  w      .boot1	00000000 vector631
+400aa000  w      .boot1	00000000 vector261
+400aa000  w      .boot1	00000000 vector445
+400aa000  w      .boot1	00000000 vector678
+400b4100 g     F .text	0000001e GetKL75status
+400bcb2b g     O .bss	00000001 fuel
+400aa000  w      .boot1	00000000 vector470
+400aa000  w      .boot1	00000000 vector758
+400aa000  w      .boot1	00000000 vector977
+400aa000  w      .boot1	00000000 vector473
+400ab9f0 g     F .text	00000060 vector60
+400aa000  w      .boot1	00000000 vector23
+400aa000  w      .boot1	00000000 vector779
+400aa000  w      .boot1	00000000 vector488
+400aa000  w      .boot1	00000000 vector932
+400aa000  w      .boot1	00000000 vector329
+400bcaa4 g     O .bss	0000004c tx14D
+400aa000  w      .boot1	00000000 vector747
+400aa000  w      .boot1	00000000 vector606
+400aa000  w      .boot1	00000000 vector236
+400aa000  w      .boot1	00000000 vector1020
+400aa000  w      .boot1	00000000 vector648
+400aa000  w      .boot1	00000000 vector278
+400aa000  w      .boot1	00000000 vector384
+400aa000  w      .boot1	00000000 vector734
+400b4040 g     F .text	00000056 GetThrottlePedalRawValue
+400aa000  w      .boot1	00000000 vector601
+400aa000  w      .boot1	00000000 vector231
+400aa000  w      .boot1	00000000 vector968
+400b2330 g     F .text	00000076 sysTimeSetup
+400abc30 g     F .text	00000060 vector66
+400aa000  w      .boot1	00000000 vector29
+400aa440 g     F .text	0000005a .hidden __gtsf2
+400aa000  w      .boot1	00000000 vector135
 00400000 g       *ABS*	00000000 __flash_size__
-00fc2000  w      .boot1	00000000 vector796
-00fc2000  w      .boot1	00000000 vector420
-00fc2000  w      .boot1	00000000 vector314
-00fc2000  w      .boot1	00000000 vector771
-00fc2000  w      .boot1	00000000 vector357
-00fc2000  w      .boot1	00000000 vector925
-00fc3be0 g     F .text	00000060 vector77
-00fc2000  w      .boot1	00000000 vector408
-00fc2000  w      .boot1	00000000 vector530
-00fc2000  w      .boot1	00000000 vector463
-00fc2000  w      .boot1	00000000 vector180
-00fc2000  w      .boot1	00000000 vector632
-00fc2000  w      .boot1	00000000 vector262
-00fc4ae0 g     F .text	000000d2 edmaInit
-00fc2000  w      .boot1	00000000 vector996
-00fc2000  w      .boot1	00000000 vector751
-00fc2000  w      .boot1	00000000 vector208
-00fc2000  w      .boot1	00000000 vector482
-00fc2000  w      .boot1	00000000 vector438
-00fc3220 g     F .text	00000016 spc5LLDInit
-00fc2000  w      .boot1	00000000 vector573
-00fc2000  w      .boot1	00000000 vector707
-00fc2000  w      .boot1	00000000 vector784
-00fc2000  w      .boot1	00000000 vector402
-00fc43c0 g     F .text	00000060 vector98
-00fc4360 g     F .text	00000060 vector97
-00fc2000  w      .boot1	00000000 vector396
-00fc2000  w      .boot1	00000000 vector526
-00fc2000  w      .boot1	00000000 vector176
-00fc2000  w      .boot1	00000000 vector857
-00fc2000  w      .boot1	00000000 vector544
-00fc2000  w      .boot1	00000000 vector194
-00fc2000  w      .boot1	00000000 vector32
-00fc2000  w      .boot1	00000000 vector693
-00fc76b0 g     F .text	00000024 osalSysTimeSetup
-00fc8310 g     F .text	00000020 GetSteeringWheelRate
-00fc2000  w      .boot1	00000000 vector951
-00fc2000  w      .boot1	00000000 vector810
-00fc2000  w      .boot1	00000000 vector549
-00fc2000  w      .boot1	00000000 vector199
-00fc2000  w      .boot1	00000000 vector741
-00fc2c60 g     F .text	00000118 .hidden __pack_f
-00fc2000  w      .boot1	00000000 vector448
-00fc7260 g     F .text	00000040 SPCSetPeripheralClockMode
-00fc2000  w      .boot1	00000000 vector589
-00fc5580 g     F .text	00000048 can_lld_getDLC
-00fc2000  w      .boot1	00000000 vector131
-00fc2000  w      .boot1	00000000 vector775
-00fc2000  w      .boot1	00000000 vector622
-00fc2000  w      .boot1	00000000 vector252
-400a8228 g       .sdata	00000000 __data_end__
-00fc2000  w      .boot1	00000000 vector0
-00fc2000  w      .boot1	00000000 vector828
-00fc2000  w      .boot1	00000000 vector667
-00fc2000  w      .boot1	00000000 vector297
-00fc2000  w      .boot1	00000000 vector730
-00fc2000  w      .boot1	00000000 vector896
-00fc0204  w      .boot0	00000000 _IVOR13
+400aa000  w      .boot1	00000000 vector796
+400aa000  w      .boot1	00000000 vector420
+400aa000  w      .boot1	00000000 vector314
+400aa000  w      .boot1	00000000 vector771
+400aa000  w      .boot1	00000000 vector357
+400aa000  w      .boot1	00000000 vector925
+400ac0d0 g     F .text	00000066 vector77
+400aa000  w      .boot1	00000000 vector408
+400bcb00 g     O .bss	00000004 speedBR
+400aa000  w      .boot1	00000000 vector530
+400aa000  w      .boot1	00000000 vector463
+400aa000  w      .boot1	00000000 vector180
+400aa000  w      .boot1	00000000 vector632
+400aa000  w      .boot1	00000000 vector262
+400ad250 g     F .text	00000154 edmaInit
+400aa000  w      .boot1	00000000 vector996
+400aa000  w      .boot1	00000000 vector751
+400aa000  w      .boot1	00000000 vector208
+400aa000  w      .boot1	00000000 vector482
+400aa000  w      .boot1	00000000 vector438
+400ab4e0 g     F .text	00000018 spc5LLDInit
+400aa000  w      .boot1	00000000 vector573
+400aa000  w      .boot1	00000000 vector707
+400aa000  w      .boot1	00000000 vector784
+400aa000  w      .boot1	00000000 vector402
+400bcaf4 g     O .bss	00000004 speedFL
+400aca00 g     F .text	00000066 vector98
+400ac990 g     F .text	00000066 vector97
+400aa000  w      .boot1	00000000 vector396
+400aa000  w      .boot1	00000000 vector526
+400aa000  w      .boot1	00000000 vector176
+400aa000  w      .boot1	00000000 vector857
+400b3d20 g     F .text	00000060 Get_WheelSpeed_FR
+400aa000  w      .boot1	00000000 vector544
+400aa000  w      .boot1	00000000 vector194
+400aa000  w      .boot1	00000000 vector32
+400aa000  w      .boot1	00000000 vector693
+400b2270 g     F .text	0000002c osalSysTimeSetup
+400b3b40 g     F .text	00000088 GetSteeringWheelRate
+400aa000  w      .boot1	00000000 vector951
+400aa000  w      .boot1	00000000 vector810
+400aa000  w      .boot1	00000000 vector549
+400aa000  w      .boot1	00000000 vector199
+400aa000  w      .boot1	00000000 vector741
+400aaf00 g     F .text	00000118 .hidden __pack_f
+400aa000  w      .boot1	00000000 vector448
+400b1d40 g     F .text	00000062 SPCSetPeripheralClockMode
+400aa000  w      .boot1	00000000 vector589
+400b3d00 g     F .text	00000020 GetTargetGearLevel
+400ad8a0 g     F .text	00000118 can_lld_getDLC
+400aa000  w      .boot1	00000000 vector131
+400aa000  w      .boot1	00000000 vector775
+400aa000  w      .boot1	00000000 vector622
+400aa000  w      .boot1	00000000 vector252
+400b4768 g       .sdata	00000000 __data_end__
+400aa000  w      .boot1	00000000 vector0
+400aa000  w      .boot1	00000000 vector828
+400aa000  w      .boot1	00000000 vector667
+400aa000  w      .boot1	00000000 vector297
+400aa000  w      .boot1	00000000 vector730
+400aa000  w      .boot1	00000000 vector896
+400a81f4  w      .boot0	00000000 _IVOR13
 50800000 g       .core0_stacks	00000000 __core0_main_thread_stack_base__
-00fc2000  w      .boot1	00000000 vector651
-00fc2000  w      .boot1	00000000 vector281
-00fc2000  w      .boot1	00000000 vector805
-00fc72d0  w    F .text	00000008 irqSysHalt
-00fc2000  w      .boot1	00000000 vector1021
-00fc2000  w      .boot1	00000000 vector570
-00fc2000  w      .boot1	00000000 vector422
-00fc2000  w      .boot1	00000000 vector853
-00fc2000  w      .boot1	00000000 vector696
-00fc2000  w      .boot1	00000000 vector443
-00fc2000  w      .boot1	00000000 vector145
-00fc2000  w      .boot1	00000000 vector777
-00fc2000  w      .boot1	00000000 vector964
-400b0584 g       .bss	00000000 __bss_end__
-400a8214 g     O .data	00000008 eirqconf
-00fc4720 g     F .text	00000060 vector107
-00fc2000  w      .boot1	00000000 vector40
-00fc2000  w      .boot1	00000000 vector732
-00fc2000  w      .boot1	00000000 vector486
-00fc2000  w      .boot1	00000000 vector465
-00fc2000  w      .boot1	00000000 vector898
-00fc2000  w      .boot1	00000000 vector789
-00fc2000  w      .boot1	00000000 vector301
-00fc4540 g     F .text	00000060 vector102
-00fc2000  w      .boot1	00000000 vector700
-00fc2000  w      .boot1	00000000 vector921
-00fc2000  w      .boot1	00000000 vector1010
-00fc2000  w      .boot1	00000000 vector724
-00fc2000  w      .boot1	00000000 vector746
-00fc2000  w      .boot1	00000000 vector855
-00fc3400 g     F .text	0000005c vector56
-00fc0200  w      .boot0	00000000 _C0_IVOR1
-00fc62f0 g     F .text	00000010 vTaskSuspendAll
-00fc2000  w      .boot1	00000000 vector963
-00fc2000  w      .boot1	00000000 vector649
-00fc2000  w      .boot1	00000000 vector279
-00fc3880 g     F .text	0000005c vector68
-00fc2000  w      .boot1	00000000 vector6
-00fc2000  w      .boot1	00000000 vector893
-00fc2000  w      .boot1	00000000 vector553
-00fc2000  w      .boot1	00000000 vector129
+400aa000  w      .boot1	00000000 vector651
+400aa000  w      .boot1	00000000 vector281
+400b3f90 g     F .text	0000006e GetBrakePressure
+400aa000  w      .boot1	00000000 vector805
+400b1df0  w    F .text	00000008 irqSysHalt
+400aa000  w      .boot1	00000000 vector1021
+400aa000  w      .boot1	00000000 vector570
+400aa000  w      .boot1	00000000 vector422
+400aa000  w      .boot1	00000000 vector853
+400aa000  w      .boot1	00000000 vector696
+400aa000  w      .boot1	00000000 vector443
+400aa000  w      .boot1	00000000 vector145
+400aa000  w      .boot1	00000000 vector777
+400aa000  w      .boot1	00000000 vector964
+400bcb44 g       .bss	00000000 __bss_end__
+400b4754 g     O .data	00000008 eirqconf
+400acdf0 g     F .text	00000066 vector107
+400aa000  w      .boot1	00000000 vector40
+400aa000  w      .boot1	00000000 vector732
+400aa000  w      .boot1	00000000 vector486
+400aa000  w      .boot1	00000000 vector465
+400aa000  w      .boot1	00000000 vector898
+400aa000  w      .boot1	00000000 vector789
+400aa000  w      .boot1	00000000 vector301
+400acbc0 g     F .text	00000066 vector102
+400aa000  w      .boot1	00000000 vector700
+400aa000  w      .boot1	00000000 vector921
+400aa000  w      .boot1	00000000 vector1010
+400aa000  w      .boot1	00000000 vector724
+400aa000  w      .boot1	00000000 vector746
+400aa000  w      .boot1	00000000 vector855
+400ab870 g     F .text	00000060 vector56
+400a81f0  w      .boot0	00000000 _C0_IVOR1
+400b02f0 g     F .text	00000016 vTaskSuspendAll
+400aa000  w      .boot1	00000000 vector963
+400aa000  w      .boot1	00000000 vector649
+400aa000  w      .boot1	00000000 vector279
+400abcf0 g     F .text	00000060 vector68
+400aa000  w      .boot1	00000000 vector6
+400aa000  w      .boot1	00000000 vector893
+400bc9b8 g     O .bss	0000004c tx
+400aa000  w      .boot1	00000000 vector553
+400aa000  w      .boot1	00000000 vector129
 00000000 g       *ABS*	00000000 __irq_stack_size__
-00fc2000  w      .boot1	00000000 vector455
-00fc4bc0 g     F .text	0000003e can_lld_getframesize
+400aa000  w      .boot1	00000000 vector455
+400ad820 g     F .text	0000007c can_lld_getframesize
 013c0000 g       .boot0	00000000 __flash_end__
-00fc2000  w      .boot1	00000000 vector920
-00fc2000  w      .boot1	00000000 vector547
-00fc2000  w      .boot1	00000000 vector197
-00fc2000  w      .boot1	00000000 vector596
-00fc2000  w      .boot1	00000000 vector555
-00fc2000  w      .boot1	00000000 vector681
-00fc2000  w      .boot1	00000000 vector904
-00fc2000  w      .boot1	00000000 vector850
-00fc2000  w      .boot1	00000000 vector502
-00fc2000  w      .boot1	00000000 vector152
-00fc6100 g     F .text	00000036 uxListRemove
-00fc77f0 g     F .text	00000176 vTaskh303
-00fc2000  w      .boot1	00000000 vector838
-00fc2000  w      .boot1	00000000 vector972
-00fc2000  w      .boot1	00000000 vector598
-00fc2000  w      .boot1	00000000 vector600
-00fc2000  w      .boot1	00000000 vector230
-00fc2000  w      .boot1	00000000 vector761
-00fc2000  w      .boot1	00000000 vector415
-00fc2000  w      .boot1	00000000 vector339
-00fc2000  w      .boot1	00000000 vector459
-00fc2000  w      .boot1	00000000 vector823
-00fc2000  w      .boot1	00000000 vector868
-00fc2000  w      .boot1	00000000 vector37
-00fc2000  w      .boot1	00000000 vector690
-00fc2000  w      .boot1	00000000 vector364
-00fc2000  w      .boot1	00000000 vector205
-00fc2000  w      .boot1	00000000 vector908
-00fc2000  w      .boot1	00000000 vector511
-00fc2000  w      .boot1	00000000 vector161
-00fc2000  w      .boot1	00000000 vector472
-00fc2000  w      .boot1	00000000 vector628
-00fc2000  w      .boot1	00000000 vector258
+400aa000  w      .boot1	00000000 vector920
+400aa000  w      .boot1	00000000 vector547
+400aa000  w      .boot1	00000000 vector197
+400aa000  w      .boot1	00000000 vector596
+400aa000  w      .boot1	00000000 vector555
+400aa000  w      .boot1	00000000 vector681
+400aa000  w      .boot1	00000000 vector904
+400aa000  w      .boot1	00000000 vector850
+400aa000  w      .boot1	00000000 vector502
+400aa000  w      .boot1	00000000 vector152
+400afcd0 g     F .text	0000005e uxListRemove
+400b2460 g     F .text	000001f2 vTaskh303
+400aa000  w      .boot1	00000000 vector838
+400aa000  w      .boot1	00000000 vector972
+400aa000  w      .boot1	00000000 vector598
+400aa000  w      .boot1	00000000 vector600
+400aa000  w      .boot1	00000000 vector230
+400aa000  w      .boot1	00000000 vector761
+400aa000  w      .boot1	00000000 vector415
+400aa000  w      .boot1	00000000 vector339
+400aa000  w      .boot1	00000000 vector459
+400aa000  w      .boot1	00000000 vector823
+400aa000  w      .boot1	00000000 vector868
+400aa000  w      .boot1	00000000 vector37
+400aa000  w      .boot1	00000000 vector690
+400aa000  w      .boot1	00000000 vector364
+400aa000  w      .boot1	00000000 vector205
+400aa000  w      .boot1	00000000 vector908
+400aa000  w      .boot1	00000000 vector511
+400aa000  w      .boot1	00000000 vector161
+400b3d80 g     F .text	00000060 Get_WheelSpeed_FL
+400aa000  w      .boot1	00000000 vector472
+400aa000  w      .boot1	00000000 vector628
+400aa000  w      .boot1	00000000 vector258
 00060000 g       *ABS*	00000000 __ram_size__
-00fc2000  w      .boot1	00000000 vector927
-00fc2000  w      .boot1	00000000 vector887
-00fc2000  w      .boot1	00000000 vector634
-00fc2000  w      .boot1	00000000 vector264
-400a8328 g     O .bss	00000010 CAND2
-00fc2000  w      .boot1	00000000 vector916
-00fc39a0 g     F .text	00000060 vector71
-00fc7c40 g     F .text	0000008c can4_Can4rx_new
-00fc2000  w      .boot1	00000000 vector842
-00fc2000  w      .boot1	00000000 vector510
-00fc2000  w      .boot1	00000000 vector160
-00fc045e  w    F .boot0	00000000 __late_init
-00fc2000  w      .boot1	00000000 vector344
-00fc2000  w      .boot1	00000000 vector559
-00fc6490 g     F .text	0000001e vTaskSwitchContext
-00fc2000  w      .boot1	00000000 vector215
-00fc2000  w      .boot1	00000000 vector352
-00fc7a10 g     F .text	0000022e can1_Can1new
-00fc2000  w      .boot1	00000000 vector347
-00fc2000  w      .boot1	00000000 vector389
-00fc2000  w      .boot1	00000000 vector507
-00fc2000  w      .boot1	00000000 vector157
-00fc2000  w      .boot1	00000000 vector416
-00fc8390  w    F .text	0000001a largememcpy
-00fc2000  w      .boot1	00000000 vector490
-00fc4900 g     F .text	00000060 vector112
-00fc3160 g     F .text	000000ba .hidden __fpcmp_parts_d
-00fc2000  w      .boot1	00000000 vector727
-00fc2000  w      .boot1	00000000 vector423
+400aa000  w      .boot1	00000000 vector927
+400aa000  w      .boot1	00000000 vector887
+400aa000  w      .boot1	00000000 vector634
+400aa000  w      .boot1	00000000 vector264
+400b4868 g     O .bss	00000010 CAND2
+400aa000  w      .boot1	00000000 vector916
+400abe30 g     F .text	00000066 vector71
+400b2bd0 g     F .text	0000049e can4_Can4rx_new
+400aa000  w      .boot1	00000000 vector842
+400aa000  w      .boot1	00000000 vector510
+400aa000  w      .boot1	00000000 vector160
+400a8426  w    F .boot0	00000000 __late_init
+400b1e00 g     F .text	000000c8 manage_eirq_interrupt
+400aa000  w      .boot1	00000000 vector344
+400aa000  w      .boot1	00000000 vector559
+400b0780 g     F .text	000000e0 vTaskSwitchContext
+400aa000  w      .boot1	00000000 vector215
+400aa000  w      .boot1	00000000 vector352
+400b2720 g     F .text	000004a4 can1_Can1new
+400aa000  w      .boot1	00000000 vector347
+400aa000  w      .boot1	00000000 vector389
+400aa000  w      .boot1	00000000 vector507
+400aa000  w      .boot1	00000000 vector157
+400aa000  w      .boot1	00000000 vector416
+400b4210  w    F .text	0000001a largememcpy
+400aa000  w      .boot1	00000000 vector490
+400ad020 g     F .text	00000066 vector112
+400ab420 g     F .text	000000ba .hidden __fpcmp_parts_d
+400aa000  w      .boot1	00000000 vector727
+400aa000  w      .boot1	00000000 vector423
+400b1cb0 g     F .text	00000086 SPCSetRunMode
 00010000 g       *ABS*	00000000 __dram0_size__
-00fc2000  w      .boot1	00000000 vector995
-00fc2000  w      .boot1	00000000 vector826
-00fc2000  w      .boot1	00000000 vector532
-00fc2000  w      .boot1	00000000 vector182
-00fc57e0 g     F .text	00000756 can_lld_start
-00fc2000  w      .boot1	00000000 vector466
-00fc2000  w      .boot1	00000000 vector950
-00fc2000  w      .boot1	00000000 vector1000
-00fc2000  w      .boot1	00000000 vector12
-00fc2000  w      .boot1	00000000 vector1007
-00fc2000  w      .boot1	00000000 vector719
-00fc2000  w      .boot1	00000000 vector309
-00fc2000  w      .boot1	00000000 vector712
-00fc2000  w      .boot1	00000000 vector321
-00fc2000  w      .boot1	00000000 vector575
-00fc2000  w      .boot1	00000000 vector1002
-00fc47e0 g     F .text	00000060 vector109
-00fc2000  w      .boot1	00000000 vector383
-00fc2000  w      .boot1	00000000 vector20
-00fc2000  w      .boot1	00000000 vector986
-00fc2000  w      .boot1	00000000 vector863
-00fc2000  w      .boot1	00000000 vector319
-00fc2000  w      .boot1	00000000 vector907
-00fc2000  w      .boot1	00000000 vector873
-00fc2000  w      .boot1	00000000 vector656
-00fc2000  w      .boot1	00000000 vector303
-00fc2000  w      .boot1	00000000 vector286
-00fc2000  w      .boot1	00000000 vector417
-00fc32e0 g     F .text	0000005c vector53
-00fc2000  w      .boot1	00000000 vector18
-00fc2000  w      .boot1	00000000 vector366
-00fc2000  w      .boot1	00000000 vector776
-00fc2910 g     F .text	0000017e .hidden __divdf3
-00fc2000  w      .boot1	00000000 vector491
-00fc2000  w      .boot1	00000000 vector456
-00fc2000  w      .boot1	00000000 vector572
-00fc2000  w      .boot1	00000000 vector818
-00fc2000  w      .boot1	00000000 vector943
-00fc42a0 g     F .text	00000060 vector95
-00fc2000  w      .boot1	00000000 vector731
-00fc2000  w      .boot1	00000000 vector830
-00fc2000  w      .boot1	00000000 vector991
-00fc6b80 g     F .text	0000001a vector226
-00fc26a0 g     F .text	00000264 .hidden __muldf3
-00fc2000  w      .boot1	00000000 vector670
-00fc8510 g     O .rodata	00000010 .hidden __thenan_sf
-00fc2000  w      .boot1	00000000 vector49
-00fc7d00 g     F .text	00000010 can4_can4rx
-00fc2000  w      .boot1	00000000 vector44
-00fc3c40 g     F .text	00000060 vector78
-00fc2000  w      .boot1	00000000 vector643
-00fc2000  w      .boot1	00000000 vector469
-00fc2000  w      .boot1	00000000 vector273
-00fc2000  w      .boot1	00000000 vector523
-00fc2000  w      .boot1	00000000 vector173
-00fc2000  w      .boot1	00000000 vector637
-00fc2000  w      .boot1	00000000 vector267
-00fc2000  w      .boot1	00000000 vector117
-00fc2000  w      .boot1	00000000 vector566
-00fc2000  w      .boot1	00000000 vector956
-00fc2000  w      .boot1	00000000 vector442
-00fc2000  w      .boot1	00000000 vector911
-00fc2000  w      .boot1	00000000 vector336
-00fc2000  w      .boot1	00000000 vector686
-00fc3dc0 g     F .text	00000060 vector82
-00fc2000  w      .boot1	00000000 vector379
-00fc2000  w      .boot1	00000000 vector426
-00fc2000  w      .boot1	00000000 vector485
-00fc2000  w      .boot1	00000000 vector675
-00fc2000  w      .boot1	00000000 vector704
-00fc2000  w      .boot1	00000000 vector222
-00fc2000  w      .boot1	00000000 vector978
-00fc2000  w      .boot1	00000000 vector582
-00fc2000  w      .boot1	00000000 vector8
-00fc2000  w      .boot1	00000000 vector393
-00fc2000  w      .boot1	00000000 vector757
-00fc2000  w      .boot1	00000000 vector772
-00fc2000  w      .boot1	00000000 vector729
-00fc2000  w      .boot1	00000000 vector342
-00fc2000  w      .boot1	00000000 vector149
-00fc6dd0 g     F .text	00000104 pal_init
-00fc2000  w      .boot1	00000000 vector407
-00fc2000  w      .boot1	00000000 vector878
-00fc83b0 g     F .text	00000016 memset
-00fc2000  w      .boot1	00000000 vector387
-00fc0204  w      .boot0	00000000 _IVOR7
-00fc2000  w      .boot1	00000000 vector933
-00fc0204  w      .boot0	00000000 _IVOR2
-00fc2000  w      .boot1	00000000 vector602
-00fc2000  w      .boot1	00000000 vector232
-00fc79b0 g     F .text	00000058 main
-00fc2000  w      .boot1	00000000 vector635
-00fc2000  w      .boot1	00000000 vector265
-00fc2000  w      .boot1	00000000 vector880
-00fc0200  w      .boot0	00000000 _C0_IVOR14
-00fc46c0 g     F .text	00000060 vector106
-00fc2000  w      .boot1	00000000 vector401
-00fc2000  w      .boot1	00000000 vector351
-00fc2000  w      .boot1	00000000 vector481
-00fc2000  w      .boot1	00000000 vector220
-00fc2000  w      .boot1	00000000 vector835
-00fc2000  w      .boot1	00000000 vector421
-00fc40c0 g     F .text	00000060 vector90
-00fc2000  w      .boot1	00000000 vector513
-00fc2000  w      .boot1	00000000 vector163
-00fc2000  w      .boot1	00000000 vector1003
-00fc2000  w      .boot1	00000000 vector759
-00fc2000  w      .boot1	00000000 vector982
-00fc2000  w      .boot1	00000000 vector774
-00fc2000  w      .boot1	00000000 vector604
-00fc2000  w      .boot1	00000000 vector234
-00fc5700 g     F .text	0000000c vector689
-00fc60b0 g     F .text	00000046 vListInsert
-00fc3640 g     F .text	0000005c vector62
-00fc2000  w      .boot1	00000000 vector25
-00fc2000  w      .boot1	00000000 vector710
-00fc0380 g     F .boot0	00000000 vPortStartFirstTask
-00fc2000  w      .boot1	00000000 vector548
-00fc2000  w      .boot1	00000000 vector464
-00fc2000  w      .boot1	00000000 vector198
-00fc2000  w      .boot1	00000000 vector971
-400b051c g     O .bss	00000004 rtoscnt
-00fc2000  w      .boot1	00000000 vector120
-00fc03e0 g     F .boot0	00000000 _boot_address
-00fc2000  w      .boot1	00000000 vector646
-00fc2000  w      .boot1	00000000 vector276
-00fc2000  w      .boot1	00000000 vector827
-00fc2000  w      .boot1	00000000 vector403
-00fc2000  w      .boot1	00000000 vector444
-00fc2000  w      .boot1	00000000 vector837
-00fc2000  w      .boot1	00000000 vector937
-00fc2000  w      .boot1	00000000 vector50
-00fc2000  w      .boot1	00000000 vector15
-00fc6940 g     F .text	00000062 vTaskDelayUntil
-00fc2000  w      .boot1	00000000 vector848
-00fc2000  w      .boot1	00000000 vector1017
-00fc2000  w      .boot1	00000000 vector501
-00fc2000  w      .boot1	00000000 vector151
-00fc2000  w      .boot1	00000000 vector487
-00fc2000  w      .boot1	00000000 vector725
-00fc3e20 g     F .text	00000060 vector83
-00fc4060 g     F .text	00000060 vector89
-00fc4000 g     F .text	00000060 vector88
-00fc2000  w      .boot1	00000000 vector722
-00fc2000  w      .boot1	00000000 vector769
-00fc77d0 g     F .text	00000002 irq_cfg_init
-00fc2000  w      .boot1	00000000 vector569
-00fc2000  w      .boot1	00000000 vector664
-00fc2000  w      .boot1	00000000 vector294
-00fc8520 g     O .rodata	00000018 .hidden __thenan_df
-00fc2000  w      .boot1	00000000 vector529
-00fc2000  w      .boot1	00000000 vector179
-00fc2000  w      .boot1	00000000 vector764
-00fc2000  w      .boot1	00000000 vector990
-00fc2070 g     F .text	0000017e .hidden __mulsf3
-00fc2000  w      .boot1	00000000 vector786
-00fc2000  w      .boot1	00000000 vector794
-00fc2000  w      .boot1	00000000 vector638
-00fc2000  w      .boot1	00000000 vector268
-00fc2000  w      .boot1	00000000 vector34
-00fc2000  w      .boot1	00000000 vector46
-00fc2000  w      .boot1	00000000 vector988
-00fc2000  w      .boot1	00000000 vector743
-00fc2000  w      .boot1	00000000 vector437
-00fc2000  w      .boot1	00000000 vector1023
-00fc2000  w      .boot1	00000000 vector134
+400aa000  w      .boot1	00000000 vector995
+400aa000  w      .boot1	00000000 vector826
+400aa000  w      .boot1	00000000 vector532
+400aa000  w      .boot1	00000000 vector182
+400aeb20 g     F .text	00000d86 can_lld_start
+400b3bd0 g     F .text	0000003e GetTargetMotorTorqueFiltered
+400aa000  w      .boot1	00000000 vector466
+400aa000  w      .boot1	00000000 vector950
+400aa000  w      .boot1	00000000 vector1000
+400aa000  w      .boot1	00000000 vector12
+400aa000  w      .boot1	00000000 vector1007
+400aa000  w      .boot1	00000000 vector719
+400aa000  w      .boot1	00000000 vector309
+400aa000  w      .boot1	00000000 vector712
+400aa000  w      .boot1	00000000 vector321
+400b40e0 g     F .text	00000020 GetGearLevel
+400aa000  w      .boot1	00000000 vector575
+400aa000  w      .boot1	00000000 vector1002
+400aced0 g     F .text	00000066 vector109
+400aa000  w      .boot1	00000000 vector383
+400aa000  w      .boot1	00000000 vector20
+400aa000  w      .boot1	00000000 vector986
+400aa000  w      .boot1	00000000 vector863
+400aa000  w      .boot1	00000000 vector319
+400aa000  w      .boot1	00000000 vector907
+400aa000  w      .boot1	00000000 vector873
+400aa000  w      .boot1	00000000 vector656
+400aa000  w      .boot1	00000000 vector303
+400aa000  w      .boot1	00000000 vector286
+400aa000  w      .boot1	00000000 vector417
+400ab750 g     F .text	00000060 vector53
+400aa000  w      .boot1	00000000 vector18
+400aa000  w      .boot1	00000000 vector366
+400aa000  w      .boot1	00000000 vector776
+400aab60 g     F .text	0000017e .hidden __divdf3
+400aa000  w      .boot1	00000000 vector491
+400aa000  w      .boot1	00000000 vector456
+400aa000  w      .boot1	00000000 vector572
+400aa000  w      .boot1	00000000 vector818
+400aa000  w      .boot1	00000000 vector943
+400ac8b0 g     F .text	00000066 vector95
+400aa000  w      .boot1	00000000 vector731
+400aa000  w      .boot1	00000000 vector830
+400aa000  w      .boot1	00000000 vector991
+400b0e40 g     F .text	0000001c vector226
+400aa8f0 g     F .text	00000264 .hidden __muldf3
+400aa000  w      .boot1	00000000 vector670
+400b43b0 g     O .rodata	00000010 .hidden __thenan_sf
+400aa000  w      .boot1	00000000 vector49
+400b30c0 g     F .text	0000001e can4_can4rx
+400aa000  w      .boot1	00000000 vector44
+400ac140 g     F .text	00000066 vector78
+400aa000  w      .boot1	00000000 vector643
+400aa000  w      .boot1	00000000 vector469
+400aa000  w      .boot1	00000000 vector273
+400aa000  w      .boot1	00000000 vector523
+400aa000  w      .boot1	00000000 vector173
+400aa000  w      .boot1	00000000 vector637
+400aa000  w      .boot1	00000000 vector267
+400aa000  w      .boot1	00000000 vector117
+400aa000  w      .boot1	00000000 vector566
+400b4120 g     F .text	00000022 GetVehicleMassEst
+400aa000  w      .boot1	00000000 vector956
+400aa000  w      .boot1	00000000 vector442
+400aa000  w      .boot1	00000000 vector911
+400aa000  w      .boot1	00000000 vector336
+400aa000  w      .boot1	00000000 vector686
+400b3ea0 g     F .text	00000078 GetLateralACC
+400ac300 g     F .text	00000066 vector82
+400aa000  w      .boot1	00000000 vector379
+400aa000  w      .boot1	00000000 vector426
+400aa000  w      .boot1	00000000 vector485
+400aa000  w      .boot1	00000000 vector675
+400aa000  w      .boot1	00000000 vector704
+400aa000  w      .boot1	00000000 vector222
+400aa000  w      .boot1	00000000 vector978
+400aa000  w      .boot1	00000000 vector582
+400aa000  w      .boot1	00000000 vector8
+400aa000  w      .boot1	00000000 vector393
+400aa000  w      .boot1	00000000 vector757
+400aa000  w      .boot1	00000000 vector772
+400aa000  w      .boot1	00000000 vector729
+400aa000  w      .boot1	00000000 vector342
+400aa000  w      .boot1	00000000 vector149
+400b1330 g     F .text	0000014c pal_init
+400aa000  w      .boot1	00000000 vector407
+400aa000  w      .boot1	00000000 vector878
+400b4230 g     F .text	00000016 memset
+400aa000  w      .boot1	00000000 vector387
+400a81f4  w      .boot0	00000000 _IVOR7
+400aa000  w      .boot1	00000000 vector933
+400a81f4  w      .boot0	00000000 _IVOR2
+400aa000  w      .boot1	00000000 vector602
+400aa000  w      .boot1	00000000 vector232
+400b2660 g     F .text	000000b4 main
+400aa000  w      .boot1	00000000 vector635
+400aa000  w      .boot1	00000000 vector265
+400aa000  w      .boot1	00000000 vector880
+400a81f0  w      .boot0	00000000 _C0_IVOR14
+400acd80 g     F .text	00000066 vector106
+400aa000  w      .boot1	00000000 vector401
+400bcafc g     O .bss	00000004 speedBL
+400aa000  w      .boot1	00000000 vector351
+400aa000  w      .boot1	00000000 vector481
+400aa000  w      .boot1	00000000 vector220
+400aa000  w      .boot1	00000000 vector835
+400aa000  w      .boot1	00000000 vector421
+400ac680 g     F .text	00000066 vector90
+400aa000  w      .boot1	00000000 vector513
+400aa000  w      .boot1	00000000 vector163
+400aa000  w      .boot1	00000000 vector1003
+400aa000  w      .boot1	00000000 vector759
+400aa000  w      .boot1	00000000 vector982
+400aa000  w      .boot1	00000000 vector774
+400aa000  w      .boot1	00000000 vector604
+400aa000  w      .boot1	00000000 vector234
+400ae9b0 g     F .text	0000001c vector689
+400afc40 g     F .text	0000008e vListInsert
+400abab0 g     F .text	00000060 vector62
+400aa000  w      .boot1	00000000 vector25
+400aa000  w      .boot1	00000000 vector710
+400a8370 g     F .boot0	00000000 vPortStartFirstTask
+400aa000  w      .boot1	00000000 vector548
+400aa000  w      .boot1	00000000 vector464
+400aa000  w      .boot1	00000000 vector198
+400b4020 g     F .text	0000001c GetEPBStatus
+400aa000  w      .boot1	00000000 vector971
+400bca54 g     O .bss	00000004 rtoscnt
+400aa000  w      .boot1	00000000 vector120
+400a83d0 g     F .boot0	00000000 _boot_address
+400aa000  w      .boot1	00000000 vector646
+400aa000  w      .boot1	00000000 vector276
+400aa000  w      .boot1	00000000 vector827
+400aaeb0 g     F .text	00000046 .hidden __truncdfsf2
+400aa000  w      .boot1	00000000 vector403
+400aa000  w      .boot1	00000000 vector444
+400aa000  w      .boot1	00000000 vector837
+400aa000  w      .boot1	00000000 vector937
+400aa000  w      .boot1	00000000 vector50
+400aa000  w      .boot1	00000000 vector15
+400b0100 g     F .text	00000108 vTaskDelayUntil
+400aa000  w      .boot1	00000000 vector848
+400aa000  w      .boot1	00000000 vector1017
+400aa000  w      .boot1	00000000 vector501
+400aa000  w      .boot1	00000000 vector151
+400aa000  w      .boot1	00000000 vector487
+400aa000  w      .boot1	00000000 vector725
+400ac370 g     F .text	00000066 vector83
+400ac610 g     F .text	00000066 vector89
+400ac5a0 g     F .text	00000066 vector88
+400aa000  w      .boot1	00000000 vector722
+400aa000  w      .boot1	00000000 vector769
+400b2400 g     F .text	00000002 irq_cfg_init
+400aa000  w      .boot1	00000000 vector569
+400aa000  w      .boot1	00000000 vector664
+400aa000  w      .boot1	00000000 vector294
+400b43c0 g     O .rodata	00000018 .hidden __thenan_df
+400b3c50 g     F .text	0000003c GetTargetMotorTorqueTotal
+400aa000  w      .boot1	00000000 vector529
+400aa000  w      .boot1	00000000 vector179
+400aa000  w      .boot1	00000000 vector764
+400aa000  w      .boot1	00000000 vector990
+400aa2c0 g     F .text	0000017e .hidden __mulsf3
+400aa000  w      .boot1	00000000 vector786
+400aa000  w      .boot1	00000000 vector794
+400aa000  w      .boot1	00000000 vector638
+400aa000  w      .boot1	00000000 vector268
+400aa000  w      .boot1	00000000 vector34
+400b40a0 g     F .text	00000014 GetBrakePedalPos
+400aa000  w      .boot1	00000000 vector46
+400aa000  w      .boot1	00000000 vector988
+400aa000  w      .boot1	00000000 vector743
+400aa000  w      .boot1	00000000 vector437
+400aa000  w      .boot1	00000000 vector1023
+400aa000  w      .boot1	00000000 vector134
 400a8000 g       .boot0	00000000 __ram_start__
-00fc2000  w      .boot1	00000000 vector223
-00fc2000  w      .boot1	00000000 vector881
-00fc2000  w      .boot1	00000000 vector945
-00fc2000  w      .boot1	00000000 vector892
-00fc0204  w      .boot0	00000000 _IVOR11
-00fc2000  w      .boot1	00000000 vector410
-00fc2000  w      .boot1	00000000 vector322
-00fc2000  w      .boot1	00000000 vector888
+400aa000  w      .boot1	00000000 vector223
+400aa000  w      .boot1	00000000 vector881
+400aa000  w      .boot1	00000000 vector945
+400aa000  w      .boot1	00000000 vector892
+400a81f4  w      .boot0	00000000 _IVOR11
+400aa000  w      .boot1	00000000 vector410
+400aa000  w      .boot1	00000000 vector322
+400aa000  w      .boot1	00000000 vector888
 50800000 g       .core0_stacks	00000000 __core0_process_stack_base__
-00fc2000  w      .boot1	00000000 vector713
-00fc2000  w      .boot1	00000000 vector341
-00fc2000  w      .boot1	00000000 vector218
-00fc67d0 g     F .text	00000164 xTaskResumeAll
-00fc2000  w      .boot1	00000000 vector994
-00fc2000  w      .boot1	00000000 vector662
-00fc2000  w      .boot1	00000000 vector292
-00fc2000  w      .boot1	00000000 vector325
-00fc2000  w      .boot1	00000000 vector367
-00fc2000  w      .boot1	00000000 vector386
-00fc6760 g     F .text	00000062 vTaskStartScheduler
-00fc2000  w      .boot1	00000000 vector556
-00fc2000  w      .boot1	00000000 vector494
-00fc2000  w      .boot1	00000000 vector599
-00fc2000  w      .boot1	00000000 vector424
+400aa000  w      .boot1	00000000 vector713
+400aa000  w      .boot1	00000000 vector341
+400aa000  w      .boot1	00000000 vector218
+400b0310 g     F .text	000001e8 xTaskResumeAll
+400aa000  w      .boot1	00000000 vector994
+400aa000  w      .boot1	00000000 vector662
+400aa000  w      .boot1	00000000 vector292
+400aa000  w      .boot1	00000000 vector325
+400aa000  w      .boot1	00000000 vector367
+400aa000  w      .boot1	00000000 vector386
+400b0270 g     F .text	00000072 vTaskStartScheduler
+400aa000  w      .boot1	00000000 vector556
+400aa000  w      .boot1	00000000 vector494
+400aa000  w      .boot1	00000000 vector599
+400aa000  w      .boot1	00000000 vector424
 52800000 g       .core2_stacks	00000000 __process_stack_base__
-00fc2000  w      .boot1	00000000 vector843
-00fc2000  w      .boot1	00000000 vector467
-00fc2000  w      .boot1	00000000 vector680
-00fc0204  w      .boot0	00000000 _IVOR15
+400aa000  w      .boot1	00000000 vector843
+400aa000  w      .boot1	00000000 vector467
+400aa000  w      .boot1	00000000 vector680
+400a81f4  w      .boot0	00000000 _IVOR15
 50800000 g       .core0_stacks	00000000 __core0_irq_stack_end__
-00fc0500 g       .boot1	00000000 C0_IVORS
-00fc2000  w      .boot1	00000000 vector225
-00fc2000  w      .boot1	00000000 vector886
-00fc77e0 g     F .text	00000002 swirq_init_prio
-00fc2000  w      .boot1	00000000 vector909
-00fc2000  w      .boot1	00000000 vector308
-00fc2000  w      .boot1	00000000 vector537
-00fc2000  w      .boot1	00000000 vector187
-00fc2000  w      .boot1	00000000 vector1015
-00fc5730 g     F .text	000000a4 can_lld_init
-00fc2000  w      .boot1	00000000 vector804
-00fc2000  w      .boot1	00000000 vector370
-00fc2000  w      .boot1	00000000 vector337
-00fc2000  w      .boot1	00000000 vector739
-00fc2000  w      .boot1	00000000 vector302
-00fc0200  w      .boot0	00000000 _C0_IVOR12
-00fc2000  w      .boot1	00000000 vector30
-00fc2000  w      .boot1	00000000 vector841
-00fc2000  w      .boot1	00000000 vector382
-00fc2000  w      .boot1	00000000 vector883
-00fc02b0 g     F .boot0	00000000 _IVOR4
-00fc2000  w      .boot1	00000000 vector127
-00fc2000  w      .boot1	00000000 vector551
-00fc2000  w      .boot1	00000000 vector1009
-00fc2000  w      .boot1	00000000 vector814
-00fc2000  w      .boot1	00000000 vector542
-00fc2000  w      .boot1	00000000 vector192
-00fc2000  w      .boot1	00000000 vector516
-00fc2000  w      .boot1	00000000 vector166
-00fc2000  w      .boot1	00000000 vector434
-00fc2000  w      .boot1	00000000 vector594
-00fc2000  w      .boot1	00000000 vector590
-00fc3b80 g     F .text	00000060 vector76
-00fc3b20 g     F .text	00000060 vector75
-00fc2000  w      .boot1	00000000 vector545
-00fc2000  w      .boot1	00000000 vector195
-00fc2000  w      .boot1	00000000 vector587
-00fc2000  w      .boot1	00000000 vector500
-00fc2000  w      .boot1	00000000 vector150
-00fc2000  w      .boot1	00000000 vector304
-00fc34c0 g     F .text	0000005c vector58
-00fc2000  w      .boot1	00000000 vector618
-00fc2000  w      .boot1	00000000 vector248
-400a8338 g     O .bss	00000010 CAND7
-00fc2000  w      .boot1	00000000 vector479
-00fc2000  w      .boot1	00000000 vector343
-00fc0204  w      .boot0	00000000 _IVOR0
-00fc2000  w      .boot1	00000000 vector123
-00fc8250 g     F .text	00000034 converto1byteorder
-00fc2000  w      .boot1	00000000 vector865
-00fc4300 g     F .text	00000060 vector96
-00fc2000  w      .boot1	00000000 vector665
-00fc2000  w      .boot1	00000000 vector295
-00fc2000  w      .boot1	00000000 vector427
-00fc2000  w      .boot1	00000000 vector891
-00fc2000  w      .boot1	00000000 vector641
-00fc2000  w      .boot1	00000000 vector271
-00fc2000  w      .boot1	00000000 vector820
-00fc2000  w      .boot1	00000000 vector939
-00fc2000  w      .boot1	00000000 vector31
-00fc2000  w      .boot1	00000000 vector388
-00fc2000  w      .boot1	00000000 vector799
-00fc2000  w      .boot1	00000000 vector203
-00fc2000  w      .boot1	00000000 vector959
-00fc2000  w      .boot1	00000000 vector684
-00fc2000  w      .boot1	00000000 vector987
-00fc2000  w      .boot1	00000000 vector139
-00fc6f20 g     F .text	00000328 spc_clock_init
-00fc2000  w      .boot1	00000000 vector503
-00fc2000  w      .boot1	00000000 vector153
-00fc2000  w      .boot1	00000000 vector514
-00fc2000  w      .boot1	00000000 vector164
-400b0518 g     O .bss	00000002 steeringrate
-00fc2000  w      .boot1	00000000 vector973
-00fc55d0 g     F .text	00000118 can_lld_writeTxBuffer
-00fc2000  w      .boot1	00000000 vector1012
-00fc2000  w      .boot1	00000000 vector879
-00fc2000  w      .boot1	00000000 vector914
-00fc2000  w      .boot1	00000000 vector563
-00fc2000  w      .boot1	00000000 vector902
-00fc2000  w      .boot1	00000000 vector949
-00fc2000  w      .boot1	00000000 vector121
-00fc2000  w      .boot1	00000000 vector867
-00fc005c  w      .boot0	00000000 _boot_address0
-00fc2000  w      .boot1	00000000 vector754
-00fc2000  w      .boot1	00000000 vector5
-00fc2000  w      .boot1	00000000 vector320
-00fc2000  w      .boot1	00000000 vector517
-00fc2000  w      .boot1	00000000 vector167
-00fc2000  w      .boot1	00000000 vector944
-00fc2000  w      .boot1	00000000 vector505
-00fc2000  w      .boot1	00000000 vector155
-00fc2000  w      .boot1	00000000 vector822
-00fc2000  w      .boot1	00000000 vector619
-00fc2000  w      .boot1	00000000 vector249
-00fc6300 g     F .text	00000190 xTaskIncrementTick
-00fc2000  w      .boot1	00000000 vector938
-00fc2000  w      .boot1	00000000 vector836
-00fc2000  w      .boot1	00000000 vector318
-00fc2000  w      .boot1	00000000 vector365
-400b0478 g     O .bss	0000004c tx10B
-00fc2000  w      .boot1	00000000 vector620
-00fc2000  w      .boot1	00000000 vector250
-00fc2000  w      .boot1	00000000 vector591
-00fc2000  w      .boot1	00000000 vector124
-00fc4840 g     F .text	00000060 vector110
-00fc2000  w      .boot1	00000000 vector653
-00fc2000  w      .boot1	00000000 vector283
-00fc2000  w      .boot1	00000000 vector726
-00fc2000  w      .boot1	00000000 vector204
-00fc2000  w      .boot1	00000000 vector698
-00fc2000  w      .boot1	00000000 vector441
-00fc0200  w      .boot0	00000000 _C0_IVOR7
+400a8500 g       .boot1	00000000 C0_IVORS
+400aa000  w      .boot1	00000000 vector225
+400aa000  w      .boot1	00000000 vector886
+400b2410 g     F .text	00000002 swirq_init_prio
+400aa000  w      .boot1	00000000 vector909
+400aa000  w      .boot1	00000000 vector308
+400aa000  w      .boot1	00000000 vector537
+400aa000  w      .boot1	00000000 vector187
+400aa000  w      .boot1	00000000 vector1015
+400aea10 g     F .text	0000010a can_lld_init
+400aa000  w      .boot1	00000000 vector804
+400aa000  w      .boot1	00000000 vector370
+400aa000  w      .boot1	00000000 vector337
+400bcb27 g     O .bss	00000001 brakepedal
+400aa000  w      .boot1	00000000 vector739
+400aa000  w      .boot1	00000000 vector302
+400a81f0  w      .boot0	00000000 _C0_IVOR12
+400aa000  w      .boot1	00000000 vector30
+400aa000  w      .boot1	00000000 vector841
+400aa000  w      .boot1	00000000 vector382
+400aa000  w      .boot1	00000000 vector883
+400a82a0 g     F .boot0	00000000 _IVOR4
+400aa000  w      .boot1	00000000 vector127
+400aa000  w      .boot1	00000000 vector551
+400aa000  w      .boot1	00000000 vector1009
+400aa000  w      .boot1	00000000 vector814
+400aa000  w      .boot1	00000000 vector542
+400aa000  w      .boot1	00000000 vector192
+400aa000  w      .boot1	00000000 vector516
+400aa000  w      .boot1	00000000 vector166
+400aa000  w      .boot1	00000000 vector434
+400aa000  w      .boot1	00000000 vector594
+400aa000  w      .boot1	00000000 vector590
+400ac060 g     F .text	00000066 vector76
+400abff0 g     F .text	00000066 vector75
+400aa000  w      .boot1	00000000 vector545
+400aa000  w      .boot1	00000000 vector195
+400aa000  w      .boot1	00000000 vector587
+400aa000  w      .boot1	00000000 vector500
+400aa000  w      .boot1	00000000 vector150
+400aa000  w      .boot1	00000000 vector304
+400ab930 g     F .text	00000060 vector58
+400aa000  w      .boot1	00000000 vector618
+400aa000  w      .boot1	00000000 vector248
+400b4878 g     O .bss	00000010 CAND7
+400aa000  w      .boot1	00000000 vector479
+400aa000  w      .boot1	00000000 vector343
+400a81f4  w      .boot0	00000000 _IVOR0
+400aa000  w      .boot1	00000000 vector123
+400b3970 g     F .text	00000082 converto1byteorder
+400aa000  w      .boot1	00000000 vector865
+400ac920 g     F .text	00000066 vector96
+400aa000  w      .boot1	00000000 vector665
+400aa000  w      .boot1	00000000 vector295
+400aa000  w      .boot1	00000000 vector427
+400aa000  w      .boot1	00000000 vector891
+400aa000  w      .boot1	00000000 vector641
+400aa000  w      .boot1	00000000 vector271
+400aa000  w      .boot1	00000000 vector820
+400aa000  w      .boot1	00000000 vector939
+400aa000  w      .boot1	00000000 vector31
+400aa000  w      .boot1	00000000 vector388
+400aa000  w      .boot1	00000000 vector799
+400aa000  w      .boot1	00000000 vector203
+400aa000  w      .boot1	00000000 vector959
+400aa000  w      .boot1	00000000 vector684
+400aa000  w      .boot1	00000000 vector987
+400aa000  w      .boot1	00000000 vector139
+400b1850 g     F .text	00000432 spc_clock_init
+400aa000  w      .boot1	00000000 vector503
+400aa000  w      .boot1	00000000 vector153
+400aa000  w      .boot1	00000000 vector514
+400aa000  w      .boot1	00000000 vector164
+400bcb18 g     O .bss	00000002 steeringrate
+400aa000  w      .boot1	00000000 vector973
+400ad620 g     F .text	000001f8 can_lld_writeTxBuffer
+400aa000  w      .boot1	00000000 vector1012
+400aa000  w      .boot1	00000000 vector879
+400aa000  w      .boot1	00000000 vector914
+400aa000  w      .boot1	00000000 vector563
+400aa000  w      .boot1	00000000 vector902
+400aa000  w      .boot1	00000000 vector949
+400aa000  w      .boot1	00000000 vector121
+400aa000  w      .boot1	00000000 vector867
+400a8058  w      .boot0	00000000 _boot_address0
+400aa000  w      .boot1	00000000 vector754
+400aa000  w      .boot1	00000000 vector5
+400aa000  w      .boot1	00000000 vector320
+400aa000  w      .boot1	00000000 vector517
+400aa000  w      .boot1	00000000 vector167
+400bcb0c g     O .bss	00000004 brakepress
+400aa000  w      .boot1	00000000 vector944
+400aa000  w      .boot1	00000000 vector505
+400aa000  w      .boot1	00000000 vector155
+400bcb24 g     O .bss	00000001 targetgear
+400aa000  w      .boot1	00000000 vector822
+400aa000  w      .boot1	00000000 vector619
+400aa000  w      .boot1	00000000 vector249
+400bcb1e g     O .bss	00000002 motortorktotal
+400b0530 g     F .text	00000246 xTaskIncrementTick
+400aa000  w      .boot1	00000000 vector938
+400aa000  w      .boot1	00000000 vector836
+400aa000  w      .boot1	00000000 vector318
+400aa000  w      .boot1	00000000 vector365
+400bca58 g     O .bss	0000004c tx10B
+400aa000  w      .boot1	00000000 vector620
+400aa000  w      .boot1	00000000 vector250
+400aa000  w      .boot1	00000000 vector591
+400bcb29 g     O .bss	00000001 gearlvl
+400aa000  w      .boot1	00000000 vector124
+400acf40 g     F .text	00000066 vector110
+400aa000  w      .boot1	00000000 vector653
+400aa000  w      .boot1	00000000 vector283
+400aa000  w      .boot1	00000000 vector726
+400aa000  w      .boot1	00000000 vector204
+400aa000  w      .boot1	00000000 vector698
+400aa000  w      .boot1	00000000 vector441
+400a81f0  w      .boot0	00000000 _C0_IVOR7
 52800000 g       .core2_stacks	00000000 __irq_stack_end__
-00fc0200  w      .boot0	00000000 _C0_IVOR2
+400a81f0  w      .boot0	00000000 _C0_IVOR2
+400b0e20 g     F .text	00000014 vPortTimerReset
 50800800 g       .core0_stacks	00000000 __core0_main_thread_stack_end__
-00fc2000  w      .boot1	00000000 vector756
-00fc2000  w      .boot1	00000000 vector787
-00fc2000  w      .boot1	00000000 vector749
-00fc2000  w      .boot1	00000000 vector966
-00fc2000  w      .boot1	00000000 vector484
-00fc2000  w      .boot1	00000000 vector630
-00fc2000  w      .boot1	00000000 vector260
-00fc2000  w      .boot1	00000000 vector137
-00fc0204  w      .boot0	00000000 _IVOR14
-00fc2000  w      .boot1	00000000 vector979
-00fc2000  w      .boot1	00000000 vector330
+400aa000  w      .boot1	00000000 vector756
+400aa000  w      .boot1	00000000 vector787
+400aa000  w      .boot1	00000000 vector749
+400aa000  w      .boot1	00000000 vector966
+400aa000  w      .boot1	00000000 vector484
+400aa000  w      .boot1	00000000 vector630
+400aa000  w      .boot1	00000000 vector260
+400aa000  w      .boot1	00000000 vector137
+400a81f4  w      .boot0	00000000 _IVOR14
+400aa000  w      .boot1	00000000 vector979
+400aa000  w      .boot1	00000000 vector330
+400bcaf8 g     O .bss	00000004 speedFR
 40108000 g       .boot0	00000000 __ram_end__
-00fc2000  w      .boot1	00000000 vector561
-00fc2000  w      .boot1	00000000 vector923
-00fc2000  w      .boot1	00000000 vector617
-00fc2000  w      .boot1	00000000 vector247
-00fc2000  w      .boot1	00000000 vector668
-00fc2000  w      .boot1	00000000 vector298
-00fc2000  w      .boot1	00000000 vector657
-00fc2000  w      .boot1	00000000 vector287
-00fc2000  w      .boot1	00000000 vector22
-00fc2000  w      .boot1	00000000 vector1019
-00fc0460  w    F .boot0	00000000 __eabi
-00fc2000  w      .boot1	00000000 vector373
-00fc2000  w      .boot1	00000000 vector202
-00fc2000  w      .boot1	00000000 vector323
-00fc2000  w      .boot1	00000000 vector744
-00fc2000  w      .boot1	00000000 vector955
-00fc2000  w      .boot1	00000000 vector368
-00fc3a00 g     F .text	00000060 vector72
-00fc33a0 g     F .text	0000005c vector55
-00fc2000  w      .boot1	00000000 vector934
-00fc2000  w      .boot1	00000000 vector126
-00fc2000  w      .boot1	00000000 vector910
-00fc2000  w      .boot1	00000000 vector785
-00fc2000  w      .boot1	00000000 vector471
-00fc3760 g     F .text	0000005c vector65
-00fc2000  w      .boot1	00000000 vector28
-00fc0200  w      .boot0	00000000 _C0_IVOR8
-00fc2000  w      .boot1	00000000 vector703
-00fc2000  w      .boot1	00000000 vector550
-00fc2000  w      .boot1	00000000 vector519
-00fc2000  w      .boot1	00000000 vector169
-00fc6520 g     F .text	0000023e xTaskCreate
-00fc2000  w      .boot1	00000000 vector809
-00fc2000  w      .boot1	00000000 vector392
-00fc2000  w      .boot1	00000000 vector474
-00fc2000  w      .boot1	00000000 vector603
-00fc2000  w      .boot1	00000000 vector233
-00fc2000  w      .boot1	00000000 vector593
-00fc2000  w      .boot1	00000000 vector742
-00fc2000  w      .boot1	00000000 vector780
-00fc77a0 g     F .text	00000018 sysTimeReset
-00fc2000  w      .boot1	00000000 vector413
-00fc0204  w      .boot0	00000000 _IVOR9
-00fc2000  w      .boot1	00000000 vector866
-00fc76e0 g     F .text	00000004 osalSysTimeReset
+400aa000  w      .boot1	00000000 vector561
+400aa000  w      .boot1	00000000 vector923
+400aa000  w      .boot1	00000000 vector617
+400aa000  w      .boot1	00000000 vector247
+400aa000  w      .boot1	00000000 vector668
+400aa000  w      .boot1	00000000 vector298
+400aa000  w      .boot1	00000000 vector657
+400aa000  w      .boot1	00000000 vector287
+400aa000  w      .boot1	00000000 vector22
+400aa000  w      .boot1	00000000 vector1019
+400a8428  w    F .boot0	00000000 __eabi
+400aa000  w      .boot1	00000000 vector373
+400aa000  w      .boot1	00000000 vector202
+400aa000  w      .boot1	00000000 vector323
+400aa000  w      .boot1	00000000 vector744
+400aa000  w      .boot1	00000000 vector955
+400aa000  w      .boot1	00000000 vector368
+400abea0 g     F .text	00000066 vector72
+400ab810 g     F .text	00000060 vector55
+400aa000  w      .boot1	00000000 vector934
+400aa000  w      .boot1	00000000 vector126
+400bcb14 g     O .bss	00000004 pitch
+400aa000  w      .boot1	00000000 vector910
+400aa000  w      .boot1	00000000 vector785
+400aa000  w      .boot1	00000000 vector471
+400abbd0 g     F .text	00000060 vector65
+400aa000  w      .boot1	00000000 vector28
+400a81f0  w      .boot0	00000000 _C0_IVOR8
+400aa000  w      .boot1	00000000 vector703
+400aa000  w      .boot1	00000000 vector550
+400aa000  w      .boot1	00000000 vector519
+400aa000  w      .boot1	00000000 vector169
+400afd30 g     F .text	000000d0 xTaskCreate
+400aa000  w      .boot1	00000000 vector809
+400aa000  w      .boot1	00000000 vector392
+400aa000  w      .boot1	00000000 vector474
+400aa000  w      .boot1	00000000 vector603
+400aa000  w      .boot1	00000000 vector233
+400aa000  w      .boot1	00000000 vector593
+400aa000  w      .boot1	00000000 vector742
+400aa000  w      .boot1	00000000 vector780
+400b23b0 g     F .text	0000002e sysTimeReset
+400aa000  w      .boot1	00000000 vector413
+400a81f4  w      .boot0	00000000 _IVOR9
+400aa000  w      .boot1	00000000 vector866
+400b22a0 g     F .text	00000014 osalSysTimeReset
 52800000 g       .core2_stacks	00000000 __irq_stack_base__
 52800000 g       .core2_stacks	00000000 __main_thread_stack_base__
-00fc2000  w      .boot1	00000000 vector821
-00fc2290 g     F .text	00000084 .hidden __floatunsisf
-00fc2000  w      .boot1	00000000 vector457
+400aa000  w      .boot1	00000000 vector821
+400aa4e0 g     F .text	00000084 .hidden __floatunsisf
+400aa000  w      .boot1	00000000 vector457
 00fc0000 g       .boot0	00000000 __flash_start__
-00fc2000  w      .boot1	00000000 vector147
-00fc2000  w      .boot1	00000000 vector642
-00fc2000  w      .boot1	00000000 vector272
-00fc2000  w      .boot1	00000000 vector874
-00fc2000  w      .boot1	00000000 vector766
-00fc2000  w      .boot1	00000000 vector633
-00fc2000  w      .boot1	00000000 vector263
-00fc69b0 g     F .text	0000003e vTaskDelay
-00fc2000  w      .boot1	00000000 vector581
-00fc2000  w      .boot1	00000000 vector882
-00fc2000  w      .boot1	00000000 vector685
-00fc4600 g     F .text	00000060 vector104
-00fc2000  w      .boot1	00000000 vector831
-00fc2000  w      .boot1	00000000 vector1005
-00fc4a80 g     F .text	00000060 vector116
-00fc8290 g     F .text	00000034 converto4byteorder
-00fc2000  w      .boot1	00000000 vector654
-00fc2000  w      .boot1	00000000 vector284
-00fc2000  w      .boot1	00000000 vector452
-00fc2000  w      .boot1	00000000 vector782
-00fc2000  w      .boot1	00000000 vector768
-00fc2000  w      .boot1	00000000 vector869
-00fc2000  w      .boot1	00000000 vector992
-00fc2000  w      .boot1	00000000 vector699
-00fc2000  w      .boot1	00000000 vector439
-00fc2e00 g     F .text	000000a2 .hidden __fpcmp_parts_f
-00fc2000  w      .boot1	00000000 vector721
-00fc2000  w      .boot1	00000000 vector497
-00fc2000  w      .boot1	00000000 vector824
-00fc2000  w      .boot1	00000000 vector735
-00fc2000  w      .boot1	00000000 vector755
-00fc2000  w      .boot1	00000000 vector315
-00fc2000  w      .boot1	00000000 vector976
-00fc2000  w      .boot1	00000000 vector640
-00fc2000  w      .boot1	00000000 vector270
-00fc2000  w      .boot1	00000000 vector717
-00fc3240 g     F .text	0000009a vector52
-00fc2000  w      .boot1	00000000 vector17
-00fc2000  w      .boot1	00000000 vector360
-00fc2000  w      .boot1	00000000 vector534
-00fc2000  w      .boot1	00000000 vector184
-00fc64d0 g     F .text	00000044 vTaskExitCritical
-00fc2000  w      .boot1	00000000 vector577
-00fc6a30 g     F .text	00000122 pxPortInitialiseStack
-00fc2000  w      .boot1	00000000 vector683
-00fc2000  w      .boot1	00000000 vector358
-00fc2000  w      .boot1	00000000 vector446
-00fc2000  w      .boot1	00000000 vector906
-00fc2000  w      .boot1	00000000 vector861
-00fc2000  w      .boot1	00000000 vector489
-00fc2000  w      .boot1	00000000 vector931
-00fc2000  w      .boot1	00000000 vector658
-00fc2000  w      .boot1	00000000 vector288
-00fc2a90 g     F .text	00000064 .hidden __gedf2
-00fc2000  w      .boot1	00000000 vector564
-00fc2000  w      .boot1	00000000 vector326
-00fc2000  w      .boot1	00000000 vector207
-00fc2000  w      .boot1	00000000 vector915
-00fc0200  w      .boot0	00000000 _C0_IVOR5
-00fc2000  w      .boot1	00000000 vector540
-00fc2000  w      .boot1	00000000 vector190
-400b057c g     O .bss	00000008 h303st
-00fc2000  w      .boot1	00000000 vector609
-00fc2000  w      .boot1	00000000 vector239
-00fc4240 g     F .text	00000060 vector94
-00fc41e0 g     F .text	00000060 vector93
-00fc7970 g     F .text	00000036 can_start
-00fc2000  w      .boot1	00000000 vector567
-00fc2000  w      .boot1	00000000 vector538
-00fc2000  w      .boot1	00000000 vector188
-00fc2000  w      .boot1	00000000 vector585
-00fc2000  w      .boot1	00000000 vector636
-00fc2000  w      .boot1	00000000 vector266
-00fc2000  w      .boot1	00000000 vector411
-00fc2000  w      .boot1	00000000 vector692
-00fc2000  w      .boot1	00000000 vector847
+400aa000  w      .boot1	00000000 vector147
+400bcb2a g     O .bss	00000001 KL75
+400aa000  w      .boot1	00000000 vector642
+400aa000  w      .boot1	00000000 vector272
+400aa000  w      .boot1	00000000 vector874
+400aa000  w      .boot1	00000000 vector766
+400aa000  w      .boot1	00000000 vector633
+400aa000  w      .boot1	00000000 vector263
+400b0210 g     F .text	0000005a vTaskDelay
+400aa000  w      .boot1	00000000 vector581
+400aa000  w      .boot1	00000000 vector882
+400aa000  w      .boot1	00000000 vector685
+400acca0 g     F .text	00000066 vector104
+400aa000  w      .boot1	00000000 vector831
+400aa000  w      .boot1	00000000 vector1005
+400ad1e0 g     F .text	00000066 vector116
+400b3a00 g     F .text	00000082 converto4byteorder
+400aa000  w      .boot1	00000000 vector654
+400aa000  w      .boot1	00000000 vector284
+400aa000  w      .boot1	00000000 vector452
+400aa000  w      .boot1	00000000 vector782
+400aa000  w      .boot1	00000000 vector768
+400aa000  w      .boot1	00000000 vector869
+400aa000  w      .boot1	00000000 vector992
+400aa000  w      .boot1	00000000 vector699
+400aa000  w      .boot1	00000000 vector439
+400bcb1c g     O .bss	00000002 motortorkraw
+400ab0a0 g     F .text	000000a2 .hidden __fpcmp_parts_f
+400aa000  w      .boot1	00000000 vector721
+400aa000  w      .boot1	00000000 vector497
+400aa000  w      .boot1	00000000 vector824
+400aa000  w      .boot1	00000000 vector735
+400aa000  w      .boot1	00000000 vector755
+400aa000  w      .boot1	00000000 vector315
+400aa000  w      .boot1	00000000 vector976
+400aa000  w      .boot1	00000000 vector640
+400aa000  w      .boot1	00000000 vector270
+400aa000  w      .boot1	00000000 vector717
+400ab500 g     F .text	00000242 vector52
+400aa000  w      .boot1	00000000 vector17
+400aa000  w      .boot1	00000000 vector360
+400aa000  w      .boot1	00000000 vector534
+400aa000  w      .boot1	00000000 vector184
+400b09e0 g     F .text	0000007c vTaskExitCritical
+400aa000  w      .boot1	00000000 vector577
+400b0b70 g     F .text	00000262 pxPortInitialiseStack
+400aa000  w      .boot1	00000000 vector683
+400aa000  w      .boot1	00000000 vector358
+400aa000  w      .boot1	00000000 vector446
+400aa000  w      .boot1	00000000 vector906
+400aa000  w      .boot1	00000000 vector861
+400aa000  w      .boot1	00000000 vector489
+400aa000  w      .boot1	00000000 vector931
+400aa000  w      .boot1	00000000 vector658
+400aa000  w      .boot1	00000000 vector288
+400aace0 g     F .text	00000064 .hidden __gedf2
+400aa000  w      .boot1	00000000 vector564
+400aa000  w      .boot1	00000000 vector326
+400aa000  w      .boot1	00000000 vector207
+400aa000  w      .boot1	00000000 vector915
+400a81f0  w      .boot0	00000000 _C0_IVOR5
+400aa000  w      .boot1	00000000 vector540
+400aa000  w      .boot1	00000000 vector190
+400bc9b0 g     O .bss	00000008 h303st
+400aa000  w      .boot1	00000000 vector609
+400aa000  w      .boot1	00000000 vector239
+400ac840 g     F .text	00000066 vector94
+400ac7d0 g     F .text	00000066 vector93
+400b2420 g     F .text	00000038 can_start
+400aa000  w      .boot1	00000000 vector567
+400aa000  w      .boot1	00000000 vector538
+400aa000  w      .boot1	00000000 vector188
+400aa000  w      .boot1	00000000 vector585
+400aa000  w      .boot1	00000000 vector636
+400aa000  w      .boot1	00000000 vector266
+400aa000  w      .boot1	00000000 vector411
+400aa000  w      .boot1	00000000 vector692
+400aa000  w      .boot1	00000000 vector847
 00000800 g       *ABS*	00000000 __core0_process_stack_size__
-00fc8360 g     F .text	0000002a componentsInit
-00fc2000  w      .boot1	00000000 vector48
-00fc77c0 g     F .text	0000000c boardInit
-00fc2000  w      .boot1	00000000 vector659
-00fc2000  w      .boot1	00000000 vector289
-00fc2000  w      .boot1	00000000 vector663
-00fc2000  w      .boot1	00000000 vector293
-00fc2000  w      .boot1	00000000 vector957
+400b41e0 g     F .text	0000002c componentsInit
+400aa000  w      .boot1	00000000 vector48
+400b23e0 g     F .text	0000001c boardInit
+400aa000  w      .boot1	00000000 vector659
+400aa000  w      .boot1	00000000 vector289
+400aa000  w      .boot1	00000000 vector663
+400aa000  w      .boot1	00000000 vector293
+400aa000  w      .boot1	00000000 vector957
 50800800 g       .core0_stacks	00000000 __core0_process_stack_end__
-00fc2000  w      .boot1	00000000 vector310
-00fc2000  w      .boot1	00000000 vector219
-00fc2000  w      .boot1	00000000 vector936
-00fc2000  w      .boot1	00000000 vector148
-00fc2000  w      .boot1	00000000 vector221
-00fc2000  w      .boot1	00000000 vector912
-00fc0458  w    F .boot0	00000000 _main_exit_handler
-00fc3d00 g     F .text	00000060 vector80
-00fc2000  w      .boot1	00000000 vector353
-00fc2000  w      .boot1	00000000 vector521
-00fc2000  w      .boot1	00000000 vector171
-00fc2000  w      .boot1	00000000 vector504
-00fc2000  w      .boot1	00000000 vector154
-00fc2000  w      .boot1	00000000 vector36
-00fc82d0 g     F .text	00000038 GetSteeringWheelAngle
-00fc2634 g     F .text	00000062 .hidden __subdf3
-00fc2000  w      .boot1	00000000 vector894
-00fc2000  w      .boot1	00000000 vector605
-00fc2000  w      .boot1	00000000 vector235
-00fc4660 g     F .text	00000060 vector105
-00fc2000  w      .boot1	00000000 vector849
+400aa000  w      .boot1	00000000 vector310
+400aa000  w      .boot1	00000000 vector219
+400aa000  w      .boot1	00000000 vector936
+400aa000  w      .boot1	00000000 vector148
+400aa000  w      .boot1	00000000 vector221
+400aa000  w      .boot1	00000000 vector912
+400a8420  w    F .boot0	00000000 _main_exit_handler
+400ac220 g     F .text	00000066 vector80
+400aa000  w      .boot1	00000000 vector353
+400aa000  w      .boot1	00000000 vector521
+400aa000  w      .boot1	00000000 vector171
+400aa000  w      .boot1	00000000 vector504
+400aa000  w      .boot1	00000000 vector154
+400aa000  w      .boot1	00000000 vector36
+400b3a90 g     F .text	000000a2 GetSteeringWheelAngle
+400aa884 g     F .text	00000062 .hidden __subdf3
+400aa000  w      .boot1	00000000 vector894
+400aa000  w      .boot1	00000000 vector605
+400aa000  w      .boot1	00000000 vector235
+400acd10 g     F .text	00000066 vector105
+400aa000  w      .boot1	00000000 vector849
 52801000 g       .core2_stacks	00000000 __process_stack_end__
-00fc2000  w      .boot1	00000000 vector716
-00fc2000  w      .boot1	00000000 vector340
-00fc2000  w      .boot1	00000000 vector851
-00fc2000  w      .boot1	00000000 vector449
-00fc2000  w      .boot1	00000000 vector405
-00fc2000  w      .boot1	00000000 vector800
+400aa000  w      .boot1	00000000 vector716
+400aa000  w      .boot1	00000000 vector340
+400aa000  w      .boot1	00000000 vector851
+400aa000  w      .boot1	00000000 vector449
+400aa000  w      .boot1	00000000 vector405
+400aa000  w      .boot1	00000000 vector800
 50800000 g       .boot0	00000000 __dram0_start__
-00fc2000  w      .boot1	00000000 vector385
-00fc7250 g     F .text	00000004 __early_init
-00fc0200  w      .boot0	00000000 _C0_IVOR13
-00fc2000  w      .boot1	00000000 vector338
-00fc2000  w      .boot1	00000000 vector969
-00fc2000  w      .boot1	00000000 vector146
-00fc2000  w      .boot1	00000000 vector897
-00fc2000  w      .boot1	00000000 vector815
-00fc2000  w      .boot1	00000000 vector541
-00fc2000  w      .boot1	00000000 vector191
+400aa000  w      .boot1	00000000 vector385
+400b1c90 g     F .text	00000014 __early_init
+400a81f0  w      .boot0	00000000 _C0_IVOR13
+400aa000  w      .boot1	00000000 vector338
+400aa000  w      .boot1	00000000 vector969
+400aa000  w      .boot1	00000000 vector146
+400aa000  w      .boot1	00000000 vector897
+400aa000  w      .boot1	00000000 vector815
+400aa000  w      .boot1	00000000 vector541
+400aa000  w      .boot1	00000000 vector191
+400aa214 g     F .text	0000004a .hidden __addsf3
 50800000 g       .core0_stacks	00000000 __core0_irq_stack_base__
-00fc45a0 g     F .text	00000060 vector103
-00fc0600 g       .boot1	00000000 IVORS
-00fc2000  w      .boot1	00000000 vector669
-00fc2000  w      .boot1	00000000 vector299
+400acc30 g     F .text	00000066 vector103
+400a8600 g       .boot1	00000000 IVORS
+400b3c10 g     F .text	00000040 GetTargetMotorTorqueRaw
+400aa000  w      .boot1	00000000 vector669
+400aa000  w      .boot1	00000000 vector299
 00001000 g       *ABS*	00000000 __process_stack_size__
-00fc2000  w      .boot1	00000000 vector926
-00fc2000  w      .boot1	00000000 vector781
-00fc2000  w      .boot1	00000000 vector984
-00fc2000  w      .boot1	00000000 vector462
-00fc2000  w      .boot1	00000000 vector586
-00fc2eb0 g     F .text	000001fc .hidden __pack_d
-00fc2000  w      .boot1	00000000 vector350
-00fc2000  w      .boot1	00000000 vector997
-00fc2000  w      .boot1	00000000 vector854
-00fc2000  w      .boot1	00000000 vector941
-00fc2000  w      .boot1	00000000 vector454
-00fc2000  w      .boot1	00000000 vector708
-00fc2000  w      .boot1	00000000 vector679
-00fc2000  w      .boot1	00000000 vector406
-00fc2000  w      .boot1	00000000 vector397
-00fc2000  w      .boot1	00000000 vector480
-00fc2000  w      .boot1	00000000 vector447
-00fc2000  w      .boot1	00000000 vector11
-00fc2000  w      .boot1	00000000 vector14
-00fc2000  w      .boot1	00000000 vector952
-00fc2000  w      .boot1	00000000 vector499
-00fc2000  w      .boot1	00000000 vector884
+400aa000  w      .boot1	00000000 vector926
+400aa000  w      .boot1	00000000 vector781
+400aa000  w      .boot1	00000000 vector984
+400aa000  w      .boot1	00000000 vector462
+400aa000  w      .boot1	00000000 vector586
+400ab170 g     F .text	000001fc .hidden __pack_d
+400aa000  w      .boot1	00000000 vector350
+400aa000  w      .boot1	00000000 vector997
+400aa000  w      .boot1	00000000 vector854
+400aa000  w      .boot1	00000000 vector941
+400aa000  w      .boot1	00000000 vector454
+400aa000  w      .boot1	00000000 vector708
+400aa000  w      .boot1	00000000 vector679
+400aa000  w      .boot1	00000000 vector406
+400aa000  w      .boot1	00000000 vector397
+400aa000  w      .boot1	00000000 vector480
+400aa000  w      .boot1	00000000 vector447
+400aa000  w      .boot1	00000000 vector11
+400aa000  w      .boot1	00000000 vector14
+400aa000  w      .boot1	00000000 vector952
+400aa000  w      .boot1	00000000 vector499
+400aa000  w      .boot1	00000000 vector884
 
 

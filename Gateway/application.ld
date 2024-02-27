@@ -60,14 +60,13 @@ __dram2_end__           = ORIGIN(dram2) + LENGTH(dram2);
 
 SECTIONS
 {
-    . = ORIGIN(flash);
-
+    . = ORIGIN(ram);
     .boot0 : ALIGN(16) SUBALIGN(16)
     {
         KEEP(*(.boot))
         KEEP(*(.handlers))
         KEEP(*(.crt0))
-    } > flash
+    } > ram
 
     .boot1 : ALIGN(16) SUBALIGN(16)
     {
@@ -84,7 +83,7 @@ SECTIONS
         /* The vectors table requires a 4kB alignment.*/
         . = ALIGN(0x1000);
         KEEP(*(.vectors))
-    } > flash
+    } > ram
 
     constructors : ALIGN(4) SUBALIGN(4)
     {
@@ -92,7 +91,7 @@ SECTIONS
         KEEP(*(SORT(.init_array.*)))
         KEEP(*(.init_array))
         PROVIDE(__init_array_end = .);
-    } > flash
+    } > ram
 
     destructors : ALIGN(4) SUBALIGN(4)
     {
@@ -100,21 +99,21 @@ SECTIONS
         KEEP(*(.fini_array))
         KEEP(*(SORT(.fini_array.*)))
         PROVIDE(__fini_array_end = .);
-    } > flash
+    } > ram
 
     .text_vle : ALIGN(16) SUBALIGN(16)
     {
         *(.text_vle)
         *(.text_vle.*)
         *(.gnu.linkonce.t_vle.*)
-    } > flash
+    } > ram
 
     .text : ALIGN(16) SUBALIGN(16)
     {
         *(.text)
         *(.text.*)
         *(.gnu.linkonce.t.*)
-    } > flash
+    } > ram
 
     .rodata : ALIGN(16) SUBALIGN(16)
     {
@@ -124,7 +123,7 @@ SECTIONS
         *(.rodata)
         *(.rodata.*)
         *(.rodata1)
-    } > flash
+    } > ram
 
     .sdata2 : ALIGN(16) SUBALIGN(16)
     {
@@ -135,22 +134,22 @@ SECTIONS
         *(.sbss2)
         *(.sbss2.*)
         *(.gnu.linkonce.sb2.*)
-    } > flash
+    } > ram
 
     .eh_frame_hdr :
     {
         *(.eh_frame_hdr)
-    } > flash
+    } > ram
 
     .eh_frame : ONLY_IF_RO
     {
         *(.eh_frame)
-    } > flash
+    } > ram
 
     .romdata : ALIGN(16) SUBALIGN(16)
     {
         __romdata_start__ = .;
-    } > flash
+    } > ram
 
     .core0_stacks : ALIGN(16) SUBALIGN(16)
     {
@@ -182,7 +181,7 @@ SECTIONS
         __main_thread_stack_end__ = .;
     } > dram2
 
-    .data : AT(__romdata_start__)
+    .data :
     {
         . = ALIGN(4);
         __data_start__ = .;

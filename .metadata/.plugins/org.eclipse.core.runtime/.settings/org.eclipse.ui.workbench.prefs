@@ -1,2 +1,6 @@
+//org.eclipse.ui.commands/state/com.st.tools.spc5.commands.build/org.eclipse.ui.commands.toggleState=true
+//org.eclipse.ui.commands/state/com.st.tools.spc5.commands.clean/org.eclipse.ui.commands.toggleState=true
+//org.eclipse.ui.commands/state/com.st.tools.spc5.commands.debug/org.eclipse.ui.commands.toggleState=true
+//org.eclipse.ui.commands/state/com.st.tools.spc5.commands.generate/org.eclipse.ui.commands.toggleState=true
 //org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
 eclipse.preferences.version=1

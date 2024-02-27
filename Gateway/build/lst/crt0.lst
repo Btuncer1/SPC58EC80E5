@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\bayra\AppData\Local\Temp\cc4lRAfg.s 			page 1
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccgfWZ0Q.s 			page 1
 
 
    1              	# 1 "./components/spc58ecxx_platform_component_rla/lib/src/crt0.s"
@@ -58,7 +58,7 @@ GAS LISTING C:\Users\bayra\AppData\Local\Temp\cc4lRAfg.s 			page 1
   50              	         * Small sections registers initialization.
   51              	         */
   52 000e 7040E000 	        e_lis       %r2,  HI(__sdata2_start__)
-GAS LISTING C:\Users\bayra\AppData\Local\Temp\cc4lRAfg.s 			page 2
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccgfWZ0Q.s 			page 2
 
 
   53 0012 7040C000 	        e_or2i      %r2,  LO(__sdata2_start__)
@@ -92,33 +92,33 @@ GAS LISTING C:\Users\bayra\AppData\Local\Temp\cc4lRAfg.s 			page 1
   81              	        /*
   82              	         * DATA initialization.
   83              	         */
-  84 0044 7080E000 	        e_lis       %r4, HI(__romdata_start__)
-  85 0048 7080C000 	        e_or2i      %r4, LO(__romdata_start__)
-  86 004c 70A0E000 	        e_lis       %r5, HI(__data_start__)
-  87 0050 70A0C000 	        e_or2i      %r5, LO(__data_start__)
-  88 0054 70C0E000 	        e_lis       %r6, HI(__data_end__)
-  89 0058 70C0C000 	        e_or2i      %r6, LO(__data_end__)
+  84              	        e_lis       %r4, HI(__romdata_start__)
+  85              	        e_or2i      %r4, LO(__romdata_start__)
+  86              	        e_lis       %r5, HI(__data_start__)
+  87              	        e_or2i      %r5, LO(__data_start__)
+  88              	        e_lis       %r6, HI(__data_end__)
+  89              	        e_or2i      %r6, LO(__data_end__)
   90              	.dataloop:
-  91 005c 7C053040 	        cmpl        cr0, %r5, %r6
-  92 0060 E006     	        se_bge      .dataend
-  93 0062 C074     	        se_lwz      %r7, 0(%r4)
-  94 0064 2034     	        se_addi     %r4, 4
-  95 0066 D075     	        se_stw      %r7, 0(%r5)
-  96 0068 2035     	        se_addi     %r5, 4
-  97 006a E8F9     	        se_b        .dataloop
+  91              	        cmpl        cr0, %r5, %r6
+  92              	        se_bge      .dataend
+  93              	        se_lwz      %r7, 0(%r4)
+  94              	        se_addi     %r4, 4
+  95              	        se_stw      %r7, 0(%r5)
+  96              	        se_addi     %r5, 4
+  97              	        se_b        .dataloop
   98              	.dataend:
   99              	#endif
  100              	
  101              	        /*
  102              	         * Late initialization.
  103              	         */
- 104 006c 78000001 	        e_bl        __late_init
+ 104 0044 78000001 	        e_bl        __late_init
  105              	        /*
  106              	         * Main program invocation.
  107              	         */
- 108 0070 78000001 	        e_bl        main
- 109 0074 78000000 	        e_b         _main_exit_handler
-GAS LISTING C:\Users\bayra\AppData\Local\Temp\cc4lRAfg.s 			page 3
+ 108 0048 78000001 	        e_bl        main
+ 109 004c 78000000 	        e_b         _main_exit_handler
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccgfWZ0Q.s 			page 3
 
 
  110              	
@@ -129,7 +129,7 @@ GAS LISTING C:\Users\bayra\AppData\Local\Temp\cc4lRAfg.s 			page 1
  115              	        .globl      _main_exit_handler
  116              	        .type       _main_exit_handler, @function
  117              	_main_exit_handler:
- 118 0078 78000000 	        e_b         _main_exit_handler
+ 118 0050 78000000 	        e_b         _main_exit_handler
  119              	
  120              	        /*
  121              	         * Default early initialization code, none.
@@ -138,7 +138,7 @@ GAS LISTING C:\Users\bayra\AppData\Local\Temp\cc4lRAfg.s 			page 1
  124              	        .globl      __early_init
  125              	        .type       __early_init, @function
  126              	__early_init:
- 127 007c 0004     	        se_blr
+ 127 0054 0004     	        se_blr
  128              	
  129              	        /*
  130              	         * Default late initialization code, none.
@@ -147,7 +147,7 @@ GAS LISTING C:\Users\bayra\AppData\Local\Temp\cc4lRAfg.s 			page 1
  133              	        .globl      __late_init
  134              	        .type       __late_init, @function
  135              	__late_init:
- 136 007e 0004     	        se_blr
+ 136 0056 0004     	        se_blr
  137              	
  138              	        /*
  139              	         * __eabi code, fix for freegcc 4.9.4.
@@ -156,20 +156,18 @@ GAS LISTING C:\Users\bayra\AppData\Local\Temp\cc4lRAfg.s 			page 1
  142              	        .globl      __eabi
  143              	        .type       __eabi, @function
  144              	__eabi:
- 145 0080 0004     	        se_blr
-GAS LISTING C:\Users\bayra\AppData\Local\Temp\cc4lRAfg.s 			page 4
+ 145 0058 0004     	        se_blr
+GAS LISTING C:\Users\bayra\AppData\Local\Temp\ccgfWZ0Q.s 			page 4
 
 
 DEFINED SYMBOLS
 ./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:41     .crt0:00000000 _boot_address
-./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:126    .crt0:0000007c __early_init
+./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:126    .crt0:00000054 __early_init
 ./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:72     .crt0:00000038 .bssloop
 ./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:78     .crt0:00000044 .bssend
-./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:90     .crt0:0000005c .dataloop
-./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:98     .crt0:0000006c .dataend
-./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:135    .crt0:0000007e __late_init
-./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:117    .crt0:00000078 _main_exit_handler
-./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:144    .crt0:00000080 __eabi
+./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:135    .crt0:00000056 __late_init
+./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:117    .crt0:00000050 _main_exit_handler
+./components/spc58ecxx_platform_component_rla/lib/src/crt0.s:144    .crt0:00000058 __eabi
 
 UNDEFINED SYMBOLS
 __process_stack_end__
@@ -177,7 +175,4 @@ __sdata2_start__
 __sdata_start__
 __bss_start__
 __bss_end__
-__romdata_start__
-__data_start__
-__data_end__
 main

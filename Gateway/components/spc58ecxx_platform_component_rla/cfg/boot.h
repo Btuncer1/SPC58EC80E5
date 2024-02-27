@@ -85,7 +85,7 @@
 /*
  * Boot default settings.
  */
-#define BOOT_PERFORM_CORE_INIT  1
+#define BOOT_PERFORM_CORE_INIT  0
 
 /*
  * VLE mode default settings.
@@ -102,7 +102,7 @@
  */
 #define BOOT_RELOCATE_IN_RAM    0
 
-#define BOOT_LOAD_IN_RAM        0
+#define BOOT_LOAD_IN_RAM        1
 
 /*
  * Boot Core_0
